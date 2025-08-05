@@ -16,7 +16,7 @@ pricing_data = load_pricing_data()
 charging_library = ChargingCurveLibrary(curve_data)
 
 # === Select EV and charger ===
-ev_row = ev_specs.iloc[0]  # e.g., Nissan Leaf 2020
+ev_row = ev_specs.iloc[15]  # e.g., Nissan Leaf 2020
 ev_model = ev_row['model']
 brand = ev_row['brand_name']
 year = ev_row['release_year']
@@ -35,7 +35,7 @@ agent = EVAgent(
 )
 
 # Pick a random charger (we’ll assume it's compatible for now)
-connector = connector_data.iloc[0]
+connector = connector_data.iloc[15]
 station = station_data[station_data['chargeDeviceID'] == connector['chargeDeviceID']].iloc[0]
 pricing_row = pricing_data[pricing_data['company_name'].str.lower().str.contains(station['deviceNetworks'].lower())].head(1)
 
@@ -64,7 +64,7 @@ energy_needed = ((target_soc - current_soc) / 100) * agent.battery_kWh
 charging_cost = charger.estimate_cost(
     energy_needed,
     timestamp=datetime.now(),
-    idle_minutes=5  # Or dynamically simulate this later
+    idle_minutes=3  # Or dynamically simulate this later
 )
 
 
