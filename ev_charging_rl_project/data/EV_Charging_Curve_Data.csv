@@ -1,0 +1,4264 @@
+brand_name,model,release_year,curve_index,soc_percent,charging_power_kW
+Abarth,500E,2024,0,0.0,80.75
+Abarth,500E,2024,1,50.0,85.0
+Abarth,500E,2024,2,80.0,42.5
+Abarth,500E,2024,3,100.0,17.0
+Abarth,500e Convertible,2023,0,0.0,85.0
+Abarth,500e Convertible,2023,1,50.0,85.0
+Abarth,500e Convertible,2023,2,80.0,51.0
+Abarth,500e Convertible,2023,3,100.0,25.5
+Abarth,500e Scorpionissima,2023,0,0.0,85.0
+Abarth,500e Scorpionissima,2023,1,50.0,85.0
+Abarth,500e Scorpionissima,2023,2,80.0,51.0
+Abarth,500e Scorpionissima,2023,3,100.0,25.5
+Abarth,600e Scorpionissima,2024,0,0.0,100.0
+Abarth,600e Scorpionissima,2024,1,50.0,100.0
+Abarth,600e Scorpionissima,2024,2,80.0,60.0
+Abarth,600e Scorpionissima,2024,3,100.0,30.0
+Abarth,600e Turismo,2024,0,0.0,100.0
+Abarth,600e Turismo,2024,1,50.0,100.0
+Abarth,600e Turismo,2024,2,80.0,60.0
+Abarth,600e Turismo,2024,3,100.0,30.0
+Abarth,convertible,2023,0,0.0,37.8
+Abarth,convertible,2023,1,50.0,37.8
+Abarth,convertible,2023,2,80.0,22.68
+Abarth,convertible,2023,3,100.0,11.0
+Abarth,hatchback,2023,0,0.0,37.8
+Abarth,hatchback,2023,1,50.0,37.8
+Abarth,hatchback,2023,2,80.0,22.68
+Abarth,hatchback,2023,3,100.0,11.0
+Abarth,scorpionissima,2023,0,0.0,37.8
+Abarth,scorpionissima,2023,1,50.0,37.8
+Abarth,scorpionissima,2023,2,80.0,22.68
+Abarth,scorpionissima,2023,3,100.0,11.0
+Aiways,U5.,2022,0,0.0,60.0
+Aiways,U5.,2022,1,50.0,60.0
+Aiways,U5.,2022,2,80.0,36.0
+Aiways,U5.,2022,3,100.0,11.0
+Aiways,U6.,2022,0,0.0,60.0
+Aiways,U6.,2022,1,50.0,60.0
+Aiways,U6.,2022,2,80.0,36.0
+Aiways,U6.,2022,3,100.0,11.0
+Alpine,A290 Electric 180 hp,2024,0,0.0,100.0
+Alpine,A290 Electric 180 hp,2024,1,50.0,100.0
+Alpine,A290 Electric 180 hp,2024,2,80.0,50.0
+Alpine,A290 Electric 180 hp,2024,3,100.0,20.0
+Alpine,A290 Electric 220 hp,2024,0,0.0,100.0
+Alpine,A290 Electric 220 hp,2024,1,50.0,100.0
+Alpine,A290 Electric 220 hp,2024,2,80.0,50.0
+Alpine,A290 Electric 220 hp,2024,3,100.0,20.0
+Artega,Karo,2020,0,0.0,150.0
+Artega,Karo,2020,1,20.0,150.0
+Artega,Karo,2020,2,40.0,120.0
+Artega,Karo,2020,3,60.0,90.0
+Artega,Karo,2020,4,80.0,60.0
+Artega,Karo,2020,5,100.0,11.0
+Audi,50,2019,0,0.0,64.7
+Audi,50,2019,1,20.0,64.7
+Audi,50,2019,2,40.0,52.0
+Audi,50,2019,3,60.0,39.0
+Audi,50,2019,4,80.0,26.0
+Audi,50,2019,5,100.0,11.0
+Audi,50,2021,0,0.0,64.7
+Audi,50,2021,1,30.0,64.7
+Audi,50,2021,2,60.0,45.29
+Audi,50,2021,3,80.0,25.88
+Audi,50,2021,4,100.0,11.0
+Audi,55,2019,0,0.0,86.5
+Audi,55,2019,1,30.0,86.5
+Audi,55,2019,2,60.0,60.55
+Audi,55,2019,3,80.0,34.6
+Audi,55,2019,4,100.0,11.0
+Audi,55,2020,0,0.0,86.5
+Audi,55,2020,1,30.0,86.5
+Audi,55,2020,2,60.0,60.55
+Audi,55,2020,3,80.0,34.6
+Audi,55,2020,4,100.0,11.0
+Audi,A6 Avant e-tron,2024,0,0.0,225.0
+Audi,A6 Avant e-tron,2024,1,50.0,225.0
+Audi,A6 Avant e-tron,2024,2,80.0,112.5
+Audi,A6 Avant e-tron,2024,3,100.0,45.0
+Audi,A6 Avant e-tron performance,2024,0,0.0,270.0
+Audi,A6 Avant e-tron performance,2024,1,50.0,270.0
+Audi,A6 Avant e-tron performance,2024,2,80.0,162.0
+Audi,A6 Avant e-tron performance,2024,3,100.0,81.0
+Audi,A6 Avant e-tron quattro,2024,0,0.0,270.0
+Audi,A6 Avant e-tron quattro,2024,1,50.0,270.0
+Audi,A6 Avant e-tron quattro,2024,2,80.0,162.0
+Audi,A6 Avant e-tron quattro,2024,3,100.0,81.0
+Audi,A6 Sportback e-tron,2024,0,0.0,225.0
+Audi,A6 Sportback e-tron,2024,1,50.0,225.0
+Audi,A6 Sportback e-tron,2024,2,80.0,112.5
+Audi,A6 Sportback e-tron,2024,3,100.0,45.0
+Audi,A6 Sportback e-tron performance,2024,0,0.0,270.0
+Audi,A6 Sportback e-tron performance,2024,1,50.0,270.0
+Audi,A6 Sportback e-tron performance,2024,2,80.0,162.0
+Audi,A6 Sportback e-tron performance,2024,3,100.0,81.0
+Audi,A6 Sportback e-tron quattro,2024,0,0.0,270.0
+Audi,A6 Sportback e-tron quattro,2024,1,50.0,270.0
+Audi,A6 Sportback e-tron quattro,2024,2,80.0,162.0
+Audi,A6 Sportback e-tron quattro,2024,3,100.0,81.0
+Audi,GT,2021,0,0.0,254.6
+Audi,GT,2021,1,75.0,268.0
+Audi,GT,2021,2,100.0,11.0
+Audi,Q4 Sportback e-tron,2021,0,0.0,95.0
+Audi,Q4 Sportback e-tron,2021,1,75.0,100.0
+Audi,Q4 Sportback e-tron,2021,2,100.0,7.2
+Audi,Q4 Sportback e-tron,2021,3,80.0,65.0
+Audi,Q4 Sportback e-tron,2021,4,100.0,25.0
+Audi,Q4 Sportback e-tron 40,2021,0,0.0,143.0
+Audi,Q4 Sportback e-tron 40,2021,1,50.0,143.0
+Audi,Q4 Sportback e-tron 40,2021,2,80.0,85.8
+Audi,Q4 Sportback e-tron 40,2021,3,100.0,42.9
+Audi,Q4 Sportback e-tron 45,2023,0,0.0,150.0
+Audi,Q4 Sportback e-tron 45,2023,1,20.0,150.0
+Audi,Q4 Sportback e-tron 45,2023,2,40.0,120.0
+Audi,Q4 Sportback e-tron 45,2023,3,60.0,90.0
+Audi,Q4 Sportback e-tron 45,2023,4,80.0,60.0
+Audi,Q4 Sportback e-tron 45,2023,5,100.0,11.0
+Audi,Q4 Sportback e-tron 45 quattro,2023,0,0.0,150.0
+Audi,Q4 Sportback e-tron 45 quattro,2023,1,20.0,150.0
+Audi,Q4 Sportback e-tron 45 quattro,2023,2,40.0,120.0
+Audi,Q4 Sportback e-tron 45 quattro,2023,3,60.0,90.0
+Audi,Q4 Sportback e-tron 45 quattro,2023,4,80.0,60.0
+Audi,Q4 Sportback e-tron 45 quattro,2023,5,100.0,11.0
+Audi,Q4 Sportback e-tron 55 quattro,2023,0,0.0,175.0
+Audi,Q4 Sportback e-tron 55 quattro,2023,1,50.0,175.0
+Audi,Q4 Sportback e-tron 55 quattro,2023,2,80.0,87.5
+Audi,Q4 Sportback e-tron 55 quattro,2023,3,100.0,35.0
+Audi,Q4 e-tron,2021,0,0.0,95.0
+Audi,Q4 e-tron,2021,1,75.0,100.0
+Audi,Q4 e-tron,2021,2,100.0,7.2
+Audi,Q4 e-tron,2021,3,80.0,62.0
+Audi,Q4 e-tron,2021,4,90.0,35.0
+Audi,Q4 e-tron,2021,5,100.0,25.0
+Audi,Q4 e-tron,2023,0,0.0,128.3
+Audi,Q4 e-tron,2023,1,75.0,135.0
+Audi,Q4 e-tron,2023,2,100.0,11.0
+Audi,Q4 e-tron 45 quattro,2023,0,0.0,150.0
+Audi,Q4 e-tron 45 quattro,2023,1,20.0,150.0
+Audi,Q4 e-tron 45 quattro,2023,2,40.0,120.0
+Audi,Q4 e-tron 45 quattro,2023,3,60.0,90.0
+Audi,Q4 e-tron 45 quattro,2023,4,80.0,60.0
+Audi,Q4 e-tron 45 quattro,2023,5,100.0,11.0
+Audi,Q4 e-tron 55 quattro,2023,0,0.0,175.0
+Audi,Q4 e-tron 55 quattro,2023,1,50.0,175.0
+Audi,Q4 e-tron 55 quattro,2023,2,80.0,87.5
+Audi,Q4 e-tron 55 quattro,2023,3,100.0,35.0
+Audi,Q6 e-tron,2024,0,0.0,247.0
+Audi,Q6 e-tron,2024,1,75.0,260.0
+Audi,Q6 e-tron,2024,2,100.0,11.0
+Audi,Q6 e-tron,2024,3,100.0,45.0
+Audi,Q6 e-tron Sportback,2024,0,0.0,225.0
+Audi,Q6 e-tron Sportback,2024,1,50.0,225.0
+Audi,Q6 e-tron Sportback,2024,2,80.0,112.5
+Audi,Q6 e-tron Sportback,2024,3,100.0,45.0
+Audi,Q6 e-tron Sportback performance,2024,0,0.0,260.0
+Audi,Q6 e-tron Sportback performance,2024,1,50.0,260.0
+Audi,Q6 e-tron Sportback performance,2024,2,80.0,156.0
+Audi,Q6 e-tron Sportback performance,2024,3,100.0,78.0
+Audi,Q6 e-tron Sportback quattro,2024,0,0.0,270.0
+Audi,Q6 e-tron Sportback quattro,2024,1,50.0,270.0
+Audi,Q6 e-tron Sportback quattro,2024,2,80.0,162.0
+Audi,Q6 e-tron Sportback quattro,2024,3,100.0,81.0
+Audi,Q8 e-tron,2022,0,0.0,147.3
+Audi,Q8 e-tron,2022,1,75.0,155.0
+Audi,Q8 e-tron,2022,2,100.0,11.0
+Audi,Q8 e-tron Sportback 50 quattro,2022,0,0.0,155.0
+Audi,Q8 e-tron Sportback 50 quattro,2022,1,50.0,155.0
+Audi,Q8 e-tron Sportback 50 quattro,2022,2,80.0,93.0
+Audi,Q8 e-tron Sportback 50 quattro,2022,3,100.0,46.5
+Audi,S6 Avant e-tron,2024,0,0.0,270.0
+Audi,S6 Avant e-tron,2024,1,50.0,270.0
+Audi,S6 Avant e-tron,2024,2,80.0,162.0
+Audi,S6 Avant e-tron,2024,3,100.0,81.0
+Audi,S6 Sportback e-tron,2024,0,0.0,270.0
+Audi,S6 Sportback e-tron,2024,1,50.0,270.0
+Audi,S6 Sportback e-tron,2024,2,80.0,162.0
+Audi,S6 Sportback e-tron,2024,3,100.0,81.0
+Audi,SQ6 e-tron,2024,0,0.0,256.5
+Audi,SQ6 e-tron,2024,1,75.0,270.0
+Audi,SQ6 e-tron,2024,2,100.0,11.0
+Audi,SQ6 e-tron Sportback,2024,0,0.0,270.0
+Audi,SQ6 e-tron Sportback,2024,1,50.0,270.0
+Audi,SQ6 e-tron Sportback,2024,2,80.0,162.0
+Audi,SQ6 e-tron Sportback,2024,3,100.0,81.0
+Audi,SQ8 e-tron,2023,0,0.0,168.0
+Audi,SQ8 e-tron,2023,1,50.0,168.0
+Audi,SQ8 e-tron,2023,2,80.0,100.8
+Audi,SQ8 e-tron,2023,3,100.0,50.4
+Audi,SQ8 e-tron Sportback,2023,0,0.0,168.0
+Audi,SQ8 e-tron Sportback,2023,1,50.0,168.0
+Audi,SQ8 e-tron Sportback,2023,2,80.0,100.8
+Audi,SQ8 e-tron Sportback,2023,3,100.0,50.4
+Audi,e-tron 50,2019,0,0.0,110.0
+Audi,e-tron 50,2019,1,10.0,120.0
+Audi,e-tron 50,2019,2,20.0,124.0
+Audi,e-tron 50,2019,3,60.0,124.0
+Audi,e-tron 50,2019,4,70.0,100.0
+Audi,e-tron 50,2019,5,80.0,77.0
+Audi,e-tron 50,2019,6,100.0,22.0
+Audi,e-tron 50 quattro,2021,0,0.0,120.0
+Audi,e-tron 50 quattro,2021,1,50.0,120.0
+Audi,e-tron 50 quattro,2021,2,80.0,72.0
+Audi,e-tron 50 quattro,2021,3,100.0,36.0
+Audi,e-tron 55,2019,0,0.0,137.0
+Audi,e-tron 55,2019,1,70.0,155.0
+Audi,e-tron 55,2019,2,72.0,150.0
+Audi,e-tron 55,2019,3,78.0,120.0
+Audi,e-tron 55,2019,4,82.0,105.0
+Audi,e-tron 55,2019,5,100.0,50.0
+Audi,e-tron 55 quattro,2020,0,0.0,155.0
+Audi,e-tron 55 quattro,2020,1,50.0,155.0
+Audi,e-tron 55 quattro,2020,2,80.0,93.0
+Audi,e-tron 55 quattro,2020,3,100.0,46.5
+Audi,e-tron GT RS,2024,0,0.0,320.0
+Audi,e-tron GT RS,2024,1,50.0,320.0
+Audi,e-tron GT RS,2024,2,80.0,192.0
+Audi,e-tron GT RS,2024,3,100.0,96.0
+Audi,e-tron GT RS performance,2024,0,0.0,320.0
+Audi,e-tron GT RS performance,2024,1,50.0,320.0
+Audi,e-tron GT RS performance,2024,2,80.0,192.0
+Audi,e-tron GT RS performance,2024,3,100.0,96.0
+Audi,e-tron GT S,2024,0,0.0,320.0
+Audi,e-tron GT S,2024,1,50.0,320.0
+Audi,e-tron GT S,2024,2,80.0,192.0
+Audi,e-tron GT S,2024,3,100.0,96.0
+Audi,e-tron GT quattro,2021,0,0.0,268.0
+Audi,e-tron GT quattro,2021,1,20.0,268.0
+Audi,e-tron GT quattro,2021,2,40.0,214.0
+Audi,e-tron GT quattro,2021,3,60.0,161.0
+Audi,e-tron GT quattro,2021,4,80.0,107.0
+Audi,e-tron GT quattro,2021,5,100.0,11.0
+Audi,e-tron S,2020,0,0.0,182.0
+Audi,e-tron S,2020,1,40.0,188.0
+Audi,e-tron S,2020,2,50.0,154.0
+Audi,e-tron S,2020,3,60.0,112.0
+Audi,e-tron S,2020,4,75.0,71.0
+Audi,e-tron S,2020,5,85.0,42.0
+Audi,e-tron S,2020,6,100.0,23.0
+Audi,e-tron Sportback 50 quattro,2021,0,0.0,150.0
+Audi,e-tron Sportback 50 quattro,2021,1,20.0,150.0
+Audi,e-tron Sportback 50 quattro,2021,2,40.0,120.0
+Audi,e-tron Sportback 50 quattro,2021,3,60.0,90.0
+Audi,e-tron Sportback 50 quattro,2021,4,80.0,60.0
+Audi,e-tron Sportback 50 quattro,2021,5,100.0,11.0
+Audi,e-tron Sportback 55,2020,0,0.0,86.5
+Audi,e-tron Sportback 55,2020,1,30.0,86.5
+Audi,e-tron Sportback 55,2020,2,60.0,60.55
+Audi,e-tron Sportback 55,2020,3,80.0,34.6
+Audi,e-tron Sportback 55,2020,4,100.0,11.0
+Audi,e-tron Sportback 55 quattro,2020,0,0.0,155.0
+Audi,e-tron Sportback 55 quattro,2020,1,50.0,155.0
+Audi,e-tron Sportback 55 quattro,2020,2,80.0,93.0
+Audi,e-tron Sportback 55 quattro,2020,3,100.0,46.5
+Audi,etron,2023,0,0.0,106.0
+Audi,etron,2023,1,30.0,106.0
+Audi,etron,2023,2,60.0,74.2
+Audi,etron,2023,3,80.0,42.4
+Audi,etron,2023,4,100.0,11.0
+Audi,etron 35,2021,0,0.0,52.0
+Audi,etron 35,2021,1,50.0,52.0
+Audi,etron 35,2021,2,80.0,31.2
+Audi,etron 35,2021,3,100.0,11.0
+Audi,etron 40,2021,0,0.0,76.6
+Audi,etron 40,2021,1,20.0,76.6
+Audi,etron 40,2021,2,40.0,61.0
+Audi,etron 40,2021,3,60.0,46.0
+Audi,etron 40,2021,4,80.0,31.0
+Audi,etron 40,2021,5,100.0,11.0
+Audi,etron 45,2021,0,0.0,76.6
+Audi,etron 45,2021,1,20.0,76.6
+Audi,etron 45,2021,2,40.0,61.0
+Audi,etron 45,2021,3,60.0,46.0
+Audi,etron 45,2021,4,80.0,31.0
+Audi,etron 45,2021,5,100.0,11.0
+Audi,etron 45,2023,0,0.0,77.0
+Audi,etron 45,2023,1,30.0,77.0
+Audi,etron 45,2023,2,60.0,53.9
+Audi,etron 45,2023,3,80.0,30.8
+Audi,etron 45,2023,4,100.0,11.0
+Audi,etron 50,2021,0,0.0,76.6
+Audi,etron 50,2021,1,20.0,76.6
+Audi,etron 50,2021,2,40.0,61.0
+Audi,etron 50,2021,3,60.0,46.0
+Audi,etron 50,2021,4,80.0,31.0
+Audi,etron 50,2021,5,100.0,11.0
+Audi,etron 50,2022,0,0.0,89.0
+Audi,etron 50,2022,1,30.0,89.0
+Audi,etron 50,2022,2,60.0,62.3
+Audi,etron 50,2022,3,80.0,35.6
+Audi,etron 50,2022,4,100.0,11.0
+Audi,etron 55,2022,0,0.0,106.0
+Audi,etron 55,2022,1,30.0,106.0
+Audi,etron 55,2022,2,60.0,74.2
+Audi,etron 55,2022,3,80.0,42.4
+Audi,etron 55,2022,4,100.0,11.0
+Audi,etron 55,2023,0,0.0,77.0
+Audi,etron 55,2023,1,30.0,77.0
+Audi,etron 55,2023,2,60.0,53.9
+Audi,etron 55,2023,3,80.0,30.8
+Audi,etron 55,2023,4,100.0,11.0
+Audi,etron sportback,2023,0,0.0,106.0
+Audi,etron sportback,2023,1,30.0,106.0
+Audi,etron sportback,2023,2,60.0,74.2
+Audi,etron sportback,2023,3,80.0,42.4
+Audi,etron sportback,2023,4,100.0,11.0
+Audi,etron sportback 50,2022,0,0.0,89.0
+Audi,etron sportback 50,2022,1,30.0,89.0
+Audi,etron sportback 50,2022,2,60.0,62.3
+Audi,etron sportback 50,2022,3,80.0,35.6
+Audi,etron sportback 50,2022,4,100.0,11.0
+Audi,etron sportback 55,2022,0,0.0,106.0
+Audi,etron sportback 55,2022,1,30.0,106.0
+Audi,etron sportback 55,2022,2,60.0,74.2
+Audi,etron sportback 55,2022,3,80.0,42.4
+Audi,etron sportback 55,2022,4,100.0,11.0
+Audi,gt quattro,2021,0,0.0,85.0
+Audi,gt quattro,2021,1,40.0,85.0
+Audi,gt quattro,2021,2,70.0,68.0
+Audi,gt quattro,2021,3,90.0,34.0
+Audi,gt quattro,2021,4,100.0,11.0
+Audi,gt rs,2021,0,0.0,85.0
+Audi,gt rs,2021,1,40.0,85.0
+Audi,gt rs,2021,2,70.0,68.0
+Audi,gt rs,2021,3,90.0,34.0
+Audi,gt rs,2021,4,100.0,11.0
+Audi,s,2020,0,0.0,86.5
+Audi,s,2020,1,30.0,86.5
+Audi,s,2020,2,60.0,60.55
+Audi,s,2020,3,80.0,34.6
+Audi,s,2020,4,100.0,11.0
+Audi,s,2021,0,0.0,86.5
+Audi,s,2021,1,30.0,86.5
+Audi,s,2021,2,60.0,60.55
+Audi,s,2021,3,80.0,34.6
+Audi,s,2021,4,100.0,11.0
+Audi,s sportback,2020,0,0.0,86.5
+Audi,s sportback,2020,1,30.0,86.5
+Audi,s sportback,2020,2,60.0,60.55
+Audi,s sportback,2020,3,80.0,34.6
+Audi,s sportback,2020,4,100.0,11.0
+Audi,s sportback,2021,0,0.0,86.5
+Audi,s sportback,2021,1,30.0,86.5
+Audi,s sportback,2021,2,60.0,60.55
+Audi,s sportback,2021,3,80.0,34.6
+Audi,s sportback,2021,4,100.0,11.0
+Audi,sportback 50,2020,0,0.0,64.7
+Audi,sportback 50,2020,1,20.0,64.7
+Audi,sportback 50,2020,2,40.0,52.0
+Audi,sportback 50,2020,3,60.0,39.0
+Audi,sportback 50,2020,4,80.0,26.0
+Audi,sportback 50,2020,5,100.0,11.0
+Audi,sportback 50,2021,0,0.0,64.7
+Audi,sportback 50,2021,1,30.0,64.7
+Audi,sportback 50,2021,2,60.0,45.29
+Audi,sportback 50,2021,3,80.0,25.88
+Audi,sportback 50,2021,4,100.0,11.0
+Audi,sportback 55,2020,0,0.0,86.5
+Audi,sportback 55,2020,1,30.0,86.5
+Audi,sportback 55,2020,2,60.0,60.55
+Audi,sportback 55,2020,3,80.0,34.6
+Audi,sportback 55,2020,4,100.0,11.0
+Audi,sportbacketron 35,2021,0,0.0,52.0
+Audi,sportbacketron 35,2021,1,50.0,52.0
+Audi,sportbacketron 35,2021,2,80.0,31.2
+Audi,sportbacketron 35,2021,3,100.0,4.0
+Audi,sportbacketron 40,2021,0,0.0,76.6
+Audi,sportbacketron 40,2021,1,20.0,76.6
+Audi,sportbacketron 40,2021,2,40.0,61.0
+Audi,sportbacketron 40,2021,3,60.0,46.0
+Audi,sportbacketron 40,2021,4,80.0,31.0
+Audi,sportbacketron 40,2021,5,100.0,11.0
+Audi,sportbacketron 45,2022,0,0.0,76.6
+Audi,sportbacketron 45,2022,1,30.0,76.6
+Audi,sportbacketron 45,2022,2,60.0,53.62
+Audi,sportbacketron 45,2022,3,80.0,30.64
+Audi,sportbacketron 45,2022,4,100.0,11.0
+Audi,sportbacketron 45,2023,0,0.0,77.0
+Audi,sportbacketron 45,2023,1,30.0,77.0
+Audi,sportbacketron 45,2023,2,60.0,53.9
+Audi,sportbacketron 45,2023,3,80.0,30.8
+Audi,sportbacketron 45,2023,4,100.0,11.0
+Audi,sportbacketron 50,2021,0,0.0,76.6
+Audi,sportbacketron 50,2021,1,20.0,76.6
+Audi,sportbacketron 50,2021,2,40.0,61.0
+Audi,sportbacketron 50,2021,3,60.0,46.0
+Audi,sportbacketron 50,2021,4,80.0,31.0
+Audi,sportbacketron 50,2021,5,100.0,11.0
+Audi,sportbacketron 55,2023,0,0.0,77.0
+Audi,sportbacketron 55,2023,1,30.0,77.0
+Audi,sportbacketron 55,2023,2,60.0,53.9
+Audi,sportbacketron 55,2023,3,80.0,30.8
+Audi,sportbacketron 55,2023,4,100.0,11.0
+BMW,120 ah,2018,0,0.0,37.9
+BMW,120 ah,2018,1,50.0,37.9
+BMW,120 ah,2018,2,80.0,22.74
+BMW,120 ah,2018,3,100.0,37.9
+BMW,edrive20,2023,0,0.0,64.7
+BMW,edrive20,2023,1,30.0,64.7
+BMW,edrive20,2023,2,60.0,45.29
+BMW,edrive20,2023,3,80.0,25.88
+BMW,edrive20,2023,4,100.0,11.0
+BMW,edrive20,2024,0,0.0,64.7
+BMW,edrive20,2024,1,30.0,64.7
+BMW,edrive20,2024,2,60.0,45.29
+BMW,edrive20,2024,3,80.0,25.88
+BMW,edrive20,2024,4,100.0,11.0
+BMW,edrive35,2022,0,0.0,67.0
+BMW,edrive35,2022,1,30.0,67.0
+BMW,edrive35,2022,2,60.0,46.9
+BMW,edrive35,2022,3,80.0,26.8
+BMW,edrive35,2022,4,100.0,11.0
+BMW,edrive40,2021,0,0.0,80.7
+BMW,edrive40,2021,1,20.0,80.7
+BMW,edrive40,2021,2,40.0,65.0
+BMW,edrive40,2021,3,60.0,48.0
+BMW,edrive40,2021,4,80.0,32.0
+BMW,edrive40,2021,5,100.0,11.0
+BMW,edrive40 sedan,2023,0,0.0,81.2
+BMW,edrive40 sedan,2023,1,30.0,81.2
+BMW,edrive40 sedan,2023,2,60.0,56.84
+BMW,edrive40 sedan,2023,3,80.0,32.48
+BMW,edrive40 sedan,2023,4,100.0,11.0
+BMW,edrive50,2023,0,0.0,101.7
+BMW,edrive50,2023,1,30.0,101.7
+BMW,edrive50,2023,2,60.0,71.19
+BMW,edrive50,2023,3,80.0,40.68
+BMW,edrive50,2023,4,100.0,11.0
+BMW,i3,2013,0,0.0,43.0
+BMW,i3,2013,1,30.0,47.0
+BMW,i3,2013,2,33.0,44.0
+BMW,i3,2013,3,62.0,44.0
+BMW,i3,2013,4,100.0,3.0
+BMW,i3,2020,0,0.0,43.0
+BMW,i3,2020,1,10.0,44.0
+BMW,i3,2020,2,20.0,45.0
+BMW,i3,2020,3,40.0,46.0
+BMW,i3,2020,4,60.0,47.0
+BMW,i3,2020,5,80.0,48.0
+BMW,i3,2020,6,85.0,50.0
+BMW,i3,2020,7,90.0,35.0
+BMW,i3,2020,8,100.0,11.0
+BMW,i3 94,2016,0,0.0,47.0
+BMW,i3 94,2016,1,70.0,47.0
+BMW,i3 94,2016,2,80.0,32.9
+BMW,i3 94,2016,3,100.0,27.2
+BMW,i3 94,2017,0,0.0,27.2
+BMW,i3 94,2017,1,70.0,27.2
+BMW,i3 94,2017,2,80.0,19.04
+BMW,i3 94,2017,3,100.0,27.2
+BMW,i3S,2019,0,0.0,49.0
+BMW,i3S,2019,1,45.0,46.0
+BMW,i3S,2019,2,60.0,40.0
+BMW,i3S,2019,3,80.0,27.0
+BMW,i3S,2019,4,100.0,14.0
+BMW,i3S,2020,0,0.0,47.5
+BMW,i3S,2020,1,75.0,50.0
+BMW,i3S,2020,2,100.0,11.0
+BMW,i3s 94,2017,0,0.0,27.2
+BMW,i3s 94,2017,1,70.0,27.2
+BMW,i3s 94,2017,2,80.0,19.04
+BMW,i3s 94,2017,3,100.0,27.2
+BMW,i4,2021,0,0.0,196.6
+BMW,i4,2021,1,75.0,207.0
+BMW,i4,2021,2,100.0,11.0
+BMW,i4,2022,0,0.0,171.0
+BMW,i4,2022,1,75.0,180.0
+BMW,i4,2022,2,100.0,11.0
+BMW,i4,2024,0,0.0,207.0
+BMW,i4,2024,1,20.0,207.0
+BMW,i4,2024,2,40.0,166.0
+BMW,i4,2024,3,60.0,124.0
+BMW,i4,2024,4,80.0,83.0
+BMW,i4,2024,5,100.0,11.0
+BMW,i5,2023,0,0.0,195.7
+BMW,i5,2023,1,75.0,206.0
+BMW,i5,2023,2,100.0,11.0
+BMW,i5,2024,0,0.0,195.7
+BMW,i5,2024,1,75.0,206.0
+BMW,i5,2024,2,100.0,11.0
+BMW,i5 xDrive40 Touring,2025,0,0.0,206.0
+BMW,i5 xDrive40 Touring,2025,1,50.0,206.0
+BMW,i5 xDrive40 Touring,2025,2,80.0,103.0
+BMW,i5 xDrive40 Touring,2025,3,100.0,41.2
+BMW,i7,2022,0,0.0,185.3
+BMW,i7,2022,1,75.0,195.0
+BMW,i7,2022,2,100.0,11.0
+BMW,i7,2023,0,0.0,200.0
+BMW,i7,2023,1,50.0,200.0
+BMW,i7,2023,2,80.0,120.0
+BMW,i7,2023,3,100.0,60.0
+BMW,iX,2021,0,0.0,140.6
+BMW,iX,2021,1,50.0,148.0
+BMW,iX,2021,2,80.0,74.0
+BMW,iX,2021,3,100.0,29.6
+BMW,iX,2022,0,0.0,185.25
+BMW,iX,2022,1,50.0,195.0
+BMW,iX,2022,2,80.0,97.5
+BMW,iX,2022,3,100.0,39.0
+BMW,iX M70 xDrive,2025,0,0.0,195.0
+BMW,iX M70 xDrive,2025,1,50.0,195.0
+BMW,iX M70 xDrive,2025,2,80.0,117.0
+BMW,iX M70 xDrive,2025,3,100.0,58.5
+BMW,iX xDrive45,2025,0,0.0,175.0
+BMW,iX xDrive45,2025,1,50.0,175.0
+BMW,iX xDrive45,2025,2,80.0,87.5
+BMW,iX xDrive45,2025,3,100.0,35.0
+BMW,iX xDrive60,2025,0,0.0,195.0
+BMW,iX xDrive60,2025,1,50.0,195.0
+BMW,iX xDrive60,2025,2,80.0,117.0
+BMW,iX xDrive60,2025,3,100.0,58.5
+BMW,iX1,2022,0,0.0,123.5
+BMW,iX1,2022,1,75.0,130.0
+BMW,iX1,2022,2,100.0,11.0
+BMW,iX1 eDrive20,2023,0,0.0,128.0
+BMW,iX1 eDrive20,2023,1,50.0,128.0
+BMW,iX1 eDrive20,2023,2,80.0,76.8
+BMW,iX1 eDrive20,2023,3,100.0,38.4
+BMW,iX2 eDrive20,2024,0,0.0,128.0
+BMW,iX2 eDrive20,2024,1,50.0,128.0
+BMW,iX2 eDrive20,2024,2,80.0,76.8
+BMW,iX2 eDrive20,2024,3,100.0,38.4
+BMW,iX2 xDrive30,2023,0,0.0,128.0
+BMW,iX2 xDrive30,2023,1,50.0,128.0
+BMW,iX2 xDrive30,2023,2,80.0,76.8
+BMW,iX2 xDrive30,2023,3,100.0,38.4
+BMW,iX3,2020,0,0.0,142.5
+BMW,iX3,2020,1,75.0,150.0
+BMW,iX3,2020,2,100.0,11.0
+BMW,iX3,2021,0,0.0,74.0
+BMW,iX3,2021,1,30.0,74.0
+BMW,iX3,2021,2,60.0,51.8
+BMW,iX3,2021,3,80.0,29.6
+BMW,iX3,2021,4,100.0,11.0
+BMW,m50,2021,0,0.0,80.7
+BMW,m50,2021,1,20.0,80.7
+BMW,m50,2021,2,40.0,65.0
+BMW,m50,2021,3,60.0,48.0
+BMW,m50,2021,4,80.0,32.0
+BMW,m50,2021,5,100.0,11.0
+BMW,m60,2022,0,0.0,105.2
+BMW,m60,2022,1,20.0,105.2
+BMW,m60,2022,2,40.0,84.0
+BMW,m60,2022,3,60.0,63.0
+BMW,m60,2022,4,80.0,42.0
+BMW,m60,2022,5,100.0,11.0
+BMW,m60 xdrive sedan,2023,0,0.0,81.2
+BMW,m60 xdrive sedan,2023,1,30.0,81.2
+BMW,m60 xdrive sedan,2023,2,60.0,56.84
+BMW,m60 xdrive sedan,2023,3,80.0,32.48
+BMW,m60 xdrive sedan,2023,4,100.0,11.0
+BMW,m70 xdrive,2023,0,0.0,101.7
+BMW,m70 xdrive,2023,1,30.0,101.7
+BMW,m70 xdrive,2023,2,60.0,71.19
+BMW,m70 xdrive,2023,3,80.0,40.68
+BMW,m70 xdrive,2023,4,100.0,22.0
+BMW,xdrive30,2022,0,0.0,64.7
+BMW,xdrive30,2022,1,30.0,64.7
+BMW,xdrive30,2022,2,60.0,45.29
+BMW,xdrive30,2022,3,80.0,25.88
+BMW,xdrive30,2022,4,100.0,11.0
+BMW,xdrive30,2023,0,0.0,64.7
+BMW,xdrive30,2023,1,30.0,64.7
+BMW,xdrive30,2023,2,60.0,45.29
+BMW,xdrive30,2023,3,80.0,25.88
+BMW,xdrive30,2023,4,100.0,11.0
+BMW,xdrive40,2021,0,0.0,71.0
+BMW,xdrive40,2021,1,20.0,71.0
+BMW,xdrive40,2021,2,40.0,57.0
+BMW,xdrive40,2021,3,60.0,43.0
+BMW,xdrive40,2021,4,80.0,28.0
+BMW,xdrive40,2021,5,100.0,11.0
+BMW,xdrive40 sedan,2024,0,0.0,81.2
+BMW,xdrive40 sedan,2024,1,30.0,81.2
+BMW,xdrive40 sedan,2024,2,60.0,56.84
+BMW,xdrive40 sedan,2024,3,80.0,32.48
+BMW,xdrive40 sedan,2024,4,100.0,11.0
+BMW,xdrive50,2021,0,0.0,105.2
+BMW,xdrive50,2021,1,20.0,105.2
+BMW,xdrive50,2021,2,40.0,84.0
+BMW,xdrive50,2021,3,60.0,63.0
+BMW,xdrive50,2021,4,80.0,42.0
+BMW,xdrive50,2021,5,100.0,11.0
+BMW,xdrive60,2022,0,0.0,101.7
+BMW,xdrive60,2022,1,30.0,101.7
+BMW,xdrive60,2022,2,60.0,71.19
+BMW,xdrive60,2022,3,80.0,40.68
+BMW,xdrive60,2022,4,100.0,11.0
+BYD,3,2022,0,0.0,60.5
+BYD,3,2022,1,30.0,60.5
+BYD,3,2022,2,60.0,42.35
+BYD,3,2022,3,80.0,24.2
+BYD,3,2022,4,100.0,11.0
+BYD,44,2023,0,0.0,44.9
+BYD,44,2023,1,50.0,44.9
+BYD,44,2023,2,80.0,26.94
+BYD,44,2023,3,100.0,7.4
+BYD,60,2023,0,0.0,60.5
+BYD,60,2023,1,30.0,60.5
+BYD,60,2023,2,60.0,42.35
+BYD,60,2023,3,80.0,24.2
+BYD,60,2023,4,100.0,11.0
+BYD,82,2023,0,0.0,82.5
+BYD,82,2023,1,40.0,82.5
+BYD,82,2023,2,70.0,66.0
+BYD,82,2023,3,90.0,33.0
+BYD,82,2023,4,100.0,11.0
+BYD,ATTO 3,2022,0,0.0,89.0
+BYD,ATTO 3,2022,1,50.0,89.0
+BYD,ATTO 3,2022,2,80.0,53.4
+BYD,ATTO 3,2022,3,100.0,26.7
+BYD,DOLPHIN,2023,0,0.0,60.0
+BYD,DOLPHIN,2023,1,50.0,60.0
+BYD,DOLPHIN,2023,2,80.0,36.0
+BYD,DOLPHIN,2023,3,100.0,18.0
+BYD,Dolphin,2023,0,0.0,83.6
+BYD,Dolphin,2023,1,75.0,88.0
+BYD,Dolphin,2023,2,100.0,11.0
+BYD,HAN,2023,0,0.0,85.4
+BYD,HAN,2023,1,20.0,85.4
+BYD,HAN,2023,2,40.0,68.0
+BYD,HAN,2023,3,60.0,51.0
+BYD,HAN,2023,4,80.0,34.0
+BYD,HAN,2023,5,100.0,11.0
+BYD,SEAL,2024,0,0.0,115.0
+BYD,SEAL,2024,1,50.0,115.0
+BYD,SEAL,2024,2,80.0,57.5
+BYD,SEAL,2024,3,100.0,23.0
+BYD,SEAL,2025,0,0.0,110.0
+BYD,SEAL,2025,1,50.0,110.0
+BYD,SEAL,2025,2,80.0,55.0
+BYD,SEAL,2025,3,100.0,22.0
+BYD,SEAL U 87 kWh Design,2024,0,0.0,87.0
+BYD,SEAL U 87 kWh Design,2024,1,30.0,87.0
+BYD,SEAL U 87 kWh Design,2024,2,60.0,60.9
+BYD,SEAL U 87 kWh Design,2024,3,80.0,34.8
+BYD,SEAL U 87 kWh Design,2024,4,100.0,11.0
+BYD,Seal,2023,0,0.0,142.5
+BYD,Seal,2023,1,75.0,150.0
+BYD,Seal,2023,2,100.0,11.0
+BYD,TANG,2022,0,0.0,86.4
+BYD,TANG,2022,1,40.0,86.4
+BYD,TANG,2022,2,70.0,69.12
+BYD,TANG,2022,3,90.0,34.56
+BYD,TANG,2022,4,100.0,7.4
+BYD,flagship,2024,0,0.0,108.8
+BYD,flagship,2024,1,40.0,108.8
+BYD,flagship,2024,2,70.0,87.04
+BYD,flagship,2024,3,90.0,43.52
+BYD,flagship,2024,4,100.0,11.0
+BYD,u 71.,2024,0,0.0,71.8
+BYD,u 71.,2024,1,30.0,71.8
+BYD,u 71.,2024,2,60.0,50.26
+BYD,u 71.,2024,3,80.0,28.72
+BYD,u 71.,2024,4,100.0,11.0
+CUPRA,150kw-,2021,0,0.0,58.0
+CUPRA,150kw-,2021,1,50.0,58.0
+CUPRA,150kw-,2021,2,80.0,34.8
+CUPRA,150kw-,2021,3,100.0,11.0
+CUPRA,170kw-,2022,0,0.0,58.0
+CUPRA,170kw-,2022,1,50.0,58.0
+CUPRA,170kw-,2022,2,80.0,34.8
+CUPRA,170kw-,2022,3,100.0,11.0
+CUPRA,170kw-,2022,4,100.0,11.0
+CUPRA,Born,2021,0,0.0,95.0
+CUPRA,Born,2021,1,75.0,100.0
+CUPRA,Born,2021,2,100.0,7.2
+CUPRA,Born,2021,3,80.0,50.0
+CUPRA,Born,2021,4,100.0,25.0
+CUPRA,Born,2022,0,0.0,100.0
+CUPRA,Born,2022,1,30.0,100.0
+CUPRA,Born,2022,2,70.0,50.0
+CUPRA,Born,2022,3,80.0,50.0
+CUPRA,Born,2022,4,100.0,25.0
+CUPRA,Born 150 kW - 58 kWh,2021,0,0.0,124.0
+CUPRA,Born 150 kW - 58 kWh,2021,1,50.0,124.0
+CUPRA,Born 150 kW - 58 kWh,2021,2,80.0,62.0
+CUPRA,Born 150 kW - 58 kWh,2021,3,100.0,24.8
+CUPRA,Born 170 kW - 58 kWh,2022,0,0.0,124.0
+CUPRA,Born 170 kW - 58 kWh,2022,1,50.0,124.0
+CUPRA,Born 170 kW - 58 kWh,2022,2,80.0,62.0
+CUPRA,Born 170 kW - 58 kWh,2022,3,100.0,24.8
+CUPRA,Born 170 kW - 59 kWh,2024,0,0.0,165.0
+CUPRA,Born 170 kW - 59 kWh,2024,1,50.0,165.0
+CUPRA,Born 170 kW - 59 kWh,2024,2,80.0,82.5
+CUPRA,Born 170 kW - 59 kWh,2024,3,100.0,33.0
+CUPRA,Born 170 kW - 77 kWh,2024,0,0.0,175.0
+CUPRA,Born 170 kW - 77 kWh,2024,1,50.0,175.0
+CUPRA,Born 170 kW - 77 kWh,2024,2,80.0,105.0
+CUPRA,Born 170 kW - 77 kWh,2024,3,100.0,52.5
+CUPRA,Born VZ,2024,0,0.0,185.0
+CUPRA,Born VZ,2024,1,50.0,185.0
+CUPRA,Born VZ,2024,2,80.0,111.0
+CUPRA,Born VZ,2024,3,100.0,55.5
+CUPRA,Tavascan,2024,0,0.0,128.3
+CUPRA,Tavascan,2024,1,75.0,135.0
+CUPRA,Tavascan,2024,2,100.0,11.0
+CUPRA,Tavascan VZ,2024,0,0.0,77.0
+CUPRA,Tavascan VZ,2024,1,30.0,77.0
+CUPRA,Tavascan VZ,2024,2,60.0,53.9
+CUPRA,Tavascan VZ,2024,3,80.0,30.8
+CUPRA,Tavascan VZ,2024,4,100.0,11.0
+CUPRA,endurance,2024,0,0.0,77.0
+CUPRA,endurance,2024,1,30.0,77.0
+CUPRA,endurance,2024,2,60.0,53.9
+CUPRA,endurance,2024,3,80.0,30.8
+CUPRA,endurance,2024,4,100.0,11.0
+Cadillac,Lyriq 600 E4,2024,0,0.0,190.0
+Cadillac,Lyriq 600 E4,2024,1,50.0,190.0
+Cadillac,Lyriq 600 E4,2024,2,80.0,114.0
+Cadillac,Lyriq 600 E4,2024,3,100.0,57.0
+Carver,S+,2020,0,0.0,150.0
+Carver,S+,2020,1,20.0,150.0
+Carver,S+,2020,2,40.0,120.0
+Carver,S+,2020,3,60.0,90.0
+Carver,S+,2020,4,80.0,60.0
+Carver,S+,2020,5,100.0,11.0
+Chevrolet,Bolt,2017,0,0.0,55.0
+Chevrolet,Bolt,2017,1,56.0,38.0
+Chevrolet,Bolt,2017,2,68.0,24.0
+Chevrolet,Bolt,2017,3,85.0,16.0
+Chevrolet,Bolt,2017,4,100.0,7.0
+Chevrolet,Bolt,2020,0,0.0,55.0
+Chevrolet,Bolt,2020,1,56.0,38.0
+Chevrolet,Bolt,2020,2,68.0,24.0
+Chevrolet,Bolt,2020,3,85.0,16.0
+Chevrolet,Bolt,2020,4,100.0,7.0
+Chevrolet,Spark EV,2013,0,0.0,47.5
+Chevrolet,Spark EV,2013,1,75.0,50.0
+Chevrolet,Spark EV,2013,2,100.0,3.3
+Chevrolet,Spark EV,2015,0,0.0,47.5
+Chevrolet,Spark EV,2015,1,75.0,50.0
+Chevrolet,Spark EV,2015,2,100.0,3.3
+Citroën,54kwh,2023,0,0.0,50.8
+Citroën,54kwh,2023,1,50.0,50.8
+Citroën,54kwh,2023,2,80.0,30.48
+Citroën,54kwh,2023,3,100.0,11.0
+Citroën,C-Zero,2011,0,0.0,100.0
+Citroën,C-Zero,2011,1,50.0,100.0
+Citroën,C-Zero,2011,2,80.0,60.0
+Citroën,C-Zero,2011,3,100.0,11.0
+Citroën,C-Zero,2016,0,0.0,100.0
+Citroën,C-Zero,2016,1,50.0,100.0
+Citroën,C-Zero,2016,2,80.0,60.0
+Citroën,C-Zero,2016,3,100.0,11.0
+Citroën,E-Berlingo,2017,0,0.0,20.5
+Citroën,E-Berlingo,2017,1,70.0,20.5
+Citroën,E-Berlingo,2017,2,80.0,14.35
+Citroën,E-Berlingo,2017,3,100.0,20.5
+Citroën,E-Berlingo Multispace,2017,0,0.0,40.0
+Citroën,E-Berlingo Multispace,2017,1,50.0,40.0
+Citroën,E-Berlingo Multispace,2017,2,80.0,24.0
+Citroën,E-Berlingo Multispace,2017,3,100.0,12.0
+Citroën,combi m,2020,0,0.0,46.3
+Citroën,combi m,2020,1,20.0,46.3
+Citroën,combi m,2020,2,40.0,37.0
+Citroën,combi m,2020,3,60.0,28.0
+Citroën,combi m,2020,4,80.0,19.0
+Citroën,combi m,2020,5,100.0,11.0
+Citroën,combi xl,2020,0,0.0,46.3
+Citroën,combi xl,2020,1,20.0,46.3
+Citroën,combi xl,2020,2,40.0,37.0
+Citroën,combi xl,2020,3,60.0,28.0
+Citroën,combi xl,2020,4,80.0,19.0
+Citroën,combi xl,2020,5,100.0,11.0
+Citroën,combi xs,2020,0,0.0,46.3
+Citroën,combi xs,2020,1,20.0,46.3
+Citroën,combi xs,2020,2,40.0,37.0
+Citroën,combi xs,2020,3,60.0,28.0
+Citroën,combi xs,2020,4,80.0,19.0
+Citroën,combi xs,2020,5,100.0,11.0
+Citroën,e-Berlingo M 50 kWh,2024,0,0.0,150.0
+Citroën,e-Berlingo M 50 kWh,2024,1,20.0,150.0
+Citroën,e-Berlingo M 50 kWh,2024,2,40.0,120.0
+Citroën,e-Berlingo M 50 kWh,2024,3,60.0,90.0
+Citroën,e-Berlingo M 50 kWh,2024,4,80.0,60.0
+Citroën,e-Berlingo M 50 kWh,2024,5,100.0,11.0
+Citroën,e-Berlingo XL 50 kWh,2024,0,0.0,150.0
+Citroën,e-Berlingo XL 50 kWh,2024,1,20.0,150.0
+Citroën,e-Berlingo XL 50 kWh,2024,2,40.0,120.0
+Citroën,e-Berlingo XL 50 kWh,2024,3,60.0,90.0
+Citroën,e-Berlingo XL 50 kWh,2024,4,80.0,60.0
+Citroën,e-Berlingo XL 50 kWh,2024,5,100.0,11.0
+Citroën,e-C3,2024,0,0.0,44.0
+Citroën,e-C3,2024,1,50.0,44.0
+Citroën,e-C3,2024,2,80.0,26.4
+Citroën,e-C3,2024,3,100.0,7.4
+Citroën,e-C3 Aircross,2024,0,0.0,100.0
+Citroën,e-C3 Aircross,2024,1,50.0,100.0
+Citroën,e-C3 Aircross,2024,2,80.0,50.0
+Citroën,e-C3 Aircross,2024,3,100.0,20.0
+Citroën,e-C4,2021,0,0.0,101.0
+Citroën,e-C4,2021,1,20.0,101.0
+Citroën,e-C4,2021,2,40.0,81.0
+Citroën,e-C4,2021,3,60.0,61.0
+Citroën,e-C4,2021,4,80.0,40.0
+Citroën,e-C4,2021,5,100.0,11.0
+Citroën,e-C4,2024,0,0.0,100.0
+Citroën,e-C4,2024,1,50.0,100.0
+Citroën,e-C4,2024,2,80.0,60.0
+Citroën,e-C4,2024,3,100.0,30.0
+Citroën,e-C4 54 kWh,2024,0,0.0,100.0
+Citroën,e-C4 54 kWh,2024,1,50.0,100.0
+Citroën,e-C4 54 kWh,2024,2,80.0,60.0
+Citroën,e-C4 54 kWh,2024,3,100.0,30.0
+Citroën,e-C4 X,2024,0,0.0,100.0
+Citroën,e-C4 X,2024,1,50.0,100.0
+Citroën,e-C4 X,2024,2,80.0,60.0
+Citroën,e-C4 X,2024,3,100.0,30.0
+Citroën,e-C4 X 54 kWh,2024,0,0.0,100.0
+Citroën,e-C4 X 54 kWh,2024,1,50.0,100.0
+Citroën,e-C4 X 54 kWh,2024,2,80.0,60.0
+Citroën,e-C4 X 54 kWh,2024,3,100.0,30.0
+Citroën,e-Jumpy Combi M 50 kWh,2020,0,0.0,150.0
+Citroën,e-Jumpy Combi M 50 kWh,2020,1,20.0,150.0
+Citroën,e-Jumpy Combi M 50 kWh,2020,2,40.0,120.0
+Citroën,e-Jumpy Combi M 50 kWh,2020,3,60.0,90.0
+Citroën,e-Jumpy Combi M 50 kWh,2020,4,80.0,60.0
+Citroën,e-Jumpy Combi M 50 kWh,2020,5,100.0,11.0
+Citroën,e-Jumpy Combi M 75 kWh,2020,0,0.0,100.0
+Citroën,e-Jumpy Combi M 75 kWh,2020,1,50.0,100.0
+Citroën,e-Jumpy Combi M 75 kWh,2020,2,80.0,60.0
+Citroën,e-Jumpy Combi M 75 kWh,2020,3,100.0,30.0
+Citroën,e-Jumpy Combi XL 50 kWh,2020,0,0.0,101.0
+Citroën,e-Jumpy Combi XL 50 kWh,2020,1,20.0,101.0
+Citroën,e-Jumpy Combi XL 50 kWh,2020,2,40.0,81.0
+Citroën,e-Jumpy Combi XL 50 kWh,2020,3,60.0,61.0
+Citroën,e-Jumpy Combi XL 50 kWh,2020,4,80.0,40.0
+Citroën,e-Jumpy Combi XL 50 kWh,2020,5,100.0,11.0
+Citroën,e-Jumpy Combi XL 75 kWh,2020,0,0.0,100.0
+Citroën,e-Jumpy Combi XL 75 kWh,2020,1,50.0,100.0
+Citroën,e-Jumpy Combi XL 75 kWh,2020,2,80.0,60.0
+Citroën,e-Jumpy Combi XL 75 kWh,2020,3,100.0,30.0
+Citroën,e-Jumpy Combi XS 50 kWh,2020,0,0.0,101.0
+Citroën,e-Jumpy Combi XS 50 kWh,2020,1,20.0,101.0
+Citroën,e-Jumpy Combi XS 50 kWh,2020,2,40.0,81.0
+Citroën,e-Jumpy Combi XS 50 kWh,2020,3,60.0,61.0
+Citroën,e-Jumpy Combi XS 50 kWh,2020,4,80.0,40.0
+Citroën,e-Jumpy Combi XS 50 kWh,2020,5,100.0,11.0
+Citroën,e-SpaceTourer M 50 kWh,2024,0,0.0,150.0
+Citroën,e-SpaceTourer M 50 kWh,2024,1,20.0,150.0
+Citroën,e-SpaceTourer M 50 kWh,2024,2,40.0,120.0
+Citroën,e-SpaceTourer M 50 kWh,2024,3,60.0,90.0
+Citroën,e-SpaceTourer M 50 kWh,2024,4,80.0,60.0
+Citroën,e-SpaceTourer M 50 kWh,2024,5,100.0,11.0
+Citroën,e-SpaceTourer M 75 kWh,2024,0,0.0,150.0
+Citroën,e-SpaceTourer M 75 kWh,2024,1,20.0,150.0
+Citroën,e-SpaceTourer M 75 kWh,2024,2,40.0,120.0
+Citroën,e-SpaceTourer M 75 kWh,2024,3,60.0,90.0
+Citroën,e-SpaceTourer M 75 kWh,2024,4,80.0,60.0
+Citroën,e-SpaceTourer M 75 kWh,2024,5,100.0,11.0
+Citroën,e-SpaceTourer XL 50 kWh,2024,0,0.0,101.0
+Citroën,e-SpaceTourer XL 50 kWh,2024,1,20.0,101.0
+Citroën,e-SpaceTourer XL 50 kWh,2024,2,40.0,81.0
+Citroën,e-SpaceTourer XL 50 kWh,2024,3,60.0,61.0
+Citroën,e-SpaceTourer XL 50 kWh,2024,4,80.0,40.0
+Citroën,e-SpaceTourer XL 50 kWh,2024,5,100.0,11.0
+Citroën,e-SpaceTourer XL 75 kWh,2024,0,0.0,150.0
+Citroën,e-SpaceTourer XL 75 kWh,2024,1,20.0,150.0
+Citroën,e-SpaceTourer XL 75 kWh,2024,2,40.0,120.0
+Citroën,e-SpaceTourer XL 75 kWh,2024,3,60.0,90.0
+Citroën,e-SpaceTourer XL 75 kWh,2024,4,80.0,60.0
+Citroën,e-SpaceTourer XL 75 kWh,2024,5,100.0,11.0
+Citroën,e-SpaceTourer XS 50 kWh,2020,0,0.0,101.0
+Citroën,e-SpaceTourer XS 50 kWh,2020,1,20.0,101.0
+Citroën,e-SpaceTourer XS 50 kWh,2020,2,40.0,81.0
+Citroën,e-SpaceTourer XS 50 kWh,2020,3,60.0,61.0
+Citroën,e-SpaceTourer XS 50 kWh,2020,4,80.0,40.0
+Citroën,e-SpaceTourer XS 50 kWh,2020,5,100.0,11.0
+Citroën,m,2021,0,0.0,68.0
+Citroën,m,2021,1,20.0,68.0
+Citroën,m,2021,2,40.0,54.0
+Citroën,m,2021,3,60.0,41.0
+Citroën,m,2021,4,80.0,27.0
+Citroën,m,2021,5,100.0,11.0
+Citroën,x,2022,0,0.0,46.3
+Citroën,x,2022,1,50.0,46.3
+Citroën,x,2022,2,80.0,27.78
+Citroën,x,2022,3,100.0,7.4
+Citroën,x,2023,0,0.0,50.8
+Citroën,x,2023,1,50.0,50.8
+Citroën,x,2023,2,80.0,30.48
+Citroën,x,2023,3,100.0,11.0
+Citroën,xl,2020,0,0.0,46.3
+Citroën,xl,2020,1,20.0,46.3
+Citroën,xl,2020,2,40.0,37.0
+Citroën,xl,2020,3,60.0,28.0
+Citroën,xl,2020,4,80.0,19.0
+Citroën,xl,2020,5,100.0,11.0
+Citroën,xl,2021,0,0.0,68.0
+Citroën,xl,2021,1,20.0,68.0
+Citroën,xl,2021,2,40.0,54.0
+Citroën,xl,2021,3,60.0,41.0
+Citroën,xl,2021,4,80.0,27.0
+Citroën,xl,2021,5,100.0,11.0
+Citroën,xs,2020,0,0.0,46.3
+Citroën,xs,2020,1,20.0,46.3
+Citroën,xs,2020,2,40.0,37.0
+Citroën,xs,2020,3,60.0,28.0
+Citroën,xs,2020,4,80.0,19.0
+Citroën,xs,2020,5,100.0,11.0
+Citroën,ë-C4,2021,0,0.0,46.3
+Citroën,ë-C4,2021,1,20.0,46.3
+Citroën,ë-C4,2021,2,40.0,37.0
+Citroën,ë-C4,2021,3,60.0,28.0
+Citroën,ë-C4,2021,4,80.0,19.0
+Citroën,ë-C4,2021,5,100.0,11.0
+DS,3 Crossback E-Tense,2020,0,0.0,100.0
+DS,3 Crossback E-Tense,2020,1,30.0,97.0
+DS,3 Crossback E-Tense,2020,2,32.0,78.0
+DS,3 Crossback E-Tense,2020,3,58.0,78.0
+DS,3 Crossback E-Tense,2020,4,59.0,60.0
+DS,3 Crossback E-Tense,2020,5,66.0,60.0
+DS,3 Crossback E-Tense,2020,6,68.0,55.0
+DS,3 Crossback E-Tense,2020,7,78.0,55.0
+DS,3 Crossback E-Tense,2020,8,80.0,27.0
+DS,3 Crossback E-Tense,2020,9,90.0,27.0
+DS,3 Crossback E-Tense,2020,10,100.0,11.0
+DS,3 Crossback E-Tense,2021,0,0.0,101.0
+DS,3 Crossback E-Tense,2021,1,20.0,101.0
+DS,3 Crossback E-Tense,2021,2,40.0,81.0
+DS,3 Crossback E-Tense,2021,3,60.0,61.0
+DS,3 Crossback E-Tense,2021,4,80.0,40.0
+DS,3 Crossback E-Tense,2021,5,100.0,11.0
+DS,3 E-Tense,2022,0,0.0,100.0
+DS,3 E-Tense,2022,1,50.0,100.0
+DS,3 E-Tense,2022,2,80.0,60.0
+DS,3 E-Tense,2022,3,100.0,30.0
+DS,N°8 AWD Long Range,2024,0,0.0,200.0
+DS,N°8 AWD Long Range,2024,1,50.0,200.0
+DS,N°8 AWD Long Range,2024,2,80.0,100.0
+DS,N°8 AWD Long Range,2024,3,100.0,40.0
+DS,N°8 FWD,2024,0,0.0,160.0
+DS,N°8 FWD,2024,1,50.0,160.0
+DS,N°8 FWD,2024,2,80.0,80.0
+DS,N°8 FWD,2024,3,100.0,32.0
+DS,N°8 FWD Long Range,2024,0,0.0,200.0
+DS,N°8 FWD Long Range,2024,1,50.0,200.0
+DS,N°8 FWD Long Range,2024,2,80.0,100.0
+DS,N°8 FWD Long Range,2024,3,100.0,40.0
+DS,crossback e-tense,2020,0,0.0,46.3
+DS,crossback e-tense,2020,1,20.0,46.3
+DS,crossback e-tense,2020,2,40.0,37.0
+DS,crossback e-tense,2020,3,60.0,28.0
+DS,crossback e-tense,2020,4,80.0,19.0
+DS,crossback e-tense,2020,5,100.0,11.0
+DS,crossback e-tense,2021,0,0.0,46.3
+DS,crossback e-tense,2021,1,20.0,46.3
+DS,crossback e-tense,2021,2,40.0,37.0
+DS,crossback e-tense,2021,3,60.0,28.0
+DS,crossback e-tense,2021,4,80.0,19.0
+DS,crossback e-tense,2021,5,100.0,11.0
+DS,e-tense,2022,0,0.0,50.8
+DS,e-tense,2022,1,50.0,50.8
+DS,e-tense,2022,2,80.0,30.48
+DS,e-tense,2022,3,100.0,11.0
+Dacia,Spring Electric,2021,0,0.0,23.0
+Dacia,Spring Electric,2021,1,20.0,34.0
+Dacia,Spring Electric,2021,2,40.0,32.0
+Dacia,Spring Electric,2021,3,42.0,28.0
+Dacia,Spring Electric,2021,4,58.0,28.0
+Dacia,Spring Electric,2021,5,61.0,24.0
+Dacia,Spring Electric,2021,6,100.0,10.0
+Dacia,Spring Electric 45,2024,0,0.0,34.0
+Dacia,Spring Electric 45,2024,1,50.0,34.0
+Dacia,Spring Electric 45,2024,2,80.0,20.4
+Dacia,Spring Electric 45,2024,3,100.0,10.2
+Dacia,Spring Electric 65,2024,0,0.0,34.0
+Dacia,Spring Electric 65,2024,1,50.0,34.0
+Dacia,Spring Electric 65,2024,2,80.0,20.4
+Dacia,Spring Electric 65,2024,3,100.0,10.2
+Dacia,Spring Electric 65 Extreme,2023,0,0.0,34.0
+Dacia,Spring Electric 65 Extreme,2023,1,50.0,34.0
+Dacia,Spring Electric 65 Extreme,2023,2,80.0,20.4
+Dacia,Spring Electric 65 Extreme,2023,3,100.0,10.2
+Dacia,electric,2021,0,0.0,25.0
+Dacia,electric,2021,1,70.0,25.0
+Dacia,electric,2021,2,80.0,17.5
+Dacia,electric,2021,3,100.0,6.6
+Dacia,electric 45,2022,0,0.0,25.0
+Dacia,electric 45,2022,1,70.0,25.0
+Dacia,electric 45,2022,2,80.0,17.5
+Dacia,electric 45,2022,3,100.0,6.6
+Dacia,electric 65 extreme,2023,0,0.0,25.0
+Dacia,electric 65 extreme,2023,1,70.0,25.0
+Dacia,electric 65 extreme,2023,2,80.0,17.5
+Dacia,electric 65 extreme,2023,3,100.0,6.6
+Dongfeng,Box 31.4 kWh,2025,0,0.0,57.0
+Dongfeng,Box 31.4 kWh,2025,1,20.0,57.0
+Dongfeng,Box 31.4 kWh,2025,2,40.0,46.0
+Dongfeng,Box 31.4 kWh,2025,3,60.0,34.0
+Dongfeng,Box 31.4 kWh,2025,4,80.0,23.0
+Dongfeng,Box 31.4 kWh,2025,5,100.0,11.0
+Dongfeng,Box 42.3 kWh,2024,0,0.0,60.0
+Dongfeng,Box 42.3 kWh,2024,1,50.0,60.0
+Dongfeng,Box 42.3 kWh,2024,2,80.0,36.0
+Dongfeng,Box 42.3 kWh,2024,3,100.0,18.0
+Elaris,86kwh,2023,0,0.0,81.0
+Elaris,86kwh,2023,1,30.0,81.0
+Elaris,86kwh,2023,2,60.0,56.7
+Elaris,86kwh,2023,3,80.0,32.4
+Elaris,86kwh,2023,4,100.0,11.0
+Elaris,BEO 86 kWh,2023,0,0.0,100.0
+Elaris,BEO 86 kWh,2023,1,50.0,100.0
+Elaris,BEO 86 kWh,2023,2,80.0,50.0
+Elaris,BEO 86 kWh,2023,3,100.0,20.0
+Energica,Eva,2020,0,0.0,22.0
+Energica,Eva,2020,1,25.0,23.0
+Energica,Eva,2020,2,35.0,23.0
+Energica,Eva,2020,3,50.0,18.0
+Energica,Eva,2020,4,60.0,17.0
+Energica,Eva,2020,5,75.0,15.0
+Energica,Eva,2020,6,85.0,15.0
+Energica,Eva,2020,7,100.0,3.0
+Fiat,3+1,2020,0,0.0,37.3
+Fiat,3+1,2020,1,50.0,37.3
+Fiat,3+1,2020,2,80.0,22.38
+Fiat,3+1,2020,3,100.0,37.3
+Fiat,3+1,2022,0,0.0,21.3
+Fiat,3+1,2022,1,70.0,21.3
+Fiat,3+1,2022,2,80.0,14.91
+Fiat,3+1,2022,3,100.0,11.0
+Fiat,500e,2013,0,0.0,38.0
+Fiat,500e,2013,1,75.0,40.0
+Fiat,500e,2013,2,100.0,6.6
+Fiat,500e,2020,0,0.0,75.0
+Fiat,500e,2020,1,10.0,75.0
+Fiat,500e,2020,2,20.0,85.0
+Fiat,500e,2020,3,35.0,80.0
+Fiat,500e,2020,4,40.0,60.0
+Fiat,500e,2020,5,55.0,60.0
+Fiat,500e,2020,6,60.0,52.0
+Fiat,500e,2020,7,85.0,45.0
+Fiat,500e,2020,8,90.0,12.0
+Fiat,500e,2020,9,100.0,11.0
+Fiat,500e,2021,0,0.0,30.0
+Fiat,500e,2021,1,10.0,50.0
+Fiat,500e,2021,2,80.0,50.0
+Fiat,500e,2021,3,100.0,6.6
+Fiat,600e,2023,0,0.0,50.8
+Fiat,600e,2023,1,50.0,50.8
+Fiat,600e,2023,2,80.0,30.48
+Fiat,600e,2023,3,100.0,11.0
+Fiat,E-Ulysse L2 50 kWh,2022,0,0.0,101.0
+Fiat,E-Ulysse L2 50 kWh,2022,1,20.0,101.0
+Fiat,E-Ulysse L2 50 kWh,2022,2,40.0,81.0
+Fiat,E-Ulysse L2 50 kWh,2022,3,60.0,61.0
+Fiat,E-Ulysse L2 50 kWh,2022,4,80.0,40.0
+Fiat,E-Ulysse L2 50 kWh,2022,5,100.0,11.0
+Fiat,E-Ulysse L2 75 kWh,2022,0,0.0,100.0
+Fiat,E-Ulysse L2 75 kWh,2022,1,50.0,100.0
+Fiat,E-Ulysse L2 75 kWh,2022,2,80.0,60.0
+Fiat,E-Ulysse L2 75 kWh,2022,3,100.0,30.0
+Fiat,E-Ulysse L3 50 kWh,2022,0,0.0,101.0
+Fiat,E-Ulysse L3 50 kWh,2022,1,20.0,101.0
+Fiat,E-Ulysse L3 50 kWh,2022,2,40.0,81.0
+Fiat,E-Ulysse L3 50 kWh,2022,3,60.0,61.0
+Fiat,E-Ulysse L3 50 kWh,2022,4,80.0,40.0
+Fiat,E-Ulysse L3 50 kWh,2022,5,100.0,11.0
+Fiat,E-Ulysse L3 75 kWh,2022,0,0.0,100.0
+Fiat,E-Ulysse L3 75 kWh,2022,1,50.0,100.0
+Fiat,E-Ulysse L3 75 kWh,2022,2,80.0,60.0
+Fiat,E-Ulysse L3 75 kWh,2022,3,100.0,30.0
+Fiat,Grande Panda,2024,0,0.0,100.0
+Fiat,Grande Panda,2024,1,50.0,100.0
+Fiat,Grande Panda,2024,2,80.0,50.0
+Fiat,Grande Panda,2024,3,100.0,20.0
+Fiat,cabrio,2020,0,0.0,37.3
+Fiat,cabrio,2020,1,50.0,37.3
+Fiat,cabrio,2020,2,80.0,22.38
+Fiat,cabrio,2020,3,100.0,37.3
+Fiat,cabrio,2022,0,0.0,21.3
+Fiat,cabrio,2022,1,70.0,21.3
+Fiat,cabrio,2022,2,80.0,14.91
+Fiat,cabrio,2022,3,100.0,11.0
+Fiat,hatchback,2020,0,0.0,37.3
+Fiat,hatchback,2020,1,20.0,37.3
+Fiat,hatchback,2020,2,40.0,30.0
+Fiat,hatchback,2020,3,60.0,22.0
+Fiat,hatchback,2020,4,80.0,15.0
+Fiat,hatchback,2020,5,100.0,11.0
+Fiat,l2,2022,0,0.0,46.3
+Fiat,l2,2022,1,50.0,46.3
+Fiat,l2,2022,2,80.0,27.78
+Fiat,l2,2022,3,100.0,7.4
+Fiat,l2,2022,4,100.0,7.4
+Fiat,l3,2022,0,0.0,46.3
+Fiat,l3,2022,1,50.0,46.3
+Fiat,l3,2022,2,80.0,27.78
+Fiat,l3,2022,3,100.0,7.4
+Fiat,l3,2022,4,100.0,7.4
+Fisker,Ocean Extreme,2023,0,0.0,250.0
+Fisker,Ocean Extreme,2023,1,50.0,250.0
+Fisker,Ocean Extreme,2023,2,80.0,125.0
+Fisker,Ocean Extreme,2023,3,100.0,50.0
+Fisker,Ocean One,2023,0,0.0,250.0
+Fisker,Ocean One,2023,1,50.0,250.0
+Fisker,Ocean One,2023,2,80.0,125.0
+Fisker,Ocean One,2023,3,100.0,50.0
+Fisker,Ocean Sport,2023,0,0.0,200.0
+Fisker,Ocean Sport,2023,1,50.0,200.0
+Fisker,Ocean Sport,2023,2,80.0,100.0
+Fisker,Ocean Sport,2023,3,100.0,40.0
+Fisker,Ocean Ultra,2023,0,0.0,250.0
+Fisker,Ocean Ultra,2023,1,50.0,250.0
+Fisker,Ocean Ultra,2023,2,80.0,125.0
+Fisker,Ocean Ultra,2023,3,100.0,50.0
+Fisker,extreme,2023,0,0.0,106.5
+Fisker,extreme,2023,1,30.0,106.5
+Fisker,extreme,2023,2,60.0,74.55
+Fisker,extreme,2023,3,80.0,42.6
+Fisker,extreme,2023,4,100.0,11.0
+Fisker,one,2023,0,0.0,106.5
+Fisker,one,2023,1,30.0,106.5
+Fisker,one,2023,2,60.0,74.55
+Fisker,one,2023,3,80.0,42.6
+Fisker,one,2023,4,100.0,11.0
+Fisker,sport,2023,0,0.0,71.0
+Fisker,sport,2023,1,30.0,71.0
+Fisker,sport,2023,2,60.0,49.7
+Fisker,sport,2023,3,80.0,28.4
+Fisker,sport,2023,4,100.0,11.0
+Fisker,ultra,2023,0,0.0,106.5
+Fisker,ultra,2023,1,30.0,106.5
+Fisker,ultra,2023,2,60.0,74.55
+Fisker,ultra,2023,3,80.0,42.6
+Fisker,ultra,2023,4,100.0,11.0
+Ford,Capri Extended Range AWD,2024,0,0.0,185.0
+Ford,Capri Extended Range AWD,2024,1,50.0,185.0
+Ford,Capri Extended Range AWD,2024,2,80.0,111.0
+Ford,Capri Extended Range AWD,2024,3,100.0,55.5
+Ford,Capri Extended Range RWD,2024,0,0.0,135.0
+Ford,Capri Extended Range RWD,2024,1,50.0,135.0
+Ford,Capri Extended Range RWD,2024,2,80.0,81.0
+Ford,Capri Extended Range RWD,2024,3,100.0,40.5
+Ford,Capri Standard Range RWD,2024,0,0.0,145.0
+Ford,Capri Standard Range RWD,2024,1,50.0,145.0
+Ford,Capri Standard Range RWD,2024,2,80.0,72.5
+Ford,Capri Standard Range RWD,2024,3,100.0,29.0
+Ford,Explorer Extended Range AWD,2024,0,0.0,185.0
+Ford,Explorer Extended Range AWD,2024,1,50.0,185.0
+Ford,Explorer Extended Range AWD,2024,2,80.0,111.0
+Ford,Explorer Extended Range AWD,2024,3,100.0,55.5
+Ford,Explorer Extended Range RWD,2024,0,0.0,135.0
+Ford,Explorer Extended Range RWD,2024,1,50.0,135.0
+Ford,Explorer Extended Range RWD,2024,2,80.0,81.0
+Ford,Explorer Extended Range RWD,2024,3,100.0,40.5
+Ford,Explorer Standard Range RWD,2024,0,0.0,145.0
+Ford,Explorer Standard Range RWD,2024,1,50.0,145.0
+Ford,Explorer Standard Range RWD,2024,2,80.0,72.5
+Ford,Explorer Standard Range RWD,2024,3,100.0,29.0
+Ford,Focus Electric,2013,0,0.0,150.0
+Ford,Focus Electric,2013,1,20.0,150.0
+Ford,Focus Electric,2013,2,40.0,120.0
+Ford,Focus Electric,2013,3,60.0,90.0
+Ford,Focus Electric,2013,4,80.0,60.0
+Ford,Focus Electric,2013,5,100.0,11.0
+Ford,Focus electric,2013,0,0.0,150.0
+Ford,Focus electric,2013,1,20.0,150.0
+Ford,Focus electric,2013,2,40.0,120.0
+Ford,Focus electric,2013,3,60.0,90.0
+Ford,Focus electric,2013,4,80.0,60.0
+Ford,Focus electric,2013,5,100.0,11.0
+Ford,Focus electric,2017,0,0.0,47.5
+Ford,Focus electric,2017,1,75.0,50.0
+Ford,Focus electric,2017,2,100.0,6.6
+Ford,Mustang Mach e,2022,0,0.0,113.0
+Ford,Mustang Mach e,2022,1,30.0,99.0
+Ford,Mustang Mach e,2022,2,60.0,77.0
+Ford,Mustang Mach e,2022,3,85.0,36.0
+Ford,Mustang Mach e,2022,4,100.0,13.0
+Ford,Mustang Mach-E ER AWD,2024,0,0.0,150.0
+Ford,Mustang Mach-E ER AWD,2024,1,50.0,150.0
+Ford,Mustang Mach-E ER AWD,2024,2,80.0,90.0
+Ford,Mustang Mach-E ER AWD,2024,3,100.0,45.0
+Ford,Mustang Mach-E ER RWD,2024,0,0.0,150.0
+Ford,Mustang Mach-E ER RWD,2024,1,50.0,150.0
+Ford,Mustang Mach-E ER RWD,2024,2,80.0,90.0
+Ford,Mustang Mach-E ER RWD,2024,3,100.0,45.0
+Ford,Mustang Mach-E Rally,2024,0,0.0,150.0
+Ford,Mustang Mach-E Rally,2024,1,50.0,150.0
+Ford,Mustang Mach-E Rally,2024,2,80.0,90.0
+Ford,Mustang Mach-E Rally,2024,3,100.0,45.0
+Ford,Mustang Mach-E SR AWD,2024,0,0.0,150.0
+Ford,Mustang Mach-E SR AWD,2024,1,50.0,150.0
+Ford,Mustang Mach-E SR AWD,2024,2,80.0,75.0
+Ford,Mustang Mach-E SR AWD,2024,3,100.0,30.0
+Ford,Mustang Mach-E SR RWD,2024,0,0.0,150.0
+Ford,Mustang Mach-E SR RWD,2024,1,50.0,150.0
+Ford,Mustang Mach-E SR RWD,2024,2,80.0,75.0
+Ford,Mustang Mach-E SR RWD,2024,3,100.0,30.0
+Ford,Puma Gen-E,2024,0,0.0,100.0
+Ford,Puma Gen-E,2024,1,50.0,100.0
+Ford,Puma Gen-E,2024,2,80.0,60.0
+Ford,Puma Gen-E,2024,3,100.0,30.0
+Ford,mach-e,2021,0,0.0,88.0
+Ford,mach-e,2021,1,20.0,88.0
+Ford,mach-e,2021,2,40.0,70.0
+Ford,mach-e,2021,3,60.0,53.0
+Ford,mach-e,2021,4,80.0,35.0
+Ford,mach-e,2021,5,100.0,11.0
+Ford,mach-e,2022,0,0.0,91.0
+Ford,mach-e,2022,1,30.0,91.0
+Ford,mach-e,2022,2,60.0,63.7
+Ford,mach-e,2022,3,80.0,36.4
+Ford,mach-e,2022,4,100.0,11.0
+Ford,mach-e,2023,0,0.0,91.0
+Ford,mach-e,2023,1,30.0,91.0
+Ford,mach-e,2023,2,60.0,63.7
+Ford,mach-e,2023,3,80.0,36.4
+Ford,mach-e,2023,4,100.0,11.0
+Ford,mach-e er,2021,0,0.0,88.0
+Ford,mach-e er,2021,1,20.0,88.0
+Ford,mach-e er,2021,2,40.0,70.0
+Ford,mach-e er,2021,3,60.0,53.0
+Ford,mach-e er,2021,4,80.0,35.0
+Ford,mach-e er,2021,5,100.0,11.0
+Ford,mach-e er,2022,0,0.0,91.0
+Ford,mach-e er,2022,1,30.0,91.0
+Ford,mach-e er,2022,2,60.0,63.7
+Ford,mach-e er,2022,3,80.0,36.4
+Ford,mach-e er,2022,4,100.0,11.0
+Ford,mach-e er,2023,0,0.0,91.0
+Ford,mach-e er,2023,1,30.0,91.0
+Ford,mach-e er,2023,2,60.0,63.7
+Ford,mach-e er,2023,3,80.0,36.4
+Ford,mach-e er,2023,4,100.0,11.0
+Ford,mach-e er rwd,2021,0,0.0,88.0
+Ford,mach-e er rwd,2021,1,20.0,88.0
+Ford,mach-e er rwd,2021,2,40.0,70.0
+Ford,mach-e er rwd,2021,3,60.0,53.0
+Ford,mach-e er rwd,2021,4,80.0,35.0
+Ford,mach-e er rwd,2021,5,100.0,11.0
+Ford,mach-e er rwd,2022,0,0.0,91.0
+Ford,mach-e er rwd,2022,1,30.0,91.0
+Ford,mach-e er rwd,2022,2,60.0,63.7
+Ford,mach-e er rwd,2022,3,80.0,36.4
+Ford,mach-e er rwd,2022,4,100.0,11.0
+Ford,mach-e er rwd,2023,0,0.0,91.0
+Ford,mach-e er rwd,2023,1,30.0,91.0
+Ford,mach-e er rwd,2023,2,60.0,63.7
+Ford,mach-e er rwd,2023,3,80.0,36.4
+Ford,mach-e er rwd,2023,4,100.0,11.0
+Ford,mach-e sr,2021,0,0.0,68.0
+Ford,mach-e sr,2021,1,20.0,68.0
+Ford,mach-e sr,2021,2,40.0,54.0
+Ford,mach-e sr,2021,3,60.0,41.0
+Ford,mach-e sr,2021,4,80.0,27.0
+Ford,mach-e sr,2021,5,100.0,11.0
+Ford,mach-e sr,2022,0,0.0,70.0
+Ford,mach-e sr,2022,1,30.0,70.0
+Ford,mach-e sr,2022,2,60.0,49.0
+Ford,mach-e sr,2022,3,80.0,28.0
+Ford,mach-e sr,2022,4,100.0,11.0
+Ford,mach-e sr,2023,0,0.0,72.6
+Ford,mach-e sr,2023,1,30.0,72.6
+Ford,mach-e sr,2023,2,60.0,50.82
+Ford,mach-e sr,2023,3,80.0,29.04
+Ford,mach-e sr,2023,4,100.0,11.0
+Ford,mach-e sr rwd,2021,0,0.0,68.0
+Ford,mach-e sr rwd,2021,1,20.0,68.0
+Ford,mach-e sr rwd,2021,2,40.0,54.0
+Ford,mach-e sr rwd,2021,3,60.0,41.0
+Ford,mach-e sr rwd,2021,4,80.0,27.0
+Ford,mach-e sr rwd,2021,5,100.0,11.0
+Ford,mach-e sr rwd,2022,0,0.0,70.0
+Ford,mach-e sr rwd,2022,1,30.0,70.0
+Ford,mach-e sr rwd,2022,2,60.0,49.0
+Ford,mach-e sr rwd,2022,3,80.0,28.0
+Ford,mach-e sr rwd,2022,4,100.0,11.0
+Ford,mach-e sr rwd,2023,0,0.0,72.6
+Ford,mach-e sr rwd,2023,1,30.0,72.6
+Ford,mach-e sr rwd,2023,2,60.0,50.82
+Ford,mach-e sr rwd,2023,3,80.0,29.04
+Ford,mach-e sr rwd,2023,4,100.0,11.0
+GWM,ORA 03,2024,0,0.0,60.8
+GWM,ORA 03,2024,1,75.0,64.0
+GWM,ORA 03,2024,2,100.0,11.0
+GWM,ORA 03 48 kWh,2024,0,0.0,45.4
+GWM,ORA 03 48 kWh,2024,1,50.0,45.4
+GWM,ORA 03 48 kWh,2024,2,80.0,27.24
+GWM,ORA 03 48 kWh,2024,3,100.0,11.0
+GWM,ORA 03 63 kWh,2024,0,0.0,59.3
+GWM,ORA 03 63 kWh,2024,1,50.0,59.3
+GWM,ORA 03 63 kWh,2024,2,80.0,35.58
+GWM,ORA 03 63 kWh,2024,3,100.0,11.0
+GWM,ORA 03 GT,2024,0,0.0,59.3
+GWM,ORA 03 GT,2024,1,50.0,59.3
+GWM,ORA 03 GT,2024,2,80.0,35.58
+GWM,ORA 03 GT,2024,3,100.0,11.0
+GWM,ORA 07,2024,0,0.0,83.6
+GWM,ORA 07,2024,1,75.0,88.0
+GWM,ORA 07,2024,2,100.0,11.0
+Genesis,G80,2023,0,0.0,218.5
+Genesis,G80,2023,1,75.0,230.0
+Genesis,G80,2023,2,100.0,11.0
+Genesis,GV60,2022,0,0.0,221.4
+Genesis,GV60,2022,1,75.0,233.0
+Genesis,GV60,2022,2,100.0,11.0
+Genesis,GV70,2023,0,0.0,221.4
+Genesis,GV70,2023,1,75.0,233.0
+Genesis,GV70,2023,2,100.0,11.0
+Genesis,electrified luxury,2022,0,0.0,82.5
+Genesis,electrified luxury,2022,1,40.0,82.5
+Genesis,electrified luxury,2022,2,70.0,66.0
+Genesis,electrified luxury,2022,3,90.0,33.0
+Genesis,electrified luxury,2022,4,100.0,11.0
+Genesis,electrified sport,2022,0,0.0,74.0
+Genesis,electrified sport,2022,1,40.0,74.0
+Genesis,electrified sport,2022,2,70.0,59.2
+Genesis,electrified sport,2022,3,90.0,29.6
+Genesis,electrified sport,2022,4,100.0,11.0
+Genesis,premium,2022,0,0.0,74.0
+Genesis,premium,2022,1,40.0,74.0
+Genesis,premium,2022,2,70.0,59.2
+Genesis,premium,2022,3,90.0,29.6
+Genesis,premium,2022,4,100.0,11.0
+Genesis,sport,2022,0,0.0,74.0
+Genesis,sport,2022,1,40.0,74.0
+Genesis,sport,2022,2,70.0,59.2
+Genesis,sport,2022,3,90.0,29.6
+Genesis,sport,2022,4,100.0,11.0
+Genesis,sport plus,2022,0,0.0,74.0
+Genesis,sport plus,2022,1,40.0,74.0
+Genesis,sport plus,2022,2,70.0,59.2
+Genesis,sport plus,2022,3,90.0,29.6
+Genesis,sport plus,2022,4,100.0,11.0
+Honda,advance,2020,0,0.0,28.5
+Honda,advance,2020,1,70.0,28.5
+Honda,advance,2020,2,80.0,19.95
+Honda,advance,2020,3,100.0,28.5
+Honda,e,2020,0,0.0,28.5
+Honda,e,2020,1,70.0,28.5
+Honda,e,2020,2,80.0,19.95
+Honda,e,2020,3,100.0,6.6
+Honda,e:Ny1,2023,0,0.0,61.9
+Honda,e:Ny1,2023,1,30.0,61.9
+Honda,e:Ny1,2023,2,60.0,43.33
+Honda,e:Ny1,2023,3,80.0,24.76
+Honda,e:Ny1,2023,4,100.0,11.0
+Hongqi,120kwh,2023,0,0.0,112.0
+Hongqi,120kwh,2023,1,30.0,112.0
+Hongqi,120kwh,2023,2,60.0,78.4
+Hongqi,120kwh,2023,3,80.0,44.8
+Hongqi,120kwh,2023,4,100.0,11.0
+Hongqi,84kwh,2022,0,0.0,76.5
+Hongqi,84kwh,2022,1,30.0,76.5
+Hongqi,84kwh,2022,2,60.0,53.55
+Hongqi,84kwh,2022,3,80.0,30.6
+Hongqi,84kwh,2022,4,100.0,11.0
+Hongqi,99kwh,2022,0,0.0,90.0
+Hongqi,99kwh,2022,1,30.0,90.0
+Hongqi,99kwh,2022,2,60.0,63.0
+Hongqi,99kwh,2022,3,80.0,36.0
+Hongqi,99kwh,2022,4,100.0,11.0
+Hongqi,E-HS9,2023,0,0.0,123.5
+Hongqi,E-HS9,2023,1,75.0,130.0
+Hongqi,E-HS9,2023,2,100.0,11.0
+Hongqi,E-HS9 84 kWh,2022,0,0.0,140.0
+Hongqi,E-HS9 84 kWh,2022,1,50.0,140.0
+Hongqi,E-HS9 84 kWh,2022,2,80.0,84.0
+Hongqi,E-HS9 84 kWh,2022,3,100.0,42.0
+Hongqi,E-HS9 99 kWh,2022,0,0.0,140.0
+Hongqi,E-HS9 99 kWh,2022,1,50.0,140.0
+Hongqi,E-HS9 99 kWh,2022,2,80.0,84.0
+Hongqi,E-HS9 99 kWh,2022,3,100.0,42.0
+Hyundai,5 long range,2021,0,0.0,70.0
+Hyundai,5 long range,2021,1,40.0,70.0
+Hyundai,5 long range,2021,2,70.0,56.0
+Hyundai,5 long range,2021,3,90.0,28.0
+Hyundai,5 long range,2021,4,100.0,11.0
+Hyundai,5 long range,2022,0,0.0,74.0
+Hyundai,5 long range,2022,1,40.0,74.0
+Hyundai,5 long range,2022,2,70.0,59.2
+Hyundai,5 long range,2022,3,90.0,29.6
+Hyundai,5 long range,2022,4,100.0,11.0
+Hyundai,5 long range 2wd,2021,0,0.0,70.0
+Hyundai,5 long range 2wd,2021,1,40.0,70.0
+Hyundai,5 long range 2wd,2021,2,70.0,56.0
+Hyundai,5 long range 2wd,2021,3,90.0,28.0
+Hyundai,5 long range 2wd,2021,4,100.0,11.0
+Hyundai,5 long range 2wd,2022,0,0.0,74.0
+Hyundai,5 long range 2wd,2022,1,40.0,74.0
+Hyundai,5 long range 2wd,2022,2,70.0,59.2
+Hyundai,5 long range 2wd,2022,3,90.0,29.6
+Hyundai,5 long range 2wd,2022,4,100.0,11.0
+Hyundai,5 n,2023,0,0.0,80.0
+Hyundai,5 n,2023,1,40.0,80.0
+Hyundai,5 n,2023,2,70.0,64.0
+Hyundai,5 n,2023,3,90.0,32.0
+Hyundai,5 n,2023,4,100.0,11.0
+Hyundai,5 project 45,2021,0,0.0,70.0
+Hyundai,5 project 45,2021,1,40.0,70.0
+Hyundai,5 project 45,2021,2,70.0,56.0
+Hyundai,5 project 45,2021,3,90.0,28.0
+Hyundai,5 project 45,2021,4,100.0,11.0
+Hyundai,5 standard range,2021,0,0.0,54.0
+Hyundai,5 standard range,2021,1,40.0,54.0
+Hyundai,5 standard range,2021,2,70.0,43.2
+Hyundai,5 standard range,2021,3,90.0,21.6
+Hyundai,5 standard range,2021,4,100.0,11.0
+Hyundai,5 standard range 2wd,2021,0,0.0,54.0
+Hyundai,5 standard range 2wd,2021,1,40.0,54.0
+Hyundai,5 standard range 2wd,2021,2,70.0,43.2
+Hyundai,5 standard range 2wd,2021,3,90.0,21.6
+Hyundai,5 standard range 2wd,2021,4,100.0,11.0
+Hyundai,6 long range,2022,0,0.0,74.0
+Hyundai,6 long range,2022,1,40.0,74.0
+Hyundai,6 long range,2022,2,70.0,59.2
+Hyundai,6 long range,2022,3,90.0,29.6
+Hyundai,6 long range,2022,4,100.0,11.0
+Hyundai,6 long range 2wd,2022,0,0.0,74.0
+Hyundai,6 long range 2wd,2022,1,40.0,74.0
+Hyundai,6 long range 2wd,2022,2,70.0,59.2
+Hyundai,6 long range 2wd,2022,3,90.0,29.6
+Hyundai,6 long range 2wd,2022,4,100.0,11.0
+Hyundai,6 standard range 2wd,2023,0,0.0,50.0
+Hyundai,6 standard range 2wd,2023,1,40.0,50.0
+Hyundai,6 standard range 2wd,2023,2,70.0,40.0
+Hyundai,6 standard range 2wd,2023,3,90.0,20.0
+Hyundai,6 standard range 2wd,2023,4,100.0,11.0
+Hyundai,INSTER Long Range,2024,0,0.0,85.0
+Hyundai,INSTER Long Range,2024,1,50.0,85.0
+Hyundai,INSTER Long Range,2024,2,80.0,51.0
+Hyundai,INSTER Long Range,2024,3,100.0,25.5
+Hyundai,INSTER Standard Range,2024,0,0.0,73.0
+Hyundai,INSTER Standard Range,2024,1,50.0,73.0
+Hyundai,INSTER Standard Range,2024,2,80.0,43.8
+Hyundai,INSTER Standard Range,2024,3,100.0,21.9
+Hyundai,IONIQ,2016,0,0.0,28.0
+Hyundai,IONIQ,2016,1,20.0,28.0
+Hyundai,IONIQ,2016,2,40.0,22.0
+Hyundai,IONIQ,2016,3,60.0,17.0
+Hyundai,IONIQ,2016,4,80.0,11.0
+Hyundai,IONIQ,2016,5,100.0,11.0
+Hyundai,IONIQ 5,2021,0,0.0,210.0
+Hyundai,IONIQ 5,2021,1,46.0,233.0
+Hyundai,IONIQ 5,2021,2,47.0,175.0
+Hyundai,IONIQ 5,2021,3,48.0,175.0
+Hyundai,IONIQ 5,2021,4,60.0,175.0
+Hyundai,IONIQ 5,2021,5,70.0,150.0
+Hyundai,IONIQ 5,2021,6,72.0,110.0
+Hyundai,IONIQ 5,2021,7,84.0,110.0
+Hyundai,IONIQ 5,2021,8,100.0,10.0
+Hyundai,Ioniq,2016,0,0.0,60.0
+Hyundai,Ioniq,2016,1,76.0,69.0
+Hyundai,Ioniq,2016,2,84.0,23.0
+Hyundai,Ioniq,2016,3,92.0,23.0
+Hyundai,Ioniq,2016,4,100.0,10.0
+Hyundai,Ioniq,2019,0,0.0,40.0
+Hyundai,Ioniq,2019,1,51.0,46.0
+Hyundai,Ioniq,2019,2,53.0,36.0
+Hyundai,Ioniq,2019,3,67.0,37.0
+Hyundai,Ioniq,2019,4,69.0,23.0
+Hyundai,Ioniq,2019,5,74.0,23.0
+Hyundai,Ioniq,2019,6,76.0,15.0
+Hyundai,Ioniq,2019,7,90.0,15.0
+Hyundai,Ioniq,2019,8,100.0,8.0
+Hyundai,Kona,2018,0,0.0,47.5
+Hyundai,Kona,2018,1,75.0,50.0
+Hyundai,Kona,2018,2,100.0,7.2
+Hyundai,Kona,2018,3,53.0,71.0
+Hyundai,Kona,2018,4,55.0,57.0
+Hyundai,Kona,2018,5,71.0,58.0
+Hyundai,Kona,2018,6,72.0,38.0
+Hyundai,Kona,2018,7,76.0,38.0
+Hyundai,Kona,2018,8,78.0,25.0
+Hyundai,Kona,2018,9,88.0,25.0
+Hyundai,Kona,2018,10,100.0,8.0
+Hyundai,Kona,2020,0,0.0,47.5
+Hyundai,Kona,2020,1,75.0,50.0
+Hyundai,Kona,2020,2,100.0,11.0
+Hyundai,Kona,2020,3,53.0,71.0
+Hyundai,Kona,2020,4,55.0,57.0
+Hyundai,Kona,2020,5,71.0,58.0
+Hyundai,Kona,2020,6,72.0,38.0
+Hyundai,Kona,2020,7,76.0,38.0
+Hyundai,Kona,2020,8,78.0,25.0
+Hyundai,Kona,2020,9,88.0,25.0
+Hyundai,Kona,2020,10,100.0,8.0
+Hyundai,Kona Electric 39,2018,0,0.0,39.2
+Hyundai,Kona Electric 39,2018,1,50.0,39.2
+Hyundai,Kona Electric 39,2018,2,80.0,23.52
+Hyundai,Kona Electric 39,2018,3,100.0,39.2
+Hyundai,Kona Electric 39 kWh,2021,0,0.0,44.0
+Hyundai,Kona Electric 39 kWh,2021,1,50.0,44.0
+Hyundai,Kona Electric 39 kWh,2021,2,80.0,26.4
+Hyundai,Kona Electric 39 kWh,2021,3,100.0,13.2
+Hyundai,Kona Electric 48 kWh,2023,0,0.0,75.0
+Hyundai,Kona Electric 48 kWh,2023,1,50.0,75.0
+Hyundai,Kona Electric 48 kWh,2023,2,80.0,37.5
+Hyundai,Kona Electric 48 kWh,2023,3,100.0,15.0
+Hyundai,Kona Electric 64,2018,0,0.0,64.0
+Hyundai,Kona Electric 64,2018,1,30.0,64.0
+Hyundai,Kona Electric 64,2018,2,60.0,44.8
+Hyundai,Kona Electric 64,2018,3,80.0,25.6
+Hyundai,Kona Electric 64,2018,4,100.0,11.0
+Hyundai,Kona Electric 64 kWh,2021,0,0.0,77.0
+Hyundai,Kona Electric 64 kWh,2021,1,20.0,77.0
+Hyundai,Kona Electric 64 kWh,2021,2,40.0,62.0
+Hyundai,Kona Electric 64 kWh,2021,3,60.0,46.0
+Hyundai,Kona Electric 64 kWh,2021,4,80.0,31.0
+Hyundai,Kona Electric 64 kWh,2021,5,100.0,11.0
+Hyundai,Kona Electric 65 kWh,2023,0,0.0,105.0
+Hyundai,Kona Electric 65 kWh,2023,1,50.0,105.0
+Hyundai,Kona Electric 65 kWh,2023,2,80.0,63.0
+Hyundai,Kona Electric 65 kWh,2023,3,100.0,31.5
+Hyundai,electric,2019,0,0.0,38.3
+Hyundai,electric,2019,1,20.0,38.3
+Hyundai,electric,2019,2,40.0,31.0
+Hyundai,electric,2019,3,60.0,23.0
+Hyundai,electric,2019,4,80.0,15.0
+Hyundai,electric,2019,5,100.0,11.0
+Hyundai,electric,2021,0,0.0,39.2
+Hyundai,electric,2021,1,50.0,39.2
+Hyundai,electric,2021,2,80.0,23.52
+Hyundai,electric,2021,3,100.0,39.2
+Hyundai,electric,2021,4,100.0,11.0
+Hyundai,electric,2023,0,0.0,48.4
+Hyundai,electric,2023,1,50.0,48.4
+Hyundai,electric,2023,2,80.0,29.04
+Hyundai,electric,2023,3,100.0,11.0
+Hyundai,electric,2023,4,100.0,11.0
+JAC,iEV7s,2021,0,0.0,39.0
+JAC,iEV7s,2021,1,50.0,39.0
+JAC,iEV7s,2021,2,80.0,23.4
+JAC,iEV7s,2021,3,100.0,6.6
+Jaguar,I-Pace,2018,0,0.0,84.7
+Jaguar,I-Pace,2018,1,30.0,84.7
+Jaguar,I-Pace,2018,2,60.0,59.29
+Jaguar,I-Pace,2018,3,80.0,33.88
+Jaguar,I-Pace,2018,4,100.0,11.0
+Jaguar,ev320,2020,0,0.0,84.7
+Jaguar,ev320,2020,1,30.0,84.7
+Jaguar,ev320,2020,2,60.0,59.29
+Jaguar,ev320,2020,3,80.0,33.88
+Jaguar,ev320,2020,4,100.0,11.0
+Jaguar,ev400,2020,0,0.0,84.7
+Jaguar,ev400,2020,1,30.0,84.7
+Jaguar,ev400,2020,2,60.0,59.29
+Jaguar,ev400,2020,3,80.0,33.88
+Jaguar,ev400,2020,4,100.0,11.0
+Jaguar,ev400,2023,0,0.0,84.7
+Jaguar,ev400,2023,1,30.0,84.7
+Jaguar,ev400,2023,2,60.0,59.29
+Jaguar,ev400,2023,3,80.0,33.88
+Jaguar,ev400,2023,4,100.0,11.0
+Jaguar,i-Pace,2018,0,0.0,100.0
+Jaguar,i-Pace,2018,1,30.0,105.0
+Jaguar,i-Pace,2018,2,80.0,55.0
+Jaguar,i-Pace,2018,3,90.0,37.0
+Jaguar,i-Pace,2018,4,100.0,12.0
+Jaguar,i-Pace,2020,0,0.0,100.0
+Jaguar,i-Pace,2020,1,30.0,105.0
+Jaguar,i-Pace,2020,2,80.0,55.0
+Jaguar,i-Pace,2020,3,90.0,37.0
+Jaguar,i-Pace,2020,4,100.0,12.0
+Jeep,Avenger,2023,0,0.0,95.0
+Jeep,Avenger,2023,1,75.0,100.0
+Jeep,Avenger,2023,2,100.0,11.0
+Jeep,Avenger Electric,2023,0,0.0,100.0
+Jeep,Avenger Electric,2023,1,50.0,100.0
+Jeep,Avenger Electric,2023,2,80.0,60.0
+Jeep,Avenger Electric,2023,3,100.0,30.0
+Jeep,Avenger Electric 1st Edition,2023,0,0.0,100.0
+Jeep,Avenger Electric 1st Edition,2023,1,50.0,100.0
+Jeep,Avenger Electric 1st Edition,2023,2,80.0,60.0
+Jeep,Avenger Electric 1st Edition,2023,3,100.0,30.0
+Jeep,electric,2023,0,0.0,50.8
+Jeep,electric,2023,1,50.0,50.8
+Jeep,electric,2023,2,80.0,30.48
+Jeep,electric,2023,3,100.0,11.0
+Jeep,electric 1st edition,2023,0,0.0,50.8
+Jeep,electric 1st edition,2023,1,50.0,50.8
+Jeep,electric 1st edition,2023,2,80.0,30.48
+Jeep,electric 1st edition,2023,3,100.0,11.0
+KGM,Torres EVX,2024,0,0.0,120.0
+KGM,Torres EVX,2024,1,50.0,120.0
+KGM,Torres EVX,2024,2,80.0,72.0
+KGM,Torres EVX,2024,3,100.0,36.0
+Kia,39,2022,0,0.0,39.2
+Kia,39,2022,1,50.0,39.2
+Kia,39,2022,2,80.0,23.52
+Kia,39,2022,3,100.0,7.2
+Kia,39kwh,2019,0,0.0,39.2
+Kia,39kwh,2019,1,50.0,39.2
+Kia,39kwh,2019,2,80.0,23.52
+Kia,39kwh,2019,3,100.0,39.2
+Kia,39kwh,2020,0,0.0,39.2
+Kia,39kwh,2020,1,50.0,39.2
+Kia,39kwh,2020,2,80.0,23.52
+Kia,39kwh,2020,3,100.0,39.2
+Kia,64kwh,2020,0,0.0,64.0
+Kia,64kwh,2020,1,30.0,64.0
+Kia,64kwh,2020,2,60.0,44.8
+Kia,64kwh,2020,3,80.0,25.6
+Kia,64kwh,2020,4,100.0,11.0
+Kia,64kwh,2022,0,0.0,64.0
+Kia,64kwh,2022,1,30.0,64.0
+Kia,64kwh,2022,2,60.0,44.8
+Kia,64kwh,2022,3,80.0,25.6
+Kia,64kwh,2022,4,100.0,7.2
+Kia,76,2024,0,0.0,73.0
+Kia,76,2024,1,40.0,73.0
+Kia,76,2024,2,70.0,58.4
+Kia,76,2024,3,90.0,29.2
+Kia,76,2024,4,100.0,11.0
+Kia,99,2023,0,0.0,96.0
+Kia,99,2023,1,40.0,96.0
+Kia,99,2023,2,70.0,76.8
+Kia,99,2023,3,90.0,38.4
+Kia,99,2023,4,100.0,11.0
+Kia,EV3 Long Range,2024,0,0.0,135.0
+Kia,EV3 Long Range,2024,1,50.0,135.0
+Kia,EV3 Long Range,2024,2,80.0,81.0
+Kia,EV3 Long Range,2024,3,100.0,40.5
+Kia,EV4 Hatchback Long Range,2025,0,0.0,135.0
+Kia,EV4 Hatchback Long Range,2025,1,50.0,135.0
+Kia,EV4 Hatchback Long Range,2025,2,80.0,81.0
+Kia,EV4 Hatchback Long Range,2025,3,100.0,40.5
+Kia,EV4 Hatchback Standard Range,2025,0,0.0,100.0
+Kia,EV4 Hatchback Standard Range,2025,1,50.0,100.0
+Kia,EV4 Hatchback Standard Range,2025,2,80.0,60.0
+Kia,EV4 Hatchback Standard Range,2025,3,100.0,30.0
+Kia,EV4 Sedan Long Range,2025,0,0.0,135.0
+Kia,EV4 Sedan Long Range,2025,1,50.0,135.0
+Kia,EV4 Sedan Long Range,2025,2,80.0,81.0
+Kia,EV4 Sedan Long Range,2025,3,100.0,40.5
+Kia,EV4 Sedan Standard Range,2025,0,0.0,100.0
+Kia,EV4 Sedan Standard Range,2025,1,50.0,100.0
+Kia,EV4 Sedan Standard Range,2025,2,80.0,60.0
+Kia,EV4 Sedan Standard Range,2025,3,100.0,30.0
+Kia,EV6,2021,0,0.0,237.5
+Kia,EV6,2021,1,75.0,250.0
+Kia,EV6,2021,2,100.0,11.0
+Kia,EV6 GT,2025,0,0.0,263.0
+Kia,EV6 GT,2025,1,20.0,263.0
+Kia,EV6 GT,2025,2,40.0,210.0
+Kia,EV6 GT,2025,3,60.0,158.0
+Kia,EV6 GT,2025,4,80.0,105.0
+Kia,EV6 GT,2025,5,100.0,11.0
+Kia,EV6 Long Range AWD,2024,0,0.0,263.0
+Kia,EV6 Long Range AWD,2024,1,20.0,263.0
+Kia,EV6 Long Range AWD,2024,2,40.0,210.0
+Kia,EV6 Long Range AWD,2024,3,60.0,158.0
+Kia,EV6 Long Range AWD,2024,4,80.0,105.0
+Kia,EV6 Long Range AWD,2024,5,100.0,11.0
+Kia,EV9,2023,0,0.0,199.5
+Kia,EV9,2023,1,75.0,210.0
+Kia,EV9,2023,2,100.0,11.0
+Kia,EV9,2024,0,0.0,210.0
+Kia,EV9,2024,1,50.0,210.0
+Kia,EV9,2024,2,80.0,126.0
+Kia,EV9,2024,3,100.0,63.0
+Kia,EV9 76.1 kWh RWD,2024,0,0.0,210.0
+Kia,EV9 76.1 kWh RWD,2024,1,50.0,210.0
+Kia,EV9 76.1 kWh RWD,2024,2,80.0,126.0
+Kia,EV9 76.1 kWh RWD,2024,3,100.0,63.0
+Kia,EV9 99.8 kWh AWD GT-Line,2023,0,0.0,209.0
+Kia,EV9 99.8 kWh AWD GT-Line,2023,1,20.0,209.0
+Kia,EV9 99.8 kWh AWD GT-Line,2023,2,40.0,167.0
+Kia,EV9 99.8 kWh AWD GT-Line,2023,3,60.0,125.0
+Kia,EV9 99.8 kWh AWD GT-Line,2023,4,80.0,84.0
+Kia,EV9 99.8 kWh AWD GT-Line,2023,5,100.0,11.0
+Kia,Niro EV,2022,0,0.0,76.0
+Kia,Niro EV,2022,1,75.0,80.0
+Kia,Niro EV,2022,2,100.0,11.0
+Kia,Soul,2014,0,0.0,47.5
+Kia,Soul,2014,1,75.0,50.0
+Kia,Soul,2014,2,100.0,6.6
+Kia,Soul,2017,0,0.0,30.0
+Kia,Soul,2017,1,50.0,30.0
+Kia,Soul,2017,2,80.0,18.0
+Kia,Soul,2017,3,100.0,30.0
+Kia,Soul EV,2017,0,0.0,50.0
+Kia,Soul EV,2017,1,50.0,50.0
+Kia,Soul EV,2017,2,80.0,30.0
+Kia,Soul EV,2017,3,100.0,15.0
+Kia,e-Niro,2018,0,0.0,47.5
+Kia,e-Niro,2018,1,75.0,50.0
+Kia,e-Niro,2018,2,100.0,7.2
+Kia,e-Niro,2018,3,53.0,71.0
+Kia,e-Niro,2018,4,55.0,57.0
+Kia,e-Niro,2018,5,71.0,58.0
+Kia,e-Niro,2018,6,72.0,38.0
+Kia,e-Niro,2018,7,76.0,38.0
+Kia,e-Niro,2018,8,78.0,25.0
+Kia,e-Niro,2018,9,88.0,25.0
+Kia,e-Niro,2018,10,100.0,8.0
+Kia,e-Niro,2020,0,0.0,47.5
+Kia,e-Niro,2020,1,75.0,50.0
+Kia,e-Niro,2020,2,100.0,11.0
+Kia,e-Niro,2020,3,53.0,71.0
+Kia,e-Niro,2020,4,55.0,57.0
+Kia,e-Niro,2020,5,71.0,58.0
+Kia,e-Niro,2020,6,72.0,38.0
+Kia,e-Niro,2020,7,76.0,38.0
+Kia,e-Niro,2020,8,78.0,25.0
+Kia,e-Niro,2020,9,88.0,25.0
+Kia,e-Niro,2020,10,100.0,8.0
+Kia,e-Niro 64,2018,0,0.0,64.0
+Kia,e-Niro 64,2018,1,30.0,64.0
+Kia,e-Niro 64,2018,2,60.0,44.8
+Kia,e-Niro 64,2018,3,80.0,25.6
+Kia,e-Niro 64,2018,4,100.0,11.0
+Kia,e-Soul,2019,0,0.0,47.5
+Kia,e-Soul,2019,1,75.0,50.0
+Kia,e-Soul,2019,2,100.0,11.0
+Kia,e-Soul,2019,3,53.0,71.0
+Kia,e-Soul,2019,4,55.0,57.0
+Kia,e-Soul,2019,5,71.0,58.0
+Kia,e-Soul,2019,6,72.0,38.0
+Kia,e-Soul,2019,7,76.0,38.0
+Kia,e-Soul,2019,8,78.0,25.0
+Kia,e-Soul,2019,9,88.0,25.0
+Kia,e-Soul,2019,10,100.0,8.0
+Kia,e-Soul,2020,0,0.0,73.1
+Kia,e-Soul,2020,1,75.0,77.0
+Kia,e-Soul,2020,2,100.0,11.0
+Kia,e-Soul,2022,0,0.0,44.0
+Kia,e-Soul,2022,1,50.0,44.0
+Kia,e-Soul,2022,2,80.0,26.4
+Kia,e-Soul,2022,3,100.0,13.2
+Kia,e-Soul 39.2 kWh,2022,0,0.0,44.0
+Kia,e-Soul 39.2 kWh,2022,1,50.0,44.0
+Kia,e-Soul 39.2 kWh,2022,2,80.0,26.4
+Kia,e-Soul 39.2 kWh,2022,3,100.0,13.2
+Kia,ev,2022,0,0.0,64.8
+Kia,ev,2022,1,30.0,64.8
+Kia,ev,2022,2,60.0,45.36
+Kia,ev,2022,3,80.0,25.92
+Kia,ev,2022,4,100.0,11.0
+Kia,gt,2022,0,0.0,74.0
+Kia,gt,2022,1,40.0,74.0
+Kia,gt,2022,2,70.0,59.2
+Kia,gt,2022,3,90.0,29.6
+Kia,gt,2022,4,100.0,11.0
+Kia,long range,2021,0,0.0,74.0
+Kia,long range,2021,1,40.0,74.0
+Kia,long range,2021,2,70.0,59.2
+Kia,long range,2021,3,90.0,29.6
+Kia,long range,2021,4,100.0,11.0
+Kia,long range 2wd,2021,0,0.0,74.0
+Kia,long range 2wd,2021,1,40.0,74.0
+Kia,long range 2wd,2021,2,70.0,59.2
+Kia,long range 2wd,2021,3,90.0,29.6
+Kia,long range 2wd,2021,4,100.0,11.0
+Kia,standard range 2wd,2021,0,0.0,54.0
+Kia,standard range 2wd,2021,1,40.0,54.0
+Kia,standard range 2wd,2021,2,70.0,43.2
+Kia,standard range 2wd,2021,3,90.0,21.6
+Kia,standard range 2wd,2021,4,100.0,11.0
+Lancia,Ypsilon,2024,0,0.0,100.0
+Lancia,Ypsilon,2024,1,50.0,100.0
+Lancia,Ypsilon,2024,2,80.0,60.0
+Lancia,Ypsilon,2024,3,100.0,30.0
+Leapmotor,C10,2024,0,0.0,84.0
+Leapmotor,C10,2024,1,50.0,84.0
+Leapmotor,C10,2024,2,80.0,50.4
+Leapmotor,C10,2024,3,100.0,25.2
+Leapmotor,T03,2024,0,0.0,48.0
+Leapmotor,T03,2024,1,20.0,48.0
+Leapmotor,T03,2024,2,40.0,38.0
+Leapmotor,T03,2024,3,60.0,29.0
+Leapmotor,T03,2024,4,80.0,19.0
+Leapmotor,T03,2024,5,100.0,11.0
+Lexus,300e,2020,0,0.0,45.0
+Lexus,300e,2020,1,50.0,45.0
+Lexus,300e,2020,2,80.0,27.0
+Lexus,300e,2020,3,100.0,11.0
+Lexus,300e,2023,0,0.0,64.0
+Lexus,300e,2023,1,30.0,64.0
+Lexus,300e,2023,2,60.0,44.8
+Lexus,300e,2023,3,80.0,25.6
+Lexus,300e,2023,4,100.0,6.6
+Lexus,450e,2023,0,0.0,64.0
+Lexus,450e,2023,1,30.0,64.0
+Lexus,450e,2023,2,60.0,44.8
+Lexus,450e,2023,3,80.0,25.6
+Lexus,450e,2023,4,100.0,6.6
+Lexus,RZ 300e,2023,0,0.0,147.0
+Lexus,RZ 300e,2023,1,20.0,147.0
+Lexus,RZ 300e,2023,2,40.0,118.0
+Lexus,RZ 300e,2023,3,60.0,88.0
+Lexus,RZ 300e,2023,4,80.0,59.0
+Lexus,RZ 300e,2023,5,100.0,11.0
+Lexus,RZ 450e,2022,0,0.0,142.5
+Lexus,RZ 450e,2022,1,75.0,150.0
+Lexus,RZ 450e,2022,2,100.0,11.0
+Lexus,UX 300e,2023,0,0.0,50.0
+Lexus,UX 300e,2023,1,50.0,50.0
+Lexus,UX 300e,2023,2,80.0,25.0
+Lexus,UX 300e,2023,3,100.0,10.0
+Lightyear,0,2022,0,0.0,100.0
+Lightyear,0,2022,1,50.0,100.0
+Lightyear,0,2022,2,80.0,60.0
+Lightyear,0,2022,3,100.0,11.0
+Lotus,Eletre,2023,0,0.0,109.0
+Lotus,Eletre,2023,1,40.0,109.0
+Lotus,Eletre,2023,2,70.0,87.2
+Lotus,Eletre,2023,3,90.0,43.6
+Lotus,Eletre,2023,4,100.0,22.0
+Lotus,Eletre,2024,0,0.0,95.0
+Lotus,Eletre,2024,1,22.0,100.0
+Lotus,Eletre,2024,2,27.0,97.0
+Lotus,Eletre,2024,3,46.0,96.0
+Lotus,Eletre,2024,4,49.0,92.0
+Lotus,Eletre,2024,5,75.0,60.0
+Lotus,Eletre,2024,6,90.0,40.0
+Lotus,Eletre,2024,7,100.0,22.0
+Lotus,Eletre R,2023,0,0.0,367.0
+Lotus,Eletre R,2023,1,50.0,367.0
+Lotus,Eletre R,2023,2,80.0,220.2
+Lotus,Eletre R,2023,3,100.0,110.1
+Lotus,Eletre S,2023,0,0.0,109.0
+Lotus,Eletre S,2023,1,40.0,109.0
+Lotus,Eletre S,2023,2,70.0,87.2
+Lotus,Eletre S,2023,3,90.0,43.6
+Lotus,Eletre S,2023,4,100.0,22.0
+Lotus,Emeya,2024,0,0.0,350.0
+Lotus,Emeya,2024,1,50.0,350.0
+Lotus,Emeya,2024,2,80.0,175.0
+Lotus,Emeya,2024,3,100.0,70.0
+Lotus,Emeya R,2024,0,0.0,350.0
+Lotus,Emeya R,2024,1,50.0,350.0
+Lotus,Emeya R,2024,2,80.0,175.0
+Lotus,Emeya R,2024,3,100.0,70.0
+Lotus,Emeya S,2024,0,0.0,350.0
+Lotus,Emeya S,2024,1,50.0,350.0
+Lotus,Emeya S,2024,2,80.0,175.0
+Lotus,Emeya S,2024,3,100.0,70.0
+Lotus,r,2023,0,0.0,109.0
+Lotus,r,2023,1,40.0,109.0
+Lotus,r,2023,2,70.0,87.2
+Lotus,r,2023,3,90.0,43.6
+Lotus,r,2023,4,100.0,22.0
+Lucid,Air,2022,0,0.0,285.0
+Lucid,Air,2022,1,75.0,300.0
+Lucid,Air,2022,2,100.0,22.0
+Lucid,Air Dream Edition,2022,0,0.0,118.0
+Lucid,Air Dream Edition,2022,1,40.0,118.0
+Lucid,Air Dream Edition,2022,2,70.0,94.4
+Lucid,Air Dream Edition,2022,3,90.0,47.2
+Lucid,Air Dream Edition,2022,4,100.0,11.0
+Lucid,Air Dream Edition P,2022,0,0.0,300.0
+Lucid,Air Dream Edition P,2022,1,50.0,300.0
+Lucid,Air Dream Edition P,2022,2,80.0,150.0
+Lucid,Air Dream Edition P,2022,3,100.0,60.0
+Lucid,Air Grand Touring,2023,0,0.0,253.0
+Lucid,Air Grand Touring,2023,1,20.0,253.0
+Lucid,Air Grand Touring,2023,2,40.0,202.0
+Lucid,Air Grand Touring,2023,3,60.0,152.0
+Lucid,Air Grand Touring,2023,4,80.0,101.0
+Lucid,Air Grand Touring,2023,5,100.0,11.0
+Lucid,Air Pure AWD,2023,0,0.0,200.0
+Lucid,Air Pure AWD,2023,1,50.0,200.0
+Lucid,Air Pure AWD,2023,2,80.0,120.0
+Lucid,Air Pure AWD,2023,3,100.0,60.0
+Lucid,Air Pure RWD,2024,0,0.0,200.0
+Lucid,Air Pure RWD,2024,1,50.0,200.0
+Lucid,Air Pure RWD,2024,2,80.0,120.0
+Lucid,Air Pure RWD,2024,3,100.0,60.0
+Lucid,Air Touring,2023,0,0.0,200.0
+Lucid,Air Touring,2023,1,50.0,200.0
+Lucid,Air Touring,2023,2,80.0,120.0
+Lucid,Air Touring,2023,3,100.0,60.0
+Lucid,dream edition r,2022,0,0.0,118.0
+Lucid,dream edition r,2022,1,40.0,118.0
+Lucid,dream edition r,2022,2,70.0,94.4
+Lucid,dream edition r,2022,3,90.0,47.2
+Lucid,dream edition r,2022,4,100.0,22.0
+Lucid,grand touring,2023,0,0.0,112.0
+Lucid,grand touring,2023,1,20.0,112.0
+Lucid,grand touring,2023,2,40.0,90.0
+Lucid,grand touring,2023,3,60.0,67.0
+Lucid,grand touring,2023,4,80.0,45.0
+Lucid,grand touring,2023,5,100.0,11.0
+Lucid,pure,2023,0,0.0,92.0
+Lucid,pure,2023,1,20.0,92.0
+Lucid,pure,2023,2,40.0,74.0
+Lucid,pure,2023,3,60.0,55.0
+Lucid,pure,2023,4,80.0,37.0
+Lucid,pure,2023,5,100.0,11.0
+Lucid,touring,2023,0,0.0,92.0
+Lucid,touring,2023,1,20.0,92.0
+Lucid,touring,2023,2,40.0,74.0
+Lucid,touring,2023,3,60.0,55.0
+Lucid,touring,2023,4,80.0,37.0
+Lucid,touring,2023,5,100.0,11.0
+MAN,e TGE,2020,0,0.0,38.0
+MAN,e TGE,2020,1,75.0,40.0
+MAN,e TGE,2020,2,100.0,7.2
+MG,Cyberster GT,2024,0,0.0,144.0
+MG,Cyberster GT,2024,1,50.0,144.0
+MG,Cyberster GT,2024,2,80.0,72.0
+MG,Cyberster GT,2024,3,100.0,28.8
+MG,Cyberster Trophy,2024,0,0.0,144.0
+MG,Cyberster Trophy,2024,1,50.0,144.0
+MG,Cyberster Trophy,2024,2,80.0,72.0
+MG,Cyberster Trophy,2024,3,100.0,28.8
+MG,MG4 EV,2022,0,0.0,128.3
+MG,MG4 EV,2022,1,75.0,135.0
+MG,MG4 EV,2022,2,100.0,11.0
+MG,MG4 EV,2023,0,0.0,136.8
+MG,MG4 EV,2023,1,75.0,144.0
+MG,MG4 EV,2023,2,100.0,11.0
+MG,MG4 Electric 51 kWh,2022,0,0.0,87.0
+MG,MG4 Electric 51 kWh,2022,1,20.0,87.0
+MG,MG4 Electric 51 kWh,2022,2,40.0,70.0
+MG,MG4 Electric 51 kWh,2022,3,60.0,52.0
+MG,MG4 Electric 51 kWh,2022,4,80.0,35.0
+MG,MG4 Electric 51 kWh,2022,5,100.0,11.0
+MG,MG4 Electric 64 kWh,2022,0,0.0,142.0
+MG,MG4 Electric 64 kWh,2022,1,50.0,142.0
+MG,MG4 Electric 64 kWh,2022,2,80.0,85.2
+MG,MG4 Electric 64 kWh,2022,3,100.0,42.6
+MG,MG4 Electric 77 kWh,2023,0,0.0,144.0
+MG,MG4 Electric 77 kWh,2023,1,20.0,144.0
+MG,MG4 Electric 77 kWh,2023,2,40.0,115.0
+MG,MG4 Electric 77 kWh,2023,3,60.0,86.0
+MG,MG4 Electric 77 kWh,2023,4,80.0,58.0
+MG,MG4 Electric 77 kWh,2023,5,100.0,11.0
+MG,MG4 Electric XPOWER,2023,0,0.0,142.0
+MG,MG4 Electric XPOWER,2023,1,50.0,142.0
+MG,MG4 Electric XPOWER,2023,2,80.0,85.2
+MG,MG4 Electric XPOWER,2023,3,100.0,42.6
+MG,MG5 EV,2020,0,0.0,70.0
+MG,MG5 EV,2020,1,10.0,80.0
+MG,MG5 EV,2020,2,20.0,70.0
+MG,MG5 EV,2020,3,80.0,55.0
+MG,MG5 EV,2020,4,83.0,18.0
+MG,MG5 EV,2020,5,90.0,18.0
+MG,MG5 EV,2020,6,100.0,6.6
+MG,MG5 EV,2022,0,0.0,70.0
+MG,MG5 EV,2022,1,10.0,80.0
+MG,MG5 EV,2022,2,20.0,70.0
+MG,MG5 EV,2022,3,80.0,55.0
+MG,MG5 EV,2022,4,83.0,18.0
+MG,MG5 EV,2022,5,90.0,18.0
+MG,MG5 EV,2022,6,100.0,6.6
+MG,MG5 Electric Long Range,2022,0,0.0,87.0
+MG,MG5 Electric Long Range,2022,1,20.0,87.0
+MG,MG5 Electric Long Range,2022,2,40.0,70.0
+MG,MG5 Electric Long Range,2022,3,60.0,52.0
+MG,MG5 Electric Long Range,2022,4,80.0,35.0
+MG,MG5 Electric Long Range,2022,5,100.0,11.0
+MG,MG5 Electric Standard Range,2022,0,0.0,63.0
+MG,MG5 Electric Standard Range,2022,1,50.0,63.0
+MG,MG5 Electric Standard Range,2022,2,80.0,37.8
+MG,MG5 Electric Standard Range,2022,3,100.0,18.9
+MG,MGS5  EV 49 kWh,2025,0,0.0,120.0
+MG,MGS5  EV 49 kWh,2025,1,50.0,120.0
+MG,MGS5  EV 49 kWh,2025,2,80.0,60.0
+MG,MGS5  EV 49 kWh,2025,3,100.0,24.0
+MG,MGS5  EV 64 kWh,2025,0,0.0,139.0
+MG,MGS5  EV 64 kWh,2025,1,50.0,139.0
+MG,MGS5  EV 64 kWh,2025,2,80.0,69.5
+MG,MGS5  EV 64 kWh,2025,3,100.0,27.8
+MG,Marvel R,2021,0,0.0,89.3
+MG,Marvel R,2021,1,75.0,94.0
+MG,Marvel R,2021,2,100.0,11.0
+MG,ZS EV,2020,0,0.0,72.2
+MG,ZS EV,2020,1,75.0,76.0
+MG,ZS EV,2020,2,100.0,11.0
+MG,ZS EV,2020,3,80.0,55.0
+MG,ZS EV,2020,4,83.0,18.0
+MG,ZS EV,2020,5,90.0,18.0
+MG,ZS EV,2020,6,100.0,6.6
+MG,ZS EV,2022,0,0.0,75.0
+MG,ZS EV,2022,1,5.0,85.0
+MG,ZS EV,2022,2,45.0,94.0
+MG,ZS EV,2022,3,46.0,75.0
+MG,ZS EV,2022,4,60.0,78.0
+MG,ZS EV,2022,5,75.0,60.0
+MG,ZS EV,2022,6,83.0,60.0
+MG,ZS EV,2022,7,85.0,25.0
+MG,ZS EV,2022,8,90.0,25.0
+MG,ZS EV,2022,9,100.0,6.0
+MG,electric,2022,0,0.0,50.8
+MG,electric,2022,1,50.0,50.8
+MG,electric,2022,2,80.0,30.48
+MG,electric,2022,3,100.0,6.6
+MG,electric,2022,4,100.0,6.6
+MG,electric,2023,0,0.0,74.4
+MG,electric,2023,1,30.0,74.4
+MG,electric,2023,2,60.0,52.08
+MG,electric,2023,3,80.0,29.76
+MG,electric,2023,4,100.0,6.6
+MG,electric long range,2022,0,0.0,57.4
+MG,electric long range,2022,1,50.0,57.4
+MG,electric long range,2022,2,80.0,34.44
+MG,electric long range,2022,3,100.0,11.0
+MG,electric standard range,2022,0,0.0,46.0
+MG,electric standard range,2022,1,20.0,46.0
+MG,electric standard range,2022,2,40.0,37.0
+MG,electric standard range,2022,3,60.0,28.0
+MG,electric standard range,2022,4,80.0,18.0
+MG,electric standard range,2022,5,100.0,11.0
+MG,electric xpower,2023,0,0.0,61.7
+MG,electric xpower,2023,1,30.0,61.7
+MG,electric xpower,2023,2,60.0,43.19
+MG,electric xpower,2023,3,80.0,24.68
+MG,electric xpower,2023,4,100.0,6.6
+MG,ev,2019,0,0.0,42.5
+MG,ev,2019,1,50.0,42.5
+MG,ev,2019,2,80.0,25.5
+MG,ev,2019,3,100.0,42.5
+MG,ev,2020,0,0.0,48.8
+MG,ev,2020,1,20.0,48.8
+MG,ev,2020,2,40.0,39.0
+MG,ev,2020,3,60.0,29.0
+MG,ev,2020,4,80.0,20.0
+MG,ev,2020,5,100.0,11.0
+MG,ev long range,2020,0,0.0,57.4
+MG,ev long range,2020,1,50.0,57.4
+MG,ev long range,2020,2,80.0,34.44
+MG,ev long range,2020,3,100.0,11.0
+MG,ev long range,2021,0,0.0,68.3
+MG,ev long range,2021,1,20.0,68.3
+MG,ev long range,2021,2,40.0,55.0
+MG,ev long range,2021,3,60.0,41.0
+MG,ev long range,2021,4,80.0,27.0
+MG,ev long range,2021,5,100.0,11.0
+MG,ev standard range,2021,0,0.0,49.0
+MG,ev standard range,2021,1,50.0,49.0
+MG,ev standard range,2021,2,80.0,29.4
+MG,ev standard range,2021,3,100.0,11.0
+MG,r,2021,0,0.0,70.0
+MG,r,2021,1,30.0,70.0
+MG,r,2021,2,60.0,49.0
+MG,r,2021,3,80.0,28.0
+MG,r,2021,4,100.0,11.0
+Maserati,GranCabrio Folgore,2024,0,0.0,270.0
+Maserati,GranCabrio Folgore,2024,1,50.0,270.0
+Maserati,GranCabrio Folgore,2024,2,80.0,162.0
+Maserati,GranCabrio Folgore,2024,3,100.0,81.0
+Maserati,GranTurismo,2024,0,0.0,256.5
+Maserati,GranTurismo,2024,1,75.0,270.0
+Maserati,GranTurismo,2024,2,100.0,22.0
+Maserati,Grecale,2024,0,0.0,142.5
+Maserati,Grecale,2024,1,75.0,150.0
+Maserati,Grecale,2024,2,100.0,22.0
+Maserati,folgore,2024,0,0.0,83.0
+Maserati,folgore,2024,1,40.0,83.0
+Maserati,folgore,2024,2,70.0,66.4
+Maserati,folgore,2024,3,90.0,33.2
+Maserati,folgore,2024,4,100.0,22.0
+Maxus,9,2023,0,0.0,84.0
+Maxus,9,2023,1,30.0,84.0
+Maxus,9,2023,2,60.0,58.8
+Maxus,9,2023,3,80.0,33.6
+Maxus,9,2023,4,100.0,11.0
+Maxus,EV80,2018,0,0.0,26.6
+Maxus,EV80,2018,1,75.0,28.0
+Maxus,EV80,2018,2,100.0,6.6
+Maxus,MIFA 9,2023,0,0.0,114.0
+Maxus,MIFA 9,2023,1,20.0,114.0
+Maxus,MIFA 9,2023,2,40.0,91.0
+Maxus,MIFA 9,2023,3,60.0,68.0
+Maxus,MIFA 9,2023,4,80.0,46.0
+Maxus,MIFA 9,2023,5,100.0,11.0
+Mazda,6e,2025,0,0.0,200.0
+Mazda,6e,2025,1,50.0,200.0
+Mazda,6e,2025,2,80.0,100.0
+Mazda,6e,2025,3,100.0,40.0
+Mazda,6e Long Range,2025,0,0.0,95.0
+Mazda,6e Long Range,2025,1,50.0,95.0
+Mazda,6e Long Range,2025,2,80.0,57.0
+Mazda,6e Long Range,2025,3,100.0,28.5
+Mazda,MX-30,2022,0,0.0,30.0
+Mazda,MX-30,2022,1,50.0,30.0
+Mazda,MX-30,2022,2,80.0,18.0
+Mazda,MX-30,2022,3,100.0,11.0
+Mercedes,200 standard,2023,0,0.0,45.0
+Mercedes,200 standard,2023,1,50.0,45.0
+Mercedes,200 standard,2023,2,80.0,27.0
+Mercedes,200 standard,2023,3,100.0,22.0
+Mercedes,250,2021,0,0.0,66.5
+Mercedes,250,2021,1,30.0,66.5
+Mercedes,250,2021,2,60.0,46.55
+Mercedes,250,2021,3,80.0,26.6
+Mercedes,250,2021,4,100.0,11.0
+Mercedes,250,2022,0,0.0,66.5
+Mercedes,250,2022,1,30.0,66.5
+Mercedes,250,2022,2,60.0,46.55
+Mercedes,250,2022,3,80.0,26.6
+Mercedes,250,2022,4,100.0,11.0
+Mercedes,250,2023,0,0.0,66.5
+Mercedes,250,2023,1,30.0,66.5
+Mercedes,250,2023,2,60.0,46.55
+Mercedes,250,2023,3,80.0,26.6
+Mercedes,250,2023,4,100.0,11.0
+Mercedes,250 extra-long,2021,0,0.0,60.0
+Mercedes,250 extra-long,2021,1,50.0,60.0
+Mercedes,250 extra-long,2021,2,80.0,36.0
+Mercedes,250 extra-long,2021,3,100.0,11.0
+Mercedes,250 long,2021,0,0.0,60.0
+Mercedes,250 long,2021,1,50.0,60.0
+Mercedes,250 long,2021,2,80.0,36.0
+Mercedes,250 long,2021,3,100.0,11.0
+Mercedes,250+,2022,0,0.0,70.5
+Mercedes,250+,2022,1,30.0,70.5
+Mercedes,250+,2022,2,60.0,49.35
+Mercedes,250+,2022,3,80.0,28.2
+Mercedes,250+,2022,4,100.0,11.0
+Mercedes,250+,2023,0,0.0,70.5
+Mercedes,250+,2023,1,30.0,70.5
+Mercedes,250+,2023,2,60.0,49.35
+Mercedes,250+,2023,3,80.0,28.2
+Mercedes,250+,2023,4,100.0,11.0
+Mercedes,300,2021,0,0.0,66.5
+Mercedes,300,2021,1,30.0,66.5
+Mercedes,300,2021,2,60.0,46.55
+Mercedes,300,2021,3,80.0,26.6
+Mercedes,300,2021,4,100.0,11.0
+Mercedes,300,2022,0,0.0,66.5
+Mercedes,300,2022,1,30.0,66.5
+Mercedes,300,2022,2,60.0,46.55
+Mercedes,300,2022,3,80.0,26.6
+Mercedes,300,2022,4,100.0,11.0
+Mercedes,300,2023,0,0.0,89.0
+Mercedes,300,2023,1,30.0,89.0
+Mercedes,300,2023,2,60.0,62.3
+Mercedes,300,2023,3,80.0,35.6
+Mercedes,300,2023,4,100.0,11.0
+Mercedes,300 extra-long,2020,0,0.0,90.0
+Mercedes,300 extra-long,2020,1,20.0,90.0
+Mercedes,300 extra-long,2020,2,40.0,72.0
+Mercedes,300 extra-long,2020,3,60.0,54.0
+Mercedes,300 extra-long,2020,4,80.0,36.0
+Mercedes,300 extra-long,2020,5,100.0,11.0
+Mercedes,300 long,2020,0,0.0,90.0
+Mercedes,300 long,2020,1,20.0,90.0
+Mercedes,300 long,2020,2,40.0,72.0
+Mercedes,300 long,2020,3,60.0,54.0
+Mercedes,300 long,2020,4,80.0,36.0
+Mercedes,300 long,2020,5,100.0,11.0
+Mercedes,350,2021,0,0.0,66.5
+Mercedes,350,2021,1,30.0,66.5
+Mercedes,350,2021,2,60.0,46.55
+Mercedes,350,2021,3,80.0,26.6
+Mercedes,350,2021,4,100.0,11.0
+Mercedes,350,2021,5,100.0,11.0
+Mercedes,350,2022,0,0.0,90.6
+Mercedes,350,2022,1,30.0,90.6
+Mercedes,350,2022,2,60.0,63.42
+Mercedes,350,2022,3,80.0,36.24
+Mercedes,350,2022,4,100.0,11.0
+Mercedes,350,2023,0,0.0,89.0
+Mercedes,350,2023,1,30.0,89.0
+Mercedes,350,2023,2,60.0,62.3
+Mercedes,350,2023,3,80.0,35.6
+Mercedes,350,2023,4,100.0,11.0
+Mercedes,350+,2022,0,0.0,90.6
+Mercedes,350+,2022,1,20.0,90.6
+Mercedes,350+,2022,2,40.0,72.0
+Mercedes,350+,2022,3,60.0,54.0
+Mercedes,350+,2022,4,80.0,36.0
+Mercedes,350+,2022,5,100.0,11.0
+Mercedes,350+,2023,0,0.0,90.6
+Mercedes,350+,2023,1,30.0,90.6
+Mercedes,350+,2023,2,60.0,63.42
+Mercedes,350+,2023,3,80.0,36.24
+Mercedes,350+,2023,4,100.0,11.0
+Mercedes,400,2019,0,0.0,80.0
+Mercedes,400,2019,1,30.0,80.0
+Mercedes,400,2019,2,60.0,56.0
+Mercedes,400,2019,3,80.0,32.0
+Mercedes,400,2019,4,100.0,11.0
+Mercedes,400,2020,0,0.0,80.0
+Mercedes,400,2020,1,30.0,80.0
+Mercedes,400,2020,2,60.0,56.0
+Mercedes,400,2020,3,80.0,32.0
+Mercedes,400,2020,4,100.0,11.0
+Mercedes,450,2022,0,0.0,107.8
+Mercedes,450,2022,1,30.0,107.8
+Mercedes,450,2022,2,60.0,75.46
+Mercedes,450,2022,3,80.0,43.12
+Mercedes,450,2022,4,100.0,11.0
+Mercedes,450,2023,0,0.0,108.4
+Mercedes,450,2023,1,30.0,108.4
+Mercedes,450,2023,2,60.0,75.88
+Mercedes,450,2023,3,80.0,43.36
+Mercedes,450,2023,4,100.0,11.0
+Mercedes,450+,2021,0,0.0,107.8
+Mercedes,450+,2021,1,20.0,107.8
+Mercedes,450+,2021,2,40.0,86.0
+Mercedes,450+,2021,3,60.0,65.0
+Mercedes,450+,2021,4,80.0,43.0
+Mercedes,450+,2021,5,100.0,11.0
+Mercedes,450+,2023,0,0.0,108.4
+Mercedes,450+,2023,1,30.0,108.4
+Mercedes,450+,2023,2,60.0,75.88
+Mercedes,450+,2023,3,80.0,43.36
+Mercedes,450+,2023,4,100.0,11.0
+Mercedes,500,2022,0,0.0,107.8
+Mercedes,500,2022,1,30.0,107.8
+Mercedes,500,2022,2,60.0,75.46
+Mercedes,500,2022,3,80.0,43.12
+Mercedes,500,2022,4,100.0,11.0
+Mercedes,500,2023,0,0.0,90.6
+Mercedes,500,2023,1,30.0,90.6
+Mercedes,500,2023,2,60.0,63.42
+Mercedes,500,2023,3,80.0,36.24
+Mercedes,500,2023,4,100.0,11.0
+Mercedes,580,2021,0,0.0,107.8
+Mercedes,580,2021,1,20.0,107.8
+Mercedes,580,2021,2,40.0,86.0
+Mercedes,580,2021,3,60.0,65.0
+Mercedes,580,2021,4,80.0,43.0
+Mercedes,580,2021,5,100.0,11.0
+Mercedes,580,2023,0,0.0,108.4
+Mercedes,580,2023,1,30.0,108.4
+Mercedes,580,2023,2,60.0,75.88
+Mercedes,580,2023,3,80.0,43.36
+Mercedes,580,2023,4,100.0,11.0
+Mercedes,B 250e,2015,0,0.0,150.0
+Mercedes,B 250e,2015,1,20.0,150.0
+Mercedes,B 250e,2015,2,40.0,120.0
+Mercedes,B 250e,2015,3,60.0,90.0
+Mercedes,B 250e,2015,4,80.0,60.0
+Mercedes,B 250e,2015,5,100.0,11.0
+Mercedes,B-Klasse,2014,0,0.0,150.0
+Mercedes,B-Klasse,2014,1,20.0,150.0
+Mercedes,B-Klasse,2014,2,40.0,120.0
+Mercedes,B-Klasse,2014,3,60.0,90.0
+Mercedes,B-Klasse,2014,4,80.0,60.0
+Mercedes,B-Klasse,2014,5,100.0,11.0
+Mercedes,CLA,2025,0,0.0,320.0
+Mercedes,CLA,2025,1,50.0,320.0
+Mercedes,CLA,2025,2,80.0,160.0
+Mercedes,CLA,2025,3,100.0,64.0
+Mercedes,EQA,2021,0,0.0,99.0
+Mercedes,EQA,2021,1,35.0,98.0
+Mercedes,EQA,2021,2,65.0,70.0
+Mercedes,EQA,2021,3,85.0,36.0
+Mercedes,EQA,2021,4,100.0,1.0
+Mercedes,EQA,2023,0,0.0,102.0
+Mercedes,EQA,2023,1,20.0,102.0
+Mercedes,EQA,2023,2,40.0,82.0
+Mercedes,EQA,2023,3,60.0,61.0
+Mercedes,EQA,2023,4,80.0,41.0
+Mercedes,EQA,2023,5,100.0,11.0
+Mercedes,EQB,2022,0,0.0,112.0
+Mercedes,EQB,2022,1,50.0,112.0
+Mercedes,EQB,2022,2,80.0,67.2
+Mercedes,EQB,2022,3,100.0,33.6
+Mercedes,EQB,2023,0,0.0,96.9
+Mercedes,EQB,2023,1,75.0,102.0
+Mercedes,EQB,2023,2,100.0,11.0
+Mercedes,EQB,2023,3,100.0,33.6
+Mercedes,EQC,2019,0,0.0,105.0
+Mercedes,EQC,2019,1,39.0,125.0
+Mercedes,EQC,2019,2,70.0,87.0
+Mercedes,EQC,2019,3,84.0,68.0
+Mercedes,EQC,2019,4,100.0,25.0
+Mercedes,EQC,2020,0,0.0,105.0
+Mercedes,EQC,2020,1,39.0,125.0
+Mercedes,EQC,2020,2,70.0,87.0
+Mercedes,EQC,2020,3,84.0,68.0
+Mercedes,EQC,2020,4,100.0,25.0
+Mercedes,EQE,2023,0,0.0,164.35
+Mercedes,EQE,2023,1,50.0,173.0
+Mercedes,EQE,2023,2,80.0,86.5
+Mercedes,EQE,2023,3,100.0,34.6
+Mercedes,EQE,2024,0,0.0,173.0
+Mercedes,EQE,2024,1,50.0,173.0
+Mercedes,EQE,2024,2,80.0,103.8
+Mercedes,EQE,2024,3,100.0,51.9
+Mercedes,EQE,2024,4,100.0,34.6
+Mercedes,EQS,2021,0,0.0,170.0
+Mercedes,EQS,2021,1,10.0,200.0
+Mercedes,EQS,2021,2,35.0,204.0
+Mercedes,EQS,2021,3,82.0,120.0
+Mercedes,EQS,2021,4,100.0,10.0
+Mercedes,EQS,2022,0,0.0,161.5
+Mercedes,EQS,2022,1,75.0,170.0
+Mercedes,EQS,2022,2,100.0,11.0
+Mercedes,EQS,2022,3,82.0,120.0
+Mercedes,EQS,2022,4,100.0,10.0
+Mercedes,EQS,2023,0,0.0,200.0
+Mercedes,EQS,2023,1,50.0,200.0
+Mercedes,EQS,2023,2,80.0,120.0
+Mercedes,EQS,2023,3,100.0,60.0
+Mercedes,EQS,2024,0,0.0,200.0
+Mercedes,EQS,2024,1,50.0,200.0
+Mercedes,EQS,2024,2,80.0,120.0
+Mercedes,EQS,2024,3,100.0,60.0
+Mercedes,EQV,2020,0,0.0,104.5
+Mercedes,EQV,2020,1,75.0,110.0
+Mercedes,EQV,2020,2,100.0,11.0
+Mercedes,EQV,2024,0,0.0,110.0
+Mercedes,EQV,2024,1,50.0,110.0
+Mercedes,EQV,2024,2,80.0,66.0
+Mercedes,EQV,2024,3,100.0,33.0
+Mercedes,G 580,2024,0,0.0,200.0
+Mercedes,G 580,2024,1,50.0,200.0
+Mercedes,G 580,2024,2,80.0,120.0
+Mercedes,G 580,2024,3,100.0,60.0
+Mercedes,amg 43,2022,0,0.0,90.6
+Mercedes,amg 43,2022,1,20.0,90.6
+Mercedes,amg 43,2022,2,40.0,72.0
+Mercedes,amg 43,2022,3,60.0,54.0
+Mercedes,amg 43,2022,4,80.0,36.0
+Mercedes,amg 43,2022,5,100.0,11.0
+Mercedes,amg 43,2023,0,0.0,90.6
+Mercedes,amg 43,2023,1,30.0,90.6
+Mercedes,amg 43,2023,2,60.0,63.42
+Mercedes,amg 43,2023,3,80.0,36.24
+Mercedes,amg 43,2023,4,100.0,11.0
+Mercedes,amg 53,2022,0,0.0,90.6
+Mercedes,amg 53,2022,1,20.0,90.6
+Mercedes,amg 53,2022,2,40.0,72.0
+Mercedes,amg 53,2022,3,60.0,54.0
+Mercedes,amg 53,2022,4,80.0,36.0
+Mercedes,amg 53,2022,5,100.0,11.0
+Mercedes,amg 53,2023,0,0.0,90.6
+Mercedes,amg 53,2023,1,30.0,90.6
+Mercedes,amg 53,2023,2,60.0,63.42
+Mercedes,amg 53,2023,3,80.0,36.24
+Mercedes,amg 53,2023,4,100.0,11.0
+Mercedes,eVito,2019,0,0.0,150.0
+Mercedes,eVito,2019,1,20.0,150.0
+Mercedes,eVito,2019,2,40.0,120.0
+Mercedes,eVito,2019,3,60.0,90.0
+Mercedes,eVito,2019,4,80.0,60.0
+Mercedes,eVito,2019,5,100.0,11.0
+Mercedes,suv 300,2023,0,0.0,89.0
+Mercedes,suv 300,2023,1,30.0,89.0
+Mercedes,suv 300,2023,2,60.0,62.3
+Mercedes,suv 300,2023,3,80.0,35.6
+Mercedes,suv 300,2023,4,100.0,11.0
+Mercedes,suv 350,2022,0,0.0,89.0
+Mercedes,suv 350,2022,1,30.0,89.0
+Mercedes,suv 350,2022,2,60.0,62.3
+Mercedes,suv 350,2022,3,80.0,35.6
+Mercedes,suv 350,2022,4,100.0,11.0
+Mercedes,suv 350,2023,0,0.0,90.6
+Mercedes,suv 350,2023,1,30.0,90.6
+Mercedes,suv 350,2023,2,60.0,63.42
+Mercedes,suv 350,2023,3,80.0,36.24
+Mercedes,suv 350,2023,4,100.0,11.0
+Mercedes,suv 350+,2022,0,0.0,90.6
+Mercedes,suv 350+,2022,1,30.0,90.6
+Mercedes,suv 350+,2022,2,60.0,63.42
+Mercedes,suv 350+,2022,3,80.0,36.24
+Mercedes,suv 350+,2022,4,100.0,11.0
+Mercedes,suv 350+,2023,0,0.0,96.0
+Mercedes,suv 350+,2023,1,30.0,96.0
+Mercedes,suv 350+,2023,2,60.0,67.2
+Mercedes,suv 350+,2023,3,80.0,38.4
+Mercedes,suv 350+,2023,4,100.0,11.0
+Mercedes,suv 450,2022,0,0.0,108.4
+Mercedes,suv 450,2022,1,30.0,108.4
+Mercedes,suv 450,2022,2,60.0,75.88
+Mercedes,suv 450,2022,3,80.0,43.36
+Mercedes,suv 450,2022,4,100.0,11.0
+Mercedes,suv 450,2023,0,0.0,118.0
+Mercedes,suv 450,2023,1,30.0,118.0
+Mercedes,suv 450,2023,2,60.0,82.6
+Mercedes,suv 450,2023,3,80.0,47.2
+Mercedes,suv 450,2023,4,100.0,11.0
+Mercedes,suv 450+,2022,0,0.0,108.4
+Mercedes,suv 450+,2022,1,30.0,108.4
+Mercedes,suv 450+,2022,2,60.0,75.88
+Mercedes,suv 450+,2022,3,80.0,43.36
+Mercedes,suv 450+,2022,4,100.0,11.0
+Mercedes,suv 450+,2023,0,0.0,118.0
+Mercedes,suv 450+,2023,1,30.0,118.0
+Mercedes,suv 450+,2023,2,60.0,82.6
+Mercedes,suv 450+,2023,3,80.0,47.2
+Mercedes,suv 450+,2023,4,100.0,11.0
+Mercedes,suv 500,2022,0,0.0,90.6
+Mercedes,suv 500,2022,1,30.0,90.6
+Mercedes,suv 500,2022,2,60.0,63.42
+Mercedes,suv 500,2022,3,80.0,36.24
+Mercedes,suv 500,2022,4,100.0,11.0
+Mercedes,suv 500,2023,0,0.0,96.0
+Mercedes,suv 500,2023,1,30.0,96.0
+Mercedes,suv 500,2023,2,60.0,67.2
+Mercedes,suv 500,2023,3,80.0,38.4
+Mercedes,suv 500,2023,4,100.0,11.0
+Mercedes,suv 580,2022,0,0.0,108.4
+Mercedes,suv 580,2022,1,30.0,108.4
+Mercedes,suv 580,2022,2,60.0,75.88
+Mercedes,suv 580,2022,3,80.0,43.36
+Mercedes,suv 580,2022,4,100.0,11.0
+Mercedes,suv 580,2023,0,0.0,118.0
+Mercedes,suv 580,2023,1,30.0,118.0
+Mercedes,suv 580,2023,2,60.0,82.6
+Mercedes,suv 580,2023,3,80.0,47.2
+Mercedes,suv 580,2023,4,100.0,11.0
+Mercedes,suv amg 43,2022,0,0.0,90.6
+Mercedes,suv amg 43,2022,1,30.0,90.6
+Mercedes,suv amg 43,2022,2,60.0,63.42
+Mercedes,suv amg 43,2022,3,80.0,36.24
+Mercedes,suv amg 43,2022,4,100.0,22.0
+Mercedes,suv amg 53,2023,0,0.0,90.6
+Mercedes,suv amg 53,2023,1,30.0,90.6
+Mercedes,suv amg 53,2023,2,60.0,63.42
+Mercedes,suv amg 53,2023,3,80.0,36.24
+Mercedes,suv amg 53,2023,4,100.0,22.0
+Mercedes,suv maybach 680,2024,0,0.0,118.0
+Mercedes,suv maybach 680,2024,1,30.0,118.0
+Mercedes,suv maybach 680,2024,2,60.0,82.6
+Mercedes,suv maybach 680,2024,3,80.0,47.2
+Mercedes,suv maybach 680,2024,4,100.0,22.0
+Mercedes,tourer extra-long,2019,0,0.0,35.0
+Mercedes,tourer extra-long,2019,1,50.0,35.0
+Mercedes,tourer extra-long,2019,2,80.0,21.0
+Mercedes,tourer extra-long,2019,3,100.0,35.0
+Mercedes,tourer extra-long,2020,0,0.0,90.0
+Mercedes,tourer extra-long,2020,1,20.0,90.0
+Mercedes,tourer extra-long,2020,2,40.0,72.0
+Mercedes,tourer extra-long,2020,3,60.0,54.0
+Mercedes,tourer extra-long,2020,4,80.0,36.0
+Mercedes,tourer extra-long,2020,5,100.0,11.0
+Mercedes,tourer extra-long,2022,0,0.0,60.0
+Mercedes,tourer extra-long,2022,1,50.0,60.0
+Mercedes,tourer extra-long,2022,2,80.0,36.0
+Mercedes,tourer extra-long,2022,3,100.0,11.0
+Mercedes,tourer long,2019,0,0.0,35.0
+Mercedes,tourer long,2019,1,50.0,35.0
+Mercedes,tourer long,2019,2,80.0,21.0
+Mercedes,tourer long,2019,3,100.0,35.0
+Mercedes,tourer long,2020,0,0.0,90.0
+Mercedes,tourer long,2020,1,20.0,90.0
+Mercedes,tourer long,2020,2,40.0,72.0
+Mercedes,tourer long,2020,3,60.0,54.0
+Mercedes,tourer long,2020,4,80.0,36.0
+Mercedes,tourer long,2020,5,100.0,11.0
+Mercedes,tourer long,2022,0,0.0,60.0
+Mercedes,tourer long,2022,1,50.0,60.0
+Mercedes,tourer long,2022,2,80.0,36.0
+Mercedes,tourer long,2022,3,100.0,11.0
+Micro,Microlino,2022,0,0.0,150.0
+Micro,Microlino,2022,1,20.0,150.0
+Micro,Microlino,2022,2,40.0,120.0
+Micro,Microlino,2022,3,60.0,90.0
+Micro,Microlino,2022,4,80.0,60.0
+Micro,Microlino,2022,5,100.0,11.0
+Mini,Aceman,2024,0,0.0,66.5
+Mini,Aceman,2024,1,50.0,70.0
+Mini,Aceman,2024,2,80.0,35.0
+Mini,Aceman,2024,3,100.0,14.0
+Mini,Aceman,2024,4,70.0,75.0
+Mini,Aceman,2024,5,80.0,47.5
+Mini,Aceman,2024,6,90.0,25.0
+Mini,Aceman,2024,7,100.0,19.0
+Mini,Cooper,2024,0,0.0,66.5
+Mini,Cooper,2024,1,50.0,70.0
+Mini,Cooper,2024,2,80.0,35.0
+Mini,Cooper,2024,3,100.0,14.0
+Mini,Cooper,2024,4,70.0,75.0
+Mini,Cooper,2024,5,80.0,47.5
+Mini,Cooper,2024,6,90.0,25.0
+Mini,Cooper,2024,7,100.0,19.0
+Mini,Cooper E,2023,0,0.0,36.6
+Mini,Cooper E,2023,1,50.0,36.6
+Mini,Cooper E,2023,2,80.0,21.96
+Mini,Cooper E,2023,3,100.0,11.0
+Mini,Cooper SE,2020,0,0.0,47.5
+Mini,Cooper SE,2020,1,75.0,50.0
+Mini,Cooper SE,2020,2,100.0,11.0
+Mini,Cooper SE,2023,0,0.0,49.2
+Mini,Cooper SE,2023,1,50.0,49.2
+Mini,Cooper SE,2023,2,80.0,29.52
+Mini,Cooper SE,2023,3,100.0,11.0
+Mini,Cooper SE Convertible,2023,0,0.0,49.0
+Mini,Cooper SE Convertible,2023,1,50.0,49.0
+Mini,Cooper SE Convertible,2023,2,80.0,29.4
+Mini,Cooper SE Convertible,2023,3,100.0,14.7
+Mini,Countryman,2024,0,0.0,121.6
+Mini,Countryman,2024,1,50.0,128.0
+Mini,Countryman,2024,2,80.0,64.0
+Mini,Countryman,2024,3,100.0,25.6
+Mini,Countryman,2024,4,90.0,40.0
+Mini,Countryman,2024,5,100.0,22.6
+Mini,Countryman E,2024,0,0.0,64.6
+Mini,Countryman E,2024,1,30.0,64.6
+Mini,Countryman E,2024,2,60.0,45.22
+Mini,Countryman E,2024,3,80.0,25.84
+Mini,Countryman E,2024,4,100.0,11.0
+Mini,se,2020,0,0.0,28.9
+Mini,se,2020,1,20.0,28.9
+Mini,se,2020,2,40.0,23.0
+Mini,se,2020,3,60.0,17.0
+Mini,se,2020,4,80.0,12.0
+Mini,se,2020,5,100.0,11.0
+Mini,se,2021,0,0.0,28.9
+Mini,se,2021,1,20.0,28.9
+Mini,se,2021,2,40.0,23.0
+Mini,se,2021,3,60.0,17.0
+Mini,se,2021,4,80.0,12.0
+Mini,se,2021,5,100.0,11.0
+Mini,se all4,2024,0,0.0,64.6
+Mini,se all4,2024,1,30.0,64.6
+Mini,se all4,2024,2,60.0,45.22
+Mini,se all4,2024,3,80.0,25.84
+Mini,se all4,2024,4,100.0,11.0
+Mini,se convertible,2023,0,0.0,28.9
+Mini,se convertible,2023,1,70.0,28.9
+Mini,se convertible,2023,2,80.0,20.23
+Mini,se convertible,2023,3,100.0,11.0
+Mitsubishi,i-MiEV,2011,0,0.0,100.0
+Mitsubishi,i-MiEV,2011,1,50.0,100.0
+Mitsubishi,i-MiEV,2011,2,80.0,60.0
+Mitsubishi,i-MiEV,2011,3,100.0,11.0
+Mitsubishi,i-MiEV,2015,0,0.0,100.0
+Mitsubishi,i-MiEV,2015,1,50.0,100.0
+Mitsubishi,i-MiEV,2015,2,80.0,60.0
+Mitsubishi,i-MiEV,2015,3,100.0,11.0
+Mitsubishi,i-Miev,2010,0,0.0,47.5
+Mitsubishi,i-Miev,2010,1,75.0,50.0
+Mitsubishi,i-Miev,2010,2,100.0,3.6
+NIO,EL6,2023,0,0.0,118.8
+NIO,EL6,2023,1,75.0,125.0
+NIO,EL6,2023,2,100.0,11.0
+NIO,EL6 Long Range,2023,0,0.0,180.0
+NIO,EL6 Long Range,2023,1,50.0,180.0
+NIO,EL6 Long Range,2023,2,80.0,108.0
+NIO,EL6 Long Range,2023,3,100.0,54.0
+NIO,EL6 Standard Range,2023,0,0.0,140.0
+NIO,EL6 Standard Range,2023,1,50.0,140.0
+NIO,EL6 Standard Range,2023,2,80.0,84.0
+NIO,EL6 Standard Range,2023,3,100.0,42.0
+NIO,EL7,2022,0,0.0,133.0
+NIO,EL7,2022,1,75.0,140.0
+NIO,EL7,2022,2,100.0,11.0
+NIO,EL7 Long Range,2022,0,0.0,127.0
+NIO,EL7 Long Range,2022,1,50.0,127.0
+NIO,EL7 Long Range,2022,2,80.0,76.2
+NIO,EL7 Long Range,2022,3,100.0,38.1
+NIO,EL7 Standard Range,2022,0,0.0,140.0
+NIO,EL7 Standard Range,2022,1,50.0,140.0
+NIO,EL7 Standard Range,2022,2,80.0,84.0
+NIO,EL7 Standard Range,2022,3,100.0,42.0
+NIO,EL8,2024,0,0.0,228.0
+NIO,EL8,2024,1,75.0,240.0
+NIO,EL8,2024,2,100.0,11.0
+NIO,ET5,2022,0,0.0,133.0
+NIO,ET5,2022,1,75.0,140.0
+NIO,ET5,2022,2,100.0,11.0
+NIO,ET5 Standard Range,2022,0,0.0,140.0
+NIO,ET5 Standard Range,2022,1,50.0,140.0
+NIO,ET5 Standard Range,2022,2,80.0,84.0
+NIO,ET5 Standard Range,2022,3,100.0,42.0
+NIO,ET5 Touring Long Range,2023,0,0.0,180.0
+NIO,ET5 Touring Long Range,2023,1,50.0,180.0
+NIO,ET5 Touring Long Range,2023,2,80.0,108.0
+NIO,ET5 Touring Long Range,2023,3,100.0,54.0
+NIO,ET5 Touring Standard Range,2023,0,0.0,140.0
+NIO,ET5 Touring Standard Range,2023,1,50.0,140.0
+NIO,ET5 Touring Standard Range,2023,2,80.0,84.0
+NIO,ET5 Touring Standard Range,2023,3,100.0,42.0
+NIO,ET7 Long Range,2022,0,0.0,127.0
+NIO,ET7 Long Range,2022,1,50.0,127.0
+NIO,ET7 Long Range,2022,2,80.0,76.2
+NIO,ET7 Long Range,2022,3,100.0,38.1
+NIO,ET7 Standard Range,2022,0,0.0,140.0
+NIO,ET7 Standard Range,2022,1,50.0,140.0
+NIO,ET7 Standard Range,2022,2,80.0,84.0
+NIO,ET7 Standard Range,2022,3,100.0,42.0
+NIO,long range,2022,0,0.0,90.0
+NIO,long range,2022,1,30.0,90.0
+NIO,long range,2022,2,60.0,63.0
+NIO,long range,2022,3,80.0,36.0
+NIO,long range,2022,4,100.0,11.0
+NIO,long range,2023,0,0.0,90.0
+NIO,long range,2023,1,30.0,90.0
+NIO,long range,2023,2,60.0,63.0
+NIO,long range,2023,3,80.0,36.0
+NIO,long range,2023,4,100.0,11.0
+NIO,standard range,2022,0,0.0,73.5
+NIO,standard range,2022,1,30.0,73.5
+NIO,standard range,2022,2,60.0,51.45
+NIO,standard range,2022,3,80.0,29.4
+NIO,standard range,2022,4,100.0,11.0
+NIO,standard range,2023,0,0.0,73.5
+NIO,standard range,2023,1,30.0,73.5
+NIO,standard range,2023,2,60.0,51.45
+NIO,standard range,2023,3,80.0,29.4
+NIO,standard range,2023,4,100.0,11.0
+NIO,touring long range,2023,0,0.0,90.0
+NIO,touring long range,2023,1,30.0,90.0
+NIO,touring long range,2023,2,60.0,63.0
+NIO,touring long range,2023,3,80.0,36.0
+NIO,touring long range,2023,4,100.0,11.0
+NIO,touring standard range,2023,0,0.0,73.5
+NIO,touring standard range,2023,1,30.0,73.5
+NIO,touring standard range,2023,2,60.0,51.45
+NIO,touring standard range,2023,3,80.0,29.4
+NIO,touring standard range,2023,4,100.0,11.0
+Nissan,63kwh,2022,0,0.0,63.0
+Nissan,63kwh,2022,1,20.0,63.0
+Nissan,63kwh,2022,2,40.0,50.0
+Nissan,63kwh,2022,3,60.0,38.0
+Nissan,63kwh,2022,4,80.0,25.0
+Nissan,63kwh,2022,5,100.0,11.0
+Nissan,87kwh,2022,0,0.0,87.0
+Nissan,87kwh,2022,1,20.0,87.0
+Nissan,87kwh,2022,2,40.0,70.0
+Nissan,87kwh,2022,3,60.0,52.0
+Nissan,87kwh,2022,4,80.0,35.0
+Nissan,87kwh,2022,5,100.0,11.0
+Nissan,Ariya,2022,0,0.0,123.5
+Nissan,Ariya,2022,1,75.0,130.0
+Nissan,Ariya,2022,2,100.0,7.4
+Nissan,Ariya e-4ORCE 87kWh - 225 kW,2022,0,0.0,130.0
+Nissan,Ariya e-4ORCE 87kWh - 225 kW,2022,1,50.0,130.0
+Nissan,Ariya e-4ORCE 87kWh - 225 kW,2022,2,80.0,78.0
+Nissan,Ariya e-4ORCE 87kWh - 225 kW,2022,3,100.0,39.0
+Nissan,Ariya e-4ORCE 87kWh - 290 kW,2023,0,0.0,130.0
+Nissan,Ariya e-4ORCE 87kWh - 290 kW,2023,1,50.0,130.0
+Nissan,Ariya e-4ORCE 87kWh - 290 kW,2023,2,80.0,78.0
+Nissan,Ariya e-4ORCE 87kWh - 290 kW,2023,3,100.0,39.0
+Nissan,Ariya e-4ORCE 87kWh - 320 kW Nismo,2024,0,0.0,130.0
+Nissan,Ariya e-4ORCE 87kWh - 320 kW Nismo,2024,1,50.0,130.0
+Nissan,Ariya e-4ORCE 87kWh - 320 kW Nismo,2024,2,80.0,78.0
+Nissan,Ariya e-4ORCE 87kWh - 320 kW Nismo,2024,3,100.0,39.0
+Nissan,Leaf,2011,0,0.0,40.0
+Nissan,Leaf,2011,1,22.0,46.0
+Nissan,Leaf,2011,2,100.0,10.0
+Nissan,Leaf,2015,0,0.0,41.0
+Nissan,Leaf,2015,1,80.0,47.0
+Nissan,Leaf,2015,2,90.0,30.0
+Nissan,Leaf,2015,3,100.0,10.0
+Nissan,Leaf,2018,0,0.0,41.0
+Nissan,Leaf,2018,1,62.0,45.0
+Nissan,Leaf,2018,2,65.0,36.0
+Nissan,Leaf,2018,3,100.0,15.0
+Nissan,Leaf,2019,0,0.0,95.0
+Nissan,Leaf,2019,1,75.0,100.0
+Nissan,Leaf,2019,2,100.0,6.6
+Nissan,Leaf,2022,0,0.0,39.0
+Nissan,Leaf,2022,1,50.0,39.0
+Nissan,Leaf,2022,2,80.0,23.4
+Nissan,Leaf,2022,3,100.0,3.6
+Nissan,Leaf 24,2013,0,0.0,100.0
+Nissan,Leaf 24,2013,1,50.0,100.0
+Nissan,Leaf 24,2013,2,80.0,60.0
+Nissan,Leaf 24,2013,3,100.0,11.0
+Nissan,Leaf 30,2015,0,0.0,100.0
+Nissan,Leaf 30,2015,1,50.0,100.0
+Nissan,Leaf 30,2015,2,80.0,60.0
+Nissan,Leaf 30,2015,3,100.0,11.0
+Nissan,Leaf e+,2022,0,0.0,46.0
+Nissan,Leaf e+,2022,1,20.0,46.0
+Nissan,Leaf e+,2022,2,40.0,37.0
+Nissan,Leaf e+,2022,3,60.0,28.0
+Nissan,Leaf e+,2022,4,80.0,18.0
+Nissan,Leaf e+,2022,5,100.0,11.0
+Nissan,Townstar EV Passenger,2023,0,0.0,80.0
+Nissan,Townstar EV Passenger,2023,1,50.0,80.0
+Nissan,Townstar EV Passenger,2023,2,80.0,40.0
+Nissan,Townstar EV Passenger,2023,3,100.0,16.0
+Nissan,Townstar EV Passenger L2,2024,0,0.0,80.0
+Nissan,Townstar EV Passenger L2,2024,1,50.0,80.0
+Nissan,Townstar EV Passenger L2,2024,2,80.0,40.0
+Nissan,Townstar EV Passenger L2,2024,3,100.0,16.0
+Nissan,e+,2019,0,0.0,59.0
+Nissan,e+,2019,1,50.0,59.0
+Nissan,e+,2019,2,80.0,35.4
+Nissan,e+,2019,3,100.0,11.0
+Nissan,e+,2022,0,0.0,59.0
+Nissan,e+,2022,1,50.0,59.0
+Nissan,e+,2022,2,80.0,35.4
+Nissan,e+,2022,3,100.0,6.6
+Nissan,e-4orce,2022,0,0.0,87.0
+Nissan,e-4orce,2022,1,20.0,87.0
+Nissan,e-4orce,2022,2,40.0,70.0
+Nissan,e-4orce,2022,3,60.0,52.0
+Nissan,e-4orce,2022,4,80.0,35.0
+Nissan,e-4orce,2022,5,100.0,11.0
+Nissan,e-4orce,2023,0,0.0,87.0
+Nissan,e-4orce,2023,1,20.0,87.0
+Nissan,e-4orce,2023,2,40.0,70.0
+Nissan,e-4orce,2023,3,60.0,52.0
+Nissan,e-4orce,2023,4,80.0,35.0
+Nissan,e-4orce,2023,5,100.0,11.0
+Nissan,e-NV 200,2014,0,0.0,40.0
+Nissan,e-NV 200,2014,1,10.0,45.0
+Nissan,e-NV 200,2014,2,23.0,46.0
+Nissan,e-NV 200,2014,3,80.0,25.0
+Nissan,e-NV 200,2014,4,100.0,10.0
+Nissan,e-NV200,2014,0,0.0,100.0
+Nissan,e-NV200,2014,1,50.0,100.0
+Nissan,e-NV200,2014,2,80.0,60.0
+Nissan,e-NV200,2014,3,100.0,11.0
+Nissan,e-NV200,2018,0,0.0,37.0
+Nissan,e-NV200,2018,1,50.0,37.0
+Nissan,e-NV200,2018,2,80.0,22.2
+Nissan,e-NV200,2018,3,100.0,37.0
+Nissan,e-NV200 Evalia,2018,0,0.0,46.0
+Nissan,e-NV200 Evalia,2018,1,20.0,46.0
+Nissan,e-NV200 Evalia,2018,2,40.0,37.0
+Nissan,e-NV200 Evalia,2018,3,60.0,28.0
+Nissan,e-NV200 Evalia,2018,4,80.0,18.0
+Nissan,e-NV200 Evalia,2018,5,100.0,11.0
+Nissan,ev passenger,2023,0,0.0,45.0
+Nissan,ev passenger,2023,1,50.0,45.0
+Nissan,ev passenger,2023,2,80.0,27.0
+Nissan,ev passenger,2023,3,100.0,11.0
+ORA,Funky Cat 48 kWh,2022,0,0.0,64.0
+ORA,Funky Cat 48 kWh,2022,1,50.0,64.0
+ORA,Funky Cat 48 kWh,2022,2,80.0,38.4
+ORA,Funky Cat 48 kWh,2022,3,100.0,19.2
+ORA,Funky Cat 63 kWh,2023,0,0.0,69.0
+ORA,Funky Cat 63 kWh,2023,1,50.0,69.0
+ORA,Funky Cat 63 kWh,2023,2,80.0,41.4
+ORA,Funky Cat 63 kWh,2023,3,100.0,20.7
+ORA,Funky Cat GT,2023,0,0.0,69.0
+ORA,Funky Cat GT,2023,1,50.0,69.0
+ORA,Funky Cat GT,2023,2,80.0,41.4
+ORA,Funky Cat GT,2023,3,100.0,20.7
+ORA,cat,2022,0,0.0,45.4
+ORA,cat,2022,1,50.0,45.4
+ORA,cat,2022,2,80.0,27.24
+ORA,cat,2022,3,100.0,11.0
+ORA,cat,2023,0,0.0,59.3
+ORA,cat,2023,1,50.0,59.3
+ORA,cat,2023,2,80.0,35.58
+ORA,cat,2023,3,100.0,11.0
+Omoda,E5,2024,0,0.0,80.0
+Omoda,E5,2024,1,50.0,80.0
+Omoda,E5,2024,2,80.0,48.0
+Omoda,E5,2024,3,100.0,24.0
+Peugeot,50kwh,2023,0,0.0,46.3
+Peugeot,50kwh,2023,1,50.0,46.3
+Peugeot,50kwh,2023,2,80.0,27.78
+Peugeot,50kwh,2023,3,100.0,7.4
+Peugeot,51kwh,2022,0,0.0,48.1
+Peugeot,51kwh,2022,1,50.0,48.1
+Peugeot,51kwh,2022,2,80.0,28.86
+Peugeot,51kwh,2022,3,100.0,11.0
+Peugeot,51kwh,2023,0,0.0,48.1
+Peugeot,51kwh,2023,1,50.0,48.1
+Peugeot,51kwh,2023,2,80.0,28.86
+Peugeot,51kwh,2023,3,100.0,7.4
+Peugeot,54kwh,2023,0,0.0,50.8
+Peugeot,54kwh,2023,1,50.0,50.8
+Peugeot,54kwh,2023,2,80.0,30.48
+Peugeot,54kwh,2023,3,100.0,7.4
+Peugeot,73kwh,2023,0,0.0,73.0
+Peugeot,73kwh,2023,1,30.0,73.0
+Peugeot,73kwh,2023,2,60.0,51.1
+Peugeot,73kwh,2023,3,80.0,29.2
+Peugeot,73kwh,2023,4,100.0,11.0
+Peugeot,73kwh dual motor,2025,0,0.0,73.0
+Peugeot,73kwh dual motor,2025,1,30.0,73.0
+Peugeot,73kwh dual motor,2025,2,60.0,51.1
+Peugeot,73kwh dual motor,2025,3,80.0,29.2
+Peugeot,73kwh dual motor,2025,4,100.0,11.0
+Peugeot,97kwh long range,2024,0,0.0,96.9
+Peugeot,97kwh long range,2024,1,30.0,96.9
+Peugeot,97kwh long range,2024,2,60.0,67.83
+Peugeot,97kwh long range,2024,3,80.0,38.76
+Peugeot,97kwh long range,2024,4,100.0,11.0
+Peugeot,E-Expert,2020,0,0.0,96.0
+Peugeot,E-Expert,2020,1,30.0,100.0
+Peugeot,E-Expert,2020,2,35.0,75.0
+Peugeot,E-Expert,2020,3,55.0,78.0
+Peugeot,E-Expert,2020,4,57.0,60.0
+Peugeot,E-Expert,2020,5,76.0,75.0
+Peugeot,E-Expert,2020,6,77.0,30.0
+Peugeot,E-Expert,2020,7,100.0,30.0
+Peugeot,E-Traveller,2020,0,0.0,98.0
+Peugeot,E-Traveller,2020,1,20.0,87.0
+Peugeot,E-Traveller,2020,2,22.0,75.0
+Peugeot,E-Traveller,2020,3,57.0,75.0
+Peugeot,E-Traveller,2020,4,59.0,50.0
+Peugeot,E-Traveller,2020,5,65.0,50.0
+Peugeot,E-Traveller,2020,6,67.0,45.0
+Peugeot,E-Traveller,2020,7,73.0,45.0
+Peugeot,E-Traveller,2020,8,74.0,25.0
+Peugeot,E-Traveller,2020,9,84.0,25.0
+Peugeot,E-Traveller,2020,10,85.0,12.0
+Peugeot,E-Traveller,2020,11,100.0,12.0
+Peugeot,I-on,2010,0,0.0,47.5
+Peugeot,I-on,2010,1,75.0,50.0
+Peugeot,I-on,2010,2,100.0,3.6
+Peugeot,Partner,2013,0,0.0,47.5
+Peugeot,Partner,2013,1,75.0,50.0
+Peugeot,Partner,2013,2,100.0,3.2
+Peugeot,Partner Tepee,2017,0,0.0,20.5
+Peugeot,Partner Tepee,2017,1,70.0,20.5
+Peugeot,Partner Tepee,2017,2,80.0,14.35
+Peugeot,Partner Tepee,2017,3,100.0,20.5
+Peugeot,combi compact,2021,0,0.0,46.3
+Peugeot,combi compact,2021,1,20.0,46.3
+Peugeot,combi compact,2021,2,40.0,37.0
+Peugeot,combi compact,2021,3,60.0,28.0
+Peugeot,combi compact,2021,4,80.0,19.0
+Peugeot,combi compact,2021,5,100.0,11.0
+Peugeot,combi long,2021,0,0.0,46.3
+Peugeot,combi long,2021,1,20.0,46.3
+Peugeot,combi long,2021,2,40.0,37.0
+Peugeot,combi long,2021,3,60.0,28.0
+Peugeot,combi long,2021,4,80.0,19.0
+Peugeot,combi long,2021,5,100.0,11.0
+Peugeot,combi standard,2021,0,0.0,46.3
+Peugeot,combi standard,2021,1,20.0,46.3
+Peugeot,combi standard,2021,2,40.0,37.0
+Peugeot,combi standard,2021,3,60.0,28.0
+Peugeot,combi standard,2021,4,80.0,19.0
+Peugeot,combi standard,2021,5,100.0,11.0
+Peugeot,compact,2021,0,0.0,46.3
+Peugeot,compact,2021,1,20.0,46.3
+Peugeot,compact,2021,2,40.0,37.0
+Peugeot,compact,2021,3,60.0,28.0
+Peugeot,compact,2021,4,80.0,19.0
+Peugeot,compact,2021,5,100.0,11.0
+Peugeot,e-2008,2020,0,0.0,100.0
+Peugeot,e-2008,2020,1,30.0,97.0
+Peugeot,e-2008,2020,2,32.0,78.0
+Peugeot,e-2008,2020,3,58.0,78.0
+Peugeot,e-2008,2020,4,59.0,60.0
+Peugeot,e-2008,2020,5,66.0,60.0
+Peugeot,e-2008,2020,6,68.0,55.0
+Peugeot,e-2008,2020,7,78.0,55.0
+Peugeot,e-2008,2020,8,80.0,27.0
+Peugeot,e-2008,2020,9,90.0,27.0
+Peugeot,e-2008,2020,10,100.0,11.0
+Peugeot,e-2008,2023,0,0.0,95.9
+Peugeot,e-2008,2023,1,75.0,101.0
+Peugeot,e-2008,2023,2,100.0,11.0
+Peugeot,e-2008 54 kWh,2023,0,0.0,100.0
+Peugeot,e-2008 54 kWh,2023,1,50.0,100.0
+Peugeot,e-2008 54 kWh,2023,2,80.0,60.0
+Peugeot,e-2008 54 kWh,2023,3,100.0,30.0
+Peugeot,e-2008 SUV,2021,0,0.0,101.0
+Peugeot,e-2008 SUV,2021,1,20.0,101.0
+Peugeot,e-2008 SUV,2021,2,40.0,81.0
+Peugeot,e-2008 SUV,2021,3,60.0,61.0
+Peugeot,e-2008 SUV,2021,4,80.0,40.0
+Peugeot,e-2008 SUV,2021,5,100.0,11.0
+Peugeot,e-208,2020,0,0.0,100.0
+Peugeot,e-208,2020,1,30.0,97.0
+Peugeot,e-208,2020,2,32.0,78.0
+Peugeot,e-208,2020,3,58.0,78.0
+Peugeot,e-208,2020,4,59.0,60.0
+Peugeot,e-208,2020,5,66.0,60.0
+Peugeot,e-208,2020,6,68.0,55.0
+Peugeot,e-208,2020,7,78.0,55.0
+Peugeot,e-208,2020,8,80.0,27.0
+Peugeot,e-208,2020,9,90.0,27.0
+Peugeot,e-208,2020,10,100.0,11.0
+Peugeot,e-208,2021,0,0.0,46.3
+Peugeot,e-208,2021,1,20.0,46.3
+Peugeot,e-208,2021,2,40.0,37.0
+Peugeot,e-208,2021,3,60.0,28.0
+Peugeot,e-208,2021,4,80.0,19.0
+Peugeot,e-208,2021,5,100.0,11.0
+Peugeot,e-208,2023,0,0.0,95.9
+Peugeot,e-208,2023,1,75.0,101.0
+Peugeot,e-208,2023,2,100.0,11.0
+Peugeot,e-208 51 kWh,2023,0,0.0,100.0
+Peugeot,e-208 51 kWh,2023,1,50.0,100.0
+Peugeot,e-208 51 kWh,2023,2,80.0,60.0
+Peugeot,e-208 51 kWh,2023,3,100.0,30.0
+Peugeot,e-3008,2024,0,0.0,152.0
+Peugeot,e-3008,2024,1,75.0,160.0
+Peugeot,e-3008,2024,2,100.0,11.0
+Peugeot,e-3008 73 kWh,2023,0,0.0,160.0
+Peugeot,e-3008 73 kWh,2023,1,50.0,160.0
+Peugeot,e-3008 73 kWh,2023,2,80.0,80.0
+Peugeot,e-3008 73 kWh,2023,3,100.0,32.0
+Peugeot,e-3008 97 kWh Long Range,2024,0,0.0,160.0
+Peugeot,e-3008 97 kWh Long Range,2024,1,50.0,160.0
+Peugeot,e-3008 97 kWh Long Range,2024,2,80.0,96.0
+Peugeot,e-3008 97 kWh Long Range,2024,3,100.0,48.0
+Peugeot,e-308,2023,0,0.0,50.8
+Peugeot,e-308,2023,1,20.0,50.8
+Peugeot,e-308,2023,2,40.0,41.0
+Peugeot,e-308,2023,3,60.0,30.0
+Peugeot,e-308,2023,4,80.0,20.0
+Peugeot,e-308,2023,5,100.0,11.0
+Peugeot,e-308 SW,2023,0,0.0,100.0
+Peugeot,e-308 SW,2023,1,50.0,100.0
+Peugeot,e-308 SW,2023,2,80.0,60.0
+Peugeot,e-308 SW,2023,3,100.0,30.0
+Peugeot,e-408 58 kWh,2024,0,0.0,120.0
+Peugeot,e-408 58 kWh,2024,1,50.0,120.0
+Peugeot,e-408 58 kWh,2024,2,80.0,60.0
+Peugeot,e-408 58 kWh,2024,3,100.0,24.0
+Peugeot,e-5008 73 kWh,2024,0,0.0,160.0
+Peugeot,e-5008 73 kWh,2024,1,50.0,160.0
+Peugeot,e-5008 73 kWh,2024,2,80.0,80.0
+Peugeot,e-5008 73 kWh,2024,3,100.0,32.0
+Peugeot,e-5008 73 kWh Dual Motor,2025,0,0.0,160.0
+Peugeot,e-5008 73 kWh Dual Motor,2025,1,50.0,160.0
+Peugeot,e-5008 73 kWh Dual Motor,2025,2,80.0,80.0
+Peugeot,e-5008 73 kWh Dual Motor,2025,3,100.0,32.0
+Peugeot,e-5008 97 kWh Long Range,2024,0,0.0,160.0
+Peugeot,e-5008 97 kWh Long Range,2024,1,50.0,160.0
+Peugeot,e-5008 97 kWh Long Range,2024,2,80.0,96.0
+Peugeot,e-5008 97 kWh Long Range,2024,3,100.0,48.0
+Peugeot,e-Expert Combi Compact 50 kWh,2021,0,0.0,101.0
+Peugeot,e-Expert Combi Compact 50 kWh,2021,1,20.0,101.0
+Peugeot,e-Expert Combi Compact 50 kWh,2021,2,40.0,81.0
+Peugeot,e-Expert Combi Compact 50 kWh,2021,3,60.0,61.0
+Peugeot,e-Expert Combi Compact 50 kWh,2021,4,80.0,40.0
+Peugeot,e-Expert Combi Compact 50 kWh,2021,5,100.0,11.0
+Peugeot,e-Expert Combi Long 50 kWh,2021,0,0.0,101.0
+Peugeot,e-Expert Combi Long 50 kWh,2021,1,20.0,101.0
+Peugeot,e-Expert Combi Long 50 kWh,2021,2,40.0,81.0
+Peugeot,e-Expert Combi Long 50 kWh,2021,3,60.0,61.0
+Peugeot,e-Expert Combi Long 50 kWh,2021,4,80.0,40.0
+Peugeot,e-Expert Combi Long 50 kWh,2021,5,100.0,11.0
+Peugeot,e-Expert Combi Long 75 kWh,2021,0,0.0,100.0
+Peugeot,e-Expert Combi Long 75 kWh,2021,1,50.0,100.0
+Peugeot,e-Expert Combi Long 75 kWh,2021,2,80.0,60.0
+Peugeot,e-Expert Combi Long 75 kWh,2021,3,100.0,30.0
+Peugeot,e-Expert Combi Standard 50 kWh,2021,0,0.0,101.0
+Peugeot,e-Expert Combi Standard 50 kWh,2021,1,20.0,101.0
+Peugeot,e-Expert Combi Standard 50 kWh,2021,2,40.0,81.0
+Peugeot,e-Expert Combi Standard 50 kWh,2021,3,60.0,61.0
+Peugeot,e-Expert Combi Standard 50 kWh,2021,4,80.0,40.0
+Peugeot,e-Expert Combi Standard 50 kWh,2021,5,100.0,11.0
+Peugeot,e-Expert Combi Standard 75 kWh,2021,0,0.0,100.0
+Peugeot,e-Expert Combi Standard 75 kWh,2021,1,50.0,100.0
+Peugeot,e-Expert Combi Standard 75 kWh,2021,2,80.0,60.0
+Peugeot,e-Expert Combi Standard 75 kWh,2021,3,100.0,30.0
+Peugeot,e-Partner,2021,0,0.0,100.0
+Peugeot,e-Partner,2021,1,30.0,97.0
+Peugeot,e-Partner,2021,2,32.0,78.0
+Peugeot,e-Partner,2021,3,58.0,78.0
+Peugeot,e-Partner,2021,4,59.0,60.0
+Peugeot,e-Partner,2021,5,66.0,60.0
+Peugeot,e-Partner,2021,6,68.0,55.0
+Peugeot,e-Partner,2021,7,78.0,55.0
+Peugeot,e-Partner,2021,8,80.0,27.0
+Peugeot,e-Partner,2021,9,90.0,27.0
+Peugeot,e-Partner,2021,10,100.0,11.0
+Peugeot,e-Rifter Long 50 kWh,2021,0,0.0,101.0
+Peugeot,e-Rifter Long 50 kWh,2021,1,20.0,101.0
+Peugeot,e-Rifter Long 50 kWh,2021,2,40.0,81.0
+Peugeot,e-Rifter Long 50 kWh,2021,3,60.0,61.0
+Peugeot,e-Rifter Long 50 kWh,2021,4,80.0,40.0
+Peugeot,e-Rifter Long 50 kWh,2021,5,100.0,11.0
+Peugeot,e-Rifter M 50 kWh,2024,0,0.0,100.0
+Peugeot,e-Rifter M 50 kWh,2024,1,50.0,100.0
+Peugeot,e-Rifter M 50 kWh,2024,2,80.0,60.0
+Peugeot,e-Rifter M 50 kWh,2024,3,100.0,30.0
+Peugeot,e-Rifter Standard 50 kWh,2021,0,0.0,101.0
+Peugeot,e-Rifter Standard 50 kWh,2021,1,20.0,101.0
+Peugeot,e-Rifter Standard 50 kWh,2021,2,40.0,81.0
+Peugeot,e-Rifter Standard 50 kWh,2021,3,60.0,61.0
+Peugeot,e-Rifter Standard 50 kWh,2021,4,80.0,40.0
+Peugeot,e-Rifter Standard 50 kWh,2021,5,100.0,11.0
+Peugeot,e-Rifter XL 50 kWh,2024,0,0.0,100.0
+Peugeot,e-Rifter XL 50 kWh,2024,1,50.0,100.0
+Peugeot,e-Rifter XL 50 kWh,2024,2,80.0,60.0
+Peugeot,e-Rifter XL 50 kWh,2024,3,100.0,30.0
+Peugeot,e-Traveller Compact 50 kWh,2021,0,0.0,101.0
+Peugeot,e-Traveller Compact 50 kWh,2021,1,20.0,101.0
+Peugeot,e-Traveller Compact 50 kWh,2021,2,40.0,81.0
+Peugeot,e-Traveller Compact 50 kWh,2021,3,60.0,61.0
+Peugeot,e-Traveller Compact 50 kWh,2021,4,80.0,40.0
+Peugeot,e-Traveller Compact 50 kWh,2021,5,100.0,11.0
+Peugeot,e-Traveller L2 50 kWh,2024,0,0.0,101.0
+Peugeot,e-Traveller L2 50 kWh,2024,1,20.0,101.0
+Peugeot,e-Traveller L2 50 kWh,2024,2,40.0,81.0
+Peugeot,e-Traveller L2 50 kWh,2024,3,60.0,61.0
+Peugeot,e-Traveller L2 50 kWh,2024,4,80.0,40.0
+Peugeot,e-Traveller L2 50 kWh,2024,5,100.0,11.0
+Peugeot,e-Traveller L2 75 kWh,2024,0,0.0,100.0
+Peugeot,e-Traveller L2 75 kWh,2024,1,50.0,100.0
+Peugeot,e-Traveller L2 75 kWh,2024,2,80.0,60.0
+Peugeot,e-Traveller L2 75 kWh,2024,3,100.0,30.0
+Peugeot,e-Traveller L3 50 kWh,2024,0,0.0,101.0
+Peugeot,e-Traveller L3 50 kWh,2024,1,20.0,101.0
+Peugeot,e-Traveller L3 50 kWh,2024,2,40.0,81.0
+Peugeot,e-Traveller L3 50 kWh,2024,3,60.0,61.0
+Peugeot,e-Traveller L3 50 kWh,2024,4,80.0,40.0
+Peugeot,e-Traveller L3 50 kWh,2024,5,100.0,11.0
+Peugeot,e-Traveller L3 75 kWh,2024,0,0.0,100.0
+Peugeot,e-Traveller L3 75 kWh,2024,1,50.0,100.0
+Peugeot,e-Traveller L3 75 kWh,2024,2,80.0,60.0
+Peugeot,e-Traveller L3 75 kWh,2024,3,100.0,30.0
+Peugeot,e-Traveller Long 50 kWh,2020,0,0.0,101.0
+Peugeot,e-Traveller Long 50 kWh,2020,1,20.0,101.0
+Peugeot,e-Traveller Long 50 kWh,2020,2,40.0,81.0
+Peugeot,e-Traveller Long 50 kWh,2020,3,60.0,61.0
+Peugeot,e-Traveller Long 50 kWh,2020,4,80.0,40.0
+Peugeot,e-Traveller Long 50 kWh,2020,5,100.0,11.0
+Peugeot,e-Traveller Long 75 kWh,2021,0,0.0,100.0
+Peugeot,e-Traveller Long 75 kWh,2021,1,50.0,100.0
+Peugeot,e-Traveller Long 75 kWh,2021,2,80.0,60.0
+Peugeot,e-Traveller Long 75 kWh,2021,3,100.0,30.0
+Peugeot,e-Traveller Standard 50 kWh,2020,0,0.0,101.0
+Peugeot,e-Traveller Standard 50 kWh,2020,1,20.0,101.0
+Peugeot,e-Traveller Standard 50 kWh,2020,2,40.0,81.0
+Peugeot,e-Traveller Standard 50 kWh,2020,3,60.0,61.0
+Peugeot,e-Traveller Standard 50 kWh,2020,4,80.0,40.0
+Peugeot,e-Traveller Standard 50 kWh,2020,5,100.0,11.0
+Peugeot,e-Traveller Standard 75 kWh,2021,0,0.0,100.0
+Peugeot,e-Traveller Standard 75 kWh,2021,1,50.0,100.0
+Peugeot,e-Traveller Standard 75 kWh,2021,2,80.0,60.0
+Peugeot,e-Traveller Standard 75 kWh,2021,3,100.0,30.0
+Peugeot,iOn,2011,0,0.0,100.0
+Peugeot,iOn,2011,1,50.0,100.0
+Peugeot,iOn,2011,2,80.0,60.0
+Peugeot,iOn,2011,3,100.0,11.0
+Peugeot,iOn,2016,0,0.0,100.0
+Peugeot,iOn,2016,1,50.0,100.0
+Peugeot,iOn,2016,2,80.0,60.0
+Peugeot,iOn,2016,3,100.0,11.0
+Peugeot,long,2020,0,0.0,46.3
+Peugeot,long,2020,1,20.0,46.3
+Peugeot,long,2020,2,40.0,37.0
+Peugeot,long,2020,3,60.0,28.0
+Peugeot,long,2020,4,80.0,19.0
+Peugeot,long,2020,5,100.0,11.0
+Peugeot,long,2021,0,0.0,68.0
+Peugeot,long,2021,1,20.0,68.0
+Peugeot,long,2021,2,40.0,54.0
+Peugeot,long,2021,3,60.0,41.0
+Peugeot,long,2021,4,80.0,27.0
+Peugeot,long,2021,5,100.0,11.0
+Peugeot,standard,2020,0,0.0,46.3
+Peugeot,standard,2020,1,20.0,46.3
+Peugeot,standard,2020,2,40.0,37.0
+Peugeot,standard,2020,3,60.0,28.0
+Peugeot,standard,2020,4,80.0,19.0
+Peugeot,standard,2020,5,100.0,11.0
+Peugeot,standard,2021,0,0.0,68.0
+Peugeot,standard,2021,1,20.0,68.0
+Peugeot,standard,2021,2,40.0,54.0
+Peugeot,standard,2021,3,60.0,41.0
+Peugeot,standard,2021,4,80.0,27.0
+Peugeot,standard,2021,5,100.0,11.0
+Peugeot,suv,2020,0,0.0,46.3
+Peugeot,suv,2020,1,20.0,46.3
+Peugeot,suv,2020,2,40.0,37.0
+Peugeot,suv,2020,3,60.0,28.0
+Peugeot,suv,2020,4,80.0,19.0
+Peugeot,suv,2020,5,100.0,11.0
+Peugeot,suv,2021,0,0.0,46.3
+Peugeot,suv,2021,1,20.0,46.3
+Peugeot,suv,2021,2,40.0,37.0
+Peugeot,suv,2021,3,60.0,28.0
+Peugeot,suv,2021,4,80.0,19.0
+Peugeot,suv,2021,5,100.0,11.0
+Peugeot,sw,2023,0,0.0,50.8
+Peugeot,sw,2023,1,50.0,50.8
+Peugeot,sw,2023,2,80.0,30.48
+Peugeot,sw,2023,3,100.0,11.0
+Polestar,2,2020,0,0.0,75.0
+Polestar,2,2020,1,30.0,75.0
+Polestar,2,2020,2,60.0,52.5
+Polestar,2,2020,3,80.0,30.0
+Polestar,2,2020,4,100.0,11.0
+Polestar,2,2021,0,0.0,150.0
+Polestar,2,2021,1,18.0,150.0
+Polestar,2,2021,2,20.0,130.0
+Polestar,2,2021,3,40.0,130.0
+Polestar,2,2021,4,42.0,100.0
+Polestar,2,2021,5,55.0,90.0
+Polestar,2,2021,6,57.0,70.0
+Polestar,2,2021,7,79.0,70.0
+Polestar,2,2021,8,80.0,25.0
+Polestar,2,2021,9,100.0,11.0
+Polestar,2,2022,0,0.0,126.4
+Polestar,2,2022,1,75.0,133.0
+Polestar,2,2022,2,100.0,11.0
+Polestar,2 Long Range Performance,2024,0,0.0,205.0
+Polestar,2 Long Range Performance,2024,1,50.0,205.0
+Polestar,2 Long Range Performance,2024,2,80.0,102.5
+Polestar,2 Long Range Performance,2024,3,100.0,41.0
+Polestar,3 Long Range Dual motor,2022,0,0.0,250.0
+Polestar,3 Long Range Dual motor,2022,1,50.0,250.0
+Polestar,3 Long Range Dual motor,2022,2,80.0,125.0
+Polestar,3 Long Range Dual motor,2022,3,100.0,50.0
+Polestar,3 Long Range Performance,2022,0,0.0,250.0
+Polestar,3 Long Range Performance,2022,1,50.0,250.0
+Polestar,3 Long Range Performance,2022,2,80.0,125.0
+Polestar,3 Long Range Performance,2022,3,100.0,50.0
+Polestar,3 Long Range Single motor,2024,0,0.0,250.0
+Polestar,3 Long Range Single motor,2024,1,50.0,250.0
+Polestar,3 Long Range Single motor,2024,2,80.0,125.0
+Polestar,3 Long Range Single motor,2024,3,100.0,50.0
+Polestar,4,2024,0,0.0,190.0
+Polestar,4,2024,1,75.0,200.0
+Polestar,4,2024,2,100.0,22.0
+Polestar,long range,2022,0,0.0,107.0
+Polestar,long range,2022,1,30.0,107.0
+Polestar,long range,2022,2,60.0,74.9
+Polestar,long range,2022,3,80.0,42.8
+Polestar,long range,2022,4,100.0,11.0
+Polestar,long range,2023,0,0.0,79.0
+Polestar,long range,2023,1,30.0,79.0
+Polestar,long range,2023,2,60.0,55.3
+Polestar,long range,2023,3,80.0,31.6
+Polestar,long range,2023,4,100.0,11.0
+Polestar,long range dual motor,2021,0,0.0,75.0
+Polestar,long range dual motor,2021,1,30.0,75.0
+Polestar,long range dual motor,2021,2,60.0,52.5
+Polestar,long range dual motor,2021,3,80.0,30.0
+Polestar,long range dual motor,2021,4,100.0,11.0
+Polestar,long range dual motor,2022,0,0.0,107.0
+Polestar,long range dual motor,2022,1,30.0,107.0
+Polestar,long range dual motor,2022,2,60.0,74.9
+Polestar,long range dual motor,2022,3,80.0,42.8
+Polestar,long range dual motor,2022,4,100.0,11.0
+Polestar,long range dual motor,2023,0,0.0,79.0
+Polestar,long range dual motor,2023,1,30.0,79.0
+Polestar,long range dual motor,2023,2,60.0,55.3
+Polestar,long range dual motor,2023,3,80.0,31.6
+Polestar,long range dual motor,2023,4,100.0,11.0
+Polestar,long range dual motor,2024,0,0.0,94.0
+Polestar,long range dual motor,2024,1,30.0,94.0
+Polestar,long range dual motor,2024,2,60.0,65.8
+Polestar,long range dual motor,2024,3,80.0,37.6
+Polestar,long range dual motor,2024,4,100.0,11.0
+Polestar,long range single motor,2021,0,0.0,75.0
+Polestar,long range single motor,2021,1,30.0,75.0
+Polestar,long range single motor,2021,2,60.0,52.5
+Polestar,long range single motor,2021,3,80.0,30.0
+Polestar,long range single motor,2021,4,100.0,11.0
+Polestar,long range single motor,2023,0,0.0,79.0
+Polestar,long range single motor,2023,1,30.0,79.0
+Polestar,long range single motor,2023,2,60.0,55.3
+Polestar,long range single motor,2023,3,80.0,31.6
+Polestar,long range single motor,2023,4,100.0,11.0
+Polestar,long range single motor,2024,0,0.0,94.0
+Polestar,long range single motor,2024,1,30.0,94.0
+Polestar,long range single motor,2024,2,60.0,65.8
+Polestar,long range single motor,2024,3,80.0,37.6
+Polestar,long range single motor,2024,4,100.0,11.0
+Polestar,standard range single motor,2021,0,0.0,61.0
+Polestar,standard range single motor,2021,1,20.0,61.0
+Polestar,standard range single motor,2021,2,40.0,49.0
+Polestar,standard range single motor,2021,3,60.0,37.0
+Polestar,standard range single motor,2021,4,80.0,24.0
+Polestar,standard range single motor,2021,5,100.0,11.0
+Polestar,standard range single motor,2022,0,0.0,67.0
+Polestar,standard range single motor,2022,1,30.0,67.0
+Polestar,standard range single motor,2022,2,60.0,46.9
+Polestar,standard range single motor,2022,3,80.0,26.8
+Polestar,standard range single motor,2022,4,100.0,11.0
+Polestar,standard range single motor,2023,0,0.0,67.0
+Polestar,standard range single motor,2023,1,30.0,67.0
+Polestar,standard range single motor,2023,2,60.0,46.9
+Polestar,standard range single motor,2023,3,80.0,26.8
+Polestar,standard range single motor,2023,4,100.0,11.0
+Porsche,4 cross turismo,2021,0,0.0,83.7
+Porsche,4 cross turismo,2021,1,20.0,83.7
+Porsche,4 cross turismo,2021,2,40.0,67.0
+Porsche,4 cross turismo,2021,3,60.0,50.0
+Porsche,4 cross turismo,2021,4,80.0,33.0
+Porsche,4 cross turismo,2021,5,100.0,11.0
+Porsche,4 cross turismo,2023,0,0.0,83.7
+Porsche,4 cross turismo,2023,1,40.0,83.7
+Porsche,4 cross turismo,2023,2,70.0,66.96
+Porsche,4 cross turismo,2023,3,90.0,33.48
+Porsche,4 cross turismo,2023,4,100.0,11.0
+Porsche,4 electric,2024,0,0.0,95.0
+Porsche,4 electric,2024,1,40.0,95.0
+Porsche,4 electric,2024,2,70.0,76.0
+Porsche,4 electric,2024,3,90.0,38.0
+Porsche,4 electric,2024,4,100.0,11.0
+Porsche,4s,2020,0,0.0,71.0
+Porsche,4s,2020,1,20.0,71.0
+Porsche,4s,2020,2,40.0,57.0
+Porsche,4s,2020,3,60.0,43.0
+Porsche,4s,2020,4,80.0,28.0
+Porsche,4s,2020,5,100.0,11.0
+Porsche,4s,2023,0,0.0,71.0
+Porsche,4s,2023,1,40.0,71.0
+Porsche,4s,2023,2,70.0,56.8
+Porsche,4s,2023,3,90.0,28.4
+Porsche,4s,2023,4,100.0,11.0
+Porsche,4s cross turismo,2021,0,0.0,83.7
+Porsche,4s cross turismo,2021,1,20.0,83.7
+Porsche,4s cross turismo,2021,2,40.0,67.0
+Porsche,4s cross turismo,2021,3,60.0,50.0
+Porsche,4s cross turismo,2021,4,80.0,33.0
+Porsche,4s cross turismo,2021,5,100.0,11.0
+Porsche,4s cross turismo,2023,0,0.0,83.7
+Porsche,4s cross turismo,2023,1,40.0,83.7
+Porsche,4s cross turismo,2023,2,70.0,66.96
+Porsche,4s cross turismo,2023,3,90.0,33.48
+Porsche,4s cross turismo,2023,4,100.0,11.0
+Porsche,4s plus,2020,0,0.0,83.7
+Porsche,4s plus,2020,1,20.0,83.7
+Porsche,4s plus,2020,2,40.0,67.0
+Porsche,4s plus,2020,3,60.0,50.0
+Porsche,4s plus,2020,4,80.0,33.0
+Porsche,4s plus,2020,5,100.0,11.0
+Porsche,4s plus,2023,0,0.0,83.7
+Porsche,4s plus,2023,1,40.0,83.7
+Porsche,4s plus,2023,2,70.0,66.96
+Porsche,4s plus,2023,3,90.0,33.48
+Porsche,4s plus,2023,4,100.0,11.0
+Porsche,4s plus,2024,0,0.0,97.0
+Porsche,4s plus,2024,1,40.0,97.0
+Porsche,4s plus,2024,2,70.0,77.6
+Porsche,4s plus,2024,3,90.0,38.8
+Porsche,4s plus,2024,4,100.0,11.0
+Porsche,4s plus sport turismo,2022,0,0.0,83.7
+Porsche,4s plus sport turismo,2022,1,20.0,83.7
+Porsche,4s plus sport turismo,2022,2,40.0,67.0
+Porsche,4s plus sport turismo,2022,3,60.0,50.0
+Porsche,4s plus sport turismo,2022,4,80.0,33.0
+Porsche,4s plus sport turismo,2022,5,100.0,11.0
+Porsche,4s sport turismo,2022,0,0.0,71.0
+Porsche,4s sport turismo,2022,1,20.0,71.0
+Porsche,4s sport turismo,2022,2,40.0,57.0
+Porsche,4s sport turismo,2022,3,60.0,43.0
+Porsche,4s sport turismo,2022,4,80.0,28.0
+Porsche,4s sport turismo,2022,5,100.0,11.0
+Porsche,Macan 4 Electric,2024,0,0.0,270.0
+Porsche,Macan 4 Electric,2024,1,50.0,270.0
+Porsche,Macan 4 Electric,2024,2,80.0,162.0
+Porsche,Macan 4 Electric,2024,3,100.0,81.0
+Porsche,Macan 4S Electric,2024,0,0.0,270.0
+Porsche,Macan 4S Electric,2024,1,50.0,270.0
+Porsche,Macan 4S Electric,2024,2,80.0,162.0
+Porsche,Macan 4S Electric,2024,3,100.0,81.0
+Porsche,Macan Electric,2024,0,0.0,270.0
+Porsche,Macan Electric,2024,1,50.0,270.0
+Porsche,Macan Electric,2024,2,80.0,162.0
+Porsche,Macan Electric,2024,3,100.0,81.0
+Porsche,Macan Turbo Electric,2024,0,0.0,270.0
+Porsche,Macan Turbo Electric,2024,1,50.0,270.0
+Porsche,Macan Turbo Electric,2024,2,80.0,162.0
+Porsche,Macan Turbo Electric,2024,3,100.0,81.0
+Porsche,Taycan,2020,0,0.0,213.8
+Porsche,Taycan,2020,1,75.0,225.0
+Porsche,Taycan,2020,2,100.0,11.0
+Porsche,Taycan,2023,0,0.0,71.0
+Porsche,Taycan,2023,1,20.0,71.0
+Porsche,Taycan,2023,2,40.0,57.0
+Porsche,Taycan,2023,3,60.0,43.0
+Porsche,Taycan,2023,4,80.0,28.0
+Porsche,Taycan,2023,5,100.0,11.0
+Porsche,Taycan,2024,0,0.0,82.3
+Porsche,Taycan,2024,1,40.0,82.3
+Porsche,Taycan,2024,2,70.0,65.84
+Porsche,Taycan,2024,3,90.0,32.92
+Porsche,Taycan,2024,4,100.0,11.0
+Porsche,Taycan 4S,2024,0,0.0,82.3
+Porsche,Taycan 4S,2024,1,40.0,82.3
+Porsche,Taycan 4S,2024,2,70.0,65.84
+Porsche,Taycan 4S,2024,3,90.0,32.92
+Porsche,Taycan 4S,2024,4,100.0,11.0
+Porsche,Taycan Turbo,2020,0,0.0,83.7
+Porsche,Taycan Turbo,2020,1,20.0,83.7
+Porsche,Taycan Turbo,2020,2,40.0,67.0
+Porsche,Taycan Turbo,2020,3,60.0,50.0
+Porsche,Taycan Turbo,2020,4,80.0,33.0
+Porsche,Taycan Turbo,2020,5,100.0,11.0
+Porsche,electric,2024,0,0.0,95.0
+Porsche,electric,2024,1,40.0,95.0
+Porsche,electric,2024,2,70.0,76.0
+Porsche,electric,2024,3,90.0,38.0
+Porsche,electric,2024,4,100.0,11.0
+Porsche,gts,2022,0,0.0,83.7
+Porsche,gts,2022,1,20.0,83.7
+Porsche,gts,2022,2,40.0,67.0
+Porsche,gts,2022,3,60.0,50.0
+Porsche,gts,2022,4,80.0,33.0
+Porsche,gts,2022,5,100.0,11.0
+Porsche,gts sport turismo,2022,0,0.0,83.7
+Porsche,gts sport turismo,2022,1,20.0,83.7
+Porsche,gts sport turismo,2022,2,40.0,67.0
+Porsche,gts sport turismo,2022,3,60.0,50.0
+Porsche,gts sport turismo,2022,4,80.0,33.0
+Porsche,gts sport turismo,2022,5,100.0,11.0
+Porsche,plus,2021,0,0.0,83.7
+Porsche,plus,2021,1,20.0,83.7
+Porsche,plus,2021,2,40.0,67.0
+Porsche,plus,2021,3,60.0,50.0
+Porsche,plus,2021,4,80.0,33.0
+Porsche,plus,2021,5,100.0,11.0
+Porsche,plus,2023,0,0.0,83.7
+Porsche,plus,2023,1,40.0,83.7
+Porsche,plus,2023,2,70.0,66.96
+Porsche,plus,2023,3,90.0,33.48
+Porsche,plus,2023,4,100.0,11.0
+Porsche,plus,2024,0,0.0,97.0
+Porsche,plus,2024,1,40.0,97.0
+Porsche,plus,2024,2,70.0,77.6
+Porsche,plus,2024,3,90.0,38.8
+Porsche,plus,2024,4,100.0,11.0
+Porsche,plus sport turismo,2022,0,0.0,83.7
+Porsche,plus sport turismo,2022,1,20.0,83.7
+Porsche,plus sport turismo,2022,2,40.0,67.0
+Porsche,plus sport turismo,2022,3,60.0,50.0
+Porsche,plus sport turismo,2022,4,80.0,33.0
+Porsche,plus sport turismo,2022,5,100.0,11.0
+Porsche,sport turismo,2022,0,0.0,71.0
+Porsche,sport turismo,2022,1,20.0,71.0
+Porsche,sport turismo,2022,2,40.0,57.0
+Porsche,sport turismo,2022,3,60.0,43.0
+Porsche,sport turismo,2022,4,80.0,28.0
+Porsche,sport turismo,2022,5,100.0,11.0
+Porsche,turbo,2020,0,0.0,83.7
+Porsche,turbo,2020,1,20.0,83.7
+Porsche,turbo,2020,2,40.0,67.0
+Porsche,turbo,2020,3,60.0,50.0
+Porsche,turbo,2020,4,80.0,33.0
+Porsche,turbo,2020,5,100.0,11.0
+Porsche,turbo,2023,0,0.0,83.7
+Porsche,turbo,2023,1,40.0,83.7
+Porsche,turbo,2023,2,70.0,66.96
+Porsche,turbo,2023,3,90.0,33.48
+Porsche,turbo,2023,4,100.0,11.0
+Porsche,turbo,2024,0,0.0,97.0
+Porsche,turbo,2024,1,40.0,97.0
+Porsche,turbo,2024,2,70.0,77.6
+Porsche,turbo,2024,3,90.0,38.8
+Porsche,turbo,2024,4,100.0,11.0
+Porsche,turbo cross turismo,2021,0,0.0,83.7
+Porsche,turbo cross turismo,2021,1,20.0,83.7
+Porsche,turbo cross turismo,2021,2,40.0,67.0
+Porsche,turbo cross turismo,2021,3,60.0,50.0
+Porsche,turbo cross turismo,2021,4,80.0,33.0
+Porsche,turbo cross turismo,2021,5,100.0,11.0
+Porsche,turbo cross turismo,2023,0,0.0,83.7
+Porsche,turbo cross turismo,2023,1,40.0,83.7
+Porsche,turbo cross turismo,2023,2,70.0,66.96
+Porsche,turbo cross turismo,2023,3,90.0,33.48
+Porsche,turbo cross turismo,2023,4,100.0,11.0
+Porsche,turbo electric,2024,0,0.0,95.0
+Porsche,turbo electric,2024,1,40.0,95.0
+Porsche,turbo electric,2024,2,70.0,76.0
+Porsche,turbo electric,2024,3,90.0,38.0
+Porsche,turbo electric,2024,4,100.0,11.0
+Porsche,turbo s,2023,0,0.0,83.7
+Porsche,turbo s,2023,1,40.0,83.7
+Porsche,turbo s,2023,2,70.0,66.96
+Porsche,turbo s,2023,3,90.0,33.48
+Porsche,turbo s,2023,4,100.0,11.0
+Porsche,turbo s,2024,0,0.0,97.0
+Porsche,turbo s,2024,1,40.0,97.0
+Porsche,turbo s,2024,2,70.0,77.6
+Porsche,turbo s,2024,3,90.0,38.8
+Porsche,turbo s,2024,4,100.0,11.0
+Porsche,turbo s cross turismo,2021,0,0.0,83.7
+Porsche,turbo s cross turismo,2021,1,20.0,83.7
+Porsche,turbo s cross turismo,2021,2,40.0,67.0
+Porsche,turbo s cross turismo,2021,3,60.0,50.0
+Porsche,turbo s cross turismo,2021,4,80.0,33.0
+Porsche,turbo s cross turismo,2021,5,100.0,11.0
+Porsche,turbo s cross turismo,2023,0,0.0,83.7
+Porsche,turbo s cross turismo,2023,1,40.0,83.7
+Porsche,turbo s cross turismo,2023,2,70.0,66.96
+Porsche,turbo s cross turismo,2023,3,90.0,33.48
+Porsche,turbo s cross turismo,2023,4,100.0,11.0
+Porsche,turbo s sport turismo,2022,0,0.0,83.7
+Porsche,turbo s sport turismo,2022,1,20.0,83.7
+Porsche,turbo s sport turismo,2022,2,40.0,67.0
+Porsche,turbo s sport turismo,2022,3,60.0,50.0
+Porsche,turbo s sport turismo,2022,4,80.0,33.0
+Porsche,turbo s sport turismo,2022,5,100.0,11.0
+Porsche,turbo sport turismo,2022,0,0.0,83.7
+Porsche,turbo sport turismo,2022,1,20.0,83.7
+Porsche,turbo sport turismo,2022,2,40.0,67.0
+Porsche,turbo sport turismo,2022,3,60.0,50.0
+Porsche,turbo sport turismo,2022,4,80.0,33.0
+Porsche,turbo sport turismo,2022,5,100.0,11.0
+Renault,4 E-Tech 40kWh 120hp,2025,0,0.0,80.0
+Renault,4 E-Tech 40kWh 120hp,2025,1,50.0,80.0
+Renault,4 E-Tech 40kWh 120hp,2025,2,80.0,40.0
+Renault,4 E-Tech 40kWh 120hp,2025,3,100.0,16.0
+Renault,4 E-Tech 52kWh 150hp,2025,0,0.0,100.0
+Renault,4 E-Tech 52kWh 150hp,2025,1,50.0,100.0
+Renault,4 E-Tech 52kWh 150hp,2025,2,80.0,50.0
+Renault,4 E-Tech 52kWh 150hp,2025,3,100.0,20.0
+Renault,5 E-Tech,2025,0,0.0,76.0
+Renault,5 E-Tech,2025,1,50.0,80.0
+Renault,5 E-Tech,2025,2,80.0,40.0
+Renault,5 E-Tech,2025,3,100.0,16.0
+Renault,Kangoo E-Tech Electric,2022,0,0.0,80.0
+Renault,Kangoo E-Tech Electric,2022,1,50.0,80.0
+Renault,Kangoo E-Tech Electric,2022,2,80.0,40.0
+Renault,Kangoo E-Tech Electric,2022,3,100.0,16.0
+Renault,Kangoo Grand E-Tech Electric,2024,0,0.0,80.0
+Renault,Kangoo Grand E-Tech Electric,2024,1,50.0,80.0
+Renault,Kangoo Grand E-Tech Electric,2024,2,80.0,40.0
+Renault,Kangoo Grand E-Tech Electric,2024,3,100.0,16.0
+Renault,Kangoo Maxi ZE,2017,0,0.0,31.0
+Renault,Kangoo Maxi ZE,2017,1,20.0,31.0
+Renault,Kangoo Maxi ZE,2017,2,40.0,25.0
+Renault,Kangoo Maxi ZE,2017,3,60.0,19.0
+Renault,Kangoo Maxi ZE,2017,4,80.0,12.0
+Renault,Kangoo Maxi ZE,2017,5,100.0,11.0
+Renault,Kangoo Maxi ZE 33,2017,0,0.0,150.0
+Renault,Kangoo Maxi ZE 33,2017,1,20.0,150.0
+Renault,Kangoo Maxi ZE 33,2017,2,40.0,120.0
+Renault,Kangoo Maxi ZE 33,2017,3,60.0,90.0
+Renault,Kangoo Maxi ZE 33,2017,4,80.0,60.0
+Renault,Kangoo Maxi ZE 33,2017,5,100.0,11.0
+Renault,Kangoo ZE,2011,0,0.0,150.0
+Renault,Kangoo ZE,2011,1,20.0,150.0
+Renault,Kangoo ZE,2011,2,40.0,120.0
+Renault,Kangoo ZE,2011,3,60.0,90.0
+Renault,Kangoo ZE,2011,4,80.0,60.0
+Renault,Kangoo ZE,2011,5,100.0,11.0
+Renault,Megane E-Tech,2022,0,0.0,80.8
+Renault,Megane E-Tech,2022,1,75.0,85.0
+Renault,Megane E-Tech,2022,2,100.0,22.0
+Renault,Megane E-Tech EV40 130hp,2022,0,0.0,85.0
+Renault,Megane E-Tech EV40 130hp,2022,1,50.0,85.0
+Renault,Megane E-Tech EV40 130hp,2022,2,80.0,42.5
+Renault,Megane E-Tech EV40 130hp,2022,3,100.0,17.0
+Renault,Megane E-Tech EV60 130hp,2025,0,0.0,129.0
+Renault,Megane E-Tech EV60 130hp,2025,1,50.0,129.0
+Renault,Megane E-Tech EV60 130hp,2025,2,80.0,64.5
+Renault,Megane E-Tech EV60 130hp,2025,3,100.0,25.8
+Renault,Megane E-Tech EV60 220hp,2025,0,0.0,129.0
+Renault,Megane E-Tech EV60 220hp,2025,1,50.0,129.0
+Renault,Megane E-Tech EV60 220hp,2025,2,80.0,64.5
+Renault,Megane E-Tech EV60 220hp,2025,3,100.0,25.8
+Renault,Scenic,2023,0,0.0,123.5
+Renault,Scenic,2023,1,75.0,130.0
+Renault,Scenic,2023,2,100.0,22.0
+Renault,Scenic E-Tech EV60 170hp,2023,0,0.0,130.0
+Renault,Scenic E-Tech EV60 170hp,2023,1,50.0,130.0
+Renault,Scenic E-Tech EV60 170hp,2023,2,80.0,65.0
+Renault,Scenic E-Tech EV60 170hp,2023,3,100.0,26.0
+Renault,Scenic E-Tech EV87 220hp,2023,0,0.0,150.0
+Renault,Scenic E-Tech EV87 220hp,2023,1,50.0,150.0
+Renault,Scenic E-Tech EV87 220hp,2023,2,80.0,75.0
+Renault,Scenic E-Tech EV87 220hp,2023,3,100.0,30.0
+Renault,Twingo Electric,2020,0,0.0,150.0
+Renault,Twingo Electric,2020,1,20.0,150.0
+Renault,Twingo Electric,2020,2,40.0,120.0
+Renault,Twingo Electric,2020,3,60.0,90.0
+Renault,Twingo Electric,2020,4,80.0,60.0
+Renault,Twingo Electric,2020,5,100.0,11.0
+Renault,Twingo Z.E.,2020,0,0.0,150.0
+Renault,Twingo Z.E.,2020,1,20.0,150.0
+Renault,Twingo Z.E.,2020,2,40.0,120.0
+Renault,Twingo Z.E.,2020,3,60.0,90.0
+Renault,Twingo Z.E.,2020,4,80.0,60.0
+Renault,Twingo Z.E.,2020,5,100.0,11.0
+Renault,Twizy,2012,0,0.0,150.0
+Renault,Twizy,2012,1,20.0,150.0
+Renault,Twizy,2012,2,40.0,120.0
+Renault,Twizy,2012,3,60.0,90.0
+Renault,Twizy,2012,4,80.0,60.0
+Renault,Twizy,2012,5,100.0,11.0
+Renault,Zoe,2013,0,0.0,150.0
+Renault,Zoe,2013,1,20.0,150.0
+Renault,Zoe,2013,2,40.0,120.0
+Renault,Zoe,2013,3,60.0,90.0
+Renault,Zoe,2013,4,80.0,60.0
+Renault,Zoe,2013,5,100.0,11.0
+Renault,Zoe,2015,0,0.0,150.0
+Renault,Zoe,2015,1,20.0,150.0
+Renault,Zoe,2015,2,40.0,120.0
+Renault,Zoe,2015,3,60.0,90.0
+Renault,Zoe,2015,4,80.0,60.0
+Renault,Zoe,2015,5,100.0,11.0
+Renault,Zoe,2017,0,0.0,100.0
+Renault,Zoe,2017,1,50.0,100.0
+Renault,Zoe,2017,2,80.0,60.0
+Renault,Zoe,2017,3,100.0,11.0
+Renault,Zoe,2018,0,0.0,41.0
+Renault,Zoe,2018,1,20.0,41.0
+Renault,Zoe,2018,2,40.0,33.0
+Renault,Zoe,2018,3,60.0,25.0
+Renault,Zoe,2018,4,80.0,16.0
+Renault,Zoe,2018,5,100.0,11.0
+Renault,Zoe,2019,0,0.0,41.0
+Renault,Zoe,2019,1,52.0,46.0
+Renault,Zoe,2019,2,80.0,27.0
+Renault,Zoe,2019,3,100.0,22.0
+Renault,Zoe Q210,2013,0,0.0,43.0
+Renault,Zoe Q210,2013,1,50.0,43.0
+Renault,Zoe Q210,2013,2,80.0,25.8
+Renault,Zoe Q210,2013,3,100.0,12.9
+Renault,Zoe R110,2018,0,0.0,150.0
+Renault,Zoe R110,2018,1,20.0,150.0
+Renault,Zoe R110,2018,2,40.0,120.0
+Renault,Zoe R110,2018,3,60.0,90.0
+Renault,Zoe R110,2018,4,80.0,60.0
+Renault,Zoe R110,2018,5,100.0,11.0
+Renault,Zoe R90,2017,0,0.0,100.0
+Renault,Zoe R90,2017,1,50.0,100.0
+Renault,Zoe R90,2017,2,80.0,60.0
+Renault,Zoe R90,2017,3,100.0,11.0
+Renault,Zoe R90 Entry,2017,0,0.0,150.0
+Renault,Zoe R90 Entry,2017,1,20.0,150.0
+Renault,Zoe R90 Entry,2017,2,40.0,120.0
+Renault,Zoe R90 Entry,2017,3,60.0,90.0
+Renault,Zoe R90 Entry,2017,4,80.0,60.0
+Renault,Zoe R90 Entry,2017,5,100.0,11.0
+Renault,Zoe ZE40 R110,2019,0,0.0,45.0
+Renault,Zoe ZE40 R110,2019,1,50.0,45.0
+Renault,Zoe ZE40 R110,2019,2,80.0,27.0
+Renault,Zoe ZE40 R110,2019,3,100.0,13.5
+Renault,Zoe ZE50 R110,2019,0,0.0,46.0
+Renault,Zoe ZE50 R110,2019,1,20.0,46.0
+Renault,Zoe ZE50 R110,2019,2,40.0,37.0
+Renault,Zoe ZE50 R110,2019,3,60.0,28.0
+Renault,Zoe ZE50 R110,2019,4,80.0,18.0
+Renault,Zoe ZE50 R110,2019,5,100.0,11.0
+Renault,Zoe ZE50 R135,2019,0,0.0,46.0
+Renault,Zoe ZE50 R135,2019,1,20.0,46.0
+Renault,Zoe ZE50 R135,2019,2,40.0,37.0
+Renault,Zoe ZE50 R135,2019,3,60.0,28.0
+Renault,Zoe ZE50 R135,2019,4,80.0,18.0
+Renault,Zoe ZE50 R135,2019,5,100.0,11.0
+Renault,e-tech electric,2022,0,0.0,45.0
+Renault,e-tech electric,2022,1,50.0,45.0
+Renault,e-tech electric,2022,2,80.0,27.0
+Renault,e-tech electric,2022,3,100.0,11.0
+Renault,e-tech ev40 130hp,2022,0,0.0,40.0
+Renault,e-tech ev40 130hp,2022,1,50.0,40.0
+Renault,e-tech ev40 130hp,2022,2,80.0,24.0
+Renault,e-tech ev40 130hp,2022,3,100.0,40.0
+Renault,e-tech ev60 130hp,2022,0,0.0,60.0
+Renault,e-tech ev60 130hp,2022,1,50.0,60.0
+Renault,e-tech ev60 130hp,2022,2,80.0,36.0
+Renault,e-tech ev60 130hp,2022,3,100.0,11.0
+Renault,e-tech ev60 170hp,2023,0,0.0,60.0
+Renault,e-tech ev60 170hp,2023,1,50.0,60.0
+Renault,e-tech ev60 170hp,2023,2,80.0,36.0
+Renault,e-tech ev60 170hp,2023,3,100.0,22.0
+Renault,e-tech ev60 220hp,2022,0,0.0,60.0
+Renault,e-tech ev60 220hp,2022,1,50.0,60.0
+Renault,e-tech ev60 220hp,2022,2,80.0,36.0
+Renault,e-tech ev60 220hp,2022,3,100.0,11.0
+Renault,e-tech ev87 220hp,2023,0,0.0,87.0
+Renault,e-tech ev87 220hp,2023,1,30.0,87.0
+Renault,e-tech ev87 220hp,2023,2,60.0,60.9
+Renault,e-tech ev87 220hp,2023,3,80.0,34.8
+Renault,e-tech ev87 220hp,2023,4,100.0,22.0
+Renault,electric,2020,0,0.0,21.3
+Renault,electric,2020,1,70.0,21.3
+Renault,electric,2020,2,80.0,14.91
+Renault,electric,2020,3,100.0,21.3
+Renault,grand e-tech electric,2024,0,0.0,45.0
+Renault,grand e-tech electric,2024,1,50.0,45.0
+Renault,grand e-tech electric,2024,2,80.0,27.0
+Renault,grand e-tech electric,2024,3,100.0,22.0
+Renault,q90,2018,0,0.0,41.0
+Renault,q90,2018,1,20.0,41.0
+Renault,q90,2018,2,40.0,33.0
+Renault,q90,2018,3,60.0,25.0
+Renault,q90,2018,4,80.0,16.0
+Renault,q90,2018,5,100.0,11.0
+Renault,r90,2018,0,0.0,41.0
+Renault,r90,2018,1,20.0,41.0
+Renault,r90,2018,2,40.0,33.0
+Renault,r90,2018,3,60.0,25.0
+Renault,r90,2018,4,80.0,16.0
+Renault,r90,2018,5,100.0,11.0
+Renault,ze40 r110,2019,0,0.0,41.0
+Renault,ze40 r110,2019,1,20.0,41.0
+Renault,ze40 r110,2019,2,40.0,33.0
+Renault,ze40 r110,2019,3,60.0,25.0
+Renault,ze40 r110,2019,4,80.0,16.0
+Renault,ze40 r110,2019,5,100.0,11.0
+Renault,ze50 r110,2019,0,0.0,52.0
+Renault,ze50 r110,2019,1,50.0,52.0
+Renault,ze50 r110,2019,2,80.0,31.2
+Renault,ze50 r110,2019,3,100.0,11.0
+Renault,ze50 r135,2019,0,0.0,52.0
+Renault,ze50 r135,2019,1,50.0,52.0
+Renault,ze50 r135,2019,2,80.0,31.2
+Renault,ze50 r135,2019,3,100.0,11.0
+Rolls-Royce,Spectre,2023,0,0.0,102.0
+Rolls-Royce,Spectre,2023,1,20.0,102.0
+Rolls-Royce,Spectre,2023,2,40.0,82.0
+Rolls-Royce,Spectre,2023,3,60.0,61.0
+Rolls-Royce,Spectre,2023,4,80.0,41.0
+Rolls-Royce,Spectre,2023,5,100.0,11.0
+SEAT,Mii Electric,2020,0,0.0,32.0
+SEAT,Mii Electric,2020,1,27.0,34.0
+SEAT,Mii Electric,2020,2,80.0,14.0
+SEAT,Mii Electric,2020,3,100.0,7.0
+SEAT,electric,2020,0,0.0,32.3
+SEAT,electric,2020,1,50.0,32.3
+SEAT,electric,2020,2,80.0,19.38
+SEAT,electric,2020,3,100.0,32.3
+Silence,S04,2023,0,0.0,150.0
+Silence,S04,2023,1,20.0,150.0
+Silence,S04,2023,2,40.0,120.0
+Silence,S04,2023,3,60.0,90.0
+Silence,S04,2023,4,80.0,60.0
+Silence,S04,2023,5,100.0,11.0
+Skoda,85x,2023,0,0.0,77.0
+Skoda,85x,2023,1,30.0,77.0
+Skoda,85x,2023,2,60.0,53.9
+Skoda,85x,2023,3,80.0,30.8
+Skoda,85x,2023,4,100.0,11.0
+Skoda,CITIGOe iV,2020,0,0.0,32.0
+Skoda,CITIGOe iV,2020,1,27.0,34.0
+Skoda,CITIGOe iV,2020,2,80.0,14.0
+Skoda,CITIGOe iV,2020,3,100.0,7.0
+Skoda,Elroq,2024,0,0.0,145.0
+Skoda,Elroq,2024,1,30.0,145.0
+Skoda,Elroq,2024,2,60.0,130.5
+Skoda,Elroq,2024,3,80.0,72.5
+Skoda,Elroq,2024,4,100.0,29.0
+Skoda,Enyaq,2023,0,0.0,135.0
+Skoda,Enyaq,2023,1,30.0,135.0
+Skoda,Enyaq,2023,2,60.0,121.5
+Skoda,Enyaq,2023,3,80.0,67.5
+Skoda,Enyaq,2023,4,100.0,27.0
+Skoda,Enyaq,2024,0,0.0,145.0
+Skoda,Enyaq,2024,1,30.0,145.0
+Skoda,Enyaq,2024,2,60.0,130.5
+Skoda,Enyaq,2024,3,80.0,72.5
+Skoda,Enyaq,2024,4,100.0,29.0
+Skoda,Enyaq 60,2023,0,0.0,58.0
+Skoda,Enyaq 60,2023,1,50.0,58.0
+Skoda,Enyaq 60,2023,2,80.0,34.8
+Skoda,Enyaq 60,2023,3,100.0,11.0
+Skoda,Enyaq 60,2025,0,0.0,165.0
+Skoda,Enyaq 60,2025,1,50.0,165.0
+Skoda,Enyaq 60,2025,2,80.0,82.5
+Skoda,Enyaq 60,2025,3,100.0,33.0
+Skoda,Enyaq 85,2023,0,0.0,77.0
+Skoda,Enyaq 85,2023,1,30.0,77.0
+Skoda,Enyaq 85,2023,2,60.0,53.9
+Skoda,Enyaq 85,2023,3,80.0,30.8
+Skoda,Enyaq 85,2023,4,100.0,11.0
+Skoda,Enyaq Coupe,2023,0,0.0,135.0
+Skoda,Enyaq Coupe,2023,1,30.0,135.0
+Skoda,Enyaq Coupe,2023,2,60.0,121.5
+Skoda,Enyaq Coupe,2023,3,80.0,67.5
+Skoda,Enyaq Coupe,2023,4,100.0,27.0
+Skoda,Enyaq Coupe 60,2025,0,0.0,165.0
+Skoda,Enyaq Coupe 60,2025,1,50.0,165.0
+Skoda,Enyaq Coupe 60,2025,2,80.0,82.5
+Skoda,Enyaq Coupe 60,2025,3,100.0,33.0
+Skoda,Enyaq Coupe iV 60,2022,0,0.0,124.0
+Skoda,Enyaq Coupe iV 60,2022,1,50.0,124.0
+Skoda,Enyaq Coupe iV 60,2022,2,80.0,62.0
+Skoda,Enyaq Coupe iV 60,2022,3,100.0,24.8
+Skoda,Enyaq Coupe iV 80,2022,0,0.0,143.0
+Skoda,Enyaq Coupe iV 80,2022,1,50.0,143.0
+Skoda,Enyaq Coupe iV 80,2022,2,80.0,85.8
+Skoda,Enyaq Coupe iV 80,2022,3,100.0,42.9
+Skoda,Enyaq Coupe iV 80x,2023,0,0.0,175.0
+Skoda,Enyaq Coupe iV 80x,2023,1,50.0,175.0
+Skoda,Enyaq Coupe iV 80x,2023,2,80.0,87.5
+Skoda,Enyaq Coupe iV 80x,2023,3,100.0,35.0
+Skoda,Enyaq Coupe iV RS,2022,0,0.0,175.0
+Skoda,Enyaq Coupe iV RS,2022,1,50.0,175.0
+Skoda,Enyaq Coupe iV RS,2022,2,80.0,87.5
+Skoda,Enyaq Coupe iV RS,2022,3,100.0,35.0
+Skoda,Enyaq RS,2023,0,0.0,77.0
+Skoda,Enyaq RS,2023,1,30.0,77.0
+Skoda,Enyaq RS,2023,2,60.0,53.9
+Skoda,Enyaq RS,2023,3,80.0,30.8
+Skoda,Enyaq RS,2023,4,100.0,11.0
+Skoda,Enyaq iV,2020,0,0.0,47.5
+Skoda,Enyaq iV,2020,1,75.0,50.0
+Skoda,Enyaq iV,2020,2,100.0,7.2
+Skoda,Enyaq iV,2020,3,50.0,75.0
+Skoda,Enyaq iV,2020,4,70.0,50.0
+Skoda,Enyaq iV,2020,5,80.0,50.0
+Skoda,Enyaq iV,2020,6,90.0,25.0
+Skoda,Enyaq iV,2020,7,100.0,10.0
+Skoda,Enyaq iV 50,2021,0,0.0,50.0
+Skoda,Enyaq iV 50,2021,1,50.0,50.0
+Skoda,Enyaq iV 50,2021,2,80.0,30.0
+Skoda,Enyaq iV 50,2021,3,100.0,15.0
+Skoda,Enyaq iV 60,2021,0,0.0,124.0
+Skoda,Enyaq iV 60,2021,1,50.0,124.0
+Skoda,Enyaq iV 60,2021,2,80.0,62.0
+Skoda,Enyaq iV 60,2021,3,100.0,24.8
+Skoda,Enyaq iV 80,2021,0,0.0,143.0
+Skoda,Enyaq iV 80,2021,1,50.0,143.0
+Skoda,Enyaq iV 80,2021,2,80.0,85.8
+Skoda,Enyaq iV 80,2021,3,100.0,42.9
+Skoda,Enyaq iV 80x,2021,0,0.0,175.0
+Skoda,Enyaq iV 80x,2021,1,50.0,175.0
+Skoda,Enyaq iV 80x,2021,2,80.0,87.5
+Skoda,Enyaq iV 80x,2021,3,100.0,35.0
+Skoda,Enyaq iV RS,2023,0,0.0,175.0
+Skoda,Enyaq iV RS,2023,1,50.0,175.0
+Skoda,Enyaq iV RS,2023,2,80.0,87.5
+Skoda,Enyaq iV RS,2023,3,100.0,35.0
+Skoda,coupe 60,2023,0,0.0,58.0
+Skoda,coupe 60,2023,1,50.0,58.0
+Skoda,coupe 60,2023,2,80.0,34.8
+Skoda,coupe 60,2023,3,100.0,11.0
+Skoda,coupe 85,2023,0,0.0,77.0
+Skoda,coupe 85,2023,1,30.0,77.0
+Skoda,coupe 85,2023,2,60.0,53.9
+Skoda,coupe 85,2023,3,80.0,30.8
+Skoda,coupe 85,2023,4,100.0,11.0
+Skoda,coupe 85x,2023,0,0.0,77.0
+Skoda,coupe 85x,2023,1,30.0,77.0
+Skoda,coupe 85x,2023,2,60.0,53.9
+Skoda,coupe 85x,2023,3,80.0,30.8
+Skoda,coupe 85x,2023,4,100.0,11.0
+Skoda,coupe iv 60,2022,0,0.0,58.0
+Skoda,coupe iv 60,2022,1,50.0,58.0
+Skoda,coupe iv 60,2022,2,80.0,34.8
+Skoda,coupe iv 60,2022,3,100.0,11.0
+Skoda,coupe iv 80,2022,0,0.0,77.0
+Skoda,coupe iv 80,2022,1,30.0,77.0
+Skoda,coupe iv 80,2022,2,60.0,53.9
+Skoda,coupe iv 80,2022,3,80.0,30.8
+Skoda,coupe iv 80,2022,4,100.0,11.0
+Skoda,coupe iv 80x,2023,0,0.0,77.0
+Skoda,coupe iv 80x,2023,1,30.0,77.0
+Skoda,coupe iv 80x,2023,2,60.0,53.9
+Skoda,coupe iv 80x,2023,3,80.0,30.8
+Skoda,coupe iv 80x,2023,4,100.0,11.0
+Skoda,coupe iv rs,2022,0,0.0,77.0
+Skoda,coupe iv rs,2022,1,30.0,77.0
+Skoda,coupe iv rs,2022,2,60.0,53.9
+Skoda,coupe iv rs,2022,3,80.0,30.8
+Skoda,coupe iv rs,2022,4,100.0,11.0
+Skoda,coupe rs,2023,0,0.0,77.0
+Skoda,coupe rs,2023,1,30.0,77.0
+Skoda,coupe rs,2023,2,60.0,53.9
+Skoda,coupe rs,2023,3,80.0,30.8
+Skoda,coupe rs,2023,4,100.0,11.0
+Skoda,iv,2020,0,0.0,32.3
+Skoda,iv,2020,1,50.0,32.3
+Skoda,iv,2020,2,80.0,19.38
+Skoda,iv,2020,3,100.0,32.3
+Skoda,iv 50,2021,0,0.0,52.0
+Skoda,iv 50,2021,1,50.0,52.0
+Skoda,iv 50,2021,2,80.0,31.2
+Skoda,iv 50,2021,3,100.0,11.0
+Skoda,iv 60,2021,0,0.0,58.0
+Skoda,iv 60,2021,1,50.0,58.0
+Skoda,iv 60,2021,2,80.0,34.8
+Skoda,iv 60,2021,3,100.0,11.0
+Skoda,iv 80,2021,0,0.0,77.0
+Skoda,iv 80,2021,1,30.0,77.0
+Skoda,iv 80,2021,2,60.0,53.9
+Skoda,iv 80,2021,3,80.0,30.8
+Skoda,iv 80,2021,4,100.0,11.0
+Skoda,iv 80x,2021,0,0.0,77.0
+Skoda,iv 80x,2021,1,30.0,77.0
+Skoda,iv 80x,2021,2,60.0,53.9
+Skoda,iv 80x,2021,3,80.0,30.8
+Skoda,iv 80x,2021,4,100.0,11.0
+Skoda,iv rs,2023,0,0.0,77.0
+Skoda,iv rs,2023,1,30.0,77.0
+Skoda,iv rs,2023,2,60.0,53.9
+Skoda,iv rs,2023,3,80.0,30.8
+Skoda,iv rs,2023,4,100.0,11.0
+Skywell,BE11 Long Range,2024,0,0.0,80.0
+Skywell,BE11 Long Range,2024,1,50.0,80.0
+Skywell,BE11 Long Range,2024,2,80.0,40.0
+Skywell,BE11 Long Range,2024,3,100.0,16.0
+Skywell,BE11 Standard Range,2024,0,0.0,80.0
+Skywell,BE11 Standard Range,2024,1,50.0,80.0
+Skywell,BE11 Standard Range,2024,2,80.0,40.0
+Skywell,BE11 Standard Range,2024,3,100.0,16.0
+SsangYong,Korando e-Motion,2022,0,0.0,76.0
+SsangYong,Korando e-Motion,2022,1,75.0,80.0
+SsangYong,Korando e-Motion,2022,2,100.0,6.6
+SsangYong,e-motion,2022,0,0.0,56.0
+SsangYong,e-motion,2022,1,50.0,56.0
+SsangYong,e-motion,2022,2,80.0,33.6
+SsangYong,e-motion,2022,3,100.0,11.0
+Subaru,Solterra,2022,0,0.0,142.5
+Subaru,Solterra,2022,1,10.0,150.0
+Subaru,Solterra,2022,2,30.0,150.0
+Subaru,Solterra,2022,3,50.0,120.0
+Subaru,Solterra,2022,4,80.0,70.0
+Subaru,Solterra,2022,5,90.0,40.0
+Subaru,Solterra,2022,6,100.0,20.0
+Subaru,awd,2022,0,0.0,64.0
+Subaru,awd,2022,1,30.0,64.0
+Subaru,awd,2022,2,60.0,44.8
+Subaru,awd,2022,3,80.0,25.6
+Subaru,awd,2022,4,100.0,11.0
+Tesla,3,2020,0,0.0,76.0
+Tesla,3,2020,1,20.0,76.0
+Tesla,3,2020,2,40.0,61.0
+Tesla,3,2020,3,60.0,46.0
+Tesla,3,2020,4,80.0,30.0
+Tesla,3,2020,5,100.0,11.0
+Tesla,3,2021,0,0.0,57.5
+Tesla,3,2021,1,50.0,57.5
+Tesla,3,2021,2,80.0,34.5
+Tesla,3,2021,3,100.0,11.0
+Tesla,3,2022,0,0.0,75.0
+Tesla,3,2022,1,30.0,75.0
+Tesla,3,2022,2,60.0,52.5
+Tesla,3,2022,3,80.0,30.0
+Tesla,3,2022,4,100.0,11.0
+Tesla,3 long range,2019,0,0.0,73.5
+Tesla,3 long range,2019,1,20.0,73.5
+Tesla,3 long range,2019,2,40.0,59.0
+Tesla,3 long range,2019,3,60.0,44.0
+Tesla,3 long range,2019,4,80.0,29.0
+Tesla,3 long range,2019,5,100.0,11.0
+Tesla,3 long range dual motor,2019,0,0.0,73.5
+Tesla,3 long range dual motor,2019,1,20.0,73.5
+Tesla,3 long range dual motor,2019,2,40.0,59.0
+Tesla,3 long range dual motor,2019,3,60.0,44.0
+Tesla,3 long range dual motor,2019,4,80.0,29.0
+Tesla,3 long range dual motor,2019,5,100.0,11.0
+Tesla,3 long range dual motor,2020,0,0.0,72.0
+Tesla,3 long range dual motor,2020,1,30.0,72.0
+Tesla,3 long range dual motor,2020,2,60.0,50.4
+Tesla,3 long range dual motor,2020,3,80.0,28.8
+Tesla,3 long range dual motor,2020,4,100.0,11.0
+Tesla,3 long range dual motor,2021,0,0.0,75.0
+Tesla,3 long range dual motor,2021,1,20.0,75.0
+Tesla,3 long range dual motor,2021,2,40.0,60.0
+Tesla,3 long range dual motor,2021,3,60.0,45.0
+Tesla,3 long range dual motor,2021,4,80.0,30.0
+Tesla,3 long range dual motor,2021,5,100.0,11.0
+Tesla,3 long range dual motor,2023,0,0.0,75.0
+Tesla,3 long range dual motor,2023,1,30.0,75.0
+Tesla,3 long range dual motor,2023,2,60.0,52.5
+Tesla,3 long range dual motor,2023,3,80.0,30.0
+Tesla,3 long range dual motor,2023,4,100.0,11.0
+Tesla,3 long range rwd,2023,0,0.0,75.0
+Tesla,3 long range rwd,2023,1,30.0,75.0
+Tesla,3 long range rwd,2023,2,60.0,52.5
+Tesla,3 long range rwd,2023,3,80.0,30.0
+Tesla,3 long range rwd,2023,4,100.0,11.0
+Tesla,3 standard range plus,2019,0,0.0,49.0
+Tesla,3 standard range plus,2019,1,50.0,49.0
+Tesla,3 standard range plus,2019,2,80.0,29.4
+Tesla,3 standard range plus,2019,3,100.0,11.0
+Tesla,3 standard range plus,2021,0,0.0,51.0
+Tesla,3 standard range plus,2021,1,20.0,51.0
+Tesla,3 standard range plus,2021,2,40.0,41.0
+Tesla,3 standard range plus,2021,3,60.0,31.0
+Tesla,3 standard range plus,2021,4,80.0,20.0
+Tesla,3 standard range plus,2021,5,100.0,11.0
+Tesla,3 standard range plus lfp,2020,0,0.0,52.5
+Tesla,3 standard range plus lfp,2020,1,50.0,52.5
+Tesla,3 standard range plus lfp,2020,2,80.0,31.5
+Tesla,3 standard range plus lfp,2020,3,100.0,11.0
+Tesla,Model 3,2019,0,0.0,250.0
+Tesla,Model 3,2019,1,50.0,250.0
+Tesla,Model 3,2019,2,80.0,125.0
+Tesla,Model 3,2019,3,100.0,50.0
+Tesla,Model 3,2020,0,0.0,180.0
+Tesla,Model 3,2020,1,40.0,195.0
+Tesla,Model 3,2020,2,60.0,110.0
+Tesla,Model 3,2020,3,100.0,12.0
+Tesla,Model 3,2021,0,0.0,75.0
+Tesla,Model 3,2021,1,5.0,220.0
+Tesla,Model 3,2021,2,10.0,250.0
+Tesla,Model 3,2021,3,20.0,250.0
+Tesla,Model 3,2021,4,30.0,140.0
+Tesla,Model 3,2021,5,40.0,140.0
+Tesla,Model 3,2021,6,100.0,10.0
+Tesla,Model 3,2021,7,90.0,55.0
+Tesla,Model 3,2021,8,100.0,25.0
+Tesla,Model 3,2022,0,0.0,170.0
+Tesla,Model 3,2022,1,100.0,25.0
+Tesla,Model 3,2022,2,60.0,110.0
+Tesla,Model 3,2022,3,100.0,12.0
+Tesla,Model 3,2023,0,0.0,57.5
+Tesla,Model 3,2023,1,50.0,57.5
+Tesla,Model 3,2023,2,80.0,34.5
+Tesla,Model 3,2023,3,100.0,11.0
+Tesla,Model 3,2023,4,50.0,200.0
+Tesla,Model 3,2023,5,65.0,150.0
+Tesla,Model 3,2023,6,80.0,100.0
+Tesla,Model 3,2023,7,90.0,60.0
+Tesla,Model 3,2023,8,100.0,30.0
+Tesla,Model 3,2024,0,0.0,250.0
+Tesla,Model 3,2024,1,50.0,250.0
+Tesla,Model 3,2024,2,80.0,100.0
+Tesla,Model 3,2024,3,100.0,25.0
+Tesla,Model 3 Long Range,2019,0,0.0,73.5
+Tesla,Model 3 Long Range,2019,1,20.0,73.5
+Tesla,Model 3 Long Range,2019,2,40.0,59.0
+Tesla,Model 3 Long Range,2019,3,60.0,44.0
+Tesla,Model 3 Long Range,2019,4,80.0,29.0
+Tesla,Model 3 Long Range,2019,5,100.0,11.0
+Tesla,Model S,2012,0,0.0,114.0
+Tesla,Model S,2012,1,75.0,120.0
+Tesla,Model S,2012,2,100.0,16.5
+Tesla,Model S,2012,3,100.0,12.0
+Tesla,Model S,2012,4,100.0,10.0
+Tesla,Model S,2013,0,0.0,80.8
+Tesla,Model S,2013,1,20.0,80.8
+Tesla,Model S,2013,2,40.0,65.0
+Tesla,Model S,2013,3,60.0,48.0
+Tesla,Model S,2013,4,80.0,32.0
+Tesla,Model S,2013,5,100.0,11.0
+Tesla,Model S,2014,0,0.0,80.8
+Tesla,Model S,2014,1,20.0,80.8
+Tesla,Model S,2014,2,40.0,65.0
+Tesla,Model S,2014,3,60.0,48.0
+Tesla,Model S,2014,4,80.0,32.0
+Tesla,Model S,2014,5,100.0,11.0
+Tesla,Model S,2015,0,0.0,95.0
+Tesla,Model S,2015,1,75.0,100.0
+Tesla,Model S,2015,2,100.0,22.0
+Tesla,Model S,2015,3,80.0,26.6
+Tesla,Model S,2015,4,100.0,11.0
+Tesla,Model S,2015,5,100.0,11.0
+Tesla,Model S,2016,0,0.0,69.0
+Tesla,Model S,2016,1,30.0,69.0
+Tesla,Model S,2016,2,60.0,48.3
+Tesla,Model S,2016,3,80.0,27.6
+Tesla,Model S,2016,4,100.0,11.0
+Tesla,Model S,2016,5,100.0,11.0
+Tesla,Model S,2017,0,0.0,95.0
+Tesla,Model S,2017,1,30.0,95.0
+Tesla,Model S,2017,2,60.0,66.5
+Tesla,Model S,2017,3,80.0,38.0
+Tesla,Model S,2017,4,100.0,11.0
+Tesla,Model S,2019,0,0.0,197.0
+Tesla,Model S,2019,1,30.0,149.0
+Tesla,Model S,2019,2,50.0,133.0
+Tesla,Model S,2019,3,80.0,73.0
+Tesla,Model S,2019,4,100.0,10.0
+Tesla,Model S,2020,0,0.0,250.0
+Tesla,Model S,2020,1,50.0,250.0
+Tesla,Model S,2020,2,80.0,125.0
+Tesla,Model S,2020,3,100.0,50.0
+Tesla,Model S,2022,0,0.0,237.5
+Tesla,Model S,2022,1,75.0,250.0
+Tesla,Model S,2022,2,100.0,16.5
+Tesla,Model S,2022,3,100.0,50.0
+Tesla,Model S,2023,0,0.0,250.0
+Tesla,Model S,2023,1,50.0,250.0
+Tesla,Model S,2023,2,80.0,125.0
+Tesla,Model S,2023,3,100.0,50.0
+Tesla,Model X,2016,0,0.0,85.5
+Tesla,Model X,2016,1,20.0,85.5
+Tesla,Model X,2016,2,40.0,68.0
+Tesla,Model X,2016,3,60.0,51.0
+Tesla,Model X,2016,4,80.0,34.0
+Tesla,Model X,2016,5,100.0,11.0
+Tesla,Model X,2017,0,0.0,95.0
+Tesla,Model X,2017,1,30.0,95.0
+Tesla,Model X,2017,2,60.0,66.5
+Tesla,Model X,2017,3,80.0,38.0
+Tesla,Model X,2017,4,100.0,11.0
+Tesla,Model X,2019,0,0.0,125.0
+Tesla,Model X,2019,1,43.0,140.0
+Tesla,Model X,2019,2,80.0,37.0
+Tesla,Model X,2019,3,100.0,12.0
+Tesla,Model X,2020,0,0.0,148.0
+Tesla,Model X,2020,1,35.0,147.0
+Tesla,Model X,2020,2,70.0,98.0
+Tesla,Model X,2020,3,90.0,44.0
+Tesla,Model X,2020,4,100.0,10.0
+Tesla,Model X,2022,0,0.0,250.0
+Tesla,Model X,2022,1,50.0,250.0
+Tesla,Model X,2022,2,80.0,125.0
+Tesla,Model X,2022,3,100.0,50.0
+Tesla,Model X,2023,0,0.0,250.0
+Tesla,Model X,2023,1,50.0,250.0
+Tesla,Model X,2023,2,80.0,125.0
+Tesla,Model X,2023,3,100.0,50.0
+Tesla,Model Y,2020,0,0.0,246.0
+Tesla,Model Y,2020,1,35.0,238.0
+Tesla,Model Y,2020,2,75.0,99.0
+Tesla,Model Y,2020,3,100.0,18.0
+Tesla,Model Y,2022,0,0.0,57.5
+Tesla,Model Y,2022,1,50.0,57.5
+Tesla,Model Y,2022,2,80.0,34.5
+Tesla,Model Y,2022,3,100.0,11.0
+Tesla,Model Y,2025,0,0.0,250.0
+Tesla,Model Y,2025,1,50.0,250.0
+Tesla,Model Y,2025,2,80.0,100.0
+Tesla,Model Y,2025,3,100.0,25.0
+Tesla,Roadster,2022,0,0.0,237.5
+Tesla,Roadster,2022,1,75.0,250.0
+Tesla,Roadster,2022,2,100.0,22.0
+Tesla,s,2019,0,0.0,95.0
+Tesla,s,2019,1,30.0,95.0
+Tesla,s,2019,2,60.0,66.5
+Tesla,s,2019,3,80.0,38.0
+Tesla,s,2019,4,100.0,11.0
+Tesla,s,2020,0,0.0,98.0
+Tesla,s,2020,1,30.0,98.0
+Tesla,s,2020,2,60.0,68.6
+Tesla,s,2020,3,80.0,39.2
+Tesla,s,2020,4,100.0,11.0
+Tesla,s dual motor,2023,0,0.0,95.0
+Tesla,s dual motor,2023,1,30.0,95.0
+Tesla,s dual motor,2023,2,60.0,66.5
+Tesla,s dual motor,2023,3,80.0,38.0
+Tesla,s dual motor,2023,4,100.0,11.0
+Tesla,s long range,2019,0,0.0,95.0
+Tesla,s long range,2019,1,30.0,95.0
+Tesla,s long range,2019,2,60.0,66.5
+Tesla,s long range,2019,3,80.0,38.0
+Tesla,s long range,2019,4,100.0,11.0
+Tesla,s long range plus,2020,0,0.0,98.0
+Tesla,s long range plus,2020,1,30.0,98.0
+Tesla,s long range plus,2020,2,60.0,68.6
+Tesla,s long range plus,2020,3,80.0,39.2
+Tesla,s long range plus,2020,4,100.0,11.0
+Tesla,s plaid,2022,0,0.0,95.0
+Tesla,s plaid,2022,1,30.0,95.0
+Tesla,s plaid,2022,2,60.0,66.5
+Tesla,s plaid,2022,3,80.0,38.0
+Tesla,s plaid,2022,4,100.0,11.0
+Tesla,s standard range,2019,0,0.0,72.5
+Tesla,s standard range,2019,1,30.0,72.5
+Tesla,s standard range,2019,2,60.0,50.75
+Tesla,s standard range,2019,3,80.0,29.0
+Tesla,s standard range,2019,4,100.0,11.0
+Tesla,x,2019,0,0.0,95.0
+Tesla,x,2019,1,30.0,95.0
+Tesla,x,2019,2,60.0,66.5
+Tesla,x,2019,3,80.0,38.0
+Tesla,x,2019,4,100.0,11.0
+Tesla,x,2020,0,0.0,98.0
+Tesla,x,2020,1,30.0,98.0
+Tesla,x,2020,2,60.0,68.6
+Tesla,x,2020,3,80.0,39.2
+Tesla,x,2020,4,100.0,11.0
+Tesla,x dual motor,2023,0,0.0,95.0
+Tesla,x dual motor,2023,1,30.0,95.0
+Tesla,x dual motor,2023,2,60.0,66.5
+Tesla,x dual motor,2023,3,80.0,38.0
+Tesla,x dual motor,2023,4,100.0,11.0
+Tesla,x long range,2019,0,0.0,95.0
+Tesla,x long range,2019,1,30.0,95.0
+Tesla,x long range,2019,2,60.0,66.5
+Tesla,x long range,2019,3,80.0,38.0
+Tesla,x long range,2019,4,100.0,11.0
+Tesla,x long range plus,2020,0,0.0,98.0
+Tesla,x long range plus,2020,1,30.0,98.0
+Tesla,x long range plus,2020,2,60.0,68.6
+Tesla,x long range plus,2020,3,80.0,39.2
+Tesla,x long range plus,2020,4,100.0,11.0
+Tesla,x ludicrous,2019,0,0.0,95.0
+Tesla,x ludicrous,2019,1,30.0,95.0
+Tesla,x ludicrous,2019,2,60.0,66.5
+Tesla,x ludicrous,2019,3,80.0,38.0
+Tesla,x ludicrous,2019,4,100.0,11.0
+Tesla,x plaid,2022,0,0.0,95.0
+Tesla,x plaid,2022,1,30.0,95.0
+Tesla,x plaid,2022,2,60.0,66.5
+Tesla,x plaid,2022,3,80.0,38.0
+Tesla,x plaid,2022,4,100.0,11.0
+Tesla,x standard range,2019,0,0.0,72.5
+Tesla,x standard range,2019,1,30.0,72.5
+Tesla,x standard range,2019,2,60.0,50.75
+Tesla,x standard range,2019,3,80.0,29.0
+Tesla,x standard range,2019,4,100.0,11.0
+Tesla,y,2022,0,0.0,75.0
+Tesla,y,2022,1,30.0,75.0
+Tesla,y,2022,2,60.0,52.5
+Tesla,y,2022,3,80.0,30.0
+Tesla,y,2022,4,100.0,11.0
+Tesla,y long range dual motor,2021,0,0.0,72.0
+Tesla,y long range dual motor,2021,1,30.0,72.0
+Tesla,y long range dual motor,2021,2,60.0,50.4
+Tesla,y long range dual motor,2021,3,80.0,28.8
+Tesla,y long range dual motor,2021,4,100.0,11.0
+Tesla,y long range dual motor,2022,0,0.0,75.0
+Tesla,y long range dual motor,2022,1,30.0,75.0
+Tesla,y long range dual motor,2022,2,60.0,52.5
+Tesla,y long range dual motor,2022,3,80.0,30.0
+Tesla,y long range dual motor,2022,4,100.0,11.0
+e.GO Mobile,Life 20,2019,0,0.0,150.0
+e.GO Mobile,Life 20,2019,1,20.0,150.0
+e.GO Mobile,Life 20,2019,2,40.0,120.0
+e.GO Mobile,Life 20,2019,3,60.0,90.0
+e.GO Mobile,Life 20,2019,4,80.0,60.0
+e.GO Mobile,Life 20,2019,5,100.0,11.0
+e.GO Mobile,Life 40,2019,0,0.0,150.0
+e.GO Mobile,Life 40,2019,1,20.0,150.0
+e.GO Mobile,Life 40,2019,2,40.0,120.0
+e.GO Mobile,Life 40,2019,3,60.0,90.0
+e.GO Mobile,Life 40,2019,4,80.0,60.0
+e.GO Mobile,Life 40,2019,5,100.0,11.0
+e.GO Mobile,Life 60,2019,0,0.0,150.0
+e.GO Mobile,Life 60,2019,1,20.0,150.0
+e.GO Mobile,Life 60,2019,2,40.0,120.0
+e.GO Mobile,Life 60,2019,3,60.0,90.0
+e.GO Mobile,Life 60,2019,4,80.0,60.0
+e.GO Mobile,Life 60,2019,5,100.0,11.0
+e.GO Mobile,x,2022,0,0.0,27.0
+e.GO Mobile,x,2022,1,70.0,27.0
+e.GO Mobile,x,2022,2,80.0,18.9
+e.GO Mobile,x,2022,3,100.0,11.0
+smart,#1,2024,0,0.0,123.5
+smart,#1,2024,1,75.0,130.0
+smart,#1,2024,2,100.0,7.4
+smart,#1 Brabus,2023,0,0.0,150.0
+smart,#1 Brabus,2023,1,50.0,150.0
+smart,#1 Brabus,2023,2,80.0,75.0
+smart,#1 Brabus,2023,3,100.0,30.0
+smart,#1 Premium,2023,0,0.0,150.0
+smart,#1 Premium,2023,1,50.0,150.0
+smart,#1 Premium,2023,2,80.0,75.0
+smart,#1 Premium,2023,3,100.0,30.0
+smart,#1 Pro,2023,0,0.0,130.0
+smart,#1 Pro,2023,1,50.0,130.0
+smart,#1 Pro,2023,2,80.0,65.0
+smart,#1 Pro,2023,3,100.0,26.0
+smart,#1 Pro+,2023,0,0.0,150.0
+smart,#1 Pro+,2023,1,50.0,150.0
+smart,#1 Pro+,2023,2,80.0,75.0
+smart,#1 Pro+,2023,3,100.0,30.0
+smart,#1 Pulse,2023,0,0.0,150.0
+smart,#1 Pulse,2023,1,50.0,150.0
+smart,#1 Pulse,2023,2,80.0,75.0
+smart,#1 Pulse,2023,3,100.0,30.0
+smart,#3,2024,0,0.0,142.5
+smart,#3,2024,1,75.0,150.0
+smart,#3,2024,2,100.0,22.0
+smart,#3 Premium,2024,0,0.0,150.0
+smart,#3 Premium,2024,1,50.0,150.0
+smart,#3 Premium,2024,2,80.0,90.0
+smart,#3 Premium,2024,3,100.0,45.0
+smart,#5 Premium,2025,0,0.0,400.0
+smart,#5 Premium,2025,1,50.0,400.0
+smart,#5 Premium,2025,2,80.0,200.0
+smart,#5 Premium,2025,3,100.0,80.0
+smart,#5 Pro,2025,0,0.0,150.0
+smart,#5 Pro,2025,1,50.0,150.0
+smart,#5 Pro,2025,2,80.0,90.0
+smart,#5 Pro,2025,3,100.0,45.0
+smart,#5 Pro+,2025,0,0.0,400.0
+smart,#5 Pro+,2025,1,50.0,400.0
+smart,#5 Pro+,2025,2,80.0,200.0
+smart,#5 Pro+,2025,3,100.0,80.0
+smart,#5 Pulse,2025,0,0.0,400.0
+smart,#5 Pulse,2025,1,50.0,400.0
+smart,#5 Pulse,2025,2,80.0,200.0
+smart,#5 Pulse,2025,3,100.0,80.0
+smart,#5 Summit Edition,2025,0,0.0,400.0
+smart,#5 Summit Edition,2025,1,50.0,400.0
+smart,#5 Summit Edition,2025,2,80.0,200.0
+smart,#5 Summit Edition,2025,3,100.0,80.0
+smart,EQ forfour,2020,0,0.0,150.0
+smart,EQ forfour,2020,1,20.0,150.0
+smart,EQ forfour,2020,2,40.0,120.0
+smart,EQ forfour,2020,3,60.0,90.0
+smart,EQ forfour,2020,4,80.0,60.0
+smart,EQ forfour,2020,5,100.0,11.0
+smart,EQ fortwo cabrio,2020,0,0.0,150.0
+smart,EQ fortwo cabrio,2020,1,20.0,150.0
+smart,EQ fortwo cabrio,2020,2,40.0,120.0
+smart,EQ fortwo cabrio,2020,3,60.0,90.0
+smart,EQ fortwo cabrio,2020,4,80.0,60.0
+smart,EQ fortwo cabrio,2020,5,100.0,11.0
+smart,EQ fortwo coupe,2020,0,0.0,150.0
+smart,EQ fortwo coupe,2020,1,20.0,150.0
+smart,EQ fortwo coupe,2020,2,40.0,120.0
+smart,EQ fortwo coupe,2020,3,60.0,90.0
+smart,EQ fortwo coupe,2020,4,80.0,60.0
+smart,EQ fortwo coupe,2020,5,100.0,11.0
+smart,ForFour Electric,2017,0,0.0,100.0
+smart,ForFour Electric,2017,1,70.0,100.0
+smart,ForFour Electric,2017,2,80.0,70.0
+smart,ForFour Electric,2017,3,100.0,16.7
+smart,ForFour Electric Drive,2017,0,0.0,150.0
+smart,ForFour Electric Drive,2017,1,20.0,150.0
+smart,ForFour Electric Drive,2017,2,40.0,120.0
+smart,ForFour Electric Drive,2017,3,60.0,90.0
+smart,ForFour Electric Drive,2017,4,80.0,60.0
+smart,ForFour Electric Drive,2017,5,100.0,11.0
+smart,ForTwo Cabrio Electric,2017,0,0.0,100.0
+smart,ForTwo Cabrio Electric,2017,1,70.0,100.0
+smart,ForTwo Cabrio Electric,2017,2,80.0,70.0
+smart,ForTwo Cabrio Electric,2017,3,100.0,16.7
+smart,ForTwo Cabrio Electric Drive,2017,0,0.0,150.0
+smart,ForTwo Cabrio Electric Drive,2017,1,20.0,150.0
+smart,ForTwo Cabrio Electric Drive,2017,2,40.0,120.0
+smart,ForTwo Cabrio Electric Drive,2017,3,60.0,90.0
+smart,ForTwo Cabrio Electric Drive,2017,4,80.0,60.0
+smart,ForTwo Cabrio Electric Drive,2017,5,100.0,11.0
+smart,ForTwo Electric,2017,0,0.0,100.0
+smart,ForTwo Electric,2017,1,70.0,100.0
+smart,ForTwo Electric,2017,2,80.0,70.0
+smart,ForTwo Electric,2017,3,100.0,16.7
+smart,ForTwo Electric Drive,2017,0,0.0,150.0
+smart,ForTwo Electric Drive,2017,1,20.0,150.0
+smart,ForTwo Electric Drive,2017,2,40.0,120.0
+smart,ForTwo Electric Drive,2017,3,60.0,90.0
+smart,ForTwo Electric Drive,2017,4,80.0,60.0
+smart,ForTwo Electric Drive,2017,5,100.0,11.0
+smart,brabus,2023,0,0.0,62.0
+smart,brabus,2023,1,30.0,62.0
+smart,brabus,2023,2,60.0,43.4
+smart,brabus,2023,3,80.0,24.8
+smart,brabus,2023,4,100.0,22.0
+smart,brabus,2024,0,0.0,62.0
+smart,brabus,2024,1,30.0,62.0
+smart,brabus,2024,2,60.0,43.4
+smart,brabus,2024,3,80.0,24.8
+smart,brabus,2024,4,100.0,22.0
+smart,forfour,2018,0,0.0,100.0
+smart,forfour,2018,1,70.0,100.0
+smart,forfour,2018,2,80.0,70.0
+smart,forfour,2018,3,100.0,16.7
+smart,forfour,2020,0,0.0,100.0
+smart,forfour,2020,1,70.0,100.0
+smart,forfour,2020,2,80.0,70.0
+smart,forfour,2020,3,100.0,16.7
+smart,forfour EQ,2017,0,0.0,150.0
+smart,forfour EQ,2017,1,20.0,150.0
+smart,forfour EQ,2017,2,40.0,120.0
+smart,forfour EQ,2017,3,60.0,90.0
+smart,forfour EQ,2017,4,80.0,60.0
+smart,forfour EQ,2017,5,100.0,11.0
+smart,fortwo ED,2017,0,0.0,150.0
+smart,fortwo ED,2017,1,20.0,150.0
+smart,fortwo ED,2017,2,40.0,120.0
+smart,fortwo ED,2017,3,60.0,90.0
+smart,fortwo ED,2017,4,80.0,60.0
+smart,fortwo ED,2017,5,100.0,11.0
+smart,fortwo EQ,2017,0,0.0,150.0
+smart,fortwo EQ,2017,1,20.0,150.0
+smart,fortwo EQ,2017,2,40.0,120.0
+smart,fortwo EQ,2017,3,60.0,90.0
+smart,fortwo EQ,2017,4,80.0,60.0
+smart,fortwo EQ,2017,5,100.0,11.0
+smart,fortwo cabrio,2018,0,0.0,100.0
+smart,fortwo cabrio,2018,1,70.0,100.0
+smart,fortwo cabrio,2018,2,80.0,70.0
+smart,fortwo cabrio,2018,3,100.0,16.7
+smart,fortwo cabrio,2020,0,0.0,100.0
+smart,fortwo cabrio,2020,1,70.0,100.0
+smart,fortwo cabrio,2020,2,80.0,70.0
+smart,fortwo cabrio,2020,3,100.0,16.7
+smart,fortwo coupe,2018,0,0.0,100.0
+smart,fortwo coupe,2018,1,70.0,100.0
+smart,fortwo coupe,2018,2,80.0,70.0
+smart,fortwo coupe,2018,3,100.0,16.7
+smart,fortwo coupe,2020,0,0.0,100.0
+smart,fortwo coupe,2020,1,70.0,100.0
+smart,fortwo coupe,2020,2,80.0,70.0
+smart,fortwo coupe,2020,3,100.0,16.7
+smart,premium,2023,0,0.0,62.0
+smart,premium,2023,1,30.0,62.0
+smart,premium,2023,2,60.0,43.4
+smart,premium,2023,3,80.0,24.8
+smart,premium,2023,4,100.0,22.0
+smart,premium,2024,0,0.0,62.0
+smart,premium,2024,1,30.0,62.0
+smart,premium,2024,2,60.0,43.4
+smart,premium,2024,3,80.0,24.8
+smart,premium,2024,4,100.0,22.0
+smart,pro,2023,0,0.0,47.0
+smart,pro,2023,1,50.0,47.0
+smart,pro,2023,2,80.0,28.2
+smart,pro,2023,3,100.0,7.4
+smart,pro,2024,0,0.0,47.0
+smart,pro,2024,1,50.0,47.0
+smart,pro,2024,2,80.0,28.2
+smart,pro,2024,3,100.0,7.4
+smart,pro+,2023,0,0.0,62.0
+smart,pro+,2023,1,30.0,62.0
+smart,pro+,2023,2,60.0,43.4
+smart,pro+,2023,3,80.0,24.8
+smart,pro+,2023,4,100.0,22.0
+smart,pro+,2024,0,0.0,62.0
+smart,pro+,2024,1,30.0,62.0
+smart,pro+,2024,2,60.0,43.4
+smart,pro+,2024,3,80.0,24.8
+smart,pro+,2024,4,100.0,22.0
+smart,pulse,2023,0,0.0,62.0
+smart,pulse,2023,1,30.0,62.0
+smart,pulse,2023,2,60.0,43.4
+smart,pulse,2023,3,80.0,24.8
+smart,pulse,2023,4,100.0,22.0

@@ -1,0 +1,100 @@
+,company_name,Region,Specifics,City,Postcode,subscription_required,subscription_fee,access_type,borough_specific_rates_flag,time_sensitive_flag,day_sensitive_flag,has_membership_tiers,rates_vary_by_connector,notes,connection_fee,idle_fee_flag,pre_auth_fee_flag,pre_auth_avg_fee,pre_auth_fee_bank_dependent,qr_or_app_only_flag,charging_type,user_type,price_per_kWh
+4,BP Pulse,nationwide,0,0,0,TRUE,,,0,0,0,1,0.0,"Prices may vary slightly by site, shown in live app",,,1,,1,0,fast,subscriber,0.44
+6,GeniePoint,nationwide,0,0,0,Optional,0.0,app + contactless,0,0,0,0,0.0,Registered: 85p/kWh London. Contactless: 90p/kWh London. Overstay: £10 after 90 min and every 90 min after. Pre-auth: £25 app / £35 contactless. No connection fees.,0.0,,1,,0,0,fast,subscriber,0.85
+10,Qwello,nationwide,0,0,0,No,0.0,app,0,0,0,0,0.0,2p/min fee applies. Nighttime max fee: £3.60.,0.0,1.0,0,,0,0,fast,subscriber,0.42
+11,Believ,nationwide,0,0,0,Optional,5.0,app + contactless,0,0,0,1,0.0,"£5/month membership saves 3–6p/kWh. Pre-auth £30 (guests), £25 (members). Overstay fee varies.",0.0,1.0,1,15.0,0,0,fast,subscriber,0.53
+12,ESB EV Solutions,nationwide,0,0,0,Optional,4.99,app + contactless + RFID,0,1,1,1,0.0,£4.99/month general membership. £10 RFID for PAYG. Pre-auth £5. Overstay only in London.,0.0,1.0,1,5.0,0,0,fast,subscriber,0.59
+13,Connected Kerb,nationwide,0,0,0,No,0.0,app + contactless,0,0,0,0,0.0,Connected Kerb 7–22kW chargers at 50p/kWh. No subscription.,0.0,,0,,0,1,fast,subscriber,0.5
+20,BP Pulse,nationwide,0,0,0,TRUE,,,0,0,0,1,0.0,"Prices may vary slightly by site, shown in live app",,,1,,1,0,fast,payg,0.65
+22,GeniePoint,nationwide,0,0,0,Optional,0.0,app + contactless,0,0,0,0,0.0,Registered: 85p/kWh London. Contactless: 90p/kWh London. Overstay: £10 after 90 min and every 90 min after. Pre-auth: £25 app / £35 contactless. No connection fees.,0.0,,1,,0,0,fast,payg,0.9
+23,City EV,London,0,0,0,No,0.0,contactless + app,0,0,0,0,0.0,Contactless minimum charge £1. Pre-authorisation up to £45.,1.0,,1,45.0,0,0,fast,payg,0.33
+26,Qwello,nationwide,0,0,0,No,0.0,app,0,0,0,0,0.0,2p/min fee applies. Nighttime max fee: £3.60.,0.0,1.0,0,,0,0,fast,payg,0.42
+27,Believ,nationwide,0,0,0,Optional,5.0,app + contactless,0,0,0,1,0.0,"£5/month membership saves 3–6p/kWh. Pre-auth £30 (guests), £25 (members). Overstay fee varies.",0.0,1.0,1,15.0,0,0,fast,payg,0.56
+28,ESB EV Solutions,nationwide,0,0,0,Optional,4.99,app + contactless + RFID,0,1,1,1,0.0,£4.99/month general membership. £10 RFID for PAYG. Pre-auth £5. Overstay only in London.,0.0,1.0,1,5.0,0,0,fast,payg,0.63
+29,Connected Kerb,nationwide,0,0,0,No,0.0,app + contactless,0,0,0,0,0.0,Connected Kerb 7–22kW chargers at 50p/kWh. No subscription.,0.0,,0,,0,1,fast,payg,0.5
+30,Blink Charging,nationwide,0,0,0,No,0.0,App,0,0,0,0,0.0,"Lamp post avg: 54.87p/kWh, 0.20p connection fee.",0.2,1.0,0,,0,0,fast,payg,0.5929
+31,Smart Charge,nationwide,0,0,0,No,0.0,App or contactless (assumed),0,0,0,0,1.0,No subscription required. Fast (7/22kW) max 49p/kWh. Ultra-rapid max 72p/kWh.,0.0,,0,,0,1,fast,payg,0.49
+36,BP Pulse,nationwide,0,0,0,TRUE,,,0,0,0,1,0.0,"Prices may vary slightly by site, shown in live app",,,1,,1,0,fast,contactless,0.65
+38,GeniePoint,nationwide,0,0,0,Optional,0.0,app + contactless,0,0,0,0,0.0,Registered: 85p/kWh London. Contactless: 90p/kWh London. Overstay: £10 after 90 min and every 90 min after. Pre-auth: £25 app / £35 contactless. No connection fees.,0.0,,1,,0,0,fast,contactless,0.9
+39,City EV,London,0,0,0,No,0.0,contactless + app,0,0,0,0,0.0,Contactless minimum charge £1. Pre-authorisation up to £45.,1.0,,1,45.0,0,0,fast,contactless,0.33
+43,Believ,nationwide,0,0,0,Optional,5.0,app + contactless,0,0,0,1,0.0,"£5/month membership saves 3–6p/kWh. Pre-auth £30 (guests), £25 (members). Overstay fee varies.",0.0,1.0,1,15.0,0,0,fast,contactless,0.56
+44,ESB EV Solutions,nationwide,0,0,0,Optional,4.99,app + contactless + RFID,0,1,1,1,0.0,£4.99/month general membership. £10 RFID for PAYG. Pre-auth £5. Overstay only in London.,0.0,1.0,1,5.0,0,0,fast,contactless,0.73
+45,Connected Kerb,nationwide,0,0,0,No,0.0,app + contactless,0,0,0,0,0.0,Connected Kerb 7–22kW chargers at 50p/kWh. No subscription.,0.0,,0,,0,1,fast,contactless,0.5
+52,BP Pulse,nationwide,0,0,0,TRUE,,,0,0,0,1,0.0,"Prices may vary slightly by site, shown in live app",,,1,,1,0,rapid,subscriber,0.63
+54,GeniePoint,nationwide,0,0,0,Optional,0.0,app + contactless,0,0,0,0,0.0,Registered: 85p/kWh London. Contactless: 90p/kWh London. Overstay: £10 after 90 min and every 90 min after. Pre-auth: £25 app / £35 contactless. No connection fees.,0.0,,1,,0,0,rapid,subscriber,0.85
+59,Believ,nationwide,0,0,0,Optional,5.0,app + contactless,0,0,0,1,0.0,"£5/month membership saves 3–6p/kWh. Pre-auth £30 (guests), £25 (members). Overstay fee varies.",0.0,1.0,1,15.0,0,0,rapid,subscriber,0.6
+60,ESB EV Solutions,nationwide,0,0,0,Optional,4.99,app + contactless + RFID,0,1,1,1,0.0,£4.99/month general membership. £10 RFID for PAYG. Pre-auth £5. Overstay only in London.,0.0,1.0,1,5.0,0,0,rapid,subscriber,0.62
+68,BP Pulse,nationwide,0,0,0,TRUE,,,0,0,0,1,0.0,"Prices may vary slightly by site, shown in live app",,,1,,1,0,rapid,payg,0.83
+70,GeniePoint,nationwide,0,0,0,Optional,0.0,app + contactless,0,0,0,0,0.0,Registered: 85p/kWh London. Contactless: 90p/kWh London. Overstay: £10 after 90 min and every 90 min after. Pre-auth: £25 app / £35 contactless. No connection fees.,0.0,,1,,0,0,rapid,payg,0.9
+71,City EV,London,0,0,0,No,0.0,contactless + app,0,0,0,0,0.0,Contactless minimum charge £1. Pre-authorisation up to £45.,1.0,,1,45.0,0,0,rapid,payg,0.33
+72,Pod Point,nationwide,Tesco,0,0,No,0.0,app,0,0,0,0,1.0,"Tesco: 50kW @62p, Lidl without app @74p, 75kW @69p.",0.0,,0,,0,0,rapid,payg,0.62
+73,Pod Point,nationwide,Lidil,0,0,No,0.0,app,0,0,0,0,1.0,"Tesco: 50kW @62p, Lidl without app @74p, 75kW @69p.",0.0,,0,,0,0,rapid,payg,0.74
+75,Believ,nationwide,0,0,0,Optional,5.0,app + contactless,0,0,0,1,0.0,"£5/month membership saves 3–6p/kWh. Pre-auth £30 (guests), £25 (members). Overstay fee varies.",0.0,1.0,1,15.0,0,0,rapid,payg,0.66
+76,ESB EV Solutions,nationwide,0,0,0,Optional,4.99,app + contactless + RFID,0,1,1,1,0.0,£4.99/month general membership. £10 RFID for PAYG. Pre-auth £5. Overstay only in London.,0.0,1.0,1,5.0,0,0,rapid,payg,0.67
+78,Blink Charging,nationwide,0,0,0,No,0.0,App,0,0,0,0,0.0,"Lamp post avg: 54.87p/kWh, 0.20p connection fee.",0.2,1.0,0,,0,0,rapid,payg,0.682
+79,Smart Charge,nationwide,0,0,0,No,0.0,App or contactless (assumed),0,0,0,0,1.0,No subscription required. Fast (7/22kW) max 49p/kWh. Ultra-rapid max 72p/kWh.,0.0,,0,,0,1,rapid,payg,0.49
+84,BP Pulse,nationwide,0,0,0,TRUE,,,0,0,0,1,0.0,"Prices may vary slightly by site, shown in live app",,,1,,1,0,rapid,contactless,0.85
+86,GeniePoint,nationwide,0,0,0,Optional,0.0,app + contactless,0,0,0,0,0.0,Registered: 85p/kWh London. Contactless: 90p/kWh London. Overstay: £10 after 90 min and every 90 min after. Pre-auth: £25 app / £35 contactless. No connection fees.,0.0,,1,,0,0,rapid,contactless,0.9
+87,City EV,London,0,0,0,No,0.0,contactless + app,0,0,0,0,0.0,Contactless minimum charge £1. Pre-authorisation up to £45.,1.0,,1,45.0,0,0,rapid,contactless,0.33
+88,Pod Point,nationwide,Tesco,0,0,No,0.0,app,0,0,0,0,1.0,"Tesco: 50kW @62p, Lidl without app @74p, 75kW @69p.",0.0,,0,,0,0,rapid,contactless,0.62
+89,Pod Point,nationwide,Lidil,0,0,No,0.0,app,0,0,0,0,1.0,"Tesco: 50kW @62p, Lidl without app @74p, 75kW @69p.",0.0,,0,,0,0,rapid,contactless,0.62
+91,Believ,nationwide,0,0,0,Optional,5.0,app + contactless,0,0,0,1,0.0,"£5/month membership saves 3–6p/kWh. Pre-auth £30 (guests), £25 (members). Overstay fee varies.",0.0,1.0,1,15.0,0,0,rapid,contactless,0.66
+92,ESB EV Solutions,nationwide,0,0,0,Optional,4.99,app + contactless + RFID,0,1,1,1,0.0,£4.99/month general membership. £10 RFID for PAYG. Pre-auth £5. Overstay only in London.,0.0,1.0,1,5.0,0,0,rapid,contactless,0.73
+100,BP Pulse,nationwide,0,0,0,TRUE,,,0,0,0,1,0.0,"Prices may vary slightly by site, shown in live app",,,1,,1,0,ultra,subscriber,0.69
+102,GeniePoint,nationwide,0,0,0,Optional,0.0,app + contactless,0,0,0,0,0.0,Registered: 85p/kWh London. Contactless: 90p/kWh London. Overstay: £10 after 90 min and every 90 min after. Pre-auth: £25 app / £35 contactless. No connection fees.,0.0,,1,,0,0,ultra,subscriber,0.85
+107,Believ,nationwide,0,0,0,Optional,5.0,app + contactless,0,0,0,1,0.0,"£5/month membership saves 3–6p/kWh. Pre-auth £30 (guests), £25 (members). Overstay fee varies.",0.0,1.0,1,15.0,0,0,ultra,subscriber,0.6
+108,ESB EV Solutions,nationwide,0,0,0,Optional,4.99,app + contactless + RFID,0,1,1,1,0.0,£4.99/month general membership. £10 RFID for PAYG. Pre-auth £5. Overstay only in London.,0.0,1.0,1,5.0,0,0,ultra,subscriber,0.73
+116,BP Pulse,nationwide,0,0,0,TRUE,,,0,0,0,1,0.0,"Prices may vary slightly by site, shown in live app",,,1,,1,0,ultra,payg,0.87
+118,GeniePoint,nationwide,0,0,0,Optional,0.0,app + contactless,0,0,0,0,0.0,Registered: 85p/kWh London. Contactless: 90p/kWh London. Overstay: £10 after 90 min and every 90 min after. Pre-auth: £25 app / £35 contactless. No connection fees.,0.0,,1,,0,0,ultra,payg,0.9
+119,City EV,London,0,0,0,No,0.0,contactless + app,0,0,0,0,0.0,Contactless minimum charge £1. Pre-authorisation up to £45.,1.0,,1,45.0,0,0,ultra,payg,0.33
+120,Pod Point,nationwide,Tesco,0,0,No,0.0,app,0,0,0,0,1.0,"Tesco: 50kW @62p, Lidl without app @74p, 75kW @69p.",0.0,,0,,0,0,ultra,payg,0.69
+123,Believ,nationwide,0,0,0,Optional,5.0,app + contactless,0,0,0,1,0.0,"£5/month membership saves 3–6p/kWh. Pre-auth £30 (guests), £25 (members). Overstay fee varies.",0.0,1.0,1,15.0,0,0,ultra,payg,0.66
+124,ESB EV Solutions,nationwide,0,0,0,Optional,4.99,app + contactless + RFID,0,1,1,1,0.0,£4.99/month general membership. £10 RFID for PAYG. Pre-auth £5. Overstay only in London.,0.0,1.0,1,5.0,0,0,ultra,payg,0.77
+127,Smart Charge,nationwide,0,0,0,No,0.0,App or contactless (assumed),0,0,0,0,1.0,No subscription required. Fast (7/22kW) max 49p/kWh. Ultra-rapid max 72p/kWh.,0.0,,0,,0,1,ultra,payg,0.72
+132,BP Pulse,nationwide,0,0,0,TRUE,,,0,0,0,1,0.0,"Prices may vary slightly by site, shown in live app",,,1,,1,0,ultra,contactless,0.89
+134,GeniePoint,nationwide,0,0,0,Optional,0.0,app + contactless,0,0,0,0,0.0,Registered: 85p/kWh London. Contactless: 90p/kWh London. Overstay: £10 after 90 min and every 90 min after. Pre-auth: £25 app / £35 contactless. No connection fees.,0.0,,1,,0,0,ultra,contactless,0.9
+135,City EV,London,0,0,0,No,0.0,contactless + app,0,0,0,0,0.0,Contactless minimum charge £1. Pre-authorisation up to £45.,1.0,,1,45.0,0,0,ultra,contactless,0.33
+136,Pod Point,nationwide,Tesco,0,0,No,0.0,app,0,0,0,0,1.0,"Tesco: 50kW @62p, Lidl without app @74p, 75kW @69p.",0.0,,0,,0,0,ultra,contactless,0.69
+139,Believ,nationwide,0,0,0,Optional,5.0,app + contactless,0,0,0,1,0.0,"£5/month membership saves 3–6p/kWh. Pre-auth £30 (guests), £25 (members). Overstay fee varies.",0.0,1.0,1,15.0,0,0,ultra,contactless,0.66
+140,ESB EV Solutions,nationwide,0,0,0,Optional,4.99,app + contactless + RFID,0,1,1,1,0.0,£4.99/month general membership. £10 RFID for PAYG. Pre-auth £5. Overstay only in London.,0.0,1.0,1,5.0,0,0,ultra,contactless,0.73
+146,Source London,London,0,0,0,TRUE,4.0,,1,1,1,1,1.0,Same pricing across boroughs; idle fees waived overnight,,1.0,0,,0,0,unspecified,payg,0.65
+150,GeniePoint,nationwide,0,0,0,Optional,0.0,app + contactless,0,0,0,0,0.0,Registered: 85p/kWh London. Contactless: 90p/kWh London. Overstay: £10 after 90 min and every 90 min after. Pre-auth: £25 app / £35 contactless. No connection fees.,0.0,,1,,0,0,unspecified,payg,0.85
+151,City EV,London,0,0,0,No,0.0,contactless + app,0,0,0,0,0.0,Contactless minimum charge £1. Pre-authorisation up to £45.,1.0,,1,45.0,0,0,unspecified,payg,0.33
+154,Qwello,nationwide,0,0,0,No,0.0,app,0,0,0,0,0.0,2p/min fee applies. Nighttime max fee: £3.60.,0.0,1.0,0,,0,0,unspecified,payg,0.42
+155,Believ,nationwide,0,0,0,Optional,5.0,app + contactless,0,0,0,1,0.0,"£5/month membership saves 3–6p/kWh. Pre-auth £30 (guests), £25 (members). Overstay fee varies.",0.0,1.0,1,15.0,0,0,unspecified,payg,0.66
+156,ESB EV Solutions,nationwide,0,0,0,Optional,4.99,app + contactless + RFID,0,1,1,1,0.0,£4.99/month general membership. £10 RFID for PAYG. Pre-auth £5. Overstay only in London.,0.0,1.0,1,5.0,0,0,unspecified,payg,0.67
+157,Connected Kerb,nationwide,0,0,0,No,0.0,app + contactless,0,0,0,0,0.0,Connected Kerb 7–22kW chargers at 50p/kWh. No subscription.,0.0,,0,,0,1,unspecified,payg,0.5
+158,Blink Charging,nationwide,0,0,0,No,0.0,App,0,0,0,0,0.0,"Lamp post avg: 54.87p/kWh, 0.20p connection fee.",0.2,1.0,0,,0,0,unspecified,payg,0.5929
+159,Smart Charge,nationwide,0,0,0,No,0.0,App or contactless (assumed),0,0,0,0,1.0,No subscription required. Fast (7/22kW) max 49p/kWh. Ultra-rapid max 72p/kWh.,0.0,,0,,0,1,unspecified,payg,0.49
+162,Source London,London,0,0,0,TRUE,4.0,,1,1,1,1,1.0,Same pricing across boroughs; idle fees waived overnight,,1.0,0,,0,0,unspecified,resident,0.46
+176,ubitricity,London,0,0,0,No,0.0,public,0,0,0,0,,,0.0,,1,25.0,0,0,general,default,0.54
+177,SureCharge/FM Conway,nationwide,0,0,0,No,0.0,public,0,0,0,0,0.0,,0.0,,1,45.0,0,0,general,default,0.0
+178,Source London,London,0,0,0,TRUE,4.0,,1,1,1,1,1.0,Same pricing across boroughs; idle fees waived overnight,,1.0,0,,0,0,general,default,0.55
+179,Char.gy,nationwide,0,0,0,No,0.0,public,0,0,0,0,0.0,,0.0,,0,,0,0,general,default,0.0
+182,GeniePoint,nationwide,0,0,0,Optional,0.0,app + contactless,0,0,0,0,0.0,Registered: 85p/kWh London. Contactless: 90p/kWh London. Overstay: £10 after 90 min and every 90 min after. Pre-auth: £25 app / £35 contactless. No connection fees.,0.0,,1,,0,0,general,default,0.9
+183,City EV,London,0,0,0,No,0.0,contactless + app,0,0,0,0,0.0,Contactless minimum charge £1. Pre-authorisation up to £45.,1.0,,1,45.0,0,0,general,default,0.33
+186,Qwello,nationwide,0,0,0,No,0.0,app,0,0,0,0,0.0,2p/min fee applies. Nighttime max fee: £3.60.,0.0,1.0,0,,0,0,general,default,0.42
+187,Believ,nationwide,0,0,0,Optional,5.0,app + contactless,0,0,0,1,0.0,"£5/month membership saves 3–6p/kWh. Pre-auth £30 (guests), £25 (members). Overstay fee varies.",0.0,1.0,1,15.0,0,0,general,default,0.66
+188,ESB EV Solutions,nationwide,0,0,0,Optional,4.99,app + contactless + RFID,0,1,1,1,0.0,£4.99/month general membership. £10 RFID for PAYG. Pre-auth £5. Overstay only in London.,0.0,1.0,1,5.0,0,0,general,default,0.73
+189,Connected Kerb,nationwide,0,0,0,No,0.0,app + contactless,0,0,0,0,0.0,Connected Kerb 7–22kW chargers at 50p/kWh. No subscription.,0.0,,0,,0,1,general,default,0.5
+190,Blink Charging,nationwide,0,0,0,No,0.0,App,0,0,0,0,0.0,"Lamp post avg: 54.87p/kWh, 0.20p connection fee.",0.2,1.0,0,,0,0,general,default,0.5487
+191,Smart Charge,nationwide,0,0,0,No,0.0,App or contactless (assumed),0,0,0,0,1.0,No subscription required. Fast (7/22kW) max 49p/kWh. Ultra-rapid max 72p/kWh.,0.0,,0,,0,1,general,default,0.49
+192,ubitricity,London,0,0,0,No,0.0,public,0,0,0,0,,,0.0,,1,25.0,0,0,general,weekend,0.0
+193,SureCharge/FM Conway,nationwide,0,0,0,No,0.0,public,0,0,0,0,0.0,,0.0,,1,45.0,0,0,general,weekend,0.49
+195,Char.gy,nationwide,0,0,0,No,0.0,public,0,0,0,0,0.0,,0.0,,0,,0,0,general,weekend,0.0
+198,GeniePoint,nationwide,0,0,0,Optional,0.0,app + contactless,0,0,0,0,0.0,Registered: 85p/kWh London. Contactless: 90p/kWh London. Overstay: £10 after 90 min and every 90 min after. Pre-auth: £25 app / £35 contactless. No connection fees.,0.0,,1,,0,0,general,weekend,0.9
+199,City EV,London,0,0,0,No,0.0,contactless + app,0,0,0,0,0.0,Contactless minimum charge £1. Pre-authorisation up to £45.,1.0,,1,45.0,0,0,general,weekend,0.33
+202,Qwello,nationwide,0,0,0,No,0.0,app,0,0,0,0,0.0,2p/min fee applies. Nighttime max fee: £3.60.,0.0,1.0,0,,0,0,general,weekend,0.42
+203,Believ,nationwide,0,0,0,Optional,5.0,app + contactless,0,0,0,1,0.0,"£5/month membership saves 3–6p/kWh. Pre-auth £30 (guests), £25 (members). Overstay fee varies.",0.0,1.0,1,15.0,0,0,general,weekend,0.66
+204,ESB EV Solutions,nationwide,0,0,0,Optional,4.99,app + contactless + RFID,0,1,1,1,0.0,£4.99/month general membership. £10 RFID for PAYG. Pre-auth £5. Overstay only in London.,0.0,1.0,1,5.0,0,0,general,weekend,0.73
+205,Connected Kerb,nationwide,0,0,0,No,0.0,app + contactless,0,0,0,0,0.0,Connected Kerb 7–22kW chargers at 50p/kWh. No subscription.,0.0,,0,,0,1,general,weekend,0.5
+206,Blink Charging,nationwide,0,0,0,No,0.0,App,0,0,0,0,0.0,"Lamp post avg: 54.87p/kWh, 0.20p connection fee.",0.2,1.0,0,,0,0,general,weekend,0.5929
+207,Smart Charge,nationwide,0,0,0,No,0.0,App or contactless (assumed),0,0,0,0,1.0,No subscription required. Fast (7/22kW) max 49p/kWh. Ultra-rapid max 72p/kWh.,0.0,,0,,0,1,general,weekend,0.49
+208,ubitricity,London,0,0,0,No,0.0,public,0,0,0,0,,,0.0,,1,25.0,0,0,general,off_peak,0.47
+209,SureCharge/FM Conway,nationwide,0,0,0,No,0.0,public,0,0,0,0,0.0,,0.0,,1,45.0,0,0,general,off_peak,0.85
+211,Char.gy,nationwide,0,0,0,No,0.0,public,0,0,0,0,0.0,,0.0,,0,,0,0,general,off_peak,0.39
+218,Qwello,nationwide,0,0,0,No,0.0,app,0,0,0,0,0.0,2p/min fee applies. Nighttime max fee: £3.60.,0.0,1.0,0,,0,0,general,off_peak,0.42
+224,ubitricity,London,0,0,0,No,0.0,public,0,0,0,0,,,0.0,,1,25.0,0,0,general,peak,0.57
+225,SureCharge/FM Conway,nationwide,0,0,0,No,0.0,public,0,0,0,0,0.0,,0.0,,1,45.0,0,0,general,peak,0.49
+227,Char.gy,nationwide,0,0,0,No,0.0,public,0,0,0,0,0.0,,0.0,,0,,0,0,general,peak,0.59
+234,Qwello,nationwide,0,0,0,No,0.0,app,0,0,0,0,0.0,2p/min fee applies. Nighttime max fee: £3.60.,0.0,1.0,0,,0,0,general,peak,0.42
