@@ -1,0 +1,16 @@
+company_name,pricing_model,price_per_kwh,weekend_price,connection_fee,idle_fee,subscription_required,subscription_fee,access_type,peak_hours,off_peak_hours,off_peak_price,peak_price,pre_authorisation_fee,payg_price_per_kwh,resident_price_per_kwh,fast_subscriber_price,fast_payg_price,fast_contactless_price,rapid_subscriber_price,rapid_payg_price,rapid_contactless_price,ultra_subscriber_price,ultra_payg_price,ultra_contactless_price,notes,infrastructure_fee
+ubitricity,per_kWh,0.54,0.0,0.0,0,No,0.0,public,06:00-23:00,23:00-06:00,0.47,0.57,25,,,,,,,,,,,,,
+SureCharge/FM Conway,per_kWh,0.0,0.49,0.0,0,No,0.0,public,19:00-16:00,16:00-19:00,0.85,0.49,45,,,,,,,,,,,,,
+Source London,,0.55,,,£0.040.06/min after session (exempt 12am7am),TRUE,4.0,,,,,,0,0.65,0.46,,,,,,,,,,Same pricing across boroughs; idle fees waived overnight,
+Char.gy,per_kWh,0.0,0.0,0.0,0,No,0.0,public,07:00-00:00,00:00-07:00,0.39,0.59,0,,,,,,,,,,,,,
+BP Pulse,,,,,,TRUE,,,,,,,"Bank dependent, typically refunded",,,0.44,0.65,0.65,0.63,0.83,0.85,0.69,0.87,0.89,"Prices may vary slightly by site, shown in live app",
+Zest,,,,0.0,,FALSE,0.0,,,,,,Â£20 standard; Â£36 lamppost; Â£40 rapid; none if using Zest balance (min Â£3),,,,0.39â0.55,,,0.65â0.75,,,,,Prices vary by location; QR/App payment only; No membership required Auto top-up removes pre-auth; balance-based session ends at Â£0; banks may take up to 7 days to release hold.,
+GeniePoint,per_kWh,0.9,0.9,0.0,£10 after 90 min + £10 per 90 min thereafter,Optional,0.0,app + contactless,,,,,£25 app / £35 contactless,0.85,,0.85,0.9,0.9,0.85,0.9,0.9,0.85,0.9,0.9,Registered: 85p/kWh London. Contactless: 90p/kWh London. Overstay: £10 after 90 min and every 90 min after. Pre-auth: £25 app / £35 contactless. No connection fees.,
+City EV,per_kWh,0.33,0.33,1.0,,No,0.0,contactless + app,,,,,45.0,0.33,,,0.33,0.33,,0.33,0.33,,0.33,0.33,Contactless minimum charge £1. Pre-authorisation up to £45.,
+Pod Point,per_kWh,0.62,0.62,0.0,,No,0.0,app,,,,,,0.62,,,0.62,,,0.66,,,0.69,,"Tesco: 50kW @62p, Lidl without app @74p, 75kW @69p.",
+Qwello,per_kWh + per_minute,0.42,0.42,0.0,,No,0.0,app,07:00–21:00,21:00–07:00,0.42,0.42,,0.42,,0.42,0.42,,,,,,,,2p/min fee applies. Nighttime max fee: £3.60.,3.6
+Believ,per_kWh,0.66,0.66,0.0,"5p/min (Fast 09:30–18:30), 20p/min (Rapid)",Optional,5.0,app + contactless,,,,,30.0,0.66,,0.53,0.56,0.56,0.6,0.66,0.66,0.6,0.66,0.66,"£5/month membership saves 3–6p/kWh. Pre-auth £30 (guests), £25 (members). Overstay fee varies.",
+ESB EV Solutions,per_kWh,0.73,0.73,0.0,75p/min after 60 min (Rapid/Ultra in London only),Optional,4.99,app + contactless + RFID,,,,,5.0,0.67,,0.59,0.63,0.73,0.62,0.67,0.73,0.73,0.77,0.73,£4.99/month general membership. £10 RFID for PAYG. Pre-auth £5. Overstay only in London.,
+Connected Kerb,per_kWh,0.5,0.5,0.0,,No,0.0,app + contactless,,,,,,0.5,,0.5,0.5,0.5,,,,,,,Connected Kerb 7–22kW chargers at 50p/kWh. No subscription.,
+Blink Charging,per_kWh,0.5929,0.5929,0.002,,No,0.0,App,,,,,,0.5929,,,0.5929,,,0.682,,,,,"Lamp post avg: 54.87p/kWh, 0.20p connection fee.",
+Smart Charge,per_kWh,0.49,0.49,0.0,,No,0.0,App or contactless (assumed),,,,,,0.49,,,0.49,,,0.49,,,0.72,,No subscription required. Fast (7/22kW) max 49p/kWh. Ultra-rapid max 72p/kWh.,

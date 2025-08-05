@@ -1,0 +1,1098 @@
+brand_name,model,release_year,battery_kWh,avg_consumption_Wh_per_km,ac_phases,ac_max_power_kW,dc_max_power_kW,has_default_charging_curve
+Abarth,500E,2024,42.2,22.2,3,11.0,85.0,True
+Abarth,600e Scorpionissima,2024,50.8,18.1,3,11.0,100.0,False
+Abarth,500e Convertible,2023,37.8,16.8,3,11.0,85.0,False
+Abarth,500e Scorpionissima,2023,37.8,16.8,3,11.0,85.0,False
+Abarth,600e Turismo,2024,50.8,18.1,3,11.0,100.0,False
+Abarth,scorpionissima,2023,37.8,16.8,3,11.0,37.8,False
+Abarth,hatchback,2023,37.8,16.8,3,11.0,37.8,False
+Abarth,convertible,2023,37.8,16.8,3,11.0,37.8,False
+Aiways,U5.,2022,60.0,19.0,3,11.0,60.0,False
+Aiways,U6.,2022,60.0,17.1,3,11.0,60.0,False
+Alpine,A290 Electric 220 hp,2024,52.0,17.0,3,11.0,100.0,False
+Alpine,A290 Electric 180 hp,2024,52.0,16.8,3,11.0,100.0,False
+Artega,Karo,2020,14.4,7.2,1,4.0,150.0,True
+Audi,GT,2021,85.0,21.0,3,11.0,268.0,True
+Audi,GT,2021,85.0,20.2,3,11.0,268.0,True
+Audi,Q4 Sportback e-tron,2021,52.0,17.6,3,7.2,100.0,True
+Audi,Q4 Sportback e-tron,2021,77.0,19.0,3,11.0,125.0,False
+Audi,Q4 e-tron,2021,52.0,18.2,3,7.2,100.0,True
+Audi,Q4 e-tron,2021,77.0,18.8,3,11.0,125.0,False
+Audi,Q4 e-tron,2023,77.0,18.3,3,11.0,135.0,True
+Audi,Q4 e-tron,2021,77.0,19.7,3,11.0,125.0,False
+Audi,Q6 e-tron,2024,94.9,19.8,3,11.0,260.0,True
+Audi,Q6 e-tron,2024,94.9,20.6,3,11.0,270.0,True
+Audi,Q8 e-tron,2022,89.0,20.9,3,11.0,155.0,True
+Audi,Q8 e-tron,2022,106.0,21.0,3,11.0,168.0,True
+Audi,Q8 e-tron,2022,106.0,20.2,3,11.0,168.0,True
+Audi,SQ6 e-tron,2024,94.9,21.3,3,11.0,270.0,True
+Audi,e-tron 50,2019,65.0,22.7,3,11.0,124.0,False
+Audi,e-tron 50,2019,65.0,22.7,3,22.0,124.0,False
+Audi,e-tron 55,2019,86.5,23.4,3,11.0,155.0,False
+Audi,e-tron 55,2019,86.5,23.4,3,22.0,155.0,False
+Audi,e-tron S,2020,95.0,27.0,3,22.0,188.0,False
+Audi,e-tron S,2020,86.5,27.0,3,22.0,149.0,False
+Audi,e-tron GT quattro,2021,85.0,20.2,3,11.0,268.0,True
+Audi,A6 Sportback e-tron quattro,2024,94.9,16.2,3,11.0,270.0,False
+Audi,e-tron GT RS,2024,97.0,18.5,3,11.0,320.0,False
+Audi,e-tron GT S,2024,97.0,18.0,3,11.0,320.0,False
+Audi,A6 Avant e-tron quattro,2024,94.9,17.7,3,11.0,270.0,False
+Audi,Q6 e-tron,2024,75.8,19.2,3,11.0,225.0,False
+Audi,e-tron Sportback 55 quattro,2020,86.5,22.8,3,11.0,155.0,False
+Audi,Q4 e-tron 55 quattro,2023,77.0,19.5,3,11.0,175.0,False
+Audi,A6 Avant e-tron,2024,75.8,16.0,3,11.0,225.0,False
+Audi,A6 Sportback e-tron,2024,75.8,15.6,3,11.0,225.0,False
+Audi,e-tron 50 quattro,2021,64.7,23.1,3,11.0,120.0,False
+Audi,e-tron 55 quattro,2020,86.5,23.7,3,11.0,155.0,False
+Audi,e-tron GT RS performance,2024,97.0,18.5,3,11.0,320.0,False
+Audi,Q4 Sportback e-tron 45,2023,77.0,17.7,3,11.0,150.0,True
+Audi,S6 Sportback e-tron,2024,94.9,17.3,3,11.0,270.0,False
+Audi,Q6 e-tron Sportback performance,2024,94.9,18.6,3,11.0,260.0,False
+Audi,S6 Avant e-tron,2024,94.9,18.1,3,11.0,270.0,False
+Audi,Q4 Sportback e-tron 40,2021,76.6,18.0,3,11.0,143.0,False
+Audi,e-tron Sportback 50 quattro,2021,64.7,21.9,3,11.0,150.0,True
+Audi,Q6 e-tron Sportback quattro,2024,94.9,19.0,3,11.0,270.0,False
+Audi,Q4 e-tron 45 quattro,2023,77.0,19.5,3,11.0,150.0,True
+Audi,Q4 Sportback e-tron 45 quattro,2023,77.0,18.8,3,11.0,150.0,True
+Audi,Q4 Sportback e-tron 55 quattro,2023,77.0,18.6,3,11.0,175.0,False
+Audi,Q6 e-tron Sportback,2024,75.8,18.5,3,11.0,225.0,False
+Audi,SQ8 e-tron,2023,106.0,23.3,3,11.0,168.0,False
+Audi,SQ6 e-tron Sportback,2024,94.9,19.2,3,11.0,270.0,False
+Audi,Q8 e-tron Sportback 50 quattro,2022,89.0,20.0,3,11.0,155.0,False
+Audi,SQ8 e-tron Sportback,2023,106.0,22.1,3,11.0,168.0,False
+Audi,A6 Sportback e-tron performance,2024,94.9,15.8,3,11.0,270.0,False
+Audi,A6 Avant e-tron performance,2024,94.9,16.8,3,11.0,270.0,False
+Audi,e-tron 55,2019,86.5,23.7,3,11.0,86.5,False
+Audi,e-tron Sportback 55,2020,86.5,22.8,3,11.0,86.5,False
+Audi,gt rs,2021,85.0,21.0,3,11.0,85.0,False
+Audi,etron 35,2021,52.0,18.2,3,11.0,52.0,False
+Audi,50,2019,64.7,23.1,3,11.0,64.7,True
+Audi,sportback 50,2020,64.7,21.9,3,11.0,64.7,True
+Audi,55,2019,86.5,23.7,3,11.0,86.5,False
+Audi,s,2020,86.5,27.0,3,11.0,86.5,False
+Audi,s sportback,2020,86.5,25.8,3,11.0,86.5,False
+Audi,sportbacketron 35,2021,52.0,17.6,3,4.0,52.0,False
+Audi,55,2020,86.5,23.7,3,11.0,86.5,False
+Audi,sportback 55,2020,86.5,22.8,3,11.0,86.5,False
+Audi,gt quattro,2021,85.0,20.2,3,11.0,85.0,False
+Audi,etron 40,2021,76.6,18.9,3,11.0,76.6,True
+Audi,etron 50,2021,76.6,19.9,3,11.0,76.6,True
+Audi,sportbacketron 50,2021,76.6,19.2,3,4.0,76.6,True
+Audi,etron 45,2021,76.6,19.9,3,11.0,76.6,True
+Audi,sportbacketron 40,2021,76.6,18.0,3,4.0,76.6,True
+Audi,s,2021,86.5,27.0,3,11.0,86.5,False
+Audi,s sportback,2021,86.5,26.2,3,11.0,86.5,False
+Audi,50,2021,64.7,23.1,3,11.0,64.7,False
+Audi,sportback 50,2021,64.7,21.9,3,11.0,64.7,False
+Audi,sportbacketron 45,2022,76.6,19.2,3,11.0,76.6,False
+Audi,etron 50,2022,89.0,20.9,3,11.0,89.0,False
+Audi,etron 55,2022,106.0,21.0,3,11.0,106.0,False
+Audi,etron sportback 50,2022,89.0,20.0,3,11.0,89.0,False
+Audi,etron sportback 55,2022,106.0,20.2,3,11.0,106.0,False
+Audi,etron,2023,106.0,23.3,3,11.0,106.0,False
+Audi,etron sportback,2023,106.0,22.1,3,11.0,106.0,False
+Audi,etron 45,2023,77.0,18.3,3,11.0,77.0,False
+Audi,etron 45,2023,77.0,19.5,3,11.0,77.0,False
+Audi,etron 55,2023,77.0,19.5,3,11.0,77.0,False
+Audi,sportbacketron 45,2023,77.0,17.7,3,11.0,77.0,False
+Audi,sportbacketron 45,2023,77.0,18.8,3,11.0,77.0,False
+Audi,sportbacketron 55,2023,77.0,18.6,3,11.0,77.0,False
+BMW,iX3,2021,74.0,19.2,3,11.0,74.0,False
+BMW,i3,2020,37.9,15.4,3,11.0,50.0,False
+BMW,i3,2013,18.8,14.5,1,7.4,47.0,False
+BMW,i3,2013,27.2,16.0,3,11.0,50.0,False
+BMW,i3S,2020,37.9,16.2,3,11.0,50.0,True
+BMW,i3S,2019,37.9,16.1,3,11.0,49.0,False
+BMW,i3S,2019,27.2,16.1,3,11.0,49.0,False
+BMW,i3S,2019,27.2,16.1,3,11.0,49.0,False
+BMW,i4,2022,67.0,16.8,3,11.0,180.0,True
+BMW,i4,2021,80.7,17.2,3,11.0,207.0,True
+BMW,i5,2023,81.2,19.3,3,11.0,206.0,True
+BMW,i5,2024,81.2,19.6,3,11.0,206.0,True
+BMW,i5,2023,81.2,17.3,3,11.0,206.0,True
+BMW,i5,2024,81.2,17.8,3,11.0,206.0,True
+BMW,i5,2024,81.2,17.8,3,11.0,206.0,True
+BMW,i7,2022,101.7,19.9,3,11.0,195.0,True
+BMW,iX,2022,105.2,21.7,3,22.0,195.0,True
+BMW,iX,2021,71.0,19.7,3,11.0,148.0,True
+BMW,iX,2021,105.2,20.8,3,11.0,195.0,True
+BMW,iX1,2022,64.7,18.2,3,11.0,130.0,True
+BMW,iX3,2020,73.8,18.6,3,11.0,150.0,True
+BMW,iX xDrive60,2025,109.1,20.8,3,11.0,195.0,False
+BMW,iX xDrive45,2025,94.8,20.2,3,11.0,175.0,False
+BMW,iX2 eDrive20,2024,64.7,16.4,3,11.0,128.0,False
+BMW,iX2 xDrive30,2023,64.7,16.8,3,11.0,128.0,False
+BMW,i4,2024,81.3,18.1,3,11.0,207.0,True
+BMW,i7,2023,101.7,20.8,3,11.0,200.0,False
+BMW,i4,2024,81.3,16.6,3,11.0,207.0,True
+BMW,i7,2023,101.7,19.6,3,11.0,200.0,False
+BMW,iX M70 xDrive,2025,108.9,21.8,3,11.0,195.0,False
+BMW,iX1 eDrive20,2023,64.7,16.6,3,11.0,128.0,False
+BMW,i5 xDrive40 Touring,2025,81.2,18.2,3,136.0,206.0,False
+BMW,i3 94,2016,27.2,16.5,3,27.2,47.0,False
+BMW,i3 94,2017,27.2,16.5,3,27.2,27.2,False
+BMW,i3s 94,2017,27.2,17.0,3,27.2,27.2,False
+BMW,120 ah,2018,37.9,16.5,3,37.9,37.9,False
+BMW,edrive40,2021,80.7,15.7,3,11.0,80.7,True
+BMW,xdrive40,2021,71.0,19.7,3,11.0,71.0,True
+BMW,xdrive50,2021,105.2,20.8,3,11.0,105.2,True
+BMW,m50,2021,80.7,17.9,3,11.0,80.7,True
+BMW,m60,2022,105.2,21.7,3,11.0,105.2,True
+BMW,xdrive60,2022,101.7,19.9,3,11.0,101.7,False
+BMW,xdrive30,2022,64.7,17.0,3,11.0,64.7,False
+BMW,edrive35,2022,67.0,15.6,3,11.0,67.0,False
+BMW,m70 xdrive,2023,101.7,20.8,3,22.0,101.7,False
+BMW,edrive50,2023,101.7,19.6,3,11.0,101.7,False
+BMW,edrive40 sedan,2023,81.2,17.3,3,11.0,81.2,False
+BMW,m60 xdrive sedan,2023,81.2,19.3,3,11.0,81.2,False
+BMW,edrive20,2023,64.7,16.6,3,11.0,64.7,False
+BMW,xdrive30,2023,64.7,16.8,3,11.0,64.7,False
+BMW,xdrive40 sedan,2024,81.2,17.8,3,11.0,81.2,False
+BMW,edrive20,2024,64.7,16.4,3,11.0,64.7,False
+BYD,HAN,2023,85.4,18.0,3,6.6,85.4,True
+BYD,TANG,2022,86.4,24.3,3,7.4,86.4,False
+BYD,Dolphin,2023,60.5,17.8,3,11.0,88.0,True
+BYD,Dolphin,2023,44.9,17.6,3,7.4,60.0,True
+BYD,Dolphin,2023,44.9,17.6,3,7.4,60.0,True
+BYD,Seal,2023,82.5,16.8,3,11.0,150.0,True
+BYD,Seal,2023,82.5,16.5,3,11.0,150.0,True
+BYD,SEAL,2024,71.8,19.9,3,11.0,115.0,False
+BYD,DOLPHIN,2023,44.9,16.9,3,11.0,60.0,False
+BYD,SEAL,2025,61.4,16.6,3,11.0,110.0,False
+BYD,ATTO 3,2022,60.5,18.55,3,11.0,89.0,False
+BYD,DOLPHIN,2023,44.9,17.3,3,11.0,60.0,False
+BYD,DOLPHIN,2023,60.5,17.3,3,11.0,88.0,False
+BYD,SEAL,2024,87.0,20.5,3,11.0,140.0,False
+BYD,3,2022,60.5,18.3,3,11.0,60.5,False
+BYD,44,2023,44.9,16.9,3,7.4,44.9,False
+BYD,44,2023,44.9,17.3,3,7.4,44.9,False
+BYD,60,2023,60.5,17.3,3,11.0,60.5,False
+BYD,82,2023,82.5,17.2,3,11.0,82.5,False
+BYD,82,2023,82.5,18.5,3,11.0,82.5,False
+BYD,SEAL U 87 kWh Design,2024,87.0,20.5,3,11.0,87.0,False
+BYD,u 71.,2024,71.8,19.9,3,11.0,71.8,False
+BYD,flagship,2024,108.8,23.7,3,11.0,108.8,False
+Cadillac,Lyriq 600 E4,2024,102.0,22.2,3,11.0,190.0,False
+Carver,S+,2020,7.1,7.1,1,2.3,150.0,True
+Chevrolet,Bolt,2017,58.0,12.9,2,7.2,55.0,False
+Chevrolet,Bolt,2020,66.0,12.9,3,7.2,55.0,False
+Chevrolet,Spark EV,2015,19.0,14.0,1,3.3,50.0,True
+Chevrolet,Spark EV,2013,21.3,16.0,1,3.3,50.0,True
+Citroën,ë-C4,2021,46.3,16.0,3,7.4,46.3,True
+Citroën,e-C4,2021,46.3,16.0,3,11.0,101.0,True
+Citroën,e-C4,2024,46.3,16.0,3,11.0,100.0,False
+Citroën,e-C3 Aircross,2024,44.0,17.6,3,11.0,100.0,False
+Citroën,e-C4 X 54 kWh,2024,50.8,14.9,3,11.0,100.0,False
+Citroën,e-C4 X,2024,46.3,15.7,3,11.0,100.0,False
+Citroën,e-C4 54 kWh,2024,50.8,15.2,3,11.0,100.0,False
+Citroën,C-Zero,2016,14.5,17.1,3,11.0,100.0,True
+Citroën,e-Berlingo M 50 kWh,2024,50.0,21.3,3,11.0,150.0,True
+Citroën,e-SpaceTourer M 75 kWh,2024,68.0,26.2,3,11.0,150.0,True
+Citroën,e-Jumpy Combi M 75 kWh,2020,68.0,25.7,3,11.0,100.0,False
+Citroën,e-Berlingo XL 50 kWh,2024,50.0,21.7,3,11.0,150.0,True
+Citroën,e-SpaceTourer M 50 kWh,2024,46.3,25.7,3,11.0,150.0,True
+Citroën,E-Berlingo Multispace,2017,20.5,20.5,3,11.0,40.0,False
+Citroën,e-Jumpy Combi XL 75 kWh,2020,68.0,26.2,3,11.0,100.0,False
+Citroën,e-SpaceTourer XL 75 kWh,2024,68.0,26.2,3,11.0,150.0,True
+Citroën,e-Jumpy Combi M 50 kWh,2020,46.3,25.0,3,11.0,150.0,True
+Citroën,e-SpaceTourer XL 50 kWh,2024,50.0,25.0,3,11.0,101.0,True
+Citroën,e-Jumpy Combi XL 50 kWh,2020,46.3,25.7,3,11.0,101.0,True
+Citroën,e-SpaceTourer XS 50 kWh,2020,46.3,25.0,3,11.0,101.0,True
+Citroën,e-Jumpy Combi XS 50 kWh,2020,46.3,25.0,3,11.0,101.0,True
+Citroën,C-Zero,2011,14.5,17.1,3,11.0,100.0,True
+Citroën,E-Berlingo,2017,20.5,20.5,3,20.5,20.5,False
+Citroën,xs,2020,46.3,25.0,3,11.0,46.3,True
+Citroën,xl,2020,46.3,25.7,3,11.0,46.3,True
+Citroën,m,2021,68.0,25.7,3,11.0,68.0,True
+Citroën,xl,2021,68.0,26.2,3,11.0,68.0,True
+Citroën,m,2021,46.3,22.6,3,11.0,46.3,True
+Citroën,xl,2021,46.3,22.6,3,11.0,46.3,True
+Citroën,combi xs,2020,46.3,25.0,3,11.0,46.3,True
+Citroën,combi m,2020,46.3,25.0,3,11.0,46.3,True
+Citroën,combi xl,2020,46.3,25.7,3,11.0,46.3,True
+Citroën,combi m,2020,68.0,25.7,3,11.0,68.0,True
+Citroën,combi xl,2020,68.0,26.2,3,11.0,68.0,True
+Citroën,x,2022,46.3,16.2,3,7.4,46.3,False
+Citroën,54kwh,2023,50.8,15.4,3,11.0,50.8,False
+Citroën,x,2023,50.8,15.4,3,11.0,50.8,False
+Citroën,e-C3,2024,44.0,16.9,3,7.4,44.0,False
+CUPRA,Born,2021,45.0,16.4,3,7.2,100.0,True
+CUPRA,Born,2021,58.0,16.6,3,11.0,100.0,False
+CUPRA,Born,2022,58.0,16.8,3,11.0,100.0,False
+CUPRA,Born,2021,77.0,17.1,3,11.0,125.0,False
+CUPRA,Tavascan,2024,77.0,17.1,3,11.0,135.0,True
+CUPRA,Tavascan,2024,77.0,17.9,3,11.0,175.0,True
+CUPRA,Born 170 kW - 77 kWh,2024,77.0,16.7,3,11.0,175.0,False
+CUPRA,Born VZ,2024,79.0,17.0,3,11.0,185.0,False
+CUPRA,Born 170 kW - 59 kWh,2024,59.0,16.4,3,11.0,165.0,False
+CUPRA,Born 170 kW - 58 kWh,2022,58.0,16.8,3,11.0,124.0,False
+CUPRA,Born 150 kW - 58 kWh,2021,58.0,16.6,3,11.0,124.0,False
+CUPRA,150kw-,2021,58.0,16.6,3,11.0,58.0,False
+CUPRA,170kw-,2022,58.0,16.8,3,11.0,58.0,False
+CUPRA,170kw-,2022,77.0,17.1,3,11.0,77.0,False
+CUPRA,endurance,2024,77.0,17.3,3,11.0,77.0,False
+CUPRA,Tavascan VZ,2024,77.0,18.1,3,11.0,77.0,False
+Dacia,Spring Electric,2021,26.8,15.8,1,6.6,34.0,False
+Dacia,Spring Electric 45,2024,25.0,15.2,3,11.0,34.0,False
+Dacia,Spring Electric 65,2024,25.0,15.6,3,11.0,34.0,False
+Dacia,Spring Electric 65 Extreme,2023,25.0,15.6,3,11.0,34.0,False
+Dacia,electric,2021,25.0,15.6,3,6.6,25.0,False
+Dacia,electric 45,2022,25.0,15.2,3,6.6,25.0,False
+Dacia,electric 65 extreme,2023,25.0,15.6,3,6.6,25.0,False
+Dongfeng,Box 42.3 kWh,2024,40.0,15.7,3,11.0,60.0,False
+Dongfeng,Box 31.4 kWh,2025,29.0,15.3,3,11.0,57.0,True
+DS,crossback e-tense,2020,46.3,81.1,3,3.0,46.3,True
+DS,3 Crossback E-Tense,2020,46.0,18.4,3,11.0,100.0,False
+DS,3 Crossback E-Tense,2020,46.0,18.4,1,7.4,100.0,True
+DS,N°8 FWD Long Range,2024,97.2,17.5,3,11.0,200.0,False
+DS,N°8 AWD Long Range,2024,97.2,18.2,3,11.0,200.0,False
+DS,3 E-Tense,2022,50.8,16.9,3,85.0,100.0,False
+DS,3 Crossback E-Tense,2021,46.3,17.5,3,78.0,101.0,True
+DS,N°8 FWD,2024,74.0,17.4,3,11.0,160.0,False
+DS,crossback e-tense,2021,46.3,17.5,3,3.0,46.3,True
+DS,e-tense,2022,50.8,16.9,3,11.0,50.8,False
+e.GO Mobile,Life 20,2019,14.5,15.5,1,3.6,150.0,True
+e.GO Mobile,Life 40,2019,17.5,15.5,1,3.6,150.0,True
+e.GO Mobile,Life 60,2019,21.0,15.5,1,3.6,150.0,True
+e.GO Mobile,x,2022,27.0,18.0,3,11.0,27.0,False
+Elaris,BEO 86 kWh,2023,81.0,20.8,3,11.0,100.0,False
+Elaris,86kwh,2023,81.0,20.8,3,11.0,81.0,False
+Energica,Eva,2020,18.9,11.6,1,3.0,23.0,False
+Fiat,500e,2013,21.3,13.5,1,6.6,40.0,True
+Fiat,500e,2021,21.3,15.8,1,6.6,50.0,False
+Fiat,500e,2020,37.3,15.9,3,11.0,85.0,False
+Fiat,600e,2023,50.8,16.4,3,11.0,50.8,False
+Fiat,E-Ulysse L2 75 kWh,2022,68.0,25.7,3,11.0,100.0,False
+Fiat,E-Ulysse L2 50 kWh,2022,46.3,25.0,3,11.0,101.0,True
+Fiat,E-Ulysse L3 75 kWh,2022,68.0,26.2,3,11.0,100.0,False
+Fiat,E-Ulysse L3 50 kWh,2022,46.3,25.7,3,11.0,101.0,True
+Fiat,Grande Panda,2024,43.8,16.8,3,11.0,100.0,False
+Fiat,cabrio,2020,37.3,16.2,3,37.3,37.3,False
+Fiat,hatchback,2020,37.3,15.9,3,42.0,37.3,True
+Fiat,hatchback,2020,21.3,15.8,3,24.0,21.3,True
+Fiat,3+1,2020,37.3,15.9,3,37.3,37.3,False
+Fiat,l2,2022,46.3,25.0,3,7.4,46.3,False
+Fiat,l2,2022,68.0,25.7,3,7.4,68.0,False
+Fiat,l3,2022,46.3,25.7,3,7.4,46.3,False
+Fiat,l3,2022,68.0,26.2,3,7.4,68.0,False
+Fiat,3+1,2022,21.3,15.8,3,11.0,21.3,False
+Fiat,cabrio,2022,21.3,15.8,3,11.0,21.3,False
+Fisker,Ocean One,2023,106.5,20.1,3,11.0,250.0,False
+Fisker,Ocean Ultra,2023,106.5,20.9,3,11.0,250.0,False
+Fisker,Ocean Sport,2023,71.0,20.3,3,11.0,200.0,False
+Fisker,Ocean Extreme,2023,106.5,21.7,3,11.0,250.0,False
+Fisker,sport,2023,71.0,20.3,3,11.0,71.0,False
+Fisker,ultra,2023,106.5,20.9,3,11.0,106.5,False
+Fisker,extreme,2023,106.5,21.7,3,11.0,106.5,False
+Fisker,one,2023,106.5,20.1,3,11.0,106.5,False
+Ford,Focus electric,2017,33.5,16.4,1,6.6,50.0,True
+Ford,Focus electric,2013,23.0,16.4,1,6.6,150.0,True
+Ford,Mustang Mach e,2022,70.0,17.9,3,11.0,113.0,False
+Ford,Mustang Mach e,2022,88.0,18.1,3,11.0,148.0,False
+Ford,Mustang Mach e,2022,88.0,20.0,3,11.0,148.0,False
+Ford,Mustang Mach e,2022,70.0,16.5,3,11.0,113.0,False
+Ford,Mustang Mach e,2022,88.0,16.5,3,11.0,148.0,False
+Ford,Puma Gen-E,2024,43.6,15.9,3,11.0,100.0,False
+Ford,Capri Extended Range RWD,2024,77.0,16.9,3,11.0,135.0,False
+Ford,Mustang Mach-E ER RWD,2024,91.0,19.0,3,11.0,150.0,False
+Ford,Capri Extended Range AWD,2024,79.0,17.4,3,11.0,185.0,False
+Ford,Explorer Extended Range AWD,2024,79.0,18.0,3,11.0,185.0,False
+Ford,Mustang Mach-E ER AWD,2024,91.0,20.7,3,115.0,150.0,False
+Ford,Capri Standard Range RWD,2024,52.0,16.3,3,11.0,145.0,False
+Ford,Explorer Extended Range RWD,2024,77.0,17.7,3,11.0,135.0,False
+Ford,Explorer Standard Range RWD,2024,52.0,17.0,3,11.0,145.0,False
+Ford,Mustang Mach-E SR RWD,2024,72.6,18.9,3,95.0,150.0,False
+Ford,Mustang Mach-E Rally,2024,91.0,22.2,3,11.0,150.0,False
+Ford,Mustang Mach-E SR AWD,2024,72.6,20.7,3,95.0,150.0,False
+Ford,Focus Electric,2013,19.6,18.6,3,11.0,150.0,True
+Ford,mach-e sr rwd,2021,68.0,18.6,3,11.0,68.0,True
+Ford,mach-e er rwd,2021,88.0,18.9,3,11.0,88.0,True
+Ford,mach-e sr,2021,68.0,20.3,3,11.0,68.0,True
+Ford,mach-e er,2021,88.0,20.5,3,11.0,88.0,True
+Ford,mach-e,2021,88.0,21.5,3,11.0,88.0,True
+Ford,mach-e sr rwd,2022,70.0,18.7,3,11.0,70.0,False
+Ford,mach-e er rwd,2022,91.0,19.0,3,11.0,91.0,False
+Ford,mach-e sr,2022,70.0,20.3,3,11.0,70.0,False
+Ford,mach-e er,2022,91.0,20.7,3,11.0,91.0,False
+Ford,mach-e,2022,91.0,21.4,3,11.0,91.0,False
+Ford,mach-e sr rwd,2023,72.6,19.1,3,11.0,72.6,False
+Ford,mach-e er rwd,2023,91.0,19.0,3,11.0,91.0,False
+Ford,mach-e sr,2023,72.6,20.7,3,11.0,72.6,False
+Ford,mach-e er,2023,91.0,20.7,3,11.0,91.0,False
+Ford,mach-e,2023,91.0,21.4,3,11.0,91.0,False
+Genesis,G80,2023,82.5,18.8,3,11.0,230.0,True
+Genesis,GV60,2022,74.0,19.0,3,11.0,233.0,True
+Genesis,GV60,2022,74.0,19.5,3,11.0,233.0,True
+Genesis,GV60,2022,74.0,20.3,3,11.0,233.0,True
+Genesis,GV70,2023,74.0,21.1,3,11.0,233.0,True
+Genesis,premium,2022,74.0,19.0,3,11.0,74.0,False
+Genesis,sport,2022,74.0,19.5,3,11.0,74.0,False
+Genesis,sport plus,2022,74.0,20.3,3,11.0,74.0,False
+Genesis,electrified luxury,2022,82.5,18.8,3,11.0,82.5,False
+Genesis,electrified sport,2022,74.0,21.1,3,11.0,74.0,False
+GWM,ORA 03,2024,45.4,17.5,3,11.0,64.0,True
+GWM,ORA 03,2024,59.3,17.4,3,11.0,69.0,True
+GWM,ORA 03,2024,59.3,18.2,3,11.0,69.0,True
+GWM,ORA 07,2024,83.5,19.4,3,11.0,88.0,True
+GWM,ORA 07,2024,64.3,18.4,3,11.0,88.0,True
+GWM,ORA 07,2024,64.3,18.4,3,11.0,88.0,True
+GWM,ORA 03 48 kWh,2024,45.4,17.5,3,11.0,45.4,False
+GWM,ORA 03 63 kWh,2024,59.3,17.4,3,11.0,59.3,False
+GWM,ORA 03 GT,2024,59.3,18.2,3,11.0,59.3,False
+Honda,e,2020,28.5,16.8,3,6.6,28.5,False
+Honda,e:Ny1,2023,61.9,18.5,3,11.0,61.9,False
+Honda,advance,2020,28.5,16.8,3,28.5,28.5,False
+Hongqi,E-HS9,2023,112.0,24.3,3,11.0,130.0,True
+Hongqi,E-HS9 84 kWh,2022,76.5,23.9,3,11.0,140.0,False
+Hongqi,E-HS9 99 kWh,2022,90.0,24.3,3,11.0,140.0,False
+Hongqi,84kwh,2022,76.5,23.9,3,11.0,76.5,False
+Hongqi,99kwh,2022,90.0,24.3,3,11.0,90.0,False
+Hongqi,120kwh,2023,112.0,24.3,3,11.0,112.0,False
+Hyundai,IONIQ 5,2021,74.0,18.5,3,11.0,233.0,False
+Hyundai,IONIQ 5,2021,72.6,19.4,3,11.0,221.0,False
+Hyundai,IONIQ 5,2021,54.0,18.3,3,11.0,175.0,True
+Hyundai,Ioniq,2019,38.3,15.3,1,7.2,46.0,False
+Hyundai,Ioniq,2016,28.0,14.4,1,6.6,69.0,False
+Hyundai,Kona,2020,39.2,15.4,3,11.0,50.0,True
+Hyundai,Kona,2018,39.2,15.4,1,7.2,50.0,True
+Hyundai,Kona,2020,64.0,15.8,3,11.0,77.0,False
+Hyundai,Kona,2018,64.0,15.8,1,7.2,77.0,False
+Hyundai,Kona Electric 48 kWh,2023,48.4,16.4,3,11.0,75.0,False
+Hyundai,Kona Electric 39 kWh,2021,39.2,16.0,3,11.0,44.0,False
+Hyundai,Kona Electric 64 kWh,2021,64.0,16.4,3,11.0,77.0,True
+Hyundai,Kona Electric 65 kWh,2023,65.4,16.8,3,11.0,105.0,False
+Hyundai,INSTER Long Range,2024,46.0,15.6,3,11.0,85.0,False
+Hyundai,INSTER Standard Range,2024,39.0,15.6,3,11.0,73.0,False
+Hyundai,IONIQ,2016,28.0,14.7,3,28.0,28.0,True
+Hyundai,Kona Electric 64,2018,64.0,16.4,3,11.0,64.0,False
+Hyundai,Kona Electric 39,2018,39.2,16.0,3,39.2,39.2,False
+Hyundai,electric,2019,38.3,15.3,3,38.3,38.3,True
+Hyundai,electric,2019,64.0,16.4,3,11.0,64.0,False
+Hyundai,electric,2019,39.2,16.0,3,39.2,39.2,False
+Hyundai,5 project 45,2021,70.0,19.2,3,11.0,70.0,False
+Hyundai,electric,2021,39.2,16.0,3,39.2,39.2,False
+Hyundai,electric,2021,64.0,16.4,3,11.0,64.0,False
+Hyundai,5 standard range 2wd,2021,54.0,18.3,3,11.0,54.0,False
+Hyundai,5 standard range,2021,54.0,18.6,3,11.0,54.0,False
+Hyundai,5 long range 2wd,2021,70.0,18.9,3,11.0,70.0,False
+Hyundai,5 long range,2021,70.0,19.2,3,11.0,70.0,False
+Hyundai,5 long range 2wd,2022,74.0,19.0,3,11.0,74.0,False
+Hyundai,5 long range,2022,74.0,19.2,3,11.0,74.0,False
+Hyundai,6 standard range 2wd,2023,50.0,14.9,3,11.0,50.0,False
+Hyundai,6 long range 2wd,2022,74.0,14.9,3,11.0,74.0,False
+Hyundai,6 long range,2022,74.0,16.8,3,11.0,74.0,False
+Hyundai,electric,2023,48.4,16.4,3,11.0,48.4,False
+Hyundai,electric,2023,65.4,16.8,3,11.0,65.4,False
+Hyundai,5 n,2023,80.0,20.5,3,11.0,80.0,False
+JAC,iEV7s,2021,39.0,17.3,3,6.6,39.0,False
+Jaguar,i-Pace,2018,84.0,23.2,1,7.4,105.0,False
+Jaguar,i-Pace,2020,84.0,23.2,3,11.0,105.0,False
+Jaguar,i-Pace,2020,84.0,23.2,3,11.0,105.0,False
+Jaguar,I-Pace,2018,84.7,22.3,3,11.0,84.7,False
+Jaguar,ev400,2020,84.7,22.3,3,11.0,84.7,False
+Jaguar,ev320,2020,84.7,22.3,3,11.0,84.7,False
+Jaguar,ev400,2023,84.7,22.3,3,11.0,84.7,False
+Jeep,Avenger,2023,50.8,17.2,3,11.0,100.0,True
+Jeep,Avenger Electric,2023,50.8,16.4,3,11.0,100.0,False
+Jeep,Avenger Electric 1st Edition,2023,50.8,16.4,3,11.0,100.0,False
+Jeep,electric 1st edition,2023,50.8,16.4,3,11.0,50.8,False
+Jeep,electric,2023,50.8,16.4,3,11.0,50.8,False
+KGM,Torres EVX,2024,72.0,19.5,3,11.0,120.0,False
+Kia,EV6,2021,77.4,18.5,3,11.0,250.0,True
+Kia,EV6,2021,58.0,17.3,3,11.0,175.0,True
+Kia,EV9,2024,73.0,20.6,3,160.0,210.0,False
+Kia,EV9,2023,96.0,21.3,3,11.0,210.0,True
+Kia,EV9,2023,95.0,22.9,3,11.0,240.0,True
+Kia,Niro EV,2022,68.4,17.1,3,11.0,80.0,True
+Kia,Soul,2014,27.0,17.6,1,6.6,50.0,True
+Kia,Soul,2014,30.0,17.6,1,6.6,50.0,True
+Kia,e-Niro,2018,39.0,16.3,1,7.2,50.0,True
+Kia,e-Niro,2020,39.0,16.3,3,11.0,50.0,True
+Kia,e-Niro,2020,64.0,17.3,3,11.0,77.0,False
+Kia,e-Niro,2018,64.0,17.3,1,7.2,77.0,False
+Kia,e-Soul,2022,39.2,17.0,3,37.0,44.0,False
+Kia,e-Soul,2019,39.0,17.0,3,11.0,50.0,True
+Kia,e-Soul,2019,64.0,17.5,1,7.2,77.0,False
+Kia,e-Soul,2020,64.0,17.5,3,11.0,77.0,True
+Kia,EV3 Long Range,2024,78.0,17.1,3,11.0,135.0,False
+Kia,EV6 Long Range AWD,2024,80.0,17.8,3,11.0,263.0,True
+Kia,EV6 GT,2025,80.0,20.8,3,11.0,263.0,True
+Kia,EV9 99.8 kWh AWD GT-Line,2023,96.0,22.6,3,11.0,209.0,True
+Kia,Soul EV,2017,30.0,17.6,3,40.0,50.0,False
+Kia,EV4 Hatchback Standard Range,2025,55.0,16.2,3,80.0,100.0,False
+Kia,EV4 Sedan Standard Range,2025,55.0,15.5,3,80.0,100.0,False
+Kia,EV9 76.1 kWh RWD,2024,76.1,20.0,3,11.0,210.0,False
+Kia,e-Soul 39.2 kWh,2022,39.2,15.7,3,11.0,44.0,False
+Kia,EV4 Hatchback Long Range,2025,78.0,16.4,3,105.0,135.0,False
+Kia,EV4 Sedan Long Range,2025,72.8,14.8,3,11.0,135.0,False
+Kia,Soul,2017,30.0,17.6,3,30.0,30.0,False
+Kia,e-Niro 64,2018,64.0,17.1,3,11.0,64.0,False
+Kia,39kwh,2019,39.2,16.7,3,39.2,39.2,False
+Kia,64kwh,2020,64.0,17.1,3,11.0,64.0,False
+Kia,39kwh,2020,39.2,16.7,3,39.2,39.2,False
+Kia,gt,2022,74.0,20.6,3,11.0,74.0,False
+Kia,standard range 2wd,2021,54.0,17.7,3,11.0,54.0,False
+Kia,long range 2wd,2021,74.0,18.0,3,11.0,74.0,False
+Kia,long range,2021,74.0,18.5,3,11.0,74.0,False
+Kia,ev,2022,64.8,16.8,3,11.0,64.8,False
+Kia,64kwh,2022,64.0,17.3,3,7.2,64.0,False
+Kia,39,2022,39.2,17.0,3,7.2,39.2,False
+Kia,76,2024,73.0,20.6,3,11.0,73.0,False
+Kia,99,2023,96.0,21.3,3,11.0,96.0,False
+Kia,99,2023,96.0,22.1,3,11.0,96.0,False
+Kia,99,2023,96.0,22.6,3,11.0,96.0,False
+Lancia,Ypsilon,2024,48.1,15.5,3,11.0,100.0,False
+Leapmotor,C10,2024,69.9,19.7,3,11.0,84.0,False
+Leapmotor,T03,2024,37.3,13.6,3,11.0,48.0,True
+Lexus,RZ 450e,2022,71.4,19.6,3,11.0,150.0,True
+Lexus,RZ 300e,2023,64.0,17.5,3,11.0,147.0,True
+Lexus,UX 300e,2023,64.0,18.8,3,11.0,50.0,False
+Lexus,300e,2020,45.0,19.1,3,11.0,45.0,False
+Lexus,450e,2023,64.0,18.3,3,6.6,64.0,False
+Lexus,300e,2023,64.0,18.8,3,6.6,64.0,False
+Lightyear,0,2022,60.0,10.9,3,11.0,100.0,True
+Lotus,Eletre,2023,109.0,22.0,3,22.0,109.0,False
+Lotus,Eletre,2024,109.0,22.7,3,22.0,100.0,False
+Lotus,Emeya,2024,102.0,18.5,3,11.0,350.0,False
+Lotus,Eletre R,2023,112.0,22.5,3,11.0,367.0,False
+Lotus,Emeya R,2024,102.0,20.0,3,11.0,350.0,False
+Lotus,Emeya S,2024,102.0,17.9,3,11.0,350.0,False
+Lotus,r,2023,109.0,24.0,3,22.0,109.0,False
+Lotus,Eletre S,2023,109.0,22.7,3,22.0,109.0,False
+Lucid,Air,2022,118.0,17.0,3,22.0,300.0,True
+Lucid,Air Grand Touring,2023,112.0,16.8,3,11.0,253.0,True
+Lucid,Air Touring,2023,92.0,15.9,3,11.0,200.0,False
+Lucid,Air Pure RWD,2024,92.0,14.9,3,11.0,200.0,False
+Lucid,Air Dream Edition P,2022,118.0,19.2,3,11.0,300.0,False
+Lucid,Air Pure AWD,2023,92.0,15.6,3,11.0,200.0,False
+Lucid,Air Dream Edition,2022,118.0,17.7,3,11.0,118.0,False
+Lucid,grand touring,2023,112.0,16.8,3,11.0,112.0,True
+Lucid,touring,2023,92.0,15.9,3,11.0,92.0,True
+Lucid,pure,2023,92.0,16.4,3,11.0,92.0,True
+Lucid,dream edition r,2022,118.0,17.2,3,22.0,118.0,False
+MAN,e TGE,2020,35.8,30.9,1,7.2,40.0,True
+Maserati,GranTurismo,2024,83.0,19.5,3,22.0,270.0,True
+Maserati,Grecale,2024,95.0,23.5,3,22.0,150.0,True
+Maserati,GranCabrio Folgore,2024,83.0,22.7,3,11.0,270.0,False
+Maserati,folgore,2024,83.0,19.8,3,22.0,83.0,False
+Maxus,EV80,2018,56.0,35.0,2,6.6,28.0,True
+Maxus,MIFA 9,2023,84.0,23.0,3,11.0,114.0,True
+Maxus,9,2023,84.0,23.0,3,11.0,84.0,False
+Mazda,MX-30,2022,30.0,17.6,3,11.0,30.0,False
+Mazda,6e Long Range,2025,75.0,17.0,3,11.0,95.0,False
+Mazda,6e,2025,86.0,17.8,3,11.0,200.0,False
+Mercedes,B-Klasse,2014,28.0,16.6,3,11.0,150.0,True
+Mercedes,EQA,2021,66.6,17.7,3,11.0,99.0,False
+Mercedes,EQB,2023,70.5,17.0,3,11.0,102.0,True
+Mercedes,EQC,2020,80.0,21.6,3,11.0,125.0,False
+Mercedes,EQC,2019,80.0,21.6,2,7.4,125.0,False
+Mercedes,EQE,2023,96.0,20.2,3,11.0,173.0,True
+Mercedes,EQS,2022,90.6,16.6,3,11.0,170.0,True
+Mercedes,EQS,2021,107.8,16.8,3,11.0,204.0,False
+Mercedes,EQS,2021,107.8,17.7,3,11.0,204.0,False
+Mercedes,EQS,2021,107.8,17.7,3,11.0,204.0,False
+Mercedes,EQS,2022,107.8,20.7,3,11.0,204.0,False
+Mercedes,EQS,2022,107.8,19.8,3,11.0,204.0,False
+Mercedes,EQS,2022,107.8,17.7,3,11.0,204.0,False
+Mercedes,EQV,2020,90.0,27.3,3,11.0,110.0,True
+Mercedes,eVito,2019,41.0,26.2,2,7.2,150.0,True
+Mercedes,CLA,2025,85.0,15.0,3,11.0,320.0,False
+Mercedes,EQE,2024,96.0,17.3,3,11.0,173.0,False
+Mercedes,EQA,2023,70.5,16.8,3,11.0,102.0,True
+Mercedes,G 580,2024,116.0,32.2,3,11.0,200.0,False
+Mercedes,EQS,2024,118.0,17.1,3,11.0,200.0,False
+Mercedes,EQS,2024,118.0,18.4,3,11.0,200.0,False
+Mercedes,EQS,2023,118.0,22.3,3,11.0,200.0,False
+Mercedes,B 250e,2015,28.0,18.7,3,11.0,150.0,True
+Mercedes,EQV,2024,90.0,28.6,3,11.0,110.0,False
+Mercedes,EQB,2023,66.5,19.3,3,11.0,112.0,False
+Mercedes,EQS,2024,118.0,24.1,3,11.0,200.0,False
+Mercedes,EQB,2023,66.5,19.3,3,11.0,112.0,False
+Mercedes,EQS,2023,118.0,22.3,3,11.0,200.0,False
+Mercedes,EQA,2023,66.5,16.8,3,11.0,112.0,False
+Mercedes,EQS,2021,90.6,16.8,3,11.0,173.0,False
+Mercedes,EQB,2022,66.5,18.3,3,11.0,113.0,False
+Mercedes,EQE,2024,89.0,17.0,3,11.0,170.0,True
+Mercedes,EQE,2024,90.6,17.6,3,11.0,173.0,True
+Mercedes,400,2019,80.0,21.6,3,11.0,80.0,False
+Mercedes,250,2021,66.5,18.5,3,11.0,66.5,False
+Mercedes,300 long,2020,90.0,29.0,3,11.0,90.0,True
+Mercedes,300 extra-long,2020,90.0,29.0,3,11.0,90.0,True
+Mercedes,400,2020,80.0,21.6,3,11.0,80.0,False
+Mercedes,450+,2021,107.8,17.0,3,11.0,107.8,True
+Mercedes,580,2021,107.8,18.1,3,11.0,107.8,True
+Mercedes,350,2022,90.6,17.9,3,11.0,90.6,False
+Mercedes,300,2021,66.5,19.0,3,11.0,66.5,False
+Mercedes,350,2021,66.5,19.0,3,11.0,66.5,False
+Mercedes,amg 53,2022,90.6,19.9,3,11.0,90.6,True
+Mercedes,350+,2022,90.6,17.3,3,11.0,90.6,True
+Mercedes,250 long,2021,60.0,29.3,3,11.0,60.0,False
+Mercedes,250 extra-long,2021,60.0,29.3,3,11.0,60.0,False
+Mercedes,300,2022,66.5,19.6,3,11.0,66.5,False
+Mercedes,350,2021,90.6,16.8,3,11.0,90.6,True
+Mercedes,tourer long,2019,35.0,29.2,3,35.0,35.0,False
+Mercedes,tourer extra-long,2019,35.0,29.2,3,35.0,35.0,False
+Mercedes,tourer long,2020,90.0,29.0,3,11.0,90.0,True
+Mercedes,tourer extra-long,2020,90.0,29.5,3,11.0,90.0,True
+Mercedes,tourer long,2022,60.0,28.6,3,11.0,60.0,False
+Mercedes,tourer extra-long,2022,60.0,29.3,3,11.0,60.0,False
+Mercedes,amg 43,2022,90.6,19.9,3,11.0,90.6,True
+Mercedes,250,2022,66.5,16.8,3,11.0,66.5,False
+Mercedes,250+,2022,70.5,17.2,3,11.0,70.5,False
+Mercedes,suv 450+,2022,108.4,21.7,3,11.0,108.4,False
+Mercedes,suv 450,2022,108.4,22.1,3,11.0,108.4,False
+Mercedes,suv 580,2022,108.4,22.4,3,11.0,108.4,False
+Mercedes,450,2022,107.8,17.8,3,11.0,107.8,False
+Mercedes,500,2022,107.8,18.3,3,11.0,107.8,False
+Mercedes,300,2022,89.0,17.3,3,11.0,89.0,False
+Mercedes,350,2022,89.0,17.5,3,11.0,89.0,False
+Mercedes,suv 350+,2022,90.6,20.1,3,11.0,90.6,False
+Mercedes,suv 350,2022,89.0,20.9,3,11.0,89.0,False
+Mercedes,suv 500,2022,90.6,20.8,3,11.0,90.6,False
+Mercedes,suv amg 43,2022,90.6,21.3,3,22.0,90.6,False
+Mercedes,suv amg 53,2023,90.6,21.6,3,22.0,90.6,False
+Mercedes,300,2023,89.0,17.0,3,11.0,89.0,False
+Mercedes,350,2023,89.0,17.3,3,11.0,89.0,False
+Mercedes,350,2023,89.0,17.5,3,11.0,89.0,False
+Mercedes,500,2023,90.6,17.9,3,11.0,90.6,False
+Mercedes,amg 43,2023,90.6,20.1,3,11.0,90.6,False
+Mercedes,amg 53,2023,90.6,20.1,3,11.0,90.6,False
+Mercedes,200 standard,2023,45.0,20.0,3,22.0,45.0,False
+Mercedes,250,2023,66.5,16.8,3,11.0,66.5,False
+Mercedes,250+,2023,70.5,17.0,3,11.0,70.5,False
+Mercedes,300,2023,66.5,19.3,3,11.0,66.5,False
+Mercedes,350+,2023,90.6,17.1,3,11.0,90.6,False
+Mercedes,suv 300,2023,89.0,20.2,3,11.0,89.0,False
+Mercedes,450+,2023,108.4,17.1,3,11.0,108.4,False
+Mercedes,450,2023,108.4,17.8,3,11.0,108.4,False
+Mercedes,580,2023,108.4,18.4,3,11.0,108.4,False
+Mercedes,suv 350+,2023,96.0,20.2,3,11.0,96.0,False
+Mercedes,suv 350,2023,90.6,20.8,3,11.0,90.6,False
+Mercedes,suv 500,2023,96.0,21.1,3,11.0,96.0,False
+Mercedes,suv maybach 680,2024,118.0,24.1,3,22.0,118.0,False
+Mercedes,suv 450+,2023,118.0,21.9,3,11.0,118.0,False
+Mercedes,suv 450,2023,118.0,22.3,3,11.0,118.0,False
+Mercedes,suv 580,2023,118.0,22.3,3,11.0,118.0,False
+MG,MG4 EV,2023,74.4,17.5,3,11.0,144.0,True
+MG,MG4 EV,2022,61.7,16.9,3,11.0,135.0,True
+MG,MG4 EV,2022,50.8,16.9,3,6.6,117.0,True
+MG,MG4 EV,2023,61.7,19.3,3,11.0,140.0,True
+MG,MG5 EV,2020,48.8,16.5,3,6.6,80.0,False
+MG,MG5 EV,2022,57.0,17.5,3,11.0,80.0,False
+MG,Marvel R,2021,65.0,19.1,3,11.0,94.0,True
+MG,Marvel R,2021,65.0,19.7,3,11.0,94.0,True
+MG,ZS EV,2022,69.9,18.5,3,11.0,94.0,False
+MG,ZS EV,2020,68.3,18.5,3,11.0,76.0,True
+MG,ZS EV,2020,48.0,18.5,1,6.6,80.0,False
+MG,MG5 Electric Long Range,2022,57.4,17.1,3,11.0,87.0,True
+MG,MG4 Electric 51 kWh,2022,50.8,16.9,3,11.0,87.0,True
+MG,Cyberster GT,2024,74.4,18.6,3,11.0,144.0,False
+MG,MG4 Electric 77 kWh,2023,74.4,17.5,3,11.0,144.0,True
+MG,MG4 Electric XPOWER,2023,61.7,19.3,3,11.0,142.0,False
+MG,MG5 Electric Standard Range,2022,46.0,17.4,3,11.0,63.0,False
+MG,MGS5  EV 64 kWh,2025,64.0,17.5,3,11.0,139.0,False
+MG,Cyberster Trophy,2024,77.0,18.3,3,11.0,144.0,False
+MG,MGS5  EV 49 kWh,2025,49.0,16.8,3,11.0,120.0,False
+MG,MG4 Electric 64 kWh,2022,64.0,17.0,3,11.0,142.0,False
+MG,ev,2019,42.5,19.3,3,42.5,42.5,False
+MG,ev,2020,48.8,16.8,3,11.0,48.8,True
+MG,electric long range,2022,57.4,17.1,3,11.0,57.4,False
+MG,r,2021,70.0,20.0,3,11.0,70.0,False
+MG,r,2021,70.0,19.2,3,11.0,70.0,False
+MG,ev long range,2020,57.4,16.9,3,11.0,57.4,False
+MG,ev standard range,2021,49.0,18.5,3,11.0,49.0,False
+MG,ev long range,2021,68.3,18.5,3,11.0,68.3,True
+MG,electric standard range,2022,46.0,17.4,3,11.0,46.0,True
+MG,electric,2022,50.8,16.9,3,6.6,50.8,False
+MG,electric,2022,61.7,17.1,3,6.6,61.7,False
+MG,electric xpower,2023,61.7,19.3,3,6.6,61.7,False
+MG,electric,2023,74.4,17.5,3,6.6,74.4,False
+Micro,Microlino,2022,10.5,8.0,1,2.3,150.0,True
+Mini,Aceman,2024,38.5,16.7,3,11.0,70.0,True
+Mini,Aceman,2024,49.2,17.6,3,11.0,95.0,True
+Mini,Aceman,2024,49.2,17.0,3,11.0,95.0,False
+Mini,Cooper,2024,36.6,14.6,3,11.0,70.0,True
+Mini,Cooper,2024,49.2,17.0,3,11.0,95.0,True
+Mini,Cooper,2024,49.2,14.9,3,11.0,95.0,False
+Mini,Cooper SE,2020,28.9,16.1,3,11.0,50.0,True
+Mini,Countryman,2024,64.6,17.0,3,11.0,128.0,True
+Mini,Countryman,2024,64.6,17.7,3,11.0,128.0,False
+Mini,Cooper SE Convertible,2023,32.6,14.5,3,11.0,49.0,False
+Mini,se,2020,28.9,16.1,3,28.9,28.9,True
+Mini,se,2021,28.9,16.1,3,28.9,28.9,True
+Mini,se convertible,2023,28.9,17.5,3,11.0,28.9,False
+Mini,Countryman E,2024,64.6,17.0,3,11.0,64.6,False
+Mini,se all4,2024,64.6,17.7,3,11.0,64.6,False
+Mini,Cooper E,2023,36.6,14.6,3,11.0,36.6,False
+Mini,Cooper SE,2023,49.2,14.9,3,11.0,49.2,False
+Mitsubishi,i-Miev,2010,14.5,12.9,1,3.6,50.0,True
+Mitsubishi,i-MiEV,2011,14.5,17.1,3,11.0,100.0,True
+Mitsubishi,i-MiEV,2015,14.5,17.1,3,11.0,100.0,True
+NIO,EL6,2023,90.0,20.5,3,11.0,125.0,True
+NIO,EL6,2023,70.5,20.1,3,11.0,140.0,True
+NIO,EL7,2022,90.0,20.9,3,11.0,140.0,True
+NIO,EL7,2022,70.5,20.7,3,11.0,140.0,True
+NIO,EL8,2024,90.0,21.4,3,11.0,240.0,True
+NIO,EL8,2024,73.5,21.0,3,11.0,140.0,True
+NIO,ET5,2022,90.0,18.2,3,11.0,140.0,True
+NIO,ET5,2022,70.5,17.8,3,11.0,140.0,True
+NIO,EL7 Long Range,2022,90.0,20.9,3,11.0,127.0,False
+NIO,ET7 Standard Range,2022,73.5,17.7,3,11.0,140.0,False
+NIO,EL6 Long Range,2023,90.0,20.7,3,11.0,180.0,False
+NIO,ET7 Long Range,2022,90.0,17.8,3,11.0,127.0,False
+NIO,ET5 Touring Long Range,2023,100.0,18.0,3,11.0,180.0,False
+NIO,ET5 Standard Range,2022,75.0,18.0,3,11.0,140.0,False
+NIO,EL6 Standard Range,2023,75.0,19.5,3,11.0,140.0,False
+NIO,ET5 Touring Standard Range,2023,75.0,18.0,3,11.0,140.0,False
+NIO,EL7 Standard Range,2022,75.0,20.5,3,11.0,140.0,False
+NIO,standard range,2022,73.5,20.7,3,11.0,73.5,False
+NIO,long range,2022,90.0,20.9,3,11.0,90.0,False
+NIO,touring standard range,2023,73.5,18.4,3,11.0,73.5,False
+NIO,touring long range,2023,90.0,18.6,3,11.0,90.0,False
+NIO,standard range,2023,73.5,20.1,3,11.0,73.5,False
+NIO,long range,2023,90.0,20.7,3,11.0,90.0,False
+Nissan,Leaf,2022,39.0,16.6,3,3.6,39.0,False
+Nissan,Ariya,2022,63.0,18.8,3,7.4,130.0,True
+Nissan,Ariya,2022,87.0,19.6,3,22.0,130.0,True
+Nissan,Ariya,2022,87.0,20.7,3,22.0,130.0,True
+Nissan,Ariya,2022,87.0,22.6,3,22.0,130.0,True
+Nissan,Leaf,2011,24.0,16.9,1,3.6,46.0,False
+Nissan,Leaf,2011,24.0,16.9,1,6.6,46.0,False
+Nissan,Leaf,2015,30.0,16.5,1,3.6,47.0,False
+Nissan,Leaf,2015,30.0,16.5,1,6.6,47.0,False
+Nissan,Leaf,2018,38.0,16.4,1,6.6,45.0,False
+Nissan,Leaf,2019,62.0,17.2,1,6.6,100.0,True
+Nissan,e-NV 200,2014,24.0,20.0,1,3.6,46.0,False
+Nissan,e-NV 200,2014,24.0,20.0,1,6.6,46.0,False
+Nissan,e-NV 200,2014,38.0,20.0,1,6.6,45.0,False
+Nissan,Leaf e+,2022,59.0,17.4,3,11.0,46.0,True
+Nissan,e-NV200 Evalia,2018,37.0,21.8,3,11.0,46.0,True
+Nissan,Ariya e-4ORCE 87kWh - 225 kW,2022,87.0,21.5,3,11.0,130.0,False
+Nissan,Townstar EV Passenger,2023,45.0,20.0,3,11.0,80.0,False
+Nissan,Ariya e-4ORCE 87kWh - 320 kW Nismo,2024,87.0,22.6,3,11.0,130.0,False
+Nissan,Townstar EV Passenger L2,2024,45.0,20.5,3,11.0,80.0,False
+Nissan,Ariya e-4ORCE 87kWh - 290 kW,2023,87.0,21.5,3,11.0,130.0,False
+Nissan,Leaf 24,2013,22.0,16.3,3,11.0,100.0,True
+Nissan,Leaf 30,2015,28.0,16.5,3,11.0,100.0,True
+Nissan,e-NV200,2014,22.0,21.0,3,11.0,100.0,True
+Nissan,Leaf,2018,39.0,16.6,3,39.0,39.0,False
+Nissan,e-NV200,2018,37.0,21.8,3,37.0,37.0,False
+Nissan,e+,2019,59.0,17.1,3,11.0,59.0,False
+Nissan,63kwh,2022,63.0,18.8,3,11.0,63.0,True
+Nissan,87kwh,2022,87.0,19.3,3,11.0,87.0,True
+Nissan,e-4orce,2022,87.0,21.5,3,11.0,87.0,True
+Nissan,e-4orce,2023,87.0,21.5,3,11.0,87.0,True
+Nissan,e+,2022,59.0,17.4,3,6.6,59.0,False
+Nissan,ev passenger,2023,45.0,20.0,3,11.0,45.0,False
+Omoda,E5,2024,61.0,17.7,3,11.0,80.0,False
+ORA,Funky Cat GT,2023,59.3,18.0,3,11.0,69.0,False
+ORA,Funky Cat 48 kWh,2022,48.0,17.5,3,11.0,64.0,False
+ORA,Funky Cat 63 kWh,2023,63.0,17.4,3,11.0,69.0,False
+ORA,cat,2022,45.4,17.5,3,11.0,45.4,False
+ORA,cat,2023,59.3,17.4,3,11.0,59.3,False
+ORA,cat,2023,59.3,18.0,3,11.0,59.3,False
+Peugeot,e-208,2021,46.3,16.2,3,7.4,46.3,True
+Peugeot,e-308,2023,50.8,16.9,3,11.0,50.8,True
+Peugeot,Partner Tepee,2017,20.5,20.4,3,20.5,20.5,False
+Peugeot,E-Expert,2020,75.0,27.0,3,11.0,100.0,False
+Peugeot,E-Traveller,2020,45.0,24.3,3,11.0,98.0,False
+Peugeot,E-Traveller,2020,45.0,24.3,3,7.4,98.0,False
+Peugeot,I-on,2010,14.5,12.9,1,3.6,50.0,True
+Peugeot,Partner,2013,22.5,20.5,1,3.2,50.0,True
+Peugeot,e-2008,2020,47.5,18.0,3,11.0,100.0,False
+Peugeot,e-2008,2023,46.3,17.1,3,11.0,101.0,True
+Peugeot,e-2008,2020,47.5,18.0,1,7.4,100.0,False
+Peugeot,e-208,2020,45.0,16.1,3,11.0,100.0,False
+Peugeot,e-208,2023,46.3,16.0,3,11.0,101.0,True
+Peugeot,e-208,2020,45.0,16.1,1,7.4,100.0,False
+Peugeot,e-3008,2024,73.0,19.7,3,11.0,160.0,True
+Peugeot,e-3008,2024,98.0,19.4,3,11.0,160.0,True
+Peugeot,e-Partner,2021,45.0,22.5,3,11.0,100.0,False
+Peugeot,e-3008 73 kWh,2023,73.0,19.2,3,11.0,160.0,False
+Peugeot,e-2008 SUV,2021,46.3,17.1,3,11.0,101.0,True
+Peugeot,e-2008 54 kWh,2023,50.8,16.9,3,11.0,100.0,False
+Peugeot,e-5008 73 kWh,2024,73.0,19.7,3,11.0,160.0,False
+Peugeot,e-5008 97 kWh Long Range,2024,96.9,20.0,3,11.0,160.0,False
+Peugeot,e-208 51 kWh,2023,48.1,15.5,3,11.0,100.0,False
+Peugeot,e-408 58 kWh,2024,58.2,15.5,3,11.0,120.0,False
+Peugeot,e-308 SW,2023,50.8,16.9,3,11.0,100.0,False
+Peugeot,e-5008 73 kWh Dual Motor,2025,73.0,20.3,3,11.0,160.0,False
+Peugeot,e-Expert Combi Standard 75 kWh,2021,75.0,25.7,3,11.0,100.0,False
+Peugeot,e-Rifter M 50 kWh,2024,50.0,21.3,3,11.0,100.0,False
+Peugeot,e-Traveller L3 75 kWh,2024,75.0,26.2,3,11.0,100.0,False
+Peugeot,e-Expert Combi Long 75 kWh,2021,75.0,26.2,3,11.0,100.0,False
+Peugeot,e-Traveller Long 75 kWh,2021,75.0,26.2,3,11.0,100.0,False
+Peugeot,e-Expert Combi Standard 50 kWh,2021,50.0,25.0,3,11.0,101.0,True
+Peugeot,e-Rifter XL 50 kWh,2024,50.0,21.7,3,11.0,100.0,False
+Peugeot,e-Rifter Long 50 kWh,2021,50.0,23.2,3,11.0,101.0,True
+Peugeot,e-Traveller Standard 50 kWh,2020,50.0,25.0,3,11.0,101.0,True
+Peugeot,e-Rifter Standard 50 kWh,2021,50.0,22.6,3,11.0,101.0,True
+Peugeot,e-Traveller Standard 75 kWh,2021,75.0,25.7,3,11.0,100.0,False
+Peugeot,e-Traveller L2 50 kWh,2024,50.0,25.7,3,11.0,101.0,True
+Peugeot,e-Traveller L2 75 kWh,2024,75.0,26.2,3,11.0,100.0,False
+Peugeot,e-Traveller Long 50 kWh,2020,50.0,25.0,3,11.0,101.0,True
+Peugeot,e-Traveller L3 50 kWh,2024,50.0,25.7,3,11.0,101.0,True
+Peugeot,e-Expert Combi Long 50 kWh,2021,50.0,25.0,3,11.0,101.0,True
+Peugeot,e-Expert Combi Compact 50 kWh,2021,50.0,25.0,3,11.0,101.0,True
+Peugeot,e-3008 97 kWh Long Range,2024,97.0,19.4,3,11.0,160.0,False
+Peugeot,e-Traveller Compact 50 kWh,2021,50.0,25.0,3,11.0,101.0,True
+Peugeot,iOn,2011,14.5,17.1,3,11.0,100.0,True
+Peugeot,iOn,2016,14.5,17.1,3,11.0,100.0,True
+Peugeot,suv,2020,46.3,17.8,3,11.0,46.3,True
+Peugeot,compact,2021,46.3,25.0,3,11.0,46.3,True
+Peugeot,standard,2020,46.3,25.0,3,11.0,46.3,True
+Peugeot,long,2020,46.3,25.0,3,11.0,46.3,True
+Peugeot,standard,2021,68.0,25.7,3,11.0,68.0,True
+Peugeot,long,2021,68.0,26.2,3,11.0,68.0,True
+Peugeot,standard,2021,46.3,22.6,3,11.0,46.3,True
+Peugeot,long,2021,46.3,23.2,3,11.0,46.3,True
+Peugeot,suv,2021,46.3,17.1,3,11.0,46.3,True
+Peugeot,combi compact,2021,46.3,25.0,3,11.0,46.3,True
+Peugeot,combi standard,2021,46.3,25.0,3,11.0,46.3,True
+Peugeot,combi long,2021,46.3,25.0,3,11.0,46.3,True
+Peugeot,combi standard,2021,68.0,25.7,3,11.0,68.0,True
+Peugeot,combi long,2021,68.0,26.2,3,11.0,68.0,True
+Peugeot,sw,2023,50.8,16.9,3,11.0,50.8,False
+Peugeot,51kwh,2022,48.1,15.8,3,11.0,48.1,False
+Peugeot,50kwh,2023,46.3,16.0,3,7.4,46.3,False
+Peugeot,54kwh,2023,50.8,16.9,3,7.4,50.8,False
+Peugeot,51kwh,2023,48.1,15.5,3,7.4,48.1,False
+Peugeot,73kwh,2023,73.0,19.2,3,11.0,73.0,False
+Peugeot,73kwh dual motor,2025,73.0,19.5,3,11.0,73.0,False
+Peugeot,97kwh long range,2024,96.9,19.4,3,11.0,96.9,False
+Polestar,2,2020,75.0,19.2,3,11.0,75.0,False
+Polestar,2,2021,75.0,19.0,3,11.0,150.0,False
+Polestar,2,2021,75.0,17.6,3,11.0,150.0,False
+Polestar,2,2022,67.0,17.4,3,11.0,133.0,True
+Polestar,4,2024,94.0,20.2,3,22.0,200.0,True
+Polestar,4,2024,94.0,19.0,3,22.0,200.0,True
+Polestar,3 Long Range Dual motor,2022,107.0,22.1,3,11.0,250.0,False
+Polestar,3 Long Range Single motor,2024,107.0,21.4,3,11.0,250.0,False
+Polestar,3 Long Range Performance,2022,107.0,22.8,3,11.0,250.0,False
+Polestar,2 Long Range Performance,2024,79.0,17.6,3,11.0,205.0,False
+Polestar,standard range single motor,2021,61.0,17.7,3,11.0,61.0,True
+Polestar,long range single motor,2021,75.0,17.9,3,11.0,75.0,False
+Polestar,long range dual motor,2021,75.0,19.2,3,11.0,75.0,False
+Polestar,standard range single motor,2022,67.0,17.6,3,11.0,67.0,False
+Polestar,long range dual motor,2022,107.0,22.1,3,11.0,107.0,False
+Polestar,long range,2022,107.0,22.8,3,11.0,107.0,False
+Polestar,standard range single motor,2023,67.0,16.5,3,11.0,67.0,False
+Polestar,long range single motor,2023,79.0,16.8,3,11.0,79.0,False
+Polestar,long range dual motor,2023,79.0,17.6,3,11.0,79.0,False
+Polestar,long range,2023,79.0,17.6,3,11.0,79.0,False
+Polestar,long range single motor,2024,94.0,19.0,3,11.0,94.0,False
+Polestar,long range dual motor,2024,94.0,19.4,3,11.0,94.0,False
+Porsche,Taycan,2023,71.0,20.4,3,11.0,71.0,True
+Porsche,Taycan,2023,83.7,19.0,3,11.0,268.0,True
+Porsche,Taycan,2020,71.0,19.5,3,11.0,225.0,True
+Porsche,Taycan,2023,71.0,17.1,3,11.0,223.0,True
+Porsche,Taycan,2023,83.7,19.0,3,11.0,268.0,True
+Porsche,Taycan,2020,83.7,19.7,3,11.0,270.0,True
+Porsche,Taycan,2023,83.7,17.4,3,11.0,268.0,True
+Porsche,Taycan,2023,83.7,17.3,3,11.0,268.0,True
+Porsche,Taycan,2023,83.7,18.8,3,11.0,268.0,True
+Porsche,Taycan,2020,83.7,21.5,3,11.0,270.0,True
+Porsche,Taycan,2023,83.7,19.7,3,11.0,268.0,True
+Porsche,Taycan,2020,83.7,22.3,3,11.0,270.0,True
+Porsche,Taycan,2023,83.7,19.5,3,11.0,268.0,True
+Porsche,Macan 4 Electric,2024,95.0,19.6,3,11.0,270.0,False
+Porsche,Macan Electric,2024,95.0,18.6,3,11.0,270.0,False
+Porsche,Macan Turbo Electric,2024,95.0,20.2,3,11.0,270.0,False
+Porsche,Macan 4S Electric,2024,95.0,19.6,3,11.0,270.0,False
+Porsche,Taycan Turbo,2020,83.7,20.9,3,11.0,83.7,True
+Porsche,4 cross turismo,2021,83.7,19.9,3,11.0,83.7,True
+Porsche,turbo,2020,83.7,20.2,3,11.0,83.7,True
+Porsche,4s,2020,71.0,18.0,3,11.0,71.0,True
+Porsche,4s plus,2020,83.7,18.2,3,11.0,83.7,True
+Porsche,plus,2021,83.7,17.6,3,11.0,83.7,True
+Porsche,4s cross turismo,2021,83.7,19.9,3,11.0,83.7,True
+Porsche,turbo cross turismo,2021,83.7,21.2,3,11.0,83.7,True
+Porsche,turbo s cross turismo,2021,83.7,22.0,3,11.0,83.7,True
+Porsche,gts,2022,83.7,18.6,3,11.0,83.7,True
+Porsche,gts sport turismo,2022,83.7,19.7,3,11.0,83.7,True
+Porsche,sport turismo,2022,71.0,18.7,3,11.0,71.0,True
+Porsche,plus sport turismo,2022,83.7,18.8,3,11.0,83.7,True
+Porsche,4s sport turismo,2022,71.0,19.2,3,11.0,71.0,True
+Porsche,4s plus sport turismo,2022,83.7,19.5,3,11.0,83.7,True
+Porsche,turbo sport turismo,2022,83.7,20.7,3,11.0,83.7,True
+Porsche,turbo s sport turismo,2022,83.7,21.2,3,11.0,83.7,True
+Porsche,plus,2023,83.7,17.3,3,11.0,83.7,False
+Porsche,4s,2023,71.0,17.1,3,11.0,71.0,False
+Porsche,4s plus,2023,83.7,17.4,3,11.0,83.7,False
+Porsche,turbo,2023,83.7,18.8,3,11.0,83.7,False
+Porsche,turbo s,2023,83.7,19.5,3,11.0,83.7,False
+Porsche,4 cross turismo,2023,83.7,19.0,3,11.0,83.7,False
+Porsche,4s cross turismo,2023,83.7,19.0,3,11.0,83.7,False
+Porsche,turbo cross turismo,2023,83.7,19.7,3,11.0,83.7,False
+Porsche,turbo s cross turismo,2023,83.7,20.4,3,11.0,83.7,False
+Porsche,electric,2024,95.0,18.6,3,11.0,95.0,False
+Porsche,4 electric,2024,95.0,19.6,3,11.0,95.0,False
+Porsche,turbo electric,2024,95.0,20.2,3,11.0,95.0,False
+Porsche,Taycan,2024,82.3,16.6,3,11.0,82.3,False
+Porsche,plus,2024,97.0,16.9,3,11.0,97.0,False
+Porsche,Taycan 4S,2024,82.3,16.8,3,11.0,82.3,False
+Porsche,4s plus,2024,97.0,17.2,3,11.0,97.0,False
+Porsche,turbo,2024,97.0,18.1,3,11.0,97.0,False
+Porsche,turbo s,2024,97.0,18.5,3,11.0,97.0,False
+Renault,5 E-Tech,2025,40.0,15.7,3,11.0,80.0,True
+Renault,5 E-Tech,2025,40.0,15.7,3,11.0,80.0,True
+Renault,5 E-Tech,2025,52.0,16.3,3,11.0,100.0,True
+Renault,Kangoo ZE,2011,33.0,19.4,1,7.2,150.0,True
+Renault,Megane E-Tech,2022,40.0,16.3,3,22.0,85.0,True
+Renault,Megane E-Tech,2022,60.0,17.1,3,22.0,130.0,True
+Renault,Scenic,2023,60.0,17.6,3,22.0,130.0,True
+Renault,Scenic,2023,87.0,17.9,3,22.0,150.0,True
+Renault,Twingo Z.E.,2020,21.3,16.3,3,22.0,150.0,True
+Renault,Twizy,2012,6.1,6.1,1,2.3,150.0,True
+Renault,Zoe,2013,22.0,15.5,3,43.0,150.0,True
+Renault,Zoe,2017,41.0,16.7,3,11.0,100.0,True
+Renault,Zoe,2015,22.0,15.5,3,22.0,150.0,True
+Renault,Zoe,2017,41.0,16.1,3,11.0,100.0,True
+Renault,Zoe,2019,41.0,16.1,3,22.0,46.0,False
+Renault,Zoe,2019,52.0,16.5,3,22.0,46.0,False
+Renault,Zoe,2019,52.0,17.4,3,22.0,46.0,False
+Renault,4 E-Tech 52kWh 150hp,2025,52.0,16.5,3,11.0,100.0,False
+Renault,Megane E-Tech EV60 220hp,2025,60.0,15.8,3,11.0,129.0,False
+Renault,Zoe ZE50 R135,2019,52.0,16.8,3,11.0,46.0,True
+Renault,Twingo Electric,2020,21.3,15.8,3,11.0,150.0,True
+Renault,Megane E-Tech EV60 130hp,2025,60.0,15.8,3,11.0,129.0,False
+Renault,Kangoo E-Tech Electric,2022,45.0,20.0,3,11.0,80.0,False
+Renault,Kangoo Maxi ZE 33,2017,31.0,19.4,3,11.0,150.0,True
+Renault,Zoe R110,2018,41.0,16.4,3,11.0,150.0,True
+Renault,Scenic E-Tech EV60 170hp,2023,60.0,17.6,3,11.0,130.0,False
+Renault,Zoe ZE40 R110,2019,41.0,16.1,3,11.0,45.0,False
+Renault,4 E-Tech 40kWh 120hp,2025,40.0,16.3,3,11.0,80.0,False
+Renault,Megane E-Tech EV40 130hp,2022,40.0,15.4,3,11.0,85.0,False
+Renault,Kangoo Grand E-Tech Electric,2024,45.0,20.5,3,11.0,80.0,False
+Renault,Zoe R90 Entry,2017,23.3,16.6,3,11.0,150.0,True
+Renault,Scenic E-Tech EV87 220hp,2023,87.0,18.1,3,11.0,150.0,False
+Renault,Zoe ZE50 R110,2019,52.0,16.5,3,11.0,46.0,True
+Renault,Zoe Q210,2013,23.3,17.9,3,11.0,43.0,False
+Renault,Zoe,2013,23.3,17.9,3,11.0,100.0,True
+Renault,Zoe,2015,23.3,16.1,3,23.3,23.3,False
+Renault,Zoe R90,2017,23.3,16.6,3,11.0,100.0,True
+Renault,Kangoo Maxi ZE,2017,31.0,19.4,3,31.0,31.0,True
+Renault,Zoe,2018,41.0,16.4,3,41.0,41.0,True
+Renault,q90,2018,41.0,16.7,3,41.0,41.0,True
+Renault,r90,2018,41.0,16.1,3,41.0,41.0,True
+Renault,ze50 r110,2019,52.0,16.5,3,11.0,52.0,False
+Renault,ze50 r135,2019,52.0,16.8,3,11.0,52.0,False
+Renault,ze40 r110,2019,41.0,16.1,3,41.0,41.0,True
+Renault,electric,2020,21.3,15.8,3,21.3,21.3,False
+Renault,e-tech ev60 220hp,2022,60.0,15.8,3,11.0,60.0,False
+Renault,e-tech ev40 130hp,2022,40.0,15.4,3,40.0,40.0,False
+Renault,e-tech ev60 130hp,2022,60.0,15.8,3,11.0,60.0,False
+Renault,e-tech electric,2022,45.0,20.0,3,11.0,45.0,False
+Renault,grand e-tech electric,2024,45.0,20.5,3,22.0,45.0,False
+Renault,e-tech ev60 170hp,2023,60.0,17.6,3,22.0,60.0,False
+Renault,e-tech ev87 220hp,2023,87.0,18.1,3,22.0,87.0,False
+Rolls-Royce,Spectre,2023,102.0,21.9,3,22.0,102.0,True
+SEAT,Mii Electric,2020,32.3,16.6,2,7.2,34.0,False
+SEAT,Mii Electric,2020,32.3,15.8,3,11.0,37.0,False
+SEAT,electric,2020,32.3,15.8,3,32.3,32.3,False
+SEAT,Mii Electric,2020,32.3,16.6,2,7.2,34.0,False
+SEAT,Mii Electric,2020,32.3,15.8,3,11.0,37.0,False
+SEAT,electric,2020,32.3,15.8,3,32.3,32.3,False
+Silence,S04,2023,11.2,8.5,1,2.3,150.0,True
+Skoda,CITIGOe iV,2020,32.3,16.6,2,7.2,34.0,False
+Skoda,Elroq,2024,52.0,16.5,3,11.0,145.0,True
+Skoda,Elroq,2024,59.0,17.1,3,11.0,165.0,True
+Skoda,Elroq,2024,77.0,17.1,3,11.0,175.0,True
+Skoda,Enyaq,2024,52.0,16.8,3,11.0,145.0,True
+Skoda,Enyaq,2023,77.0,17.1,3,11.0,135.0,True
+Skoda,Enyaq,2023,77.0,17.5,3,11.0,175.0,True
+Skoda,Enyaq,2023,77.0,17.7,3,11.0,175.0,True
+Skoda,Enyaq Coupe,2023,77.0,16.0,3,11.0,135.0,True
+Skoda,Enyaq Coupe,2023,77.0,16.2,3,11.0,175.0,True
+Skoda,Enyaq Coupe,2023,77.0,16.7,3,11.0,175.0,True
+Skoda,Enyaq iV,2020,52.0,18.7,2,7.2,50.0,True
+Skoda,Enyaq iV,2020,58.0,18.7,3,11.0,100.0,False
+Skoda,Enyaq iV,2020,58.0,18.7,3,11.0,50.0,False
+Skoda,Enyaq iV,2020,77.0,19.0,3,11.0,125.0,False
+Skoda,Enyaq iV,2020,77.0,19.0,3,11.0,50.0,False
+Skoda,Enyaq iV 60,2021,58.0,17.1,3,11.0,124.0,False
+Skoda,Enyaq iV 80x,2021,77.0,18.1,3,11.0,175.0,False
+Skoda,Enyaq 60,2025,59.0,16.6,3,11.0,165.0,False
+Skoda,CITIGOe iV,2020,32.3,15.8,3,11.0,37.0,False
+Skoda,Enyaq iV 50,2021,52.0,17.0,3,11.0,50.0,False
+Skoda,Enyaq Coupe iV RS,2022,77.0,17.9,3,11.0,175.0,False
+Skoda,Enyaq Coupe 60,2025,59.0,15.9,3,11.0,165.0,False
+Skoda,Enyaq Coupe iV 80,2022,77.0,17.3,3,11.0,143.0,False
+Skoda,Enyaq Coupe iV 80x,2023,77.0,17.7,3,11.0,175.0,False
+Skoda,Enyaq Coupe iV 60,2022,58.0,16.8,3,11.0,124.0,False
+Skoda,Enyaq iV RS,2023,77.0,18.3,3,11.0,175.0,False
+Skoda,Enyaq iV 80,2021,77.0,17.5,3,11.0,143.0,False
+Skoda,iv 50,2021,52.0,17.0,3,11.0,52.0,False
+Skoda,iv,2020,32.3,15.8,3,32.3,32.3,False
+Skoda,iv 60,2021,58.0,17.1,3,11.0,58.0,False
+Skoda,iv 80,2021,77.0,17.5,3,11.0,77.0,False
+Skoda,iv 80x,2021,77.0,18.1,3,11.0,77.0,False
+Skoda,iv rs,2023,77.0,18.3,3,11.0,77.0,False
+Skoda,coupe iv 60,2022,58.0,16.8,3,11.0,58.0,False
+Skoda,coupe iv 80,2022,77.0,17.3,3,11.0,77.0,False
+Skoda,coupe iv 80x,2023,77.0,17.7,3,11.0,77.0,False
+Skoda,coupe iv rs,2022,77.0,17.9,3,11.0,77.0,False
+Skoda,Enyaq 60,2023,58.0,17.3,3,11.0,58.0,False
+Skoda,Enyaq 85,2023,77.0,17.1,3,11.0,77.0,False
+Skoda,85x,2023,77.0,17.5,3,11.0,77.0,False
+Skoda,Enyaq RS,2023,77.0,17.7,3,11.0,77.0,False
+Skoda,coupe 60,2023,58.0,16.8,3,11.0,58.0,False
+Skoda,coupe 85,2023,77.0,16.7,3,11.0,77.0,False
+Skoda,coupe 85x,2023,77.0,16.9,3,11.0,77.0,False
+Skoda,coupe rs,2023,77.0,17.1,3,11.0,77.0,False
+Skywell,BE11 Long Range,2024,81.0,20.8,3,11.0,80.0,False
+Skywell,BE11 Standard Range,2024,68.0,20.6,3,11.0,80.0,False
+smart,#1,2024,47.0,18.8,3,7.4,130.0,True
+smart,#1,2024,62.0,18.4,3,22.0,150.0,True
+smart,#3,2024,62.0,18.8,3,22.0,150.0,True
+smart,#3,2024,47.0,17.7,3,7.4,130.0,True
+smart,#3,2024,62.0,17.5,3,22.0,150.0,True
+smart,forfour EQ,2017,17.6,17.6,1,3.6,150.0,True
+smart,forfour EQ,2017,17.6,17.6,3,22.0,150.0,True
+smart,fortwo ED,2017,17.6,16.7,1,3.6,150.0,True
+smart,fortwo ED,2017,17.6,16.7,3,22.0,150.0,True
+smart,fortwo EQ,2017,17.6,16.7,3,22.0,150.0,True
+smart,EQ fortwo coupe,2020,16.7,16.7,3,11.0,150.0,True
+smart,#1 Pro+,2023,62.0,18.5,3,11.0,150.0,False
+smart,#5 Summit Edition,2025,94.0,20.7,3,11.0,400.0,False
+smart,#5 Pro+,2025,94.0,20.2,3,11.0,400.0,False
+smart,#1 Brabus,2023,62.0,19.1,3,11.0,150.0,False
+smart,EQ forfour,2020,16.7,17.6,3,11.0,150.0,True
+smart,#5 Premium,2025,94.0,20.2,3,11.0,400.0,False
+smart,#3 Premium,2024,62.0,17.5,3,11.0,150.0,False
+smart,#5 Pro,2025,74.4,20.1,3,11.0,150.0,False
+smart,ForTwo Electric Drive,2017,16.7,16.7,3,11.0,150.0,True
+smart,#5 Pulse,2025,94.0,20.7,3,11.0,400.0,False
+smart,#1 Premium,2023,62.0,18.5,3,11.0,150.0,False
+smart,#1 Pro,2023,47.0,18.8,3,11.0,130.0,False
+smart,EQ fortwo cabrio,2020,16.7,17.6,3,11.0,150.0,True
+smart,#1 Pulse,2023,62.0,19.1,3,11.0,150.0,False
+smart,ForFour Electric Drive,2017,16.7,17.6,3,11.0,150.0,True
+smart,ForTwo Cabrio Electric Drive,2017,16.7,17.6,3,11.0,150.0,True
+smart,ForTwo Cabrio Electric,2017,16.7,17.6,3,16.7,100.0,False
+smart,ForFour Electric,2017,16.7,17.6,3,16.7,100.0,False
+smart,ForTwo Electric,2017,16.7,16.7,3,16.7,100.0,False
+smart,fortwo coupe,2018,16.7,16.7,3,16.7,100.0,False
+smart,fortwo cabrio,2018,16.7,17.6,3,16.7,100.0,False
+smart,forfour,2018,16.7,17.6,3,16.7,100.0,False
+smart,fortwo coupe,2020,16.7,16.7,3,16.7,100.0,False
+smart,fortwo cabrio,2020,16.7,17.6,3,16.7,100.0,False
+smart,forfour,2020,16.7,17.6,3,16.7,100.0,False
+smart,pro+,2023,62.0,18.5,3,22.0,62.0,False
+smart,brabus,2023,62.0,19.1,3,22.0,62.0,False
+smart,pulse,2023,62.0,19.1,3,22.0,62.0,False
+smart,pro+,2024,62.0,17.5,3,22.0,62.0,False
+smart,brabus,2024,62.0,18.5,3,22.0,62.0,False
+smart,pro,2023,47.0,18.8,3,7.4,47.0,False
+smart,pro,2024,47.0,17.7,3,7.4,47.0,False
+smart,premium,2023,62.0,18.5,3,22.0,62.0,False
+smart,premium,2024,62.0,17.5,3,22.0,62.0,False
+SsangYong,Korando e-Motion,2022,56.0,19.3,3,6.6,80.0,True
+SsangYong,e-motion,2022,56.0,19.3,3,11.0,56.0,False
+Subaru,Solterra,2022,64.0,20.0,3,6.6,150.0,False
+Subaru,awd,2022,64.0,20.0,3,11.0,64.0,False
+Tesla,Model S,2016,69.0,20.0,3,11.0,69.0,False
+Tesla,Model S,2017,95.0,20.0,3,11.0,95.0,False
+Tesla,Model 3,2023,57.5,13.7,3,11.0,57.5,False
+Tesla,Model 3,2020,74.0,16.1,3,11.0,195.0,False
+Tesla,Model 3,2021,76.0,16.1,3,11.0,250.0,False
+Tesla,Model 3,2023,75.0,14.9,3,11.0,250.0,False
+Tesla,Model 3,2020,72.5,16.7,3,11.0,195.0,False
+Tesla,Model 3,2021,82.0,16.9,3,11.0,250.0,False
+Tesla,Model 3,2022,62.3,15.5,3,11.0,170.0,False
+Tesla,Model 3,2021,57.5,15.1,3,11.0,170.0,False
+Tesla,Model 3,2022,50.0,15.3,3,11.0,149.0,False
+Tesla,Model S,2016,95.0,18.4,3,16.5,140.0,False
+Tesla,Model S,2012,62.0,18.0,3,16.5,120.0,True
+Tesla,Model S,2015,67.0,18.5,3,22.0,100.0,True
+Tesla,Model S,2015,66.5,19.0,3,11.0,66.5,False
+Tesla,Model S,2015,66.5,18.8,3,22.0,120.0,True
+Tesla,Model S,2016,72.5,19.1,3,11.0,72.5,False
+Tesla,Model S,2016,72.5,19.1,3,11.0,72.5,False
+Tesla,Model S,2012,76.0,19.1,3,11.0,140.0,False
+Tesla,Model S,2012,77.5,19.1,3,16.5,197.0,False
+Tesla,Model S,2015,81.0,18.2,3,16.5,140.0,False
+Tesla,Model S,2016,72.5,20.8,3,16.5,197.0,False
+Tesla,Model S,2022,95.0,16.2,3,16.5,250.0,True
+Tesla,Model S,2019,95.0,19.0,3,16.5,197.0,False
+Tesla,Model S,2014,80.8,20.7,3,11.0,80.8,True
+Tesla,Model S,2014,80.8,19.1,3,22.0,120.0,True
+Tesla,Model S,2019,95.0,19.3,3,16.5,197.0,False
+Tesla,Model S,2022,95.0,17.0,3,16.5,250.0,True
+Tesla,Model S,2019,72.5,18.4,3,16.5,197.0,False
+Tesla,Model X,2019,75.0,20.0,3,16.5,140.0,False
+Tesla,Model X,2019,100.0,20.0,3,16.5,140.0,False
+Tesla,Model X,2020,95.0,23.6,3,16.5,148.0,False
+Tesla,Model X,2019,100.0,22.0,3,16.5,140.0,False
+Tesla,Model X,2020,72.5,21.6,3,16.5,148.0,False
+Tesla,Model X,2019,75.0,20.0,3,16.5,140.0,False
+Tesla,Model X,2020,95.0,22.6,3,16.5,148.0,False
+Tesla,Model Y,2022,57.5,16.4,3,11.0,57.5,False
+Tesla,Model Y,2020,72.5,14.4,3,11.0,246.0,False
+Tesla,Model Y,2022,76.0,18.1,3,11.0,246.0,False
+Tesla,Roadster,2022,200.0,20.6,3,22.0,250.0,True
+Tesla,Model Y,2022,75.0,16.9,3,11.0,250.0,False
+Tesla,Model X,2022,95.0,20.4,3,11.0,250.0,False
+Tesla,Model X,2023,95.0,19.6,3,11.0,250.0,False
+Tesla,Model 3,2020,52.5,15.0,3,11.0,170.0,False
+Tesla,Model 3,2019,73.5,16.7,3,11.0,250.0,False
+Tesla,Model S,2020,98.0,17.7,3,11.0,250.0,False
+Tesla,Model 3,2024,75.0,13.8,3,11.0,250.0,False
+Tesla,Model X,2020,98.0,20.4,3,11.0,250.0,False
+Tesla,Model X,2019,95.0,21.6,3,11.0,145.0,False
+Tesla,Model S,2016,85.5,21.1,3,11.0,85.5,True
+Tesla,Model X,2016,85.5,22.8,3,11.0,85.5,True
+Tesla,Model S,2022,95.0,17.0,3,11.0,250.0,False
+Tesla,Model 3,2021,51.0,14.6,3,11.0,170.0,False
+Tesla,Model S,2023,95.0,16.5,3,11.0,250.0,False
+Tesla,Model Y,2025,75.0,16.7,3,11.0,250.0,False
+Tesla,Model S,2013,80.8,19.9,3,11.0,80.8,True
+Tesla,Model S,2015,80.8,19.2,3,11.0,80.8,True
+Tesla,Model S,2015,85.5,21.1,3,11.0,85.5,True
+Tesla,Model S,2016,69.0,20.0,3,11.0,69.0,False
+Tesla,Model S,2016,62.0,18.0,3,11.0,62.0,False
+Tesla,Model 3 Long Range,2019,73.5,15.5,3,11.0,73.5,True
+Tesla,Model X,2016,62.0,21.8,3,11.0,62.0,False
+Tesla,Model S,2015,85.5,19.2,3,11.0,85.5,True
+Tesla,Model S,2016,85.5,18.8,3,11.0,85.5,True
+Tesla,Model S,2015,66.5,19.6,3,11.0,66.5,False
+Tesla,Model X,2016,72.5,21.6,3,11.0,72.5,False
+Tesla,Model S,2016,85.5,21.1,3,11.0,85.5,True
+Tesla,Model S,2016,62.0,18.0,3,11.0,62.0,False
+Tesla,Model S,2015,85.5,20.6,3,11.0,85.5,True
+Tesla,Model X,2016,85.5,22.8,3,11.0,85.5,True
+Tesla,Model X,2016,85.5,21.6,3,11.0,85.5,True
+Tesla,Model X,2017,95.0,21.8,3,11.0,95.0,False
+Tesla,Model X,2017,95.0,22.6,3,11.0,100.0,True
+Tesla,Model S,2016,95.0,20.0,3,11.0,100.0,True
+Tesla,3 long range dual motor,2019,73.5,16.2,3,11.0,73.5,True
+Tesla,3 long range,2019,73.5,16.7,3,11.0,73.5,True
+Tesla,x long range,2019,95.0,21.6,3,11.0,95.0,False
+Tesla,x ludicrous,2019,95.0,21.6,3,11.0,95.0,False
+Tesla,3 standard range plus,2019,49.0,15.3,3,11.0,49.0,False
+Tesla,y long range dual motor,2021,72.0,16.9,3,11.0,72.0,False
+Tesla,y,2022,75.0,17.4,3,11.0,75.0,False
+Tesla,x,2019,95.0,22.1,3,11.0,95.0,False
+Tesla,s standard range,2019,72.5,17.3,3,11.0,72.5,False
+Tesla,s long range,2019,95.0,17.9,3,11.0,95.0,False
+Tesla,x standard range,2019,72.5,20.4,3,11.0,72.5,False
+Tesla,s,2019,95.0,18.4,3,11.0,95.0,False
+Tesla,3 standard range plus lfp,2020,52.5,15.0,3,11.0,52.5,False
+Tesla,3 long range dual motor,2020,72.0,15.5,3,11.0,72.0,False
+Tesla,3,2020,76.0,16.2,3,11.0,76.0,True
+Tesla,s long range plus,2020,98.0,17.7,3,11.0,98.0,False
+Tesla,s,2020,98.0,18.3,3,11.0,98.0,False
+Tesla,x long range plus,2020,98.0,20.4,3,11.0,98.0,False
+Tesla,x,2020,98.0,20.9,3,11.0,98.0,False
+Tesla,s dual motor,2023,95.0,16.5,3,11.0,95.0,False
+Tesla,s plaid,2022,95.0,17.0,3,11.0,95.0,False
+Tesla,x dual motor,2023,95.0,19.6,3,11.0,95.0,False
+Tesla,x plaid,2022,95.0,20.4,3,11.0,95.0,False
+Tesla,3 standard range plus,2021,51.0,14.6,3,11.0,51.0,True
+Tesla,3 long range dual motor,2021,75.0,15.5,3,11.0,75.0,True
+Tesla,3,2021,57.5,14.2,3,11.0,57.5,False
+Tesla,y long range dual motor,2022,75.0,16.9,3,11.0,75.0,False
+Tesla,3,2022,75.0,16.3,3,11.0,75.0,False
+Tesla,y,2022,57.5,16.4,3,11.0,57.5,False
+Tesla,3 long range rwd,2023,75.0,15.2,3,11.0,75.0,False
+Tesla,3 long range dual motor,2023,75.0,14.3,3,11.0,75.0,False
