@@ -57,8 +57,12 @@ class Charger:
         return total_time_min
 
     def estimate_cost(self, kWh_needed, timestamp=None, idle_minutes=0):
+        
+        def safe(value):
+            return 0.0 if pd.isna(value) or value is None else float(value)
+        
         scheme = self.pricing_scheme
-        base_price_per_kWh = self.base_price_per_kWh
+        base_price_per_kWh = safe(self.base_price_per_kWh)
 
         if scheme.get("time_sensitive_flag") == 1 and timestamp:
             hour = timestamp.hour
@@ -67,10 +71,7 @@ class Charger:
             elif "peak_price" in scheme:
                 base_price_per_kWh = scheme.get("peak_price", base_price_per_kWh)
 
-        energy_cost = kWh_needed * base_price_per_kWh
-
-        def safe(value):
-            return 0.0 if pd.isna(value) or value is None else float(value)
+        energy_cost = safe(kWh_needed * base_price_per_kWh)
 
         subscription_fee = safe(scheme.get("subscription_fee"))
         connection_fee = safe(scheme.get("connection_fee"))
@@ -78,7 +79,8 @@ class Charger:
 
         idle_fee = 0.0
         if scheme.get("idle_fee_flag") == 1 and idle_minutes > 0:
-            idle_fee = idle_minutes * 0.5  # Placeholder until rate is available
+            idle_fee = safe(scheme.get("idle_fee_per_minute", 0.5)) * idle_minutes
+
 
         total_cost = energy_cost + subscription_fee + connection_fee + idle_fee + pre_auth_fee
         return total_cost
