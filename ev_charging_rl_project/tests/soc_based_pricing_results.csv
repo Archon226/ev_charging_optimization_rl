@@ -1,0 +1,21 @@
+agent_id,status,model,user_type,objective,operator,company_id,charger_type,distance_km,drive_minutes,initial_soc,final_soc,kwh_delivered,charge_minutes,unit_price,price_source,energy_cost,fees_connection,fees_infra,fees_idle,fees_overstay,min_charge_topup,total_cost
+U001,no_charge_needed,e-tron Sportback 50 quattro,Payg,cost,n/a,,n/a,6.172,13.23,18.4,18.19,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U002,no_charge_needed,Spark EV,Payg,cost,n/a,,n/a,12.885,27.61,15.6,14.63,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U003,no_charge_needed,Q4 Sportback e-tron 45 quattro,Payg,hybrid,n/a,,n/a,0.857,1.84,52.1,52.08,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U004,no_charge_needed,Enyaq Coupe iV 80x,Payg,hybrid,n/a,,n/a,9.013,19.31,10.4,10.19,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U005,no_charge_needed,Zoe R90 Entry,Payg,cost,n/a,,n/a,3.099,6.64,67.4,67.18,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U006,no_charge_needed,e-Jumpy Combi M 75 kWh,Payg,time,n/a,,n/a,0.34,0.73,30.6,30.59,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U007,no_charge_needed,etron sportback 50,Payg,time,n/a,,n/a,9.151,19.61,68.4,68.19,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U008,no_charge_needed,ev long range,Payg,time,n/a,,n/a,10.931,23.42,61.7,61.4,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U009,no_charge_needed,m70 xdrive,Subscriber,cost,n/a,,n/a,3.29,7.05,27.4,27.33,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U010,no_charge_needed,EV80,Payg,time,n/a,,n/a,3.097,6.64,37.2,37.01,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U011,no_charge_needed,ORA 03,Payg,cost,n/a,,n/a,4.856,10.41,26.0,25.85,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U012,no_charge_needed,edrive20,Payg,cost,n/a,,n/a,2.608,5.59,53.7,53.63,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U013,no_charge_needed,standard range single motor,Subscriber,hybrid,n/a,,n/a,0.538,1.15,51.3,51.29,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U014,no_charge_needed,e-NV 200,Payg,hybrid,n/a,,n/a,3.216,6.89,23.7,23.53,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U015,no_charge_needed,standard range,Payg,cost,n/a,,n/a,3.636,7.79,64.8,64.7,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U016,no_charge_needed,ET5 Touring Standard Range,Subscriber,time,n/a,,n/a,7.275,15.59,63.1,62.93,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U017,no_charge_needed,Mustang Mach e,Subscriber,cost,n/a,,n/a,12.698,27.21,43.7,43.46,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U018,no_charge_needed,ze50 r135,Payg,time,n/a,,n/a,7.366,15.78,23.2,22.96,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U019,no_charge_needed,Model S,Payg,hybrid,n/a,,n/a,10.455,22.4,61.7,61.48,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+U020,no_charge_needed,sport,Payg,time,n/a,,n/a,4.24,9.09,13.8,13.69,0.0,0.0,0.0,n/a,0.0,0.0,0.0,0.0,0.0,0.0,0.0

@@ -1,95 +1,88 @@
-import uuid
+# env/agent.py
+from __future__ import annotations
+from dataclasses import dataclass, field
+from typing import List, Dict, Optional
 
+@dataclass
 class EVAgent:
-    def __init__(self, user_id, ev_model, battery_kWh, efficiency_Wh_per_km,
-                 ac_power_kW, dc_power_kW, start_soc_percent, origin, destination,
-                 objective='cost', max_budget=None, max_time_slack=None):
+    agent_id: str
+    model: str
+    user_type: str                 # "Subscriber" | "Payg" | "Contactless"
+    objective: str                 # "cost" | "time" | "hybrid"
+    efficiency_Wh_per_km: float    # e.g., 160 Wh/km
+    battery_kwh: float             # usable capacity
+    soc: float                     # 0..100
+    alpha_cost: float = 0.5        # only for hybrid objective
 
-        self.user_id = user_id or str(uuid.uuid4())
-        self.ev_model = ev_model
+    # runtime/state
+    total_minutes: float = 0.0
+    total_cost: float = 0.0
+    distance_driven_km: float = 0.0
+    charging_sessions: List[Dict] = field(default_factory=list)
+    route_history: List[Dict] = field(default_factory=list)
 
-        # Specs
-        self.battery_kWh = battery_kWh
-        self.efficiency_Wh_per_km = efficiency_Wh_per_km
-        self.ac_power_kW = ac_power_kW
-        self.dc_power_kW = dc_power_kW
+    def current_kwh(self) -> float:
+        return (self.soc / 100.0) * self.battery_kwh
 
-        # Energy state
-        self.max_soc = battery_kWh
-        self.soc_percent = start_soc_percent
-        self.current_energy_kWh = (start_soc_percent / 100) * battery_kWh
-        self.soc = self.current_energy_kWh
+    def can_reach(self, distance_km: float, reserve_soc: float = 0.0) -> bool:
+        needed_kwh = (distance_km * self.efficiency_Wh_per_km) / 1000.0
+        end_soc = (self.current_kwh() - needed_kwh) / max(self.battery_kwh, 1e-9) * 100.0
+        return end_soc >= reserve_soc
 
-        # Trip
-        self.origin = origin  # (lat, lon) or SUMO node
-        self.destination = destination
-        self.route_history = [origin]
-        self.objective = objective
-        self.max_budget = max_budget
-        self.max_time_slack = max_time_slack
+    def energy_needed_to(self, target_soc: float) -> float:
+        target_soc = max(0.0, min(100.0, target_soc))
+        delta_soc = max(0.0, target_soc - self.soc)
+        return self.battery_kwh * (delta_soc / 100.0)
 
-        # SUMO integration attributes
-        self.traci_id = None
-        self.current_edge = None
-        self.location = origin  # updated from SUMO if needed
+    def apply_drive(self, distance_km: float, avg_speed_kph: float) -> Dict:
+        distance_km = max(0.0, float(distance_km))
+        hours = distance_km / max(1e-6, float(avg_speed_kph))
+        minutes = hours * 60.0
+        kwh_used = (distance_km * self.efficiency_Wh_per_km) / 1000.0
+        soc_drop = (kwh_used / self.battery_kwh) * 100.0
 
-        # Logs
-        self.total_cost = 0.0
-        self.total_time = 0.0
-        self.charging_sessions = []
+        self.soc = max(0.0, self.soc - soc_drop)
+        self.total_minutes += minutes
+        self.distance_driven_km += distance_km
+        self.route_history.append({"type": "drive", "km": distance_km, "minutes": minutes, "soc_after": self.soc})
+        return {"minutes": minutes, "kwh_used": kwh_used, "soc_after": self.soc}
 
-    def estimate_range_km(self):
-        """Estimate how far the EV can go with current energy."""
-        return (self.current_energy_kWh * 1000) / self.efficiency_Wh_per_km
+    def apply_charge(self, delivered_kwh: float, minutes: float, cost_breakdown: Dict) -> None:
+        soc_gain = (max(0.0, float(delivered_kwh)) / self.battery_kwh) * 100.0
+        self.soc = min(100.0, self.soc + soc_gain)
+        self.total_minutes += float(minutes)
+        self.total_cost += float(cost_breakdown.get("total_cost", 0.0))
+        self.charging_sessions.append(cost_breakdown)
+        self.route_history.append({"type": "charge", "kwh": delivered_kwh, "minutes": minutes, "soc_after": self.soc})
 
-    def update_soc(self, energy_used_kWh):
-        self.current_energy_kWh -= energy_used_kWh
-        self.soc_percent = (self.current_energy_kWh / self.battery_kWh) * 100
-        self.soc = self.current_energy_kWh
-
-    def charge(self, energy_kWh, time_spent_min, cost):
-        """Add charge to the EV, log session."""
-        self.current_energy_kWh += energy_kWh
-        self.current_energy_kWh = min(self.current_energy_kWh, self.battery_kWh)
-        self.soc_percent = (self.current_energy_kWh / self.battery_kWh) * 100
-        self.soc = self.current_energy_kWh
-        self.total_cost += cost
-        self.total_time += time_spent_min
-        self.charging_sessions.append({
-            "energy_kWh": energy_kWh,
-            "cost": cost,
-            "time_min": time_spent_min
-        })
-
-    def drive_to(self, location, distance_km, travel_time_min):
-        """Simulate driving and consuming energy."""
-        energy_used = (distance_km * self.efficiency_Wh_per_km) / 1000
-        self.update_soc(energy_used)
-        self.total_time += travel_time_min
-        self.route_history.append(location)
-        self.location = location
-
-    def needs_charging(self, required_range_km):
-        """Check if the EV needs charging to reach a certain range."""
-        return self.estimate_range_km() < required_range_km
-
-    def update_state(self, sumo_interface):
-        """Update agent state from SUMO."""
-        self.current_edge = sumo_interface.get_edge_id(self.traci_id)
-        self.location = sumo_interface.get_position(self.traci_id)
-
-    def is_fully_charged(self):
-        return self.current_energy_kWh >= self.battery_kWh
-
+    def session_reward(self, session_minutes: float, session_cost: float) -> float:
+        if self.objective == "cost":
+            return -float(session_cost)
+        if self.objective == "time":
+            return -float(session_minutes)
+        # hybrid
+        a = float(self.alpha_cost)
+        return -(a * float(session_cost) + (1 - a) * float(session_minutes))
+    
     def reset(self):
-        """Reset agent to initial energy state and clear logs."""
-        self.soc_percent = 30.0
-        self.current_energy_kWh = 0.3 * self.battery_kWh
-        self.soc = self.current_energy_kWh
+        self.total_minutes = 0.0
         self.total_cost = 0.0
-        self.total_time = 0.0
-        self.route_history = [self.origin]
-        self.charging_sessions = []
-        self.current_edge = None
-        self.traci_id = None
-        self.location = self.origin
+        self.distance_driven_km = 0.0
+        self.charging_sessions.clear()
+        self.route_history.clear()
+
+    def is_fully_charged(self) -> bool:
+        return self.soc >= 99.5
+
+    @property
+    def max_soc(self) -> float:
+        return 100.0
+
+    @property
+    def location(self):
+        # TripSimulator owns real lat/lon; this is only for stub envs
+        return (0.0, 0.0)
+
+    def update_state(self, *_args, **_kwargs):
+        pass
+
