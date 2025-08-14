@@ -4,10 +4,12 @@ import logging
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
-
+import os, sys
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 import pandas as pd
 from utils.pricing import PricingCatalog, load_pricing_catalog  # moved out
-
+from typing import Tuple, Iterable
+import os
 log = logging.getLogger(__name__)
 if not log.handlers:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s:%(name)s:%(message)s")
@@ -235,3 +237,140 @@ def load_all_data(data_dir: str | Path) -> DatasetBundle:
         users=users,
         pricing_catalog=pricing,
     )
+
+
+def _dl_norm_name(x: str) -> str:
+    return str(x).strip().lower()
+
+def _dl_norm_connector(label: str) -> str:
+    s = str(label).strip().lower()
+    if "ccs" in s or "combined" in s:
+        return "CCS2"
+    if "chademo" in s:
+        return "CHAdeMO"
+    if "mennekes" in s or "type 2" in s or "iec62196" in s:
+        return "Type2"
+    if "type 1" in s or "j1772" in s:
+        return "Type1"
+    if "3-pin" in s or "3 pin" in s or "bs 1363" in s:
+        return "UK 3-pin"
+    return str(label).strip()
+
+def _dl_is_dc(charge_method: str) -> bool:
+    s = str(charge_method).strip().lower()
+    return ("dc" in s) or ("rapid" in s) or ("ultra" in s)
+
+def _dl_charger_type(is_dc: bool, power_kw: float) -> str:
+    # simple buckets for candidate selection; does NOT affect pricing
+    if is_dc or power_kw >= 50:
+        return "Rapid"
+    if power_kw >= 22:
+        return "Fast"
+    return "Slow"
+
+def build_stations_merged_from_frames(
+    stations_df: pd.DataFrame,
+    connectors_df: pd.DataFrame,
+    pricing_core_df: pd.DataFrame,
+) -> pd.DataFrame:
+    """
+    Pure function: merge raw station metadata + connectors + operator→company map
+    into a canonical stations_merged table used by SUMO/candidate search.
+
+    Does NOT modify or rely on pricing logic. Output columns:
+      ['station_id','latitude','longitude','company_id','charger_type',
+       'rated_power_kw','station_connectors','operator_name']
+    """
+    # Key is chargeDeviceID in your datasets
+    st = stations_df.rename(columns={
+        "chargeDeviceID": "station_id",
+        "deviceNetworks": "operator_name",
+    }).copy()
+
+    conns = connectors_df.rename(columns={
+        "chargeDeviceID": "station_id",
+        "rated_power_kW": "rated_power_kw",
+    }).copy()
+
+    # normalize connector labels & methods for aggregation
+    if "connector_type" in conns.columns:
+        conns["connector_type_norm"] = conns["connector_type"].map(_dl_norm_connector)
+    else:
+        conns["connector_type_norm"] = ""
+
+    if "charge_method" in conns.columns:
+        conns["is_dc"] = conns["charge_method"].map(_dl_is_dc)
+    else:
+        conns["is_dc"] = False
+
+    agg = (
+        conns.groupby("station_id")
+        .agg(
+            rated_power_kw=("rated_power_kw", "max"),
+            any_dc=("is_dc", "max"),
+            station_connectors=("connector_type_norm",
+                                lambda s: tuple(sorted({x for x in s if pd.notna(x) and str(x).strip()}))),
+        )
+        .reset_index()
+    )
+
+    merged = st.merge(agg, on="station_id", how="left")
+
+    # defaults if missing
+    merged["rated_power_kw"] = pd.to_numeric(merged["rated_power_kw"], errors="coerce").fillna(7.0)
+    merged["any_dc"] = merged["any_dc"].fillna(False)
+    merged["station_connectors"] = merged["station_connectors"].apply(
+        lambda x: x if isinstance(x, tuple) else tuple()
+    )
+
+    # derive charger_type for candidate filtering (not used by pricing)
+    merged["charger_type"] = [
+        _dl_charger_type(bool(dc), float(p))
+        for dc, p in zip(merged["any_dc"], merged["rated_power_kw"])
+    ]
+
+    # operator → company_id via pricing_core company_name
+    core = pricing_core_df.rename(columns={"company_name": "company_name_raw"}).copy()
+    core["company_name_norm"] = core["company_name_raw"].map(_dl_norm_name)
+    merged["operator_name_norm"] = merged["operator_name"].fillna("").map(_dl_norm_name)
+
+    merged = merged.merge(
+        core[["company_id", "company_name_norm"]].drop_duplicates(),
+        left_on="operator_name_norm",
+        right_on="company_name_norm",
+        how="left",
+    )
+
+    merged["company_id"] = merged["company_id"].fillna(-1).astype(int)
+
+    out = merged[[
+        "station_id", "latitude", "longitude", "company_id",
+        "charger_type", "rated_power_kw", "station_connectors", "operator_name"
+    ]].copy()
+
+    out["latitude"]  = pd.to_numeric(out["latitude"], errors="coerce")
+    out["longitude"] = pd.to_numeric(out["longitude"], errors="coerce")
+    out = out.dropna(subset=["latitude","longitude"])
+    return out
+
+def build_stations_merged_files(
+    data_dir: str,
+    stations_csv: str = "charging_station_metadata.csv",
+    connectors_csv: str = "charging_station_connectors.csv",
+    pricing_core_csv: str = "pricing_core.csv",
+    save_csv: str | None = "data/stations_merged.csv",
+) -> pd.DataFrame:
+    """
+    File-based convenience wrapper around build_stations_merged_from_frames.
+    Safe ADD-ONLY: does not alter existing code paths.
+    """
+    stations = pd.read_csv(os.path.join(data_dir, stations_csv))
+    connectors = pd.read_csv(os.path.join(data_dir, connectors_csv))
+    core = pd.read_csv(os.path.join(data_dir, pricing_core_csv))
+
+    merged = build_stations_merged_from_frames(stations, connectors, core)
+
+    if save_csv:
+        os.makedirs(os.path.dirname(save_csv), exist_ok=True)
+        merged.to_csv(save_csv, index=False)
+    return merged
