@@ -1,42 +1,54 @@
 import traci
+import traci.constants as tc
 
 class SumoInterface:
-    def __init__(self, config):
-        self.config = config
-        self.sumo_binary = config.get("sumo_binary", "sumo")  # or "sumo-gui"
-        self.sumo_cfg_file = config.get("sumo_config", "sumo_config.sumocfg")
-        self.simulation_time = 0
+    def __init__(self, sumo_binary="sumo", net_file=None, fast_mode=False):
+        self.sumo_binary = sumo_binary
+        self.net_file = net_file
+        self.fast_mode = fast_mode
+        self.vehicles = {}
 
-    def reset(self):
-        """Start or restart the SUMO simulation"""
-        if traci.isLoaded():
-            traci.close()
+    def start(self, gui=False):
+        import subprocess
+        cmd = [self.sumo_binary + ("-gui" if gui else ""), "-n", self.net_file]
+        traci.start(cmd)
 
-        sumo_cmd = [self.sumo_binary, "-c", self.sumo_cfg_file, "--start"]
-        traci.start(sumo_cmd)
-        self.simulation_time = 0
+    def close(self):
+        traci.close()
+
+    def add_vehicle(self, veh_id, from_edge, to_edge, depart_time=0):
+        route_id = f"route_{veh_id}"
+        if not self.fast_mode:
+            edges = self._shortest_path_edges(from_edge, to_edge)
+        else:
+            edges = [from_edge, to_edge]  # fast mode shortcut
+        traci.route.add(route_id, edges)
+        traci.vehicle.add(veh_id, route_id, depart=depart_time)
+        self.vehicles[veh_id] = {"from": from_edge, "to": to_edge}
 
     def step(self):
-        """Advance one simulation step"""
         traci.simulationStep()
-        self.simulation_time += 1
 
-    def route_agent_to_charger(self, agent, charger):
-        """
-        Route an EVAgent to a specific charger.
-        Requires: agent.id, charger.location
-        """
-        # Assume charger.location is a road edge ID
-        route = self._generate_route_to_charger(agent.current_edge, charger.edge_id)
-        traci.vehicle.setRoute(agent.traci_id, route)
+    def multi_step(self, steps=1):
+        for _ in range(steps):
+            traci.simulationStep()
 
-    def get_time_of_day_norm(self):
-        """Returns time of day as normalized float [0, 1]"""
-        total_seconds_in_day = 24 * 60 * 60
-        return (self.simulation_time % total_seconds_in_day) / total_seconds_in_day
+    def get_vehicle_position(self, veh_id):
+        x, y = traci.vehicle.getPosition(veh_id)
+        return self._to_geo(x, y)
 
-    def _generate_route_to_charger(self, from_edge, to_edge):
+    def _to_geo(self, x, y):
+        return traci.simulation.convertGeo(x, y, fromGeo=False)
+
+    def _shortest_path_edges(self, from_edge, to_edge):
         """
-        Placeholder route function. Use TraCI or Dijkstra routing here.
+        Use SUMO's inbuilt routing to get the shortest path as a list of edges.
         """
-        return [from_edge, to_edge]  # mock; replace with real route logic
+        traci.simulation.findRoute(from_edge, to_edge)
+        route = traci.simulation.findRoute(from_edge, to_edge).edges
+        return route if route else [from_edge, to_edge]
+
+    def remove_vehicle(self, veh_id):
+        if veh_id in self.vehicles:
+            traci.vehicle.remove(veh_id)
+            del self.vehicles[veh_id]
