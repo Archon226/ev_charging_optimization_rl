@@ -20,13 +20,21 @@ class Candidate:
     detour_time_s: float
     reachable_with_current_soc: bool
     connector_ok: bool
+    lat: float
+    lon: float
+    company_id: int | None = None
 
 def haversine_km(lat1, lon1, lat2, lon2):
     R = 6371.0088
     lat1, lon1, lat2, lon2 = map(np.deg2rad, [lat1, lon1, lat2, lon2])
     dlat, dlon = lat2 - lat1, lon2 - lon1
-    a = np.sin(dlat/2)**2 + np.cos(lat1)*np.cos(lat2)*np.sin(dlon/2)**2
-    return 2 * R * np.arcsin(np.sqrt(a))
+    a = np.sin(dlat/2.0)**2 + np.cos(lat1)*np.cos(lat2)*np.sin(dlon/2.0)**2
+    return 2.0 * R * np.arcsin(np.sqrt(a))
+
+def _finite_or(x, fallback=0.0):
+    x = pd.to_numeric(x, errors="coerce")
+    x = x.replace([np.inf, -np.inf], np.nan)
+    return x.fillna(fallback)
 
 def find_charger_candidates(
     sim,
@@ -41,50 +49,96 @@ def find_charger_candidates(
 ) -> List[Candidate]:
     """
     Vectorized candidate filtering + cached SUMO detour metrics.
+    Produces only priceable, finite candidates.
     """
     o_lat, o_lon = origin
     d_lat, d_lon = dest
 
     # Merge station metadata + connectors
-    merged = connectors.merge(stations, on="station_id", how="left")
+    merged = connectors.merge(stations, on="station_id", how="inner")
+
+    # Normalize power column name
+    if "rated_power_kw" not in merged.columns and "rated_power_kW" in merged.columns:
+        merged["rated_power_kw"] = merged["rated_power_kW"]
+
+    # Basic prefilter: must be priceable and have coordinates & power
+    need_cols = ["company_id", "lat", "lon", "connector_type", "charger_type", "rated_power_kw"]
+    for c in need_cols:
+        if c not in merged.columns:
+            merged[c] = np.nan
+
+    # Drop rows that cannot be priced or lack power
+    merged = merged[merged["company_id"].notna()].copy()
+    merged = merged[merged["rated_power_kw"].notna()].copy()
+
+    # Coerce numerics to finite
+    for c in ["rated_power_kw", "lat", "lon"]:
+        merged[c] = _finite_or(merged[c], 0.0)
+
+    if merged.empty:
+        return []
 
     # Prefilter by rough detour estimate
     od = haversine_km(o_lat, o_lon, d_lat, d_lon)
-    so = haversine_km(merged.lat, merged.lon, o_lat, o_lon)
-    sd = haversine_km(merged.lat, merged.lon, d_lat, d_lon)
+    so = haversine_km(merged["lat"], merged["lon"], o_lat, o_lon)
+    sd = haversine_km(merged["lat"], merged["lon"], d_lat, d_lon)
     est_detour = (so + sd) - od
+    est_detour = _finite_or(est_detour, np.inf)
     merged = merged.loc[(est_detour >= 0) & (est_detour <= max_detour_km)].copy()
-    merged["est_detour"] = est_detour[(est_detour >= 0) & (est_detour <= max_detour_km)]
+    merged["est_detour"] = est_detour.loc[merged.index]
 
     if merged.empty:
         return []
 
     # Detailed SUMO detour metrics (cached inside sim)
-    detour_data = []
+    detour_km_list = []
+    detour_s_list = []
     for row in merged.itertuples(index=False):
-        dk, dt = sim.detour_via_cached(o_lat, o_lon, row.lat, row.lon, d_lat, d_lon)
-        detour_data.append((dk, dt))
-    merged["detour_km"], merged["detour_time_s"] = zip(*detour_data)
+        dk, dt = sim.detour_via_cached(o_lat, o_lon, float(row.lat), float(row.lon), d_lat, d_lon)
+        # force-finite
+        if not np.isfinite(dk): dk = 0.0
+        if not np.isfinite(dt): dt = 0.0
+        detour_km_list.append(float(dk))
+        detour_s_list.append(float(dt))
+    merged["detour_km"] = detour_km_list
+    merged["detour_time_s"] = detour_s_list
 
     # Connector compatibility
     merged["connector_ok"] = merged["connector_type"].isin(ev.allowed_connectors)
 
-    # Range check
-    max_range_km = ev.battery_kwh * current_soc / ev.eff_kwh_per_km
-    merged["reachable_with_current_soc"] = (so <= max_range_km)
+    # Range check from origin to station (using straight-line approx for speed here)
+    so_direct = haversine_km(merged["lat"], merged["lon"], o_lat, o_lon)
+    max_range_km = float(ev.battery_kwh) * float(max(0.0, min(1.0, current_soc))) / float(ev.eff_kwh_per_km)
+    merged["reachable_with_current_soc"] = (so_direct <= max_range_km)
 
     # Select best top_k by detour time
-    merged = merged.nsmallest(top_k, "detour_time_s")
+    merged = merged.nsmallest(int(max(1, top_k)), "detour_time_s")
+    if merged.empty:
+        return []
 
-    return [
-        Candidate(
-            station_id=r.station_id,
-            charger_type=r.charger_type,
-            rated_power_kw=r.rated_power_kw,
-            detour_km=r.detour_km,
-            detour_time_s=r.detour_time_s,
-            reachable_with_current_soc=r.reachable_with_current_soc,
-            connector_ok=r.connector_ok
+    # Build Candidate list (ensure correct types)
+    out: List[Candidate] = []
+    for r in merged.itertuples(index=False):
+        cid = None
+        if getattr(r, "company_id", None) is not None and str(r.company_id).lower() not in ("nan", "none"):
+            try:
+                cid = int(r.company_id)
+            except Exception:
+                cid = None
+
+        out.append(
+            Candidate(
+                station_id=str(r.station_id),
+                charger_type=str(r.charger_type) if getattr(r, "charger_type", None) is not None else "AC",
+                rated_power_kw=float(r.rated_power_kw) if np.isfinite(r.rated_power_kw) else 0.0,
+                detour_km=float(r.detour_km),
+                detour_time_s=float(r.detour_time_s),
+                reachable_with_current_soc=bool(r.reachable_with_current_soc),
+                connector_ok=bool(r.connector_ok),
+                lat=float(r.lat),
+                lon=float(r.lon),
+                company_id=cid
+            )
         )
-        for r in merged.itertuples(index=False)
-    ]
+
+    return out
