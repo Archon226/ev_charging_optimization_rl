@@ -8,7 +8,8 @@ import numpy as np
 import sumolib
 
 
-def _haversine_km(lat1, lon1, lat2, lon2):
+# ---------- geometry helpers ----------
+def _haversine_km(lat1, lon1, lat2, lon2) -> float:
     R = 6371.0088
     lat1, lon1, lat2, lon2 = map(math.radians, [lat1, lon1, lat2, lon2])
     dlat, dlon = lat2 - lat1, lon2 - lon1
@@ -19,71 +20,55 @@ def _haversine_km(lat1, lon1, lat2, lon2):
 class SumoSim:
     """
     Minimal routing adapter:
-      - Prefers sumolib.route.mapMatch when available.
-      - Falls back to manual nearest-edge snap + getShortestPath (length/time).
-      - If snapping fails (point outside the net), falls back to great-circle distance + assumed speed.
-    Public methods:
+      - Accepts (lat, lon) from callers.
+      - Snaps each (lat, lon) to the nearest drivable edge using net.convertLonLat2XY(lon, lat).
+      - Tries getShortestPath by travel time (or length).
+      - If snapping fails or SUMO returns a degenerate route while Haversine is non-trivial,
+        falls back to Haversine distance and an assumed speed.
+
+    Public methods (kept for compatibility):
       * route_between_cached(o_lat, o_lon, d_lat, d_lon) -> (km, sec)
       * detour_via_cached(o_lat, o_lon, c_lat, c_lon, d_lat, d_lon) -> (dkm, dsec)
     """
 
     def __init__(self, net_path: str, prefer_time: bool = True, fallback_speed_kph: float = 30.0):
-        # net_path should be absolute or a path SUMO can open
-        self.net = sumolib.net.readNet(net_path)
-        self._has_mapMatch = hasattr(sumolib.route, "mapMatch")
-        self.prefer_time = prefer_time  # when computing shortest path, prefer time over length
-        self.fallback_speed_kph = max(5.0, float(fallback_speed_kph))
-        self._route_cache = {}
+        self.net = sumolib.net.readNet(net_path, withInternal=False, withPedestrians=False, withBicycles=False)
+        self.prefer_time = bool(prefer_time)
+        self.fallback_speed_kph = float(fallback_speed_kph)
 
-    # ---------------------------------------------------------------------
-    # Internal helpers
-    # ---------------------------------------------------------------------
+    # ---------- low-level snapping ----------
     def _xy(self, lat: float, lon: float) -> Tuple[float, float]:
-        # SUMO order: convertLonLat2XY(lon, lat)
+        # SUMO expects (lon, lat) here
         return self.net.convertLonLat2XY(lon, lat)
 
-    def _closest_edge(self, lat: float, lon: float, radii: List[float] = (100.0, 250.0, 500.0, 1000.0)):
+    @lru_cache(maxsize=500_000)
+    def _nearest_edge_cached(self, qlat: float, qlon: float) -> Optional["sumolib.net.edge.Edge"]:
+        """Cached snap to nearest drivable edge for quantized (lat,lon)."""
+        lat = round(float(qlat), 6)
+        lon = round(float(qlon), 6)
         x, y = self._xy(lat, lon)
-        for r in radii:
-            cand = self.net.getNeighboringEdges(x, y, r)
-            if cand:
-                # Prefer edges that allow passenger cars, then by distance
-                car_ok = [(e, d) for (e, d) in cand if self._edge_allows_passenger(e)]
-                pool = car_ok if car_ok else cand
-                edge, _dist = min(pool, key=lambda t: t[1])
-                return edge
-        raise RuntimeError(f"No edges found near lat={lat}, lon={lon}")
+        # radius kept modest; you can raise to 250 if points are sometimes off-net
+        neigh = self.net.getNeighboringEdges(x, y, r=150.0)
+        if not neigh:
+            return None
+        def score(item):
+            e, dist = item
+            drivable = ("highway" in (e.getFunction() or "")) or (e.allows("passenger"))
+            return (0 if drivable else 1, dist)
+        neigh.sort(key=score)
+        return neigh[0][0]
 
-    @staticmethod
-    def _edge_allows_passenger(edge) -> bool:
-        try:
-            return edge.allows("passenger")
-        except Exception:
-            # Some builds may not expose allows(); assume edge is okay
-            return True
+    # keep the old name for internal calls
+    def _nearest_edge(self, lat: float, lon: float):
+        return self._nearest_edge_cached(lat, lon)
 
-    @staticmethod
-    def _edge_len_m(edge) -> float:
-        try:
-            return edge.getLength()
-        except Exception:
-            return getattr(edge, "length", float("inf"))
+    def _route_cost(self, edge: "sumolib.net.edge.Edge") -> Tuple[float, float]:
+        """Return (length_m, time_s) for one edge."""
+        L = float(edge.getLength() or 0.0)
+        v = float(edge.getSpeed() or 0.0)  # m/s
+        return L, (L / v if v > 0 else 0.0)
 
-    @staticmethod
-    def _edge_speed_ms(edge) -> float:
-        try:
-            s = edge.getSpeed()
-        except Exception:
-            s = getattr(edge, "speed", 0.0)
-        return max(0.1, s or 0.0)  # avoid divide-by-zero
-
-    def _route_cost(self, edge) -> Tuple[float, float]:
-        """Return (length_m, time_s) contribution for an edge."""
-        L = self._edge_len_m(edge)
-        t = L / self._edge_speed_ms(edge)
-        return L, t
-
-    def _sum_path_metrics(self, path) -> Tuple[float, float]:
+    def _sum_path_cost(self, path: List["sumolib.net.edge.Edge"]) -> Tuple[float, float]:
         total_len_m = 0.0
         total_time_s = 0.0
         for e in path or []:
@@ -99,75 +84,81 @@ class SumoSim:
         """
         prefer_time = self.prefer_time if prefer_time is None else prefer_time
 
-        # Attempt 1: named weight 'travelTime' / 'length'
+        # Attempt 1: named weight 'travelTime'
         try:
-            weight_key = "travelTime" if prefer_time else "length"
-            path, cost = self.net.getShortestPath(e_from, e_to, weight=weight_key)
-            if path is not None:
-                return path, cost
+            w = "travelTime" if prefer_time else "length"
+            path, cost = self.net.getShortestPath(e_from, e_to, weight=w)
+            if path:
+                return path, float(cost if cost is not None else np.inf)
         except Exception:
             pass
 
-        # Attempt 2: callable weight (edge -> cost)
+        # Attempt 2: boolean preferTime signature
         try:
-            if prefer_time:
-                path, cost = self.net.getShortestPath(
-                    e_from, e_to, weight=lambda e: self._edge_len_m(e) / self._edge_speed_ms(e)
-                )
-            else:
-                path, cost = self.net.getShortestPath(e_from, e_to, weight=lambda e: self._edge_len_m(e))
-            if path is not None:
-                return path, cost
+            path, cost = self.net.getShortestPath(e_from, e_to, preferTime=prefer_time)
+            if path:
+                return path, float(cost if cost is not None else np.inf)
         except Exception:
             pass
 
-        # Not found
+        # Attempt 3: legacy signature (undocumented fallbacks may exist)
+        try:
+            path, cost = self.net.getShortestPath(e_from, e_to)
+            if path:
+                return path, float(cost if cost is not None else np.inf)
+        except Exception:
+            pass
+
         return None, float("inf")
+    
+    def cheap_detour_upperbound_km(self, o_lat, o_lon, c_lat, c_lon, d_lat, d_lon) -> float:
+        """
+        Fast upper bound on extra km for detouring via C:
+          UB ≈ hav(O,C) + hav(C,D) - hav(O,D), clipped at 0.
+        Use this to prefilter candidates before calling expensive routing.
+        """
+        hav = _haversine_km
+        ub = (hav(o_lat, o_lon, c_lat, c_lon) +
+              hav(c_lat, c_lon, d_lat, d_lon) - 
+              hav(o_lat, o_lon, d_lat, d_lon))
+        return max(0.0, ub)
 
-    # ---------------------------------------------------------------------
-    # Map-matching strategies
-    # ---------------------------------------------------------------------
-    def _route_mapmatch_api(self, o_lat, o_lon, d_lat, d_lon) -> Tuple[float, float]:
+    # ---------- public API ----------
+    @lru_cache(maxsize=200_000)
+    def route_between_cached(self, o_lat: float, o_lon: float, d_lat: float, d_lon: float) -> Tuple[float, float]:
         """
-        Use sumolib.route.mapMatch if present (newer SUMO).
-        For O/D pairs, manual shortest path after snapping is robust and fast,
-        so we keep using manual for now. Left as a placeholder.
+        Return (km, sec) from origin to dest.
+        Robustly falls back to Haversine if snapping/pathing fails or returns degenerate distances.
         """
-        raise NotImplementedError
+        # Haversine baseline
+        hav_km = _haversine_km(o_lat, o_lon, d_lat, d_lon)
 
-    def _route_manual(self, o_lat, o_lon, d_lat, d_lon) -> Tuple[float, float]:
-        """
-        Manual: snap O/D to nearest edges, then shortest path; returns (km, sec).
-        If snapping fails (point outside net), fallback to great-circle + assumed speed.
-        """
-        try:
-            e_o = self._closest_edge(o_lat, o_lon)
-            e_d = self._closest_edge(d_lat, d_lon)
-            path, _ = self._shortest_path(e_o, e_d)
-            if path is None:
-                # No path in the graph between these snapped edges
-                raise RuntimeError("No path between snapped edges")
-            L_m, T_s = self._sum_path_metrics(path)
-            return L_m / 1000.0, T_s
-        except Exception:
-            # Fallback: haversine + assumed traffic speed
-            dk = _haversine_km(o_lat, o_lon, d_lat, d_lon)
-            dt = (dk / self.fallback_speed_kph) * 3600.0
-            return float(dk), float(dt)
+        # Snap both endpoints
+        e_from = self._nearest_edge(o_lat, o_lon)
+        e_to = self._nearest_edge(d_lat, d_lon)
 
-    # ---------------------------------------------------------------------
-    # Public cached API
-    # ---------------------------------------------------------------------
-    @lru_cache(maxsize=100_000)
-    def route_between_cached(self, o_lat, o_lon, d_lat, d_lon) -> Tuple[float, float]:
-        """Returns (baseline_distance_km, baseline_time_s)."""
-        if self._has_mapMatch:
-            try:
-                return self._route_manual(o_lat, o_lon, d_lat, d_lon)
-            except Exception:
-                return self._route_manual(o_lat, o_lon, d_lat, d_lon)
-        else:
-            return self._route_manual(o_lat, o_lon, d_lat, d_lon)
+        if (e_from is None) or (e_to is None):
+            # Out of net → fallback
+            sec = (hav_km / max(self.fallback_speed_kph, 1e-3)) * 3600.0
+            return float(hav_km), float(sec)
+
+        # Get shortest path
+        path, _ = self._shortest_path(e_from, e_to, prefer_time=self.prefer_time)
+
+        if not path:
+            # No path → fallback
+            sec = (hav_km / max(self.fallback_speed_kph, 1e-3)) * 3600.0
+            return float(hav_km), float(sec)
+
+        length_m, time_s = self._sum_path_cost(path)
+
+        # Final robustness guard:
+        # If SUMO path is (almost) zero but Haversine says O(>300 m), trust Haversine.
+        if (length_m < 20.0 and hav_km > 0.3):
+            sec = (hav_km / max(self.fallback_speed_kph, 1e-3)) * 3600.0
+            return float(hav_km), float(sec)
+
+        return float(length_m / 1000.0), float(time_s)
 
     @lru_cache(maxsize=100_000)
     def detour_via_cached(self, o_lat, o_lon, c_lat, c_lon, d_lat, d_lon) -> Tuple[float, float]:
@@ -176,9 +167,17 @@ class SumoSim:
         oc_km, oc_s = self.route_between_cached(o_lat, o_lon, c_lat, c_lon)
         cd_km, cd_s = self.route_between_cached(c_lat, c_lon, d_lat, d_lon)
 
+        # Extra guard: if a leg collapses but straight-line says otherwise, trust Haversine
+        if (oc_km < 0.02) and (_haversine_km(o_lat, o_lon, c_lat, c_lon) > 0.3):
+            oc_km = _haversine_km(o_lat, o_lon, c_lat, c_lon)
+            oc_s  = (oc_km / max(self.fallback_speed_kph, 1e-3)) * 3600.0
+        if (cd_km < 0.02) and (_haversine_km(c_lat, c_lon, d_lat, d_lon) > 0.3):
+            cd_km = _haversine_km(c_lat, c_lon, d_lat, d_lon)
+            cd_s  = (cd_km / max(self.fallback_speed_kph, 1e-3)) * 3600.0
+
         dk = max(0.0, (oc_km + cd_km) - bd_km)
         dt = max(0.0, (oc_s + cd_s) - bd_s)
-        # force-finite
+
         if not (np.isfinite(dk) and np.isfinite(dt)):
             return 0.0, 0.0
         return dk, dt

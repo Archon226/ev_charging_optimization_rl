@@ -28,7 +28,7 @@ class EVSpec:
 
 
 # -----------------------------
-# New: EVPowerModel (memoized)
+# EVPowerModel (memoized)
 # -----------------------------
 class EVPowerModel:
     """
@@ -184,28 +184,48 @@ def _norm_model(m: str) -> str:
 def _build_specs_index(ev_metadata: pd.DataFrame) -> Dict[str, EVSpec]:
     req = ["model","battery_kWh","dc_max_power_kW","ac_max_power_kW","avg_consumption_Wh_per_km"]
     miss = [c for c in req if c not in ev_metadata.columns]
-    if miss: raise KeyError(f"EV_Metadata missing columns: {miss}")
+    if miss:
+        raise KeyError(f"EV_Metadata missing columns: {miss}")
     df = ev_metadata.copy()
     for c in req[1:]:
         df[c] = pd.to_numeric(df[c], errors="raise")
+
     specs: Dict[str, EVSpec] = {}
     for _, r in df.iterrows():
         m = _norm_model(r["model"])
+        raw = float(r["avg_consumption_Wh_per_km"])
+
+        # --- Unit auto-detect & convert ---
+        # If it's <60, it's almost certainly kWh/100km; convert to Wh/km by *10.
+        # Typical Wh/km is ~120–250; kWh/100km numbers are ~12–25.
+        if raw < 60.0:
+            eff_wh_per_km = raw * 10.0
+            unit_note = "kWh/100km→Wh/km"
+        else:
+            eff_wh_per_km = raw
+            unit_note = "Wh/km"
+
+        # Guardrail: warn on obviously wrong values so we don't silently train on nonsense
+        if not (80.0 <= eff_wh_per_km <= 300.0):
+            print(f"[WARN] {m}: efficiency {eff_wh_per_km:.1f} Wh/km derived from {raw} ({unit_note}) looks off")
+
         specs[m] = EVSpec(
             model=m,
-            usable_battery_kwh=float(r["battery_kWh"]),
+            usable_battery_kwh=float(r["battery_KWh" if "battery_KWh" in df.columns else "battery_kWh"]) if "battery_kWh" in df.columns or "battery_KWh" in df.columns else float(r["batterykWh"]) if "batterykWh" in df.columns else float(r["battery_kWh"]),
             max_dc_kw=float(r["dc_max_power_kW"]),
             max_ac_kw=float(r["ac_max_power_kW"]),
-            efficiency_wh_per_km=float(r["avg_consumption_Wh_per_km"]),
+            efficiency_wh_per_km=eff_wh_per_km,
         )
     return specs
 
 def _build_curve_array(curves_df: pd.DataFrame, model: str) -> np.ndarray:
     req = ["model", "soc_percent", "charging_power_kW"]
     miss = [c for c in req if c not in curves_df.columns]
-    if miss: raise KeyError(f"EV_Charging_Curve_Data missing columns: {miss}")
+    if miss:
+        raise KeyError(f"EV_Charging_Curve_Data missing columns: {miss}")
     df = curves_df.loc[curves_df["model"].astype(str) == str(model), ["soc_percent","charging_power_kW"]].dropna()
-    if df.empty: raise ValueError(f"No charging curve rows for model='{model}'")
+    if df.empty:
+        raise ValueError(f"No charging curve rows for model='{model}'")
     df["soc_percent"] = pd.to_numeric(df["soc_percent"], errors="raise").clip(0,100)
     df["charging_power_kW"] = pd.to_numeric(df["charging_power_kW"], errors="raise").clip(lower=0)
     df = df.sort_values("soc_percent").groupby("soc_percent", as_index=False)["charging_power_kW"].mean()

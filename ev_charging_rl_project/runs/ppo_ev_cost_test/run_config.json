@@ -1,6 +1,6 @@
 {
   "args": {
-    "objective": "time",
+    "objective": "cost",
     "hybrid_alpha": 0.5,
     "data_dir": ".\\data",
     "sumo_net": ".\\london_inner.net.xml",
@@ -13,7 +13,7 @@
     "normalize_rewards": false,
     "reward_norm_factor": 100.0,
     "fast_mode": false,
-    "timesteps": 10000,
+    "timesteps": 5000,
     "learning_rate": 0.0003,
     "batch_size": 2048,
     "gamma": 0.99,
@@ -25,7 +25,9 @@
     "n_epochs": 10,
     "log_dir": ".\\runs\\ppo_ev_cost_test",
     "save_freq": 50000,
-    "eval_freq": 50000
+    "eval_freq": 50000,
+    "run_id": "cost_run_12132",
+    "log_every_n": 10
   },
   "sumo_net": "D:\\Masters\\AI_Group_Project\\Actual Datasets\\ev_charging_rl_project\\london_inner.net.xml",
   "data_dir": "D:\\Masters\\AI_Group_Project\\Actual Datasets\\ev_charging_rl_project\\data",

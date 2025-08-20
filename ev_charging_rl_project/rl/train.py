@@ -28,7 +28,10 @@ import argparse
 import inspect
 from functools import partial
 from typing import Any, Dict, Callable
-
+from datetime import datetime
+from pathlib import Path
+os.environ["EV_PRICING_DEBUG"] = "1"
+os.environ["EV_REQUIRE_CHARGE"] = "1"
 # --- third-party ---
 # (Install: pip install stable-baselines3[extra] gymnasium sumolib)
 import numpy as np
@@ -44,6 +47,7 @@ from rl.episodes import load_episodes
 from simulator.sumo_adapter import SumoSim
 from utils.data_loader import load_all_data
 from utils.charging_curves import EVPowerModel
+from env.logging_wrapper import LoggingWrapper
 
 
 # -------------------------
@@ -60,6 +64,7 @@ def make_env_factory(
     env_ctor: Callable,
     env_kwargs: Dict[str, Any],
     seed: int | None = None,
+    wrapper_factory: Callable[[Any], Any] | None = None,
 ) -> Callable[[], Monitor]:
     """Return a thunk that creates a fresh, monitored env (for SB3)."""
     def _init():
@@ -69,6 +74,10 @@ def make_env_factory(
         if seed is not None:
             # Gymnasium-compatible seeding on reset call
             env.reset(seed=seed)
+            
+         # <-- NEW: wrap with LoggingWrapper if provided
+        if wrapper_factory is not None:
+            env = wrapper_factory(env)
         # Wrap with Monitor to record episode stats for callbacks/eval
         log_dir = env_kwargs.get("log_dir", None)
         return Monitor(env, filename=None if log_dir is None else os.path.join(log_dir, "monitor"))
@@ -127,6 +136,11 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--log-dir", type=str, default="./runs/ppo_ev")
     p.add_argument("--save-freq", type=int, default=50_000, help="Steps between checkpoints")
     p.add_argument("--eval-freq", type=int, default=50_000, help="Steps between evals")
+    
+    #CLI args
+    p.add_argument("--run-id", type=str, default=None, help="Optional run id to nest logs under")
+    p.add_argument("--log-every-n", type=int, default=1, help="Write 1 in N step events to CSV (1 = all)")
+
     return p.parse_args()
 
 
@@ -143,6 +157,13 @@ def main():
     tb_dir = ensure_dir(os.path.join(log_dir, "tb"))
     models_dir = ensure_dir(os.path.join(log_dir, "models"))
 
+    # ---- Logging wrapper config (events end up under <log_dir>/events) ----
+    run_stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+    rid = args.run_id or f"{args.objective}_{run_stamp}"
+    events_dir = ensure_dir(os.path.join(log_dir, "events", rid))
+    wrapper_factory = lambda env: LoggingWrapper(env, log_dir=events_dir, run_id=rid, log_every_n=args.log_every_n)
+
+    
     # --- data bundle (stations, connectors, EV metadata/curves, users, pricing) ---
     bundle = load_all_data(args.data_dir)
     stations = bundle.stations
@@ -183,7 +204,13 @@ def main():
     filtered_env_kwargs = filter_kwargs_for_ctor(EVChargingEnv.__init__, base_env_kwargs)
 
     # --- Create vectorized env(s) ---
-    make_thunk = partial(make_env_factory, EVChargingEnv, filtered_env_kwargs, seed=args.seed)
+    make_thunk = partial(
+        make_env_factory,
+        EVChargingEnv,
+        filtered_env_kwargs,
+        seed=args.seed,
+        wrapper_factory=wrapper_factory,   # <-- added
+)
 
     if args.n_envs == 1 or args.no_subproc:
         vec = DummyVecEnv([make_thunk()])

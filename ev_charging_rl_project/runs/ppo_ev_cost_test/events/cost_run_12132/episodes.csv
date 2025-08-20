@@ -1,0 +1,97 @@
+run_id,episode_id,trip_id,objective,user_type,ev_model,start_soc,end_soc,total_time_s,total_cost_gbp,reached_dest,ran_out_of_battery,n_charges,notes
+cost_run_12132,0,0,cost,Payg,iX,0.1899999998814629,0.1899999998814629,0.0,0.0,True,False,0,None
+cost_run_12132,1,1,cost,Payg,y,0.09199999923203123,0.09199999923203123,0.0,0.0,True,False,0,None
+cost_run_12132,2,2,cost,Payg,tourer long,0.13799999995997828,0.13799999995997828,0.0,0.0,True,False,0,None
+cost_run_12132,3,3,cost,Payg,combi standard,0.415,0.415,0.0,0.0,True,False,0,None
+cost_run_12132,4,4,cost,Payg,s dual motor,0.5049999833389747,0.5049999833389747,0.0,0.0,True,False,0,None
+cost_run_12132,5,5,cost,Payg,SEAL,0.10599999443855887,0.10599999443855887,0.0,0.0,True,False,0,None
+cost_run_12132,6,6,cost,Payg,iX,0.1899999998814629,0.1899999998814629,0.0,0.0,True,False,0,None
+cost_run_12132,7,7,cost,Member,x plaid,0.2769999998390045,0.2769999998390045,0.0,0.0,True,False,0,None
+cost_run_12132,8,8,cost,Payg,e-Traveller Long 75 kWh,0.4869999998058935,0.4869999998058935,0.0,0.0,True,False,0,None
+cost_run_12132,9,9,cost,Payg,gt,0.38799999898563275,0.38799999898563275,0.0,0.0,True,False,0,None
+cost_run_12132,10,10,cost,Payg,2 Long Range Performance,0.28899999323725756,0.28899999323725756,0.0,0.0,True,False,0,None
+cost_run_12132,11,11,cost,Payg,standard range 2wd,0.161,0.161,0.0,0.0,True,False,0,None
+cost_run_12132,12,12,cost,Member,ev standard range,0.3329999987984179,0.3329999987984179,0.0,0.0,True,False,0,None
+cost_run_12132,13,13,cost,Member,500,0.319,0.319,0.0,0.0,True,False,0,None
+cost_run_12132,14,14,cost,Payg,l3,0.14199999991180046,0.14199999991180046,0.0,0.0,True,False,0,None
+cost_run_12132,15,15,cost,Member,3 Long Range Single motor,0.105,0.105,0.0,0.0,True,False,0,None
+cost_run_12132,16,16,cost,Payg,sportbacketron 40,0.16899999999999998,0.16899999999999998,0.0,0.0,True,False,0,None
+cost_run_12132,17,17,cost,Payg,Twizy,0.46,0.46,0.0,0.0,True,False,0,None
+cost_run_12132,18,18,cost,Payg,IONIQ 5,0.22399999999381234,0.22399999999381234,0.0,0.0,True,False,0,None
+cost_run_12132,19,19,cost,Payg,m,0.414,0.414,0.0,0.0,True,False,0,None
+cost_run_12132,20,20,cost,Payg,ORA 07,0.166,0.166,0.0,0.0,True,False,0,None
+cost_run_12132,21,21,cost,Member,Born VZ,0.27899999999999997,0.27899999999999997,0.0,0.0,True,False,0,None
+cost_run_12132,22,22,cost,Payg,G80,0.25399994192041947,0.25399994192041947,0.0,0.0,True,False,0,None
+cost_run_12132,23,23,cost,Payg,Box 42.3 kWh,0.179,0.179,0.0,0.5,True,False,0,None
+cost_run_12132,24,24,cost,Payg,coupe iv 80,0.5359999874162744,0.5359999874162744,0.0,0.0,True,False,0,None
+cost_run_12132,25,25,cost,Payg,Partner,0.125,0.125,0.0,0.5,True,False,0,None
+cost_run_12132,26,26,cost,Payg,RZ 450e,0.391,0.391,0.0,0.0,True,False,0,None
+cost_run_12132,27,27,cost,Payg,EQ fortwo cabrio,0.3529999197101665,0.3529999197101665,0.0,0.0,True,False,0,None
+cost_run_12132,28,28,cost,Payg,electric 1st edition,0.29799999979580843,0.29799999979580843,0.0,0.0,True,False,0,None
+cost_run_12132,29,29,cost,Member,#3,0.22799999954598668,0.22799999954598668,0.0,0.0,True,False,0,None
+cost_run_12132,30,30,cost,Payg,m,0.41399999499160783,0.41399999499160783,0.0,0.0,True,False,0,None
+cost_run_12132,31,31,cost,Payg,63kwh,0.522,0.522,0.0,0.0,True,False,0,None
+cost_run_12132,32,32,cost,Payg,gt,0.38799999898563275,0.38799999898563275,0.0,0.0,True,False,0,None
+cost_run_12132,33,33,cost,Member,m70 xdrive,0.29899999998309673,0.29899999998309673,0.0,0.0,True,False,0,None
+cost_run_12132,34,34,cost,Payg,Enyaq iV 80x,0.3769999954753373,0.3769999954753373,0.0,0.0,True,False,0,None
+cost_run_12132,35,35,cost,Member,l3,0.1429999992049642,0.1429999992049642,0.0,0.0,True,False,0,None
+cost_run_12132,36,36,cost,Payg,SEAL,0.10599999443855887,0.10599999443855887,0.0,0.0,True,False,0,None
+cost_run_12132,37,37,cost,Payg,x plaid,0.24499999942696307,0.24499999942696307,0.0,0.0,True,False,0,None
+cost_run_12132,38,38,cost,Payg,Ariya e-4ORCE 87kWh - 290 kW,0.191,0.191,0.0,0.0,True,False,0,None
+cost_run_12132,39,39,cost,Payg,cabrio,0.37,0.37,0.0,0.0,True,False,0,None
+cost_run_12132,40,40,cost,Payg,ev passenger,0.2889999715996665,0.2889999715996665,0.0,0.0,True,False,0,None
+cost_run_12132,41,41,cost,Payg,e-Traveller Compact 50 kWh,0.235,0.235,0.0,0.0,True,False,0,None
+cost_run_12132,42,42,cost,Member,RZ 450e,0.5499997755533295,0.5499997755533295,0.0,0.0,True,False,0,None
+cost_run_12132,43,43,cost,Payg,iX2 xDrive30,0.14099999510138692,0.14099999510138692,0.0,0.0,True,False,0,None
+cost_run_12132,44,44,cost,Payg,500E,0.37799999999999995,0.37799999999999995,0.0,0.0,True,False,0,None
+cost_run_12132,45,45,cost,Payg,coupe 85x,0.37799999999999995,0.37799999999999995,0.0,0.0,True,False,0,None
+cost_run_12132,46,46,cost,Member,e-Traveller Compact 50 kWh,0.239,0.239,0.0,0.0,True,False,0,None
+cost_run_12132,47,47,cost,Payg,INSTER Long Range,0.124,0.124,0.0,0.5,True,False,0,None
+cost_run_12132,48,48,cost,Member,e-Traveller L2 75 kWh,0.18899999999999997,0.18899999999999997,0.0,0.5,True,False,0,None
+cost_run_12132,49,49,cost,Payg,Enyaq Coupe iV 60,0.14399999497243354,0.14399999497243354,0.0,0.0,True,False,0,None
+cost_run_12132,50,50,cost,Payg,e-Traveller Compact 50 kWh,0.23499999993615908,0.23499999993615908,0.0,0.0,True,False,0,None
+cost_run_12132,51,51,cost,Payg,EL6 Standard Range,0.21399999792229224,0.21399999792229224,0.0,0.0,True,False,0,None
+cost_run_12132,52,52,cost,Member,E-Ulysse L3 50 kWh,0.396999998266808,0.396999998266808,0.0,0.0,True,False,0,None
+cost_run_12132,53,53,cost,Payg,e-Rifter Standard 50 kWh,0.28099999978540535,0.28099999978540535,0.0,0.0,True,False,0,None
+cost_run_12132,54,54,cost,Member,long,0.084998192362155,0.084998192362155,0.0,0.0,True,False,0,None
+cost_run_12132,55,55,cost,Payg,MGS5  EV 49 kWh,0.42,0.42,0.0,0.0,True,False,0,None
+cost_run_12132,56,56,cost,Payg,electric 1st edition,0.29799999979580843,0.29799999979580843,0.0,0.0,True,False,0,None
+cost_run_12132,57,57,cost,Member,ev400,0.256,0.256,0.0,0.0,True,False,0,None
+cost_run_12132,58,58,cost,Payg,Dolphin,0.53,0.53,0.0,0.0,True,False,0,None
+cost_run_12132,59,59,cost,Payg,Air Dream Edition,0.414999998057656,0.414999998057656,0.0,0.0,True,False,0,None
+cost_run_12132,60,60,cost,Member,iEV7s,0.377,0.377,0.0,0.0,True,False,0,None
+cost_run_12132,61,61,cost,Payg,Dolphin,0.529999997130777,0.529999997130777,0.0,0.0,True,False,0,None
+cost_run_12132,62,62,cost,Payg,Eletre,0.39299999999999996,0.39299999999999996,0.0,0.0,True,False,0,None
+cost_run_12132,63,63,cost,Payg,combi compact,0.27799999853580876,0.27799999853580876,0.0,0.0,True,False,0,None
+cost_run_12132,64,64,cost,Member,m,0.364,0.364,0.0,0.0,True,False,0,None
+cost_run_12132,65,65,cost,Payg,amg 43,0.5099999997688006,0.5099999997688006,0.0,0.0,True,False,0,None
+cost_run_12132,66,66,cost,Payg,Niro EV,0.13699999999999998,0.13699999999999998,0.0,0.0,True,False,0,None
+cost_run_12132,67,67,cost,Member,Born VZ,0.27899999999999997,0.27899999999999997,0.0,0.0,True,False,0,None
+cost_run_12132,68,68,cost,Payg,e-Rifter Standard 50 kWh,0.23199999998754886,0.23199999998754886,0.0,0.0,True,False,0,None
+cost_run_12132,69,69,cost,Payg,e-Rifter Standard 50 kWh,0.28099999978540535,0.28099999978540535,0.0,0.0,True,False,0,None
+cost_run_12132,70,70,cost,Payg,Grecale,0.2789999962388318,0.2789999962388318,0.0,0.0,True,False,0,None
+cost_run_12132,71,71,cost,Member,Enyaq Coupe iV 80,0.21600000000000003,0.21600000000000003,0.0,0.0,True,False,0,None
+cost_run_12132,72,72,cost,Member,2 Long Range Performance,0.5419999894299827,0.5419999894299827,0.0,0.0,True,False,0,None
+cost_run_12132,73,73,cost,Payg,Twizy,0.46,0.46,0.0,0.0,True,False,0,None
+cost_run_12132,74,74,cost,Payg,Torres EVX,0.20199999999999999,0.20199999999999999,0.0,0.0,True,False,0,None
+cost_run_12132,75,75,cost,Payg,Kangoo Grand E-Tech Electric,0.44599998652305095,0.44599998652305095,0.0,0.0,True,False,0,None
+cost_run_12132,76,76,cost,Payg,Bolt,0.34,0.34,0.0,0.0,True,False,0,None
+cost_run_12132,77,77,cost,Payg,63kwh,0.522,0.522,0.0,0.0,True,False,0,None
+cost_run_12132,78,78,cost,Payg,advance,0.20799999987787776,0.20799999987787776,0.0,0.0,True,False,0,None
+cost_run_12132,79,79,cost,Member,Townstar EV Passenger,0.4259999997733122,0.4259999997733122,0.0,0.0,True,False,0,None
+cost_run_12132,80,80,cost,Payg,Emeya S,0.4619999819325742,0.4619999819325742,0.0,0.0,True,False,0,None
+cost_run_12132,81,81,cost,Payg,combi standard,0.415,0.415,0.0,0.0,True,False,0,None
+cost_run_12132,82,82,cost,Member,SEAL,0.26299986579450835,0.26299986579450835,0.0,0.0,True,False,0,None
+cost_run_12132,83,83,cost,Payg,GV70,0.146,0.146,0.0,0.0,True,False,0,None
+cost_run_12132,84,84,cost,Payg,i7,0.5479999999999999,0.5479999999999999,0.0,0.0,True,False,0,None
+cost_run_12132,85,85,cost,Member,RZ 450e,0.5499997755533295,0.5499997755533295,0.0,0.0,True,False,0,None
+cost_run_12132,86,86,cost,Payg,iv 80x,0.3759999965747991,0.3759999965747991,0.0,0.0,True,False,0,None
+cost_run_12132,87,87,cost,Payg,Ariya e-4ORCE 87kWh - 225 kW,0.419,0.419,0.0,0.0,True,False,0,None
+cost_run_12132,88,88,cost,Payg,A6 Avant e-tron performance,0.2839999808603176,0.2839999808603176,0.0,0.0,True,False,0,None
+cost_run_12132,89,89,cost,Payg,GV70,0.146,0.146,0.0,0.0,True,False,0,None
+cost_run_12132,90,90,cost,Payg,combi standard,0.415,0.415,0.0,0.0,True,False,0,None
+cost_run_12132,91,91,cost,Payg,EQS,0.28600000000000003,0.28600000000000003,0.0,0.0,True,False,0,None
+cost_run_12132,92,92,cost,Payg,plus,0.13399999972856244,0.13399999972856244,0.0,0.0,True,False,0,None
+cost_run_12132,93,93,cost,Payg,Q6 e-tron Sportback performance,0.17800000000000002,0.17800000000000002,0.0,0.0,True,False,0,None
+cost_run_12132,94,94,cost,Payg,Twingo Z.E.,0.43599990245135334,0.43599990245135334,0.0,0.0,True,False,0,None
+cost_run_12132,95,95,cost,Member,advance,0.19699999999999998,0.19699999999999998,0.0,0.0,True,False,0,None

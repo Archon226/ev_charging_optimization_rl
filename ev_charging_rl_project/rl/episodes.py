@@ -25,7 +25,7 @@ def load_episodes(path: str) -> List[TripPlan]:
             dest=(float(r.dest_lat), float(r.dest_lon)),
             ev_model=(getattr(r, "ev_model", None) or getattr(r, "model", "")),
             objective=str(getattr(r, "objective", "hybrid")),
-            start_soc_pct=float(r.init_soc_pct),
+            start_soc_pct=float(r.start_soc_pct),
             reserve_soc_pct=float(r.reserve_soc_pct),
             target_soc_pct=float(r.target_soc_pct),
             user_type=str(r.user_type),
