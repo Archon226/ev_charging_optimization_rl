@@ -1,82 +1,122 @@
-from utils.data_loader import load_ev_metadata, load_charging_curves, load_station_metadata, load_connectors, load_pricing_data
-from utils.charging_curves import ChargingCurveLibrary
-from env.agent import EVAgent
-from env.charger import Charger
-
-import random
+# test_single_charge.py
+from __future__ import annotations
+from pathlib import Path
 from datetime import datetime
+import math
 
-# === Load data ===
-ev_specs = load_ev_metadata()
-curve_data = load_charging_curves()
-station_data = load_station_metadata()
-connector_data = load_connectors()
-pricing_data = load_pricing_data()
+import pandas as pd
 
-charging_library = ChargingCurveLibrary(curve_data)
-
-# === Select EV and charger ===
-ev_row = ev_specs.iloc[15]  # e.g., Nissan Leaf 2020
-ev_model = ev_row['model']
-brand = ev_row['brand_name']
-year = ev_row['release_year']
-
-agent = EVAgent(
-    user_id="EV-001",
-    ev_model=ev_model,
-    battery_kWh=ev_row['battery_kWh'],
-    efficiency_Wh_per_km=ev_row['avg_consumption_Wh_per_km'],
-    ac_power_kW=ev_row['ac_max_power_kW'],
-    dc_power_kW=ev_row['dc_max_power_kW'],
-    start_soc_percent=30,
-    origin=(51.512, -0.092),
-    destination=(51.525, -0.071),
-    objective='cost'
-)
-
-# Pick a random charger (we’ll assume it's compatible for now)
-connector = connector_data.iloc[15]
-station = station_data[station_data['chargeDeviceID'] == connector['chargeDeviceID']].iloc[0]
-pricing_row = pricing_data[pricing_data['company_name'].str.lower().str.contains(station['deviceNetworks'].lower())].head(1)
-
-charger = Charger(
-    charger_id=connector['chargeDeviceID'],
-    location=(station['latitude'], station['longitude']),
-    operator=station['deviceNetworks'],
-    connector_type=connector['connector_type'],
-    rated_power_kW=connector['rated_power_kW'],
-    charge_method=connector['charge_method'],
-    base_price_per_kWh=pricing_row['price_per_kWh'].values[0] if not pricing_row.empty else 0.4,
-    pricing_scheme=pricing_row.to_dict('records')[0] if not pricing_row.empty else {}
-)
-
-# === Charging Logic ===
-current_soc = agent.soc_percent
-target_soc = 80  # Charge up to 80%
-
-# Charging curve
-curve = charging_library.get_curve(brand, ev_model, year)
-segment = charging_library.get_curve_slice(curve, current_soc, target_soc)
-
-# Estimate time and energy
-charging_time_min = charger.estimate_charging_time(current_soc, target_soc, segment, agent.battery_kWh)
-energy_needed = ((target_soc - current_soc) / 100) * agent.battery_kWh
-charging_cost = charger.estimate_cost(
-    energy_needed,
-    timestamp=datetime.now(),
-    idle_minutes=3  # Or dynamically simulate this later
-)
+from utils.data_loader import load_all_ready
+from utils.pricing import PricingCatalog
+from utils.charging_curves import EVPowerModel
+from utils.session_planner import get_candidate_pairs, evaluate_session
 
 
-# Apply charge
-agent.charge(energy_kWh=energy_needed, time_spent_min=charging_time_min, cost=charging_cost)
+def haversine_km(lat1, lon1, lat2, lon2) -> float:
+    R = 6371.0088
+    p1 = math.radians(lat1)
+    p2 = math.radians(lat2)
+    dphi = math.radians(lat2 - lat1)
+    dl = math.radians(lon2 - lon1)
+    a = math.sin(dphi / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2
+    return float(2 * R * math.asin(math.sqrt(a)))
 
-# === Output summary ===
-print(f"\n=== EV Charging Summary ===")
-print(f"Model: {brand} {ev_model} ({year})")
-print(f"Charged from {current_soc}% to {agent.soc_percent:.1f}%")
-print(f"Energy used: {energy_needed:.2f} kWh")
-print(f"Charging time: {charging_time_min:.1f} min")
-print(f"Charging cost: £{charging_cost:.2f}")
-print(f"New total cost: £{agent.total_cost:.2f}")
-print(f"New total time: {agent.total_time:.1f} min")
+
+def main():
+    data_dir = Path("data")
+
+    # 1) Load pre-indexed bundle (stations, EV caps, pricing index, curves)
+    bundle = load_all_ready(data_dir, strict=True)
+
+    # 2) Pricing + EV power model
+    pricing = PricingCatalog.from_index(bundle["pricing_index"], strict=True)
+    ev_meta = pd.read_csv(data_dir / "EV_Metadata.csv")
+    ev_curve = pd.read_csv(data_dir / "EV_Charging_Curve_Data.csv")
+    ev_power = EVPowerModel(ev_meta, ev_curve)
+
+    # 3) Pick one user (or change idx) from generated users
+    users = pd.read_csv(data_dir / "simulated_users.csv")
+    assert len(users) > 0, "No users found; run utils.generate_users first."
+    u = users.iloc[0]
+
+    ev_model = str(u["ev_model"])
+    start_lat, start_lon = float(u["start_lat"]), float(u["start_lon"])
+    depart_dt = datetime.fromisoformat(str(u["depart_datetime"]))
+    start_soc = float(u["start_soc_pct"])
+    target_soc = 80.0  # simple fixed target for this sanity test
+
+    print(f"\nUser #{int(u['user_id'])} | EV: {ev_model}")
+    print(f"Origin: ({start_lat:.6f}, {start_lon:.6f})  Depart: {depart_dt.isoformat(timespec='minutes')}")
+    print(f"SoC: {start_soc:.1f}% -> {target_soc:.1f}%\n")
+
+    # 4) Pick nearest stations (we use the enriched connectors to get lat/lon)
+    ce = bundle["station_connectors_enriched"]
+    station_pts = ce.groupby("station_id", as_index=False).first()[["station_id", "lat", "lon"]]
+    station_pts["dist_km"] = station_pts.apply(
+        lambda r: haversine_km(start_lat, start_lon, float(r["lat"]), float(r["lon"])), axis=1
+    )
+    station_pts = station_pts.sort_values("dist_km").head(60)  # shortlist
+
+    # 5) Build viable (station, category) pairs using EV & station capabilities
+    scaps = bundle["station_capabilities"]
+    ev_caps = bundle["ev_capabilities"]
+    station_ids_near = station_pts["station_id"].astype(str).tolist()
+    pairs = get_candidate_pairs(ev_model, station_ids_near, scaps, ev_caps)
+
+    # Keep only pairs whose station is among the N closest (to avoid huge printouts)
+    keep_sids = set(station_pts.head(8)["station_id"].astype(str).tolist())
+    pairs = [(sid, cat) for (sid, cat) in pairs if sid in keep_sids]
+
+    if not pairs:
+        raise RuntimeError("No viable (station, category) pairs near the origin for this EV.")
+
+    print(f"Evaluating {len(pairs)} candidate (station, category) pairs near the origin...\n")
+
+    # 6) Evaluate each candidate with consistent charging-time + pricing
+    #    We request a detailed pricing breakdown once here (handy for debugging).
+    rows = []
+    for sid, cat in pairs:
+        res = evaluate_session(
+            ev_model=ev_model,
+            station_id=sid,
+            category=cat,
+            start_soc_pct=start_soc,
+            target_soc_pct=target_soc,
+            when=depart_dt,
+            pricing=pricing,
+            ev_power=ev_power,
+            station_capabilities=scaps,
+            user_type=str(u["user_type"]),
+            efficiency=1.0,  # price on battery energy in this simple test
+            include_subscription=bool(int(u["include_subscription"])),
+            sessions_per_month=int(u["sessions_per_month"]),
+            idle_minutes=0.0,
+            detailed_pricing_breakdown=True,
+        )
+        rows.append(res)
+
+    # 7) Pretty print results sorted by price then time
+    rows_sorted = sorted(rows, key=lambda x: (x.total_price, x.session_minutes))
+    print("Top candidates (by price):")
+    for r in rows_sorted[:6]:
+        print(
+            f"  [{r.station_id} | {r.category}] "
+            f"£{r.total_price:.2f} | {r.session_minutes:.1f} min | "
+            f"{r.delivered_kwh_batt:.2f} kWh | unit={r.unit_price_source}"
+        )
+
+    # Also show top by time
+    rows_time = sorted(rows, key=lambda x: (x.session_minutes, x.total_price))
+    print("\nTop candidates (by time):")
+    for r in rows_time[:6]:
+        print(
+            f"  [{r.station_id} | {r.category}] "
+            f"{r.session_minutes:.1f} min | £{r.total_price:.2f} | "
+            f"{r.delivered_kwh_batt:.2f} kWh | unit={r.unit_price_source}"
+        )
+
+    print("\nOK: single-charge sanity check complete.\n")
+
+
+if __name__ == "__main__":
+    main()

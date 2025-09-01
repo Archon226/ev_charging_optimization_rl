@@ -7,10 +7,29 @@ class SumoInterface:
         self.net_file = net_file
         self.fast_mode = fast_mode
         self.vehicles = {}
+        self._last_cmd = None  # for debugging/tests
 
-    def start(self, gui=False):
-        import subprocess
-        cmd = [self.sumo_binary + ("-gui" if gui else ""), "-n", self.net_file]
+    def start(self, gui=False, extra_args=None):
+        """
+        Launch SUMO or SUMO-GUI safely.
+        - If sumo_binary="sumo" and gui=True -> use "sumo-gui"
+        - If sumo_binary="sumo-gui" and gui=False -> use "sumo"
+        - extra_args: list of additional SUMO CLI args (e.g., ["--step-length", "0.2"])
+        """
+        bin_name = self.sumo_binary
+        if gui and not bin_name.endswith("-gui"):
+            bin_name = bin_name + "-gui"
+        if not gui and bin_name.endswith("-gui"):
+            bin_name = bin_name[:-4]  # strip "-gui"
+
+        cmd = [bin_name, "-n", self.net_file]
+        if self.fast_mode:
+            # conservative quality-of-life options that don't change your logic
+            cmd += ["--start", "--no-warnings"]
+        if extra_args:
+            cmd += list(extra_args)
+
+        self._last_cmd = cmd
         traci.start(cmd)
 
     def close(self):
@@ -18,10 +37,7 @@ class SumoInterface:
 
     def add_vehicle(self, veh_id, from_edge, to_edge, depart_time=0):
         route_id = f"route_{veh_id}"
-        if not self.fast_mode:
-            edges = self._shortest_path_edges(from_edge, to_edge)
-        else:
-            edges = [from_edge, to_edge]  # fast mode shortcut
+        edges = [from_edge, to_edge] if self.fast_mode else self._shortest_path_edges(from_edge, to_edge)
         traci.route.add(route_id, edges)
         traci.vehicle.add(veh_id, route_id, depart=depart_time)
         self.vehicles[veh_id] = {"from": from_edge, "to": to_edge}
@@ -41,10 +57,7 @@ class SumoInterface:
         return traci.simulation.convertGeo(x, y, fromGeo=False)
 
     def _shortest_path_edges(self, from_edge, to_edge):
-        """
-        Use SUMO's inbuilt routing to get the shortest path as a list of edges.
-        """
-        traci.simulation.findRoute(from_edge, to_edge)
+        # Use SUMO's routing to get a sequence of edges
         route = traci.simulation.findRoute(from_edge, to_edge).edges
         return route if route else [from_edge, to_edge]
 
