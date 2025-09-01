@@ -32,6 +32,15 @@ class PPOEnvConfig:
     # Economics
     value_of_time_per_min: float = 0.05   # £/min (time penalty)
     charge_efficiency: float = 0.92       # battery_kWh = grid_kWh * efficiency
+    # Charging UX
+    charge_session_overhead_min: float = 3.0  # fixed per-plug overhead to discourage many tiny charges
+    
+    # Traffic modeling (lightweight scalar congestion)
+    traffic_mode: str = "none"          # "none" | "light"
+    traffic_peak_factor_am: float = 1.6 # ~60% slower during AM peak
+    traffic_peak_factor_pm: float = 1.5 # ~50% slower during PM peak
+    traffic_offpeak_factor: float = 1.0 # baseline
+
     # Objectives
     prefer: str = "hybrid"                # "time" | "cost" | "hybrid"
     success_bonus: float = 50.0
@@ -177,6 +186,19 @@ class PPOChargingEnv(gym.Env):
 
         # last resort
         return self._pick_random_ev()
+    
+    def _traffic_factor(self, now_dt):
+        """Return a time-of-day congestion factor for 'light' traffic mode."""
+        if self.cfg.traffic_mode != "light" or now_dt is None:
+            return 1.0
+        wd = now_dt.weekday()  # 0=Mon
+        h = now_dt.hour + now_dt.minute / 60.0
+        is_weekday = wd < 5
+        if is_weekday and 7.0 <= h <= 10.0:   # AM peak
+            return float(self.cfg.traffic_peak_factor_am)
+        if is_weekday and 16.0 <= h <= 19.0:  # PM peak
+            return float(self.cfg.traffic_peak_factor_pm)
+        return float(self.cfg.traffic_offpeak_factor)
 
     # ---------------------------
     # Episode lifecycle
@@ -246,7 +268,9 @@ class PPOChargingEnv(gym.Env):
         self.total_cost = 0.0
         self.charge_events = 0
         self._done = False
-
+        
+        # Start-of-episode clock (used for traffic scaling)
+        self._clock_dt = getattr(trip, "depart_datetime", None)
 
     def reset(self, *, seed: Optional[int] = None, options: Optional[Dict[str, Any]] = None):
         if seed is not None:
@@ -292,11 +316,14 @@ class PPOChargingEnv(gym.Env):
             if idx >= len(self.candidates):
                 reward -= self.cfg.invalid_action_penalty
             else:
-                station_id = self.candidates[idx].get("station_id", "")
+                cand = self.candidates[idx]
+                station_id = cand.get("station_id", "")
                 if not station_id:
                     reward -= self.cfg.invalid_action_penalty
                 else:
-                    reward += self._apply_charge(station_id, dt_min, info)
+                    detour_min = float(cand.get("eta_min", 0.0))  # extra O→S + S→D minutes
+                    reward += self._apply_charge(station_id, dt_min, info, detour_min=detour_min)
+
 
 
         # Termination conditions
@@ -343,13 +370,23 @@ class PPOChargingEnv(gym.Env):
         # SoC drop
         self.soc = max(0.0, self.soc - batt_kwh / max(self.battery_kwh, 1e-6))
 
-        # Time cost only (driving energy is not billed here)
-        self.total_minutes += dt_min
-        time_cost = dt_min * self.cfg.value_of_time_per_min
+        # Traffic factor for this slice
+        tf = self._traffic_factor(self._clock_dt)
+        minutes_used = float(dt_min) * tf
+
+        # Tally time and advance clock
+        self.total_minutes += minutes_used
+        if self._clock_dt is not None:
+            from datetime import timedelta
+            self._clock_dt = self._clock_dt + timedelta(minutes=minutes_used)
+
+        # Time penalty should use minutes_used (not raw dt_min)
+        time_cost = minutes_used * self.cfg.value_of_time_per_min
+
 
         return -time_cost if self.cfg.prefer in ("time", "hybrid") else 0.0
 
-    def _apply_charge(self, station_id: str, dt_min: float, info: Dict[str, Any]) -> float:
+    def _apply_charge(self, station_id: str, dt_min: float, info: Dict[str, Any], detour_min: float = 0.0) -> float:
         st = self.station_index[station_id]
         company_id = st["company_id"]
 
@@ -422,18 +459,27 @@ class PPOChargingEnv(gym.Env):
             unit_price = self._price_for(company_id, chosen)
             energy_cost = float(unit_price) * float(grid_kwh)
 
-        # Tally episode totals
-        self.total_minutes += dt_min
-        self.total_cost += energy_cost
+                # Minutes used this decision: charge duration + fixed session overhead + route detour (traffic-adjusted)
+        overhead = float(self.cfg.charge_session_overhead_min)
+        tf = self._traffic_factor(self._clock_dt)
+        extra_detour = max(0.0, float(detour_min)) * tf
+        minutes_used = float(dt_min) + overhead + extra_detour
 
-        # Reward = -(time + (cost if hybrid/cost))
-        time_cost = dt_min * self.cfg.value_of_time_per_min if self.cfg.prefer in ("time", "hybrid") else 0.0
+        # Tally episode totals and advance clock
+        self.total_minutes += minutes_used
+        self.total_cost += energy_cost
+        if self._clock_dt is not None:
+            from datetime import timedelta
+            self._clock_dt = self._clock_dt + timedelta(minutes=minutes_used)
+
+        # Time penalty uses full minutes_used (so frequent small charges + detours hurt)
+        time_cost = minutes_used * self.cfg.value_of_time_per_min if self.cfg.prefer in ("time", "hybrid") else 0.0
         cost_cost = energy_cost if self.cfg.prefer in ("cost", "hybrid") else 0.0
 
         # Small shaping reward if charging increases reach and we haven't arrived
         reach_km_gain = (soc_gain * self.battery_kwh) / max(self.kwh_per_km, 1e-9)
         shaping = 0.05 * reach_km_gain if self.remaining_km > 0 else 0.0
-
+        
         info.update({
             "station_id": station_id,
             "category": chosen,
@@ -442,8 +488,11 @@ class PPOChargingEnv(gym.Env):
             "batt_kwh": batt_kwh,
             "price_per_kwh": unit_price,   # may be None if catalog used
             "energy_cost": energy_cost,
+            "detour_min": extra_detour,
+            "overhead_min": overhead,
+            "minutes_used": minutes_used,
         })
-        
+
         self.charge_events += 1   # <--- ADD THIS
         
         return -(time_cost + cost_cost) + shaping

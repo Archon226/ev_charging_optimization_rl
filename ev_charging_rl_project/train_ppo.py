@@ -162,8 +162,79 @@ def main():
     project_root = Path(".").resolve()
     data_dir = project_root / "data"
     sim_csv = data_dir / "sim_users_train.csv"
+    
+    # =========================
+    # EXPERIMENT A — (You)
+    # =========================
+    # Baseline HYBRID, coarse 10-min decisions, standard value-of-time
+    EXPERIMENT = "A"
+    seed = 42
+    RUN_TAG = "Hatim_hybrid_dt10_vot0p05"
+    TOTAL_STEPS = 100_000
+    cfg = PPOEnvConfig(
+        obs_top_k=5,
+        dt_minutes=10.0,     # coarser decisions => fewer, longer charges
+        max_steps=60,        # 60 * 10min = ~10h horizon
+        prefer="hybrid",     # env still overrides per-episode from TripPlan if set in _reset_state
+        value_of_time_per_min=0.05,  # £3/h
+        charge_efficiency=0.92,
+        charge_session_overhead_min=3.0,  # you just added this in ppo_env.py
+        traffic_mode="none",
+        # (optional overrides if you want to tweak peaks) keep these commented
+        # traffic_peak_factor_am=1.6,
+        # traffic_peak_factor_pm=1.5,
+        # traffic_offpeak_factor=1.0,
+    )
 
-    run_name = time.strftime("ppo_ev_%Y%m%d_%H%M%S")
+    # =========================
+    # EXPERIMENT B — (Vishesh)
+    # =========================
+    # HYBRID but time is more valuable → pushes fewer stops, faster routes
+    # Uncomment this block for teammate 1 and comment the others.
+    # EXPERIMENT = "B"
+    # seed = 101
+    # RUN_TAG = "Vishesh_hybrid_dt10_vot0p10"
+    # TOTAL_STEPS = 100_000
+    # cfg = PPOEnvConfig(
+    #     obs_top_k=5,
+    #     dt_minutes=10.0,
+    #     max_steps=60,
+    #     prefer="hybrid",
+    #     value_of_time_per_min=0.10,  # £6/h — increases time pressure
+    #     charge_efficiency=0.92,
+    #     charge_session_overhead_min=3.0,
+    #     traffic_mode="none",
+        # (optional overrides if you want to tweak peaks)
+        # traffic_peak_factor_am=1.6,
+        # traffic_peak_factor_pm=1.5,
+        # traffic_offpeak_factor=1.0,
+    # )
+
+    # =========================
+    # EXPERIMENT C — (Divya)
+    # =========================
+    # HYBRID with fewer candidates for speed/stability (obs_top_k=3)
+    # Uncomment this block for teammate 2 and comment the others.
+    # EXPERIMENT = "C"
+    # seed = 202
+    # RUN_TAG = "Divya_hybrid_dt10_topk3_vot0p05"
+    # TOTAL_STEPS = 100_000
+    # cfg = PPOEnvConfig(
+    #     obs_top_k=3,        # smaller action set → faster SUMO routing
+    #     dt_minutes=10.0,
+    #     max_steps=60,
+    #     prefer="hybrid",
+    #     value_of_time_per_min=0.05,
+    #     charge_efficiency=0.92,
+    #     charge_session_overhead_min=3.0,
+    #     traffic_mode="none",
+        # (optional overrides if you want to tweak peaks)
+        # traffic_peak_factor_am=1.6,
+        # traffic_peak_factor_pm=1.5,
+        # traffic_offpeak_factor=1.0,
+    # )
+    
+    run_name = time.strftime(f"ppo_ev_%Y%m%d_%H%M%S_{RUN_TAG}")
     out_dir = project_root / "runs" / run_name
     tb_log_dir = out_dir / "tb"
     kpi_csv = out_dir / "kpi_episodes.csv"
@@ -173,7 +244,6 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # ---- seeds ----
-    seed = 42
     set_random_seed(seed)
     random.seed(seed)
     np.random.seed(seed)
@@ -196,16 +266,6 @@ def main():
             f"load_all_ready missing required bundle keys: {missing}. "
             f"Ensure data_loader returns pricing_catalog and ev_power_model."
         )
-
-    # ---- env config (tune as needed) ----
-    cfg = PPOEnvConfig(
-        obs_top_k=5,            # keep small; SUMO heavy
-        dt_minutes=5.0,         # decision interval
-        max_steps=120,          # 10 hours max horizon -> adjust if you prefer shorter
-        prefer="hybrid",        # hybrid cost+time objective
-        value_of_time_per_min=0.05,  # £3/h
-        charge_efficiency=0.92,
-    )
 
     # ---- trip iterator ----
     trip_iter = make_trip_iterator(sim_csv, seed)
@@ -275,10 +335,9 @@ def main():
     signal.signal(signal.SIGINT, _sigint_handler)
 
     # ---- learn ----
-    TOTAL_STEPS = 200_000
     rolled = 0
     while rolled < TOTAL_STEPS and not stop_training["flag"]:
-        chunk = min(20_000, TOTAL_STEPS - rolled)
+        chunk = min(10_000, TOTAL_STEPS - rolled)
         model.learn(total_timesteps=chunk, reset_num_timesteps=False, callback=[kpi_cb])
         rolled += chunk
         # checkpoint

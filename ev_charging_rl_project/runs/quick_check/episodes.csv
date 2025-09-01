@@ -1,1 +1,0 @@
-run_id,episode_id,trip_id,objective,user_type,ev_model,start_soc,end_soc,total_time_s,total_cost_gbp,reached_dest,ran_out_of_battery,n_charges,notes

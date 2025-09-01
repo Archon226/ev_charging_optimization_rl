@@ -1,0 +1,1 @@
+run_id,episode_id,step,event_type,trip_id,objective,user_type,ev_model,action,candidate_rank,reason,station_id,company_id,connector_type,charger_type,power_kw,start_soc,end_soc,delta_soc,energy_kwh,session_minutes,distance_km,eta_s,detour_seconds,queue_wait_s,session_cost_gbp,total_cost_gbp,pricing_breakdown_json,notes,ts
