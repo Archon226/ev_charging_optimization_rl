@@ -192,16 +192,41 @@ def main():
     # =========================
     # HYBRID but time is more valuable → pushes fewer stops, faster routes
     # Uncomment this block for teammate 1 and comment the others.
-    EXPERIMENT = "B"
-    seed = 101
-    RUN_TAG = "Vishesh_hybrid_dt10_vot0p10"
+    # EXPERIMENT = "B"
+    # seed = 101
+    # RUN_TAG = "Vishesh_hybrid_dt10_vot0p10"
+    # TOTAL_STEPS = 100_000
+    # cfg = PPOEnvConfig(
+    #     obs_top_k=5,
+    #     dt_minutes=10.0,
+    #     max_steps=60,
+    #     prefer="hybrid",
+    #     value_of_time_per_min=0.10,  # £6/h — increases time pressure
+    #     charge_efficiency=0.92,
+    #     charge_session_overhead_min=3.0,
+    #     traffic_mode="none",
+        # (optional overrides if you want to tweak peaks)
+        # traffic_peak_factor_am=1.6,
+        # traffic_peak_factor_pm=1.5,
+        # traffic_offpeak_factor=1.0,
+    # )
+
+
+
+    # EXPERIMENT C — (Divya)
+    # =========================
+    # HYBRID with fewer candidates for speed/stability (obs_top_k=3)
+    # Uncomment this block for teammate 2 and comment the others.
+    EXPERIMENT = "C"
+    seed = 202
+    RUN_TAG = "Divya_hybrid_dt10_topk3_vot0p05"
     TOTAL_STEPS = 100_000
     cfg = PPOEnvConfig(
-        obs_top_k=5,
+        obs_top_k=3,        # smaller action set → faster SUMO routing
         dt_minutes=10.0,
         max_steps=60,
         prefer="hybrid",
-        value_of_time_per_min=0.10,  # £6/h — increases time pressure
+        value_of_time_per_min=0.05,
         charge_efficiency=0.92,
         charge_session_overhead_min=3.0,
         traffic_mode="none",
@@ -211,29 +236,6 @@ def main():
         # traffic_offpeak_factor=1.0,
     )
 
-
-    # EXPERIMENT C — (Divya)
-    # =========================
-    # HYBRID with fewer candidates for speed/stability (obs_top_k=3)
-    # Uncomment this block for teammate 2 and comment the others.
-    # EXPERIMENT = "C"
-    # seed = 202
-    # RUN_TAG = "Divya_hybrid_dt10_topk3_vot0p05"
-    # TOTAL_STEPS = 100_000
-    # cfg = PPOEnvConfig(
-    #     obs_top_k=3,        # smaller action set → faster SUMO routing
-    #     dt_minutes=10.0,
-    #     max_steps=60,
-    #     prefer="hybrid",
-    #     value_of_time_per_min=0.05,
-    #     charge_efficiency=0.92,
-    #     charge_session_overhead_min=3.0,
-    #     traffic_mode="none",
-        # (optional overrides if you want to tweak peaks)
-        # traffic_peak_factor_am=1.6,
-        # traffic_peak_factor_pm=1.5,
-        # traffic_offpeak_factor=1.0,
-    # )
 
 
     
