@@ -167,50 +167,51 @@ def main():
     # EXPERIMENT A — (You)
     # =========================
     # Baseline HYBRID, coarse 10-min decisions, standard value-of-time
-    EXPERIMENT = "A"
-    seed = 42
-    RUN_TAG = "Hatim_hybrid_dt10_vot0p05"
-    TOTAL_STEPS = 100_000
-    cfg = PPOEnvConfig(
-        obs_top_k=5,
-        dt_minutes=10.0,     # coarser decisions => fewer, longer charges
-        max_steps=60,        # 60 * 10min = ~10h horizon
-        prefer="hybrid",     # env still overrides per-episode from TripPlan if set in _reset_state
-        value_of_time_per_min=0.05,  # £3/h
-        charge_efficiency=0.92,
-        charge_session_overhead_min=3.0,  # you just added this in ppo_env.py
-        traffic_mode="none",
-        # (optional overrides if you want to tweak peaks) keep these commented
-        # traffic_peak_factor_am=1.6,
-        # traffic_peak_factor_pm=1.5,
-        # traffic_offpeak_factor=1.0,
-    )
+    # EXPERIMENT = "A"
+    # seed = 42
+    # RUN_TAG = "Hatim_hybrid_dt10_vot0p05"
+    # TOTAL_STEPS = 100_000
+    # cfg = PPOEnvConfig(
+    #     obs_top_k=5,
+    #     dt_minutes=10.0,     # coarser decisions => fewer, longer charges
+    #     max_steps=60,        # 60 * 10min = ~10h horizon
+    #     prefer="hybrid",     # env still overrides per-episode from TripPlan if set in _reset_state
+    #     value_of_time_per_min=0.05,  # £3/h
+    #     charge_efficiency=0.92,
+    #     charge_session_overhead_min=3.0,  # you just added this in ppo_env.py
+    #     traffic_mode="none",
+    #     # (optional overrides if you want to tweak peaks) keep these commented
+    #     # traffic_peak_factor_am=1.6,
+    #     # traffic_peak_factor_pm=1.5,
+    #     # traffic_offpeak_factor=1.0,
+    # )
+
 
     # =========================
     # EXPERIMENT B — (Vishesh)
     # =========================
     # HYBRID but time is more valuable → pushes fewer stops, faster routes
     # Uncomment this block for teammate 1 and comment the others.
-    # EXPERIMENT = "B"
-    # seed = 101
-    # RUN_TAG = "Vishesh_hybrid_dt10_vot0p10"
-    # TOTAL_STEPS = 100_000
-    # cfg = PPOEnvConfig(
-    #     obs_top_k=5,
-    #     dt_minutes=10.0,
-    #     max_steps=60,
-    #     prefer="hybrid",
-    #     value_of_time_per_min=0.10,  # £6/h — increases time pressure
-    #     charge_efficiency=0.92,
-    #     charge_session_overhead_min=3.0,
-    #     traffic_mode="none",
+    EXPERIMENT = "B"
+    seed = 101
+    RUN_TAG = "Vishesh_hybrid_dt10_vot0p10"
+    TOTAL_STEPS = 100_000
+    cfg = PPOEnvConfig(
+        obs_top_k=5,
+        dt_minutes=10.0,
+        max_steps=60,
+        prefer="hybrid",
+        value_of_time_per_min=0.10,  # £6/h — increases time pressure
+        charge_efficiency=0.92,
+        charge_session_overhead_min=3.0,
+        traffic_mode="none",
         # (optional overrides if you want to tweak peaks)
         # traffic_peak_factor_am=1.6,
         # traffic_peak_factor_pm=1.5,
         # traffic_offpeak_factor=1.0,
-    # )
+    )
 
-    # =========================
+
     # EXPERIMENT C — (Divya)
     # =========================
     # HYBRID with fewer candidates for speed/stability (obs_top_k=3)
@@ -233,6 +234,8 @@ def main():
         # traffic_peak_factor_pm=1.5,
         # traffic_offpeak_factor=1.0,
     # )
+
+
     
     run_name = time.strftime(f"ppo_ev_%Y%m%d_%H%M%S_{RUN_TAG}")
     out_dir = project_root / "runs" / run_name
