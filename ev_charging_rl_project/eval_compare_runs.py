@@ -145,7 +145,7 @@ def evaluate_model(model_path: Path,
         warnings.warn(f"[skip] failed to load model at {model_path}: {e}")
         return None, 0, 0
 
-    # Match K to model
+    # Match K to model.
     base_cfg = make_env_cfg(args)
     k_expected = _infer_k_from_model(model)
     if k_expected is None:
