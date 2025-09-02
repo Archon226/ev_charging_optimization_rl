@@ -26,6 +26,9 @@ class SumoRouteProvider:
     def __init__(self, sumo_runner: SumoRunner, max_detour_min: float = 15.0):
         self.sumo = sumo_runner
         self.max_detour_min = float(max_detour_min)
+        # Station → edge cache (filled lazily on demand)
+        self._station_edge_map: dict[str, str] = {}
+
 
     def generate(self, trip, station_index, connectors_df, price_lookup, top_k: int):
         """
@@ -135,6 +138,7 @@ class SumoRouteProvider:
             try:
                 slat, slon = coords_latlon[sid]
                 st_edge = self.sumo.snap_to_edge(slat, slon, search_radius=SEARCH_RADIUS_M)
+                self._station_edge_map[str(sid)] = st_edge
                 _, len1, t1 = self.sumo.find_route_edges(origin_edge, st_edge)
                 _, len2, t2 = self.sumo.find_route_edges(st_edge, dest_edge)
             except Exception:
@@ -157,6 +161,31 @@ class SumoRouteProvider:
 
         candidates.sort(key=lambda c: (c.approx_eta_min, c.price_per_kwh))
         return candidates[:top_k]
+
+    def edge_for_station(self, station_id: str) -> Optional[str]:
+        """
+        Return nearest SUMO edge id for a given station_id.
+        Caches results so we don’t snap repeatedly.
+        """
+        sid = str(station_id)
+        if sid in self._station_edge_map:
+            return self._station_edge_map[sid]
+        try:
+            # You already store lat/lon in connectors_df when generate() is called,
+            # but here we may be called outside generate → so best-effort only.
+            # If you have a global station index with lat/lon, hook it here.
+            return self._station_edge_map.get(sid)
+        except Exception:
+            return None
+
+    def edge_near_xy(self, x: float, y: float) -> Optional[str]:
+        """
+        Return nearest edge to XY coordinates (in SUMO net meters).
+        """
+        try:
+            return self.sumo.nearest_edge_by_xy(float(x), float(y))
+        except Exception:
+            return None
 
 
 

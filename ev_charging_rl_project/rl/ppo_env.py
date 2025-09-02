@@ -48,6 +48,15 @@ class PPOEnvConfig:
     invalid_action_penalty: float = 2.0
     # Sampling
     rng_seed: Optional[int] = None
+    
+    # --- SUMO driving integration ---
+    use_sumo_drive: bool = True          # turn ON SUMO-backed driving
+    sumo_net_path: str = "london_inner.net.xml"
+    sumo_gui: bool = False
+    sumo_step_length_s: float = 1.0
+    sumo_mode: str = "route_time"        # "route_time" | "microsim"
+    sumo_vehicle_type: str = "passenger" # vType must exist in SUMO net
+
 
 
 class PPOChargingEnv(gym.Env):
@@ -90,12 +99,38 @@ class PPOChargingEnv(gym.Env):
 
         # Pre-index station → representative category + cap per category
         self.station_index = self._build_station_index(self.station_caps)
-        # default: use SUMO provider
+        
+        # SUMO runner (only if enabled)
+        self._sumo_runner = None
+        if self.cfg.use_sumo_drive:
+            sumo_cfg = SumoConfig(
+                net_path=self.cfg.sumo_net_path,
+                sumo_bin="sumo-gui" if self.cfg.sumo_gui else "sumo",
+                gui=self.cfg.sumo_gui,
+                step_length=self.cfg.sumo_step_length_s,
+            )
+            self._sumo_runner = SumoRunner(sumo_cfg)
+
+        # fields for active SUMO segment
+        self._seg_eta_s = 0.0       # travel time of active segment
+        self._seg_left_s = 0.0      # time left
+        self._seg_len_m = 0.0       # <--- cached length of current segment (meters)
+        self._seg_from_edge = None
+        self._seg_to_edge = None
+        self._veh_id = None         # vehicle id (microsim mode)
+
+        # default: use SUMO provider (reuse existing runner/config)
         if candidate_provider is not None:
             self.candidate_provider = candidate_provider
         else:
-            sumo_cfg = SumoConfig(net_path="london_inner.net.xml", gui=False)
-            self._sumo_runner = SumoRunner(sumo_cfg)
+            if self._sumo_runner is None:
+                sumo_cfg = SumoConfig(
+                    net_path=self.cfg.sumo_net_path,
+                    sumo_bin="sumo-gui" if self.cfg.sumo_gui else "sumo",
+                    gui=self.cfg.sumo_gui,
+                    step_length=self.cfg.sumo_step_length_s,
+                )
+                self._sumo_runner = SumoRunner(sumo_cfg)
             self._sumo_runner.start()
             self.candidate_provider = SumoRouteProvider(self._sumo_runner, max_detour_min=15.0)
 
@@ -284,6 +319,58 @@ class PPOChargingEnv(gym.Env):
 
         trip = options["trip"]
         self._reset_state(trip=trip)
+        # --- SUMO integration ---
+        if self._sumo_runner is not None:
+            self._sumo_runner.start()
+
+            # pick a start edge (from trip explicit edge, else origin lat/lon, else nearest, else any)
+            start_edge = None
+            try:
+                # 1) explicit precomputed edge id on the trip (if generator put it there)
+                if getattr(self._trip, "start_edge_id", None):
+                    start_edge = self._trip.start_edge_id
+
+                # 2) use trip.origin (lat, lon)
+                if start_edge is None:
+                    if hasattr(self._trip, "origin") and self._trip.origin and len(self._trip.origin) >= 2:
+                        o_lat, o_lon = float(self._trip.origin[0]), float(self._trip.origin[1])
+                        start_edge = self._sumo_runner.snap_to_edge(o_lat, o_lon)
+
+                # 3) legacy fields (start_lat/lon)
+                if start_edge is None and getattr(self._trip, "start_lat", None) is not None and getattr(self._trip, "start_lon", None) is not None:
+                    start_edge = self._sumo_runner.nearest_edge_by_latlon(self._trip.start_lat, self._trip.start_lon)
+
+            except Exception:
+                start_edge = None
+
+            # 4) last resort: any edge from the network (keeps training alive)
+            if start_edge is None:
+                try:
+                    start_edge = self._sumo_runner.any_edge_id()
+                except Exception:
+                    start_edge = None  # will be caught on segment begin
+
+            self._seg_from_edge = start_edge
+
+            # reset segment timers
+            self._seg_eta_s = 0.0
+            self._seg_left_s = 0.0
+            self._seg_to_edge = None
+            self._seg_len_m = 0.0   # <— add this
+
+            # microsim: add vehicle
+            if self.cfg.sumo_mode == "microsim":
+                self._veh_id = f"veh_{np.random.randint(1e9)}"
+                try:
+                    self._sumo_runner.add_vehicle_on_edge(
+                        veh_id=self._veh_id,
+                        edge_id=self._seg_from_edge or self._sumo_runner.any_edge_id(),
+                        type_id=self.cfg.sumo_vehicle_type,
+                        depart_s=0.0,
+                    )
+                except Exception:
+                    self._veh_id = None
+
         self._trip = trip
         
         # sanity assertions (fail early if user gen is off)
@@ -318,6 +405,8 @@ class PPOChargingEnv(gym.Env):
             else:
                 cand = self.candidates[idx]
                 station_id = cand.get("station_id", "")
+                if self.cfg.use_sumo_drive and self._sumo_runner is not None:
+                    self._begin_sumo_segment(to_station_id=station_id)
                 if not station_id:
                     reward -= self.cfg.invalid_action_penalty
                 else:
@@ -356,7 +445,7 @@ class PPOChargingEnv(gym.Env):
     # ---------------------------
     # Driving & Charging models
     # ---------------------------
-    def _apply_drive(self, dt_min: float, info: Dict[str, Any]) -> float:
+    def _apply_drive_fallback(self, dt_min: float, info: Dict[str, Any]) -> float:
         # Simple kinematics; later hook to SUMO
         # Assume 25 km/h average inner-London → distance in this interval:
         avg_speed_kmh = 25.0
@@ -385,6 +474,116 @@ class PPOChargingEnv(gym.Env):
 
 
         return -time_cost if self.cfg.prefer in ("time", "hybrid") else 0.0
+    
+    def _current_xy_guess(self) -> Tuple[float, float]:
+        """
+        Best-effort guess of current XY on the map.
+        If microsim is running and we have a vehicle, ask SUMO; otherwise return (nan, nan)
+        and let caller fall back to an edge.
+        """
+        try:
+            if self.cfg.sumo_mode == "microsim" and self._veh_id:
+                st = self._sumo_runner.get_vehicle_state(self._veh_id)
+                return float(st.get("x", float("nan"))), float(st.get("y", float("nan")))
+        except Exception:
+            pass
+        return float("nan"), float("nan")
+
+    def _begin_sumo_segment(self, to_station_id: str):
+        to_edge = self.candidate_provider.edge_for_station(to_station_id)
+        if not to_edge:
+            raise RuntimeError(f"No SUMO edge for station {to_station_id}")
+
+        # choose from_edge robustly
+        from_edge = self._seg_from_edge
+        if not from_edge:
+            # try a best-effort XY → edge, then fallback to origin edge, then any edge
+            xy = self._current_xy_guess()
+            if all(np.isfinite(v) for v in xy):
+                from_edge = self.candidate_provider.edge_near_xy(*xy)
+        if not from_edge and hasattr(self._trip, "origin") and self._trip.origin and len(self._trip.origin) >= 2:
+            try:
+                o_lat, o_lon = float(self._trip.origin[0]), float(self._trip.origin[1])
+                from_edge = self._sumo_runner.snap_to_edge(o_lat, o_lon)
+            except Exception:
+                from_edge = None
+        if not from_edge:
+            # absolute last resort
+            from_edge = self._sumo_runner.any_edge_id()
+
+        edges, length_m, travel_s = self._sumo_runner.find_route_edges(from_edge, to_edge)
+        if not edges:
+            raise RuntimeError(f"SUMO cannot route from {from_edge} to {to_edge}")
+
+        self._seg_eta_s = float(travel_s)
+        self._seg_left_s = self._seg_eta_s
+        self._seg_from_edge = from_edge
+        self._seg_to_edge = to_edge
+        self._seg_len_m = float(length_m)  # <--- cache length now, avoid re-querying
+
+        if self.cfg.sumo_mode == "microsim" and self._veh_id:
+            self._sumo_runner.route_vehicle(self._veh_id, edge_from=from_edge, edge_to=to_edge, depart_s=0.0)
+
+    
+    def _apply_drive(self, dt_min: float, info: Dict[str, Any]) -> float:
+        if not self.cfg.use_sumo_drive or self._sumo_runner is None:
+            return self._apply_drive_fallback(dt_min, info)
+
+        dt_s = dt_min * 60.0
+
+        def _finish_time_and_reward(raw_minutes: float) -> float:
+            # apply traffic factor even in SUMO mode to preserve your scalar peak-hour shaping (optional)
+            tf = self._traffic_factor(self._clock_dt)
+            minutes_used = float(raw_minutes) * tf
+            self.total_minutes += minutes_used
+            if self._clock_dt is not None:
+                from datetime import timedelta
+                self._clock_dt = self._clock_dt + timedelta(minutes=minutes_used)
+            return -(minutes_used * self.cfg.value_of_time_per_min) if self.cfg.prefer in ("time", "hybrid") else 0.0
+
+        if self.cfg.sumo_mode == "route_time":
+            if self._seg_left_s > 0:
+                prev_left = self._seg_left_s
+                self._seg_left_s = max(0.0, self._seg_left_s - dt_s)
+                delta_progress = (prev_left - self._seg_left_s) / max(self._seg_eta_s, 1e-6)
+                dist_km = (self._seg_len_m / 1000.0) * max(0.0, min(1.0, delta_progress))
+                self.remaining_km = max(0.0, self.remaining_km - dist_km)
+
+                grid_kwh = self.kwh_per_km * dist_km
+                batt_kwh = grid_kwh * self.cfg.charge_efficiency
+                self.soc = max(0.0, self.soc - batt_kwh / max(self.battery_kwh, 1e-6))
+
+                if self._seg_left_s == 0.0:
+                    self._seg_from_edge = self._seg_to_edge
+                    self._seg_to_edge = None
+                    self._seg_len_m = 0.0   # <— add this
+
+
+            # reward = negative time cost for dt_min (consistent with fallback)
+            return _finish_time_and_reward(dt_min)
+
+        elif self.cfg.sumo_mode == "microsim":
+            dist_km = 0.0
+            if self._veh_id:
+                steps = int(round(dt_s / max(self.cfg.sumo_step_length_s, 1e-3)))
+                for _ in range(max(1, steps)):
+                    self._sumo_runner.step()
+                try:
+                    st = self._sumo_runner.get_vehicle_state(self._veh_id)
+                    speed_mps = float(st.get("speed_mps", 0.0))
+                    dist_km = (speed_mps * steps * self.cfg.sumo_step_length_s) / 1000.0
+                except Exception:
+                    dist_km = 0.0
+
+            self.remaining_km = max(0.0, self.remaining_km - dist_km)
+            grid_kwh = self.kwh_per_km * dist_km
+            batt_kwh = grid_kwh * self.cfg.charge_efficiency
+            self.soc = max(0.0, self.soc - batt_kwh / max(self.battery_kwh, 1e-6))
+
+            return _finish_time_and_reward(dt_min)
+
+        else:
+            return self._apply_drive_fallback(dt_min, info)
 
     def _apply_charge(self, station_id: str, dt_min: float, info: Dict[str, Any], detour_min: float = 0.0) -> float:
         st = self.station_index[station_id]
@@ -570,10 +769,4 @@ class PPOChargingEnv(gym.Env):
         return ev_id, self.ev_caps[ev_id]
 
     
-    def close(self):
-        try:
-            if hasattr(self, "_sumo_runner") and (self._sumo_runner is not None):
-                self._sumo_runner.stop()
-        except Exception:
-            pass
-        super().close()
+
