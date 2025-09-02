@@ -219,7 +219,7 @@ def main():
     # Uncomment this block for teammate 2 and comment the others.
     EXPERIMENT = "C"
     seed = 202
-    RUN_TAG = "Divya_hybrid_dt10_topk3_vot0p05"
+    RUN_TAG = "Divya_hybrid2_dt10_topk3_vot0p05"
     TOTAL_STEPS = 100_000
     cfg = PPOEnvConfig(
         obs_top_k=3,        # smaller action set → faster SUMO routing
@@ -230,6 +230,14 @@ def main():
         charge_efficiency=0.92,
         charge_session_overhead_min=3.0,
         traffic_mode="none",
+        # --- SUMO integration (training) ---
+        use_sumo_drive=True,
+        sumo_net_path=str((Path(".") / "london_inner.net.xml").resolve()),
+        sumo_gui=False,             # True for debugging
+        sumo_step_length_s=1.0,
+        sumo_mode="route_time",     # "route_time" first; try "microsim" later
+        sumo_vehicle_type="passenger",
+
         # (optional overrides if you want to tweak peaks)
         # traffic_peak_factor_am=1.6,
         # traffic_peak_factor_pm=1.5,
@@ -261,6 +269,16 @@ def main():
     except Exception:
         pass
 
+    # ---- SUMO sanity (optional) ----
+    if cfg.use_sumo_drive:
+        if not os.environ.get("SUMO_HOME"):
+            print("[warn] SUMO_HOME is not set. traci/sumolib require SUMO to be installed and SUMO_HOME exported.")
+        try:
+            import traci, sumolib  # noqa: F401
+        except Exception as e:
+            print(f"[warn] SUMO Python libs not importable: {e}. Training will fail if use_sumo_drive=True.")
+
+
     # ---- load bundle & sanity checks ----
     bundle = load_all_ready(data_dir, strict=True)
     need = ["station_capabilities", "station_connectors_enriched", "ev_capabilities",
@@ -286,17 +304,18 @@ def main():
         env=vec_env,
         verbose=1,
         tensorboard_log=str(tb_log_dir),
-        n_steps=1024,              # rollout size
-        batch_size=1024,           # one update per rollout
-        learning_rate=3e-4,
-        gamma=0.995,
+        n_steps=2048,
+        batch_size=2048,
+        learning_rate=lambda f: 3e-4 * f,  # linear decay
+        gamma=0.997,
         gae_lambda=0.95,
         clip_range=0.2,
-        ent_coef=0.1,
+        ent_coef=0.02,
+        vf_coef=0.7,
         max_grad_norm=0.5,
         device="auto",
         seed=seed,
-    )
+)
 
     # ---- callbacks ----
     kpi_cb = EpisodeKpiLogger(kpi_csv)
