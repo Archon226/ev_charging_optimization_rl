@@ -1,0 +1,4 @@
+run_tag,episodes,success_rate,stranded_rate,avg_minutes,avg_cost_gbp,avg_charge_events
+Divya_hybrid_dt10_topk3_vot0p05,200,0.035,0.0,799.7425005592848,15.08347826086955,57.945
+Hatim_hybrid_dt10_vot0p05,200,0.055,0.0,785.2986314317681,14.840217391304334,56.88
+Vishesh_hybrid_dt10_vot0p10,200,1.0,0.0,26.345,0.0,0.0
