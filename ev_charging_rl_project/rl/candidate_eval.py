@@ -1,6 +1,6 @@
 import numpy as np
 from typing import List
-from simulator.candidates import Candidate
+from helperstuff.simulatorstuff.candidates import Candidate
 
 def score_candidates(
     candidates: List[Candidate],

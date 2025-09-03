@@ -23,6 +23,8 @@ from utils.data_loader import load_all_ready
 from rl.episodes import iter_episodes, TripPlan
 from rl.ppo_env import PPOChargingEnv, PPOEnvConfig
 
+import torch.nn as nn
+from stable_baselines3.common.callbacks import EvalCallback, StopTrainingOnNoModelImprovement
 
 # -----------------------------
 # Trip iterator (infinite)
@@ -95,32 +97,54 @@ class EpisodeKpiLogger(BaseCallback):
             except Exception:
                 return default
 
-        for done, _ in zip(dones, infos):
+        for i, (done, info) in enumerate(zip(dones, infos)):
             if not done:
                 continue
 
-            total_minutes = GA("total_minutes", 0.0) or 0.0
-            total_cost    = GA("total_cost", 0.0) or 0.0
-            remaining_km  = GA("remaining_km", -1.0)
-            soc_final     = GA("soc", -1.0)
-            episode_steps = GA("step_count", -1)
-            charge_events = GA("charge_events", 0)   # <--- NEW
-            
+            # Prefer values emitted by env in 'info' at termination
+            total_minutes = info.get("episode_minutes", None)
+            total_cost    = info.get("episode_cost_gbp", None)
+            remaining_km  = info.get("remaining_km", None)
+            soc_final     = info.get("soc_final", None)
+            episode_steps = info.get("episode_steps", None)
+            charge_events = info.get("charge_events", None)
+            term_reason   = info.get("termination_reason", None)
+
+            # Fallback to unwrapped env attributes if 'info' is missing (backward-compatible)
+            def F(val, name, default):
+                return val if val is not None else (GA(name, default))
+
+            total_minutes = F(total_minutes, "total_minutes", 0.0) or 0.0
+            total_cost    = F(total_cost,    "total_cost",    0.0) or 0.0
+            remaining_km  = F(remaining_km,  "remaining_km",  -1.0)
+            soc_final     = F(soc_final,     "soc",           -1.0)
+            episode_steps = F(episode_steps, "step_count",    -1)
+            charge_events = F(charge_events, "charge_events", 0)
+            term_reason   = term_reason or ("success" if (remaining_km is not None and remaining_km <= 0.0)
+                                            else "stranded" if (soc_final is not None and soc_final <= 0.0)
+                                            else "time_limit" if (episode_steps is not None and episode_steps >= 0)
+                                            else "unknown")
+
             # Flags
             success  = int((remaining_km is not None) and (remaining_km <= 0.0))
             stranded = int((soc_final is not None) and (soc_final <= 0.0))
 
             row = {
-                "time_s":        int(time.time()),
-                "timesteps":     int(self.num_timesteps),
-                "episode_steps": int(episode_steps if episode_steps is not None else -1),
-                "total_minutes": float(total_minutes),
-                "total_cost_gbp":float(total_cost),
-                "success":       success,
-                "stranded":      stranded,
-                "soc_final":     float(soc_final if soc_final is not None else -1.0),
-                "remaining_km":  float(remaining_km if remaining_km is not None else -1.0),
-                "charge_events": int(charge_events if charge_events is not None else 0),
+                "time_s":         int(time.time()),
+                "timesteps":      int(self.num_timesteps),
+                "episode_steps":  int(episode_steps if episode_steps is not None else -1),
+                "total_minutes":  float(total_minutes),
+                "total_cost_gbp": float(total_cost),
+                "success":        success,
+                "stranded":       stranded,
+                "soc_final":      float(soc_final if soc_final is not None else -1.0),
+                "remaining_km":   float(remaining_km if remaining_km is not None else -1.0),
+                "charge_events":  int(charge_events if charge_events is not None else 0),
+                "termination_reason": term_reason,
+                # === Phase 3: new metrics ===
+                "violations_repeat":   int(info.get("violations_repeat", 0)),
+                "violations_overlimit":int(info.get("violations_overlimit", 0)),
+                "violations_cooldown": int(info.get("violations_cooldown", 0)),
             }
 
             # CSV write (header on first write)
@@ -161,7 +185,7 @@ def main():
     # ---- paths & config ----
     project_root = Path(".").resolve()
     data_dir = project_root / "data"
-    sim_csv = data_dir / "sim_users_train.csv"
+    sim_csv = data_dir / "sim_users_train_calibrated.csv"
     
     # =========================
     # EXPERIMENT A — (You)
@@ -219,30 +243,48 @@ def main():
     # Uncomment this block for teammate 2 and comment the others.
     EXPERIMENT = "C"
     seed = 202
-    RUN_TAG = "Divya_hybrid2_dt10_topk3_vot0p05"
-    TOTAL_STEPS = 100_000
+    RUN_TAG = "Hatim_hybrid_dt10_topk3_vot0p05_sumo_traffic"
+    TOTAL_STEPS = 500_000
+
     cfg = PPOEnvConfig(
-        obs_top_k=3,        # smaller action set → faster SUMO routing
-        dt_minutes=10.0,
-        max_steps=60,
+        # --- observation & horizon ---
+        obs_top_k=5,                 # small candidate set → faster, stabler learning
+        dt_minutes=10.0,             # coarse decisions → fewer, longer charges
+        max_steps=84,                # 60 * 10min = 10 hours horizon (enough for long trips)
+
+        # --- objective & costs ---
         prefer="hybrid",
         value_of_time_per_min=0.05,
         charge_efficiency=0.92,
         charge_session_overhead_min=3.0,
-        traffic_mode="none",
-        # --- SUMO integration (training) ---
-        use_sumo_drive=True,
-        sumo_net_path=str((Path(".") / "london_inner.net.xml").resolve()),
-        sumo_gui=False,             # True for debugging
-        sumo_step_length_s=1.0,
-        sumo_mode="route_time",     # "route_time" first; try "microsim" later
-        sumo_vehicle_type="passenger",
 
-        # (optional overrides if you want to tweak peaks)
-        # traffic_peak_factor_am=1.6,
-        # traffic_peak_factor_pm=1.5,
-        # traffic_offpeak_factor=1.0,
+        # --- Phase 3 constraints (already in your env) ---
+        # keep your current penalties & flags in PPOEnvConfig as-is
+
+        # --- Phase 5 shaping (from earlier patch) ---
+        enable_shaping=True,
+        shaping_gamma=1.0,           # shaping neutral on charge steps
+        enable_potential_time=True,
+        potential_vref_kmh=25.0,
+        idle_penalty_per_step=0.05,
+        idle_progress_epsilon_km=0.15,
+        micro_charge_penalty=0.5,
+        micro_charge_min_kwh=1.0,
+        micro_charge_min_minutes=6.0,
+
+        # --- Traffic + SUMO ---
+        traffic_mode="light",
+        traffic_peak_factor_am=1.6,
+        traffic_peak_factor_pm=1.5,
+        traffic_offpeak_factor=1.0,
+
+        use_sumo_drive=True,
+        sumo_mode="route_time",
+        sumo_net_path="london_inner.net.xml",  # set if not at project root
+        sumo_gui=False,                       # enable for visual debugging only
     )
+
+
 
 
 
@@ -304,18 +346,34 @@ def main():
         env=vec_env,
         verbose=1,
         tensorboard_log=str(tb_log_dir),
-        n_steps=2048,
-        batch_size=2048,
-        learning_rate=lambda f: 3e-4 * f,  # linear decay
-        gamma=0.997,
+
+        # Larger rollouts reduce update noise with single env
+        n_steps=8192,                 # collect 8k steps/update
+        batch_size=4096,              # large minibatches for stable gradients
+        n_epochs=10,                  # PPO default (good here)
+
+        # Optimisation
+        learning_rate=lambda f: 3e-4 * f,  # linear decay over training
+        gamma=0.997,                 # long horizon (10-min steps ≈ 55h effective)
         gae_lambda=0.95,
         clip_range=0.2,
-        ent_coef=0.02,
+        clip_range_vf=0.2,           # value clipping prevents VF runaway
+        ent_coef=0.0075,             # gentler exploration to cut dithering
         vf_coef=0.7,
         max_grad_norm=0.5,
+        target_kl=0.015,             # guardrails against destabilising updates
+
+        # Network
+        policy_kwargs=dict(
+            net_arch=dict(pi=[256, 256], vf=[256, 256]),
+            activation_fn=nn.ReLU,
+            ortho_init=True,
+        ),
+
         device="auto",
         seed=seed,
-)
+    )
+
 
     # ---- callbacks ----
     kpi_cb = EpisodeKpiLogger(kpi_csv)
@@ -339,14 +397,22 @@ def main():
             "ppo_env_config": asdict(cfg),
             "algo": "PPO",
             "hyperparams": {
-                "n_steps": 1024,
-                "batch_size": 1024,
-                "learning_rate": 3e-4,
-                "gamma": 0.995,
+                "n_steps": 8192,
+                "batch_size": 4096,
+                "n_epochs": 10,
+                "learning_rate": "linear_3e-4",
+                "gamma": 0.997,
                 "gae_lambda": 0.95,
                 "clip_range": 0.2,
-                "ent_coef": 0.1,
-                "max_grad_norm": 0.5
+                "clip_range_vf": 0.2,
+                "ent_coef": 0.0075,
+                "vf_coef": 0.7,
+                "max_grad_norm": 0.5,
+                "target_kl": 0.015,
+                "policy_net_arch": [256, 256],
+                "value_net_arch": [256, 256],
+                "activation": "ReLU",
+                "ortho_init": True
             }
         }, f, indent=2)
 

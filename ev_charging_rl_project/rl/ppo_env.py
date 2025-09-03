@@ -57,7 +57,32 @@ class PPOEnvConfig:
     sumo_mode: str = "route_time"        # "route_time" | "microsim"
     sumo_vehicle_type: str = "passenger" # vType must exist in SUMO net
 
+    # === Phase 3: policy constraints & penalties ===
+    disallow_repeat_station: bool = True
+    max_charges_per_trip: int = 2
+    min_charge_gap_min: float = 12.0      # 10–15 typical
+    penalty_repeat: float = -5.0          # negative values
+    penalty_overlimit: float = -20.0
+    penalty_cooldown: float = -5.0
+    terminate_on_overlimit: bool = True
+    # Penalty when a chosen station is unroutable in SUMO (episode continues)
+    penalty_unreachable: float = -3.0
 
+    # === Phase 5: reward shaping ===
+    enable_shaping: bool = True
+    # Use gamma=1.0 to keep shaping neutral on non-progress steps (esp. during charge).
+    # If you want potential-based invariance w.r.t. PPO's gamma, set this to the same value (e.g., 0.997).
+    shaping_gamma: float = 1.0
+    # Potential φ(s) = - value_of_time_per_min * ETA_left_min where ETA_left_min = remaining_km / v_ref_kmh * 60
+    enable_potential_time: bool = True
+    potential_vref_kmh: float = 25.0   # reference cruise speed for ETA estimate
+
+    # Anti-dither (tiny negatives to discourage no-progress drive or micro-charges)
+    idle_penalty_per_step: float = 0.0       # e.g., 0.05 ⇒ -0.05 when drive progress < epsilon
+    idle_progress_epsilon_km: float = 0.15
+    micro_charge_penalty: float = 0.0        # e.g., 0.5 ⇒ -0.5 when the charge slice is tiny
+    micro_charge_min_kwh: float = 1.0
+    micro_charge_min_minutes: float = 6.0
 
 class PPOChargingEnv(gym.Env):
     """
@@ -119,20 +144,27 @@ class PPOChargingEnv(gym.Env):
         self._seg_to_edge = None
         self._veh_id = None         # vehicle id (microsim mode)
 
-        # default: use SUMO provider (reuse existing runner/config)
+        # default: provider; only start SUMO if enabled
         if candidate_provider is not None:
             self.candidate_provider = candidate_provider
         else:
-            if self._sumo_runner is None:
-                sumo_cfg = SumoConfig(
-                    net_path=self.cfg.sumo_net_path,
-                    sumo_bin="sumo-gui" if self.cfg.sumo_gui else "sumo",
-                    gui=self.cfg.sumo_gui,
-                    step_length=self.cfg.sumo_step_length_s,
-                )
-                self._sumo_runner = SumoRunner(sumo_cfg)
-            self._sumo_runner.start()
-            self.candidate_provider = SumoRouteProvider(self._sumo_runner, max_detour_min=15.0)
+            if self.cfg.use_sumo_drive:
+                if self._sumo_runner is None:
+                    sumo_cfg = SumoConfig(
+                        net_path=self.cfg.sumo_net_path,
+                        sumo_bin="sumo-gui" if self.cfg.sumo_gui else "sumo",
+                        gui=self.cfg.sumo_gui,
+                        step_length=self.cfg.sumo_step_length_s,
+                    )
+                    self._sumo_runner = SumoRunner(sumo_cfg)
+                self._sumo_runner.start()
+                self.candidate_provider = SumoRouteProvider(self._sumo_runner, max_detour_min=15.0)
+            else:
+                # Lightweight no-SUMO provider for smoke tests; returns no candidates (env pads obs)
+                class _NoopProvider:
+                    def generate(self, **kwargs):
+                        return []
+                self.candidate_provider = _NoopProvider()
 
         # ---------- Spaces ----------
         K = int(cfg.obs_top_k)
@@ -304,8 +336,55 @@ class PPOChargingEnv(gym.Env):
         self.charge_events = 0
         self._done = False
         
+        # --- Phase 1.5 telemetry ---
+        self.drive_steps = 0
+        self.charge_steps = 0
+        self._last_step_type = None   # "drive" or "charge"
+        self._arrival_via = None      # "drive" or "charge" (set at terminal)
+        
+        # --- Phase 3: constraints state ---
+        self.visited_station_ids: set = set()
+        self.last_charge_end_min: Optional[float] = None
+        self.violations_repeat: int = 0
+        self.violations_overlimit: int = 0
+        self.violations_cooldown: int = 0
+        # Stations we discovered are unroutable this episode (masked thereafter)
+        self.unreachable_station_ids: set = set()
+
+
         # Start-of-episode clock (used for traffic scaling)
         self._clock_dt = getattr(trip, "depart_datetime", None)
+
+        # ------------------------
+        # Fallback trip clock: full week (Mon–Sun), 24h
+        # ------------------------
+        if getattr(self.cfg, "traffic_mode", "none") != "none" and self._clock_dt is None:
+            from datetime import datetime, timedelta
+            # Use env RNG for reproducibility with seeds
+            weekday = int(self.rng.integers(0, 7))     # 0..6 (Mon..Sun)
+            hour    = int(self.rng.integers(0, 24))    # 0..23
+            minute  = int(self.rng.integers(0, 60))    # 0..59
+
+            # Anchor to a known Monday; 2024-01-01 is Monday
+            base = datetime(2024, 1, 1, 0, 0, 0)
+            self._clock_dt = base + timedelta(days=weekday, hours=hour, minutes=minute)
+
+            # Keep a trace for KPI/info
+            self._depart_dt_fallback_iso = self._clock_dt.isoformat()
+
+    # ---------------------------
+    # Phase 3 helpers
+    # ---------------------------
+    def _cooldown_active(self, now_min: float) -> bool:
+        if self.last_charge_end_min is None:
+            return False
+        return (now_min - float(self.last_charge_end_min)) < float(self.cfg.min_charge_gap_min)
+
+    @staticmethod
+    def _apply_penalty(base_reward: float, penalty: float) -> float:
+        # penalties are negative; just add them
+        return float(base_reward) + float(penalty)
+
 
     def reset(self, *, seed: Optional[int] = None, options: Optional[Dict[str, Any]] = None):
         if seed is not None:
@@ -320,7 +399,7 @@ class PPOChargingEnv(gym.Env):
         trip = options["trip"]
         self._reset_state(trip=trip)
         # --- SUMO integration ---
-        if self._sumo_runner is not None:
+        if self.cfg.use_sumo_drive and self._sumo_runner is not None:
             self._sumo_runner.start()
 
             # pick a start edge (from trip explicit edge, else origin lat/lon, else nearest, else any)
@@ -379,6 +458,11 @@ class PPOChargingEnv(gym.Env):
 
         obs = self._build_observation()
         info = {"ev_id": self.ev_id, "episode_source": "trip"}
+        # If we synthesized a depart time, expose it for logging/inspection
+        if hasattr(self, "_depart_dt_fallback_iso"):
+            info["depart_datetime_fallback"] = self._depart_dt_fallback_iso
+            # optional: clean up so it only appears once
+            del self._depart_dt_fallback_iso
         return obs, info
 
 
@@ -390,49 +474,236 @@ class PPOChargingEnv(gym.Env):
         if self._done:
             raise RuntimeError("Call reset() before step() after episode terminated.")
         self.step_count += 1
+        # Phase 5: capture distance before the transition
+        prev_remaining_km = float(self.remaining_km)
+        
+        # ---- Lazy-init Phase 3 state (safe if already set in _reset_state) ----
+        if not hasattr(self, "visited_station_ids") or self.visited_station_ids is None:
+            self.visited_station_ids = set()
+        if not hasattr(self, "last_charge_end_min"):
+            self.last_charge_end_min = None
+        if not hasattr(self, "violations_repeat"):
+            self.violations_repeat = 0
+        if not hasattr(self, "violations_overlimit"):
+            self.violations_overlimit = 0
+        if not hasattr(self, "violations_cooldown"):
+            self.violations_cooldown = 0
+
+        # Convenience: current episode time in minutes
+        now_min = float(self.total_minutes)
 
         dt_min = float(self.cfg.dt_minutes)
         reward = 0.0
         info: Dict[str, Any] = {}
 
+        # --- identify step type, apply transition, and count it ---
+        # Default: not arrived on this step; we will set True after drive if we cross 0
+        self._arrived_this_step = False
+
+        terminated = False
+        truncated = False
+        termination_reason = None
+
         if action == 0:
+            # =======================
             # DRIVE
+            # =======================
+            info["step_type"] = "drive"  # PHASE 1.5
+            step_type = "drive"
             reward += self._apply_drive(dt_min, info)
+            self.drive_steps += 1  # PHASE 1.5
+
+            # Arrival can only be credited on a DRIVE step
+            if self.remaining_km <= 0.0:
+                self._arrived_this_step = True  # PHASE 1.5
+
         else:
+            # =======================
+            # CHARGE
+            # =======================
+            info["step_type"] = "charge"  # PHASE 1.5
+            step_type = "charge"
             idx = action - 1
+
             if idx >= len(self.candidates):
                 reward -= self.cfg.invalid_action_penalty
             else:
                 cand = self.candidates[idx]
                 station_id = cand.get("station_id", "")
-                if self.cfg.use_sumo_drive and self._sumo_runner is not None:
-                    self._begin_sumo_segment(to_station_id=station_id)
-                if not station_id:
-                    reward -= self.cfg.invalid_action_penalty
+
+                begin_ok = True
+                if self.cfg.use_sumo_drive and self._sumo_runner is not None and station_id:
+                    try:
+                        self._begin_sumo_segment(to_station_id=station_id)
+                    except RuntimeError as e:
+                        msg = str(e)
+                        # Soft-handle only the routing gap; re-raise other errors
+                        if "cannot route" in msg or "No SUMO edge" in msg:
+                            # Remember & penalize once, then mask in future candidate refreshes
+                            if not hasattr(self, "unreachable_station_ids"):
+                                self.unreachable_station_ids = set()
+                            self.unreachable_station_ids.add(station_id)
+                            info["unreachable_station_id"] = station_id
+                            # apply small penalty but do NOT also apply invalid_action_penalty below
+                            reward += float(getattr(self.cfg, "penalty_unreachable", -3.0))
+                            begin_ok = False
+                        else:
+                            raise
+
+
+                if (not station_id) or (not begin_ok):
+                    # if unroutable, we already added penalty_unreachable above; avoid double-penalizing
+                    if not begin_ok:
+                        pass
+                    else:
+                        reward -= self.cfg.invalid_action_penalty
                 else:
-                    detour_min = float(cand.get("eta_min", 0.0))  # extra O→S + S→D minutes
-                    reward += self._apply_charge(station_id, dt_min, info, detour_min=detour_min)
+                    # Phase 3 constraints..
+                    # ---------- Phase 3: constraints BEFORE executing the charge ----------
+                    # A) repeat station
+                    if getattr(self.cfg, "disallow_repeat_station", True) and station_id in self.visited_station_ids:
+                        # apply repeat penalty (do not block; Phase 4 will mask)
+                        repeat_pen = getattr(self.cfg, "penalty_repeat", -5.0)
+                        reward += float(repeat_pen)
+                        self.violations_repeat += 1
 
+                    # B) max charges per trip
+                    overlimit = False
+                    max_ch = int(getattr(self.cfg, "max_charges_per_trip", 2))
+                    if self.charge_events >= max_ch:
+                        over_pen = getattr(self.cfg, "penalty_overlimit", -20.0)
+                        reward += float(over_pen)
+                        self.violations_overlimit += 1
+                        if bool(getattr(self.cfg, "terminate_on_overlimit", True)):
+                            # terminate immediately; skip the actual charge
+                            terminated = True
+                            termination_reason = "overlimit"
 
+                    # C) cooldown between charges
+                    if not terminated:
+                        min_gap = float(getattr(self.cfg, "min_charge_gap_min", 12.0))
+                        if self.last_charge_end_min is not None and (now_min - float(self.last_charge_end_min)) < min_gap:
+                            cd_pen = getattr(self.cfg, "penalty_cooldown", -5.0)
+                            reward += float(cd_pen)
+                            self.violations_cooldown += 1
 
+                    # ---------- Execute charge if not terminated early ----------
+                    if not terminated:
+                        detour_min = float(cand.get("eta_min", 0.0))  # extra O→S + S→D minutes (already congestion-scaled later)
+                        reward += self._apply_charge(station_id, dt_min, info, detour_min=detour_min)
+                        self.charge_steps += 1  # PHASE 1.5
+
+                        # Update Phase 3 state after a completed charge slice
+                        self.visited_station_ids.add(station_id)
+                        # end-of-charge time is current total_minutes (apply_charge already advanced clock)
+                        self.last_charge_end_min = float(self.total_minutes)
+                        info["charge_end_min"] = self.last_charge_end_min
+                    else:
+                        # if we terminated due to overlimit, still count the step as a charge attempt
+                        self.charge_steps += 1
+
+        # ------------------------
         # Termination conditions
-        terminated = False
-        if self.remaining_km <= 0.0:
-            terminated = True
-            self._done = True
-            # success bonus
-            reward += self.cfg.success_bonus
-        elif self.soc <= 0.0:
-            terminated = True
-            self._done = True
-            reward -= self.cfg.strand_penalty
+        # ------------------------
+        arrival_via = None
 
-        truncated = self.step_count >= self.cfg.max_steps
-        if truncated:
+        # Success ONLY if we arrived on THIS (drive) step
+        if not terminated:
+            if self._arrived_this_step:
+                terminated = True
+                self._done = True
+                reward += self.cfg.success_bonus
+                arrival_via = "drive"
+                termination_reason = "success"
+            elif self.soc <= 0.0:
+                terminated = True
+                self._done = True
+                reward -= self.cfg.strand_penalty
+                arrival_via = "none"
+                termination_reason = "stranded"
+            else:
+                arrival_via = "none"
+
+        # ------------------------
+        # Phase 5: Reward shaping (time-potential + anti-dither)
+        # ------------------------
+        if getattr(self.cfg, "enable_shaping", True):
+            # Make prev distance visible for logs
+            info["prev_remaining_km"] = float(prev_remaining_km)
+
+            # Progress in km (always >= 0)
+            prev_km = float(prev_remaining_km)
+            curr_km = float(self.remaining_km)
+            progress_km = max(0.0, prev_km - curr_km)
+            info["progress_km"] = float(progress_km)
+
+            # (A) Potential-based time shaping (only for time/hybrid objectives)
+            if getattr(self.cfg, "enable_potential_time", True) and (self.cfg.prefer in ("time", "hybrid")):
+                vref = max(1e-3, float(self.cfg.potential_vref_kmh))
+                eta_old_min = max(0.0, prev_km) / vref * 60.0
+                eta_new_min = max(0.0, curr_km) / vref * 60.0
+                phi_old = - float(self.cfg.value_of_time_per_min) * eta_old_min
+                phi_new = - float(self.cfg.value_of_time_per_min) * eta_new_min
+                gamma_phi = float(getattr(self.cfg, "shaping_gamma", 1.0))
+                r_phi = gamma_phi * phi_new - phi_old
+                reward += float(r_phi)
+                info["shaping_time"] = float(r_phi)
+
+            # (B) Anti-idle on DRIVE steps: tiny negative if no real progress
+            idle_pen = float(getattr(self.cfg, "idle_penalty_per_step", 0.0))
+            if idle_pen > 0.0:
+                eps_km = float(getattr(self.cfg, "idle_progress_epsilon_km", 0.15))
+                if info.get("step_type") == "drive" and (progress_km < eps_km) and not (terminated or truncated):
+                    reward -= idle_pen
+                    info["penalty_idle"] = float(idle_pen)
+
+            # (C) Micro-charge penalty: tiny negative if the charge slice is too small
+            micro_pen = float(getattr(self.cfg, "micro_charge_penalty", 0.0))
+            if micro_pen > 0.0 and info.get("step_type") == "charge":
+                lc = info.get("last_charge", {}) or {}
+                kwh = float(lc.get("grid_kwh") or 0.0)
+                mins = float(lc.get("minutes_used") or 0.0)
+                if (kwh < float(self.cfg.micro_charge_min_kwh)) or (mins < float(self.cfg.micro_charge_min_minutes)):
+                    reward -= micro_pen
+                    info["penalty_micro_charge"] = float(micro_pen)
+
+
+        # Time-limit truncation
+        truncated = truncated or (self.step_count >= self.cfg.max_steps)
+        if truncated and not self._done:
             self._done = True
+            if termination_reason is None:
+                termination_reason = "time_limit"
+
+        # --- PHASE 1.5: KPI snapshot at episode end (so callbacks can read it from 'info') ---
+        if terminated or truncated:
+            reason = termination_reason or (
+                "success" if self._arrived_this_step else
+                "stranded" if self.soc <= 0.0 else
+                "time_limit" if truncated else "other"
+            )
+            info.update({
+                "episode_minutes":     float(self.total_minutes),
+                "episode_cost_gbp":    float(self.total_cost),
+                "episode_steps":       int(self.step_count),
+                "charge_events":       int(self.charge_events),
+                "drive_steps":         int(self.drive_steps),     # PHASE 1.5
+                "charge_steps":        int(self.charge_steps),    # PHASE 1.5
+                "soc_final":           float(self.soc),
+                "remaining_km":        float(self.remaining_km),
+                "termination_reason":  reason,
+                "arrival_via":         arrival_via,               # PHASE 1.5
+                # ---- Phase 3 observability ----
+                "violations_repeat":   int(self.violations_repeat),
+                "violations_overlimit":int(self.violations_overlimit),
+                "violations_cooldown": int(self.violations_cooldown),
+                "visited_station_ids": list(self.visited_station_ids),
+                "last_charge_end_min": self.last_charge_end_min,
+            })
 
         obs = self._build_observation()
         return obs, float(reward), bool(terminated), bool(truncated), info
+
     
     def close(self):
         try:
@@ -658,7 +929,7 @@ class PPOChargingEnv(gym.Env):
             unit_price = self._price_for(company_id, chosen)
             energy_cost = float(unit_price) * float(grid_kwh)
 
-                # Minutes used this decision: charge duration + fixed session overhead + route detour (traffic-adjusted)
+        # Minutes used this decision: charge duration + fixed session overhead + route detour (traffic-adjusted)
         overhead = float(self.cfg.charge_session_overhead_min)
         tf = self._traffic_factor(self._clock_dt)
         extra_detour = max(0.0, float(detour_min)) * tf
@@ -671,20 +942,17 @@ class PPOChargingEnv(gym.Env):
             from datetime import timedelta
             self._clock_dt = self._clock_dt + timedelta(minutes=minutes_used)
 
-        # Time penalty uses full minutes_used (so frequent small charges + detours hurt)
-        time_cost = minutes_used * self.cfg.value_of_time_per_min if self.cfg.prefer in ("time", "hybrid") else 0.0
-        cost_cost = energy_cost if self.cfg.prefer in ("cost", "hybrid") else 0.0
+        # --- PHASE 1.5: charge must be strictly net-negative, regardless of 'prefer'
+        # Always pay BOTH time and energy costs on charge; no positive shaping.
+        time_cost = minutes_used * self.cfg.value_of_time_per_min
+        cost_cost = energy_cost
 
-        # Small shaping reward if charging increases reach and we haven't arrived
-        reach_km_gain = (soc_gain * self.battery_kwh) / max(self.kwh_per_km, 1e-9)
-        shaping = 0.05 * reach_km_gain if self.remaining_km > 0 else 0.0
-        
         info.update({
             "station_id": station_id,
             "category": chosen,
             "eff_kw": eff_kw,
-            "grid_kwh": grid_kwh,
-            "batt_kwh": batt_kwh,
+            "grid_kwh": float(grid_kwh),
+            "batt_kwh": float(batt_kwh),
             "price_per_kwh": unit_price,   # may be None if catalog used
             "energy_cost": energy_cost,
             "detour_min": extra_detour,
@@ -692,9 +960,9 @@ class PPOChargingEnv(gym.Env):
             "minutes_used": minutes_used,
         })
 
-        self.charge_events += 1   # <--- ADD THIS
-        
-        return -(time_cost + cost_cost) + shaping
+        self.charge_events += 1
+
+        return -(time_cost + cost_cost)
 
 
     def _price_for(self, company_id: Optional[str], charger_type: str) -> float:
@@ -718,7 +986,17 @@ class PPOChargingEnv(gym.Env):
                 connectors_df=self.connectors_df,
                 price_lookup=self.price_lookup,
                 top_k=K,
+                # ---- Phase 4 masking metadata ----
+                visited_station_ids=self.visited_station_ids,
+                now_min=float(self.total_minutes),
+                last_charge_end_min=self.last_charge_end_min,
+                min_charge_gap_min=float(self.cfg.min_charge_gap_min),
+                emergency=(self.soc < 0.08),   # allow exception if SoC < 8%
+                keep_nearest_n_on_emergency=1,
             )
+            # Drop stations that were flagged as unroutable earlier in the episode
+            cand_list = [c for c in cand_list if c.station_id not in getattr(self, "unreachable_station_ids", set())]
+
             # Convert to the env’s internal dict format used by _build_observation()
             self.candidates = []
             for c in cand_list:
@@ -737,7 +1015,7 @@ class PPOChargingEnv(gym.Env):
 
     def _build_observation(self) -> np.ndarray:
         # refresh candidate set every timestep to avoid stale options
-
+        self._refresh_candidates()
         feats: List[float] = [float(self.soc), float(self.remaining_km)]
         for c in self.candidates:
             onehot = self._type_onehot(c["rep_type"])
