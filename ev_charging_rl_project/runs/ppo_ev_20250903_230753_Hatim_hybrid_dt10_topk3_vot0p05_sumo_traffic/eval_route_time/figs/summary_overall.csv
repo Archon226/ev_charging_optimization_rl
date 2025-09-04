@@ -1,0 +1,2 @@
+episodes,success_rate,strand_rate,avg_minutes,p95_minutes,avg_cost_gbp,p95_cost_gbp,avg_charges,violations_repeat_total,violations_overlimit_total,violations_cooldown_total,avg_progress_km,avg_shaping_time,micro_charge_hits,idle_hits
+300,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0.0,0.0,0,300
