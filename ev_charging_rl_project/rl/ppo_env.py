@@ -909,7 +909,9 @@ class PPOChargingEnv(gym.Env):
                     self._seg_to_edge = None
                     self._seg_len_m = 0.0
 
-            return _finish_time_and_reward(dt_min)
+            # Use SUMO-consumed time (in minutes) for KPI minutes and time cost
+            consumed_min = (prev_left - self._seg_left_s) / 60.0
+            return _finish_time_and_reward(consumed_min if consumed_min > 0.0 else dt_min)
 
 
         elif self.cfg.sumo_mode == "microsim":

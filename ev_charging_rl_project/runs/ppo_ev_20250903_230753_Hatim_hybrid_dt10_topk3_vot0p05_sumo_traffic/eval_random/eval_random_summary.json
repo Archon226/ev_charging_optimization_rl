@@ -1,0 +1,10 @@
+{
+  "episodes": 10,
+  "success_rate": 0.0,
+  "avg_minutes": 59.49644682922011,
+  "avg_cost_gbp": 0.819927536231884,
+  "avg_charges": 1.9,
+  "violations_repeat_total": 0,
+  "violations_overlimit_total": 4,
+  "violations_cooldown_total": 0
+}
