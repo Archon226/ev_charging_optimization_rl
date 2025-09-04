@@ -150,9 +150,15 @@ def evaluate_random(
             k = info.get("terminal_kpis", {}) or {}
             row = dict(
                 episode=done_eps,
-                episode_steps=int(k.get("steps", info.get("episode_steps", 0))),
-                total_minutes=float(k.get("minutes", info.get("total_minutes", 0.0))),
-                total_cost_gbp=float(k.get("cost", info.get("total_cost_gbp", 0.0))),
+                episode_steps=int(
+                    k.get("episode_steps", info.get("episode_steps", 0))
+                ),
+                total_minutes=float(
+                    k.get("episode_minutes", info.get("episode_minutes", 0.0))
+                ),
+                total_cost_gbp=float(
+                    k.get("episode_cost_gbp", info.get("episode_cost_gbp", 0.0))
+                ),
                 success=int(k.get("success", info.get("success", False))) or 0,
                 stranded=int(k.get("stranded", info.get("stranded", False))) or 0,
                 soc_final=float(k.get("soc_final", info.get("soc_final", 0.0))),
@@ -164,6 +170,7 @@ def evaluate_random(
                 termination_reason=str(k.get("termination_reason", info.get("termination_reason", ""))),
                 action_mask_size=int(info.get("action_mask_size", 0)),
             )
+
             ep_writer.write(",".join(str(row[h]) for h in header) + "\n")
             ep_writer.flush()
             done_eps += 1
