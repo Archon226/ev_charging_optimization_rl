@@ -892,7 +892,7 @@ class PPOChargingEnv(gym.Env):
                     # No route available right now; fall back to kinematics for this slice
                     return self._apply_drive_fallback(dt_min, info)
 
-            # Consume the active segment if we have one; else fallback already returned above
+            # Consume the active segment if we have one; else fallback
             if self._seg_left_s > 0:
                 prev_left = self._seg_left_s
                 self._seg_left_s = max(0.0, self._seg_left_s - dt_s)
@@ -909,9 +909,13 @@ class PPOChargingEnv(gym.Env):
                     self._seg_to_edge = None
                     self._seg_len_m = 0.0
 
-            # Use SUMO-consumed time (in minutes) for KPI minutes and time cost
-            consumed_min = (prev_left - self._seg_left_s) / 60.0
-            return _finish_time_and_reward(consumed_min if consumed_min > 0.0 else dt_min)
+                # Use SUMO-consumed time for KPI minutes and time cost
+                consumed_min = (prev_left - self._seg_left_s) / 60.0
+                return _finish_time_and_reward(consumed_min if consumed_min > 0.0 else dt_min)
+            else:
+                # Still no segment (e.g., no dest edge resolved): fall back this slice
+                return self._apply_drive_fallback(dt_min, info)
+
 
 
         elif self.cfg.sumo_mode == "microsim":
