@@ -590,14 +590,18 @@ class PPOChargingEnv(gym.Env):
                                 termination_reason = "overlimit"
                         self.charge_steps += 1  # PHASE 1.5
 
-                        # Update Phase 3 state only if a real charge happened
-                        lc = info.get("last_charge", {}) if "last_charge" in info else {}
-                        charged = float(lc.get("batt_kwh", 0.0)) > 0.0 and float(lc.get("minutes_used", 0.0)) > 0.0
-                        if charged:
+                        # Update Phase 3 state only if a *real* charge happened
+                        lc = info.get("last_charge", {}) or {}
+                        kwh = float(lc.get("grid_kwh") or 0.0)
+                        mins = float(lc.get("minutes_used") or 0.0)
+                        if (kwh > 0.0) and (mins > 0.0):
                             self.visited_station_ids.add(station_id)
                             # end-of-charge time is current total_minutes (apply_charge already advanced clock)
                             self.last_charge_end_min = float(self.total_minutes)
                             info["charge_end_min"] = self.last_charge_end_min
+                    else:
+                        # if we terminated due to overlimit, still count the step as a charge attempt
+                        self.charge_steps += 1
 
         # ------------------------
         # Termination conditions
@@ -956,6 +960,21 @@ class PPOChargingEnv(gym.Env):
             "overhead_min": overhead,
             "minutes_used": minutes_used,
         })
+        
+        # Phase-5 friendly: also provide a nested 'last_charge' dict that callers use
+        info["last_charge"] = {
+            "station_id": station_id,
+            "category": chosen,
+            "eff_kw": eff_kw,
+            "grid_kwh": float(grid_kwh),
+            "batt_kwh": float(batt_kwh),
+            "price_per_kwh": unit_price,
+            "energy_cost": energy_cost,
+            "detour_min": extra_detour,
+            "overhead_min": overhead,
+            "minutes_used": minutes_used,
+        }
+
 
         # Count only if this slice delivered meaningful energy
         if batt_kwh > 0.0 and minutes_used > 0.0:
