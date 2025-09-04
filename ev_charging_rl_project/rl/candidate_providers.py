@@ -67,6 +67,11 @@ def mask_candidates_phase4(
 
     # Final sort stays the same policy as before
     kept.sort(key=lambda x: (x.approx_eta_min, x.price_per_kwh))
+    # ---- SAFETY GUARANTEE ----
+    # Ensure Drive (action 0) is always legal in the mask
+    # If no stations survive masking, return an empty list (env will still allow Drive).
+    if not kept:
+        return []
     return kept
 
 class SumoRouteProvider:

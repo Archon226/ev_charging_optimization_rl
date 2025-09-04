@@ -282,6 +282,9 @@ def main():
         sumo_mode="route_time",
         sumo_net_path="london_inner.net.xml",  # set if not at project root
         sumo_gui=False,                       # enable for visual debugging only
+        
+        max_charges_per_trip=99,
+        terminate_on_overlimit=False,   
     )
 
 

@@ -591,6 +591,15 @@ class PPOChargingEnv(gym.Env):
                     if not terminated:
                         detour_min = float(cand.get("eta_min", 0.0))  # extra O→S + S→D minutes (already congestion-scaled later)
                         reward += self._apply_charge(station_id, dt_min, info, detour_min=detour_min)
+                        # After a completed charge, enforce over-limit
+                        max_ch = int(getattr(self.cfg, "max_charges_per_trip", 2))
+                        if self.charge_events > max_ch:
+                            over_pen = getattr(self.cfg, "penalty_overlimit", -20.0)
+                            reward += float(over_pen)
+                            self.violations_overlimit += 1
+                            if bool(getattr(self.cfg, "terminate_on_overlimit", True)):
+                                terminated = True
+                                termination_reason = "overlimit"
                         self.charge_steps += 1  # PHASE 1.5
 
                         # Update Phase 3 state after a completed charge slice
@@ -960,7 +969,9 @@ class PPOChargingEnv(gym.Env):
             "minutes_used": minutes_used,
         })
 
-        self.charge_events += 1
+        # Count only if this slice delivered meaningful energy
+        if batt_kwh > 0.0 and minutes_used > 0.0:
+            self.charge_events += 1
 
         return -(time_cost + cost_cost)
 
