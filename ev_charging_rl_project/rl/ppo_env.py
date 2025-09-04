@@ -437,6 +437,25 @@ class PPOChargingEnv(gym.Env):
             self._seg_to_edge = None
             self._seg_len_m = 0.0   # <— add this
 
+            # Determine destination edge for OD routing
+            self._dest_edge = None
+            try:
+                # Prefer a precomputed edge id if your generator provided it
+                if getattr(self._trip, "end_edge_id", None):
+                    self._dest_edge = self._trip.end_edge_id
+
+                # Else try trip.destination (lat, lon)
+                if self._dest_edge is None:
+                    if hasattr(self._trip, "destination") and self._trip.destination and len(self._trip.destination) >= 2:
+                        d_lat, d_lon = float(self._trip.destination[0]), float(self._trip.destination[1])
+                        self._dest_edge = self._sumo_runner.snap_to_edge(d_lat, d_lon)
+
+                # Legacy fields (end_lat/lon)
+                if self._dest_edge is None and getattr(self._trip, "end_lat", None) is not None and getattr(self._trip, "end_lon", None) is not None:
+                    self._dest_edge = self._sumo_runner.nearest_edge_by_latlon(self._trip.end_lat, self._trip.end_lon)
+            except Exception:
+                self._dest_edge = None
+
             # microsim: add vehicle
             if self.cfg.sumo_mode == "microsim":
                 self._veh_id = f"veh_{np.random.randint(1e9)}"
@@ -796,7 +815,57 @@ class PPOChargingEnv(gym.Env):
         if self.cfg.sumo_mode == "microsim" and self._veh_id:
             self._sumo_runner.route_vehicle(self._veh_id, edge_from=from_edge, edge_to=to_edge, depart_s=0.0)
 
-    
+    def _begin_od_segment(self, to_edge: Optional[str]) -> None:
+        """
+        Start a SUMO route-time segment from the current edge toward 'to_edge' (destination).
+        Robustly chooses a 'from_edge' (current -> origin -> any) and configures:
+        self._seg_eta_s, self._seg_left_s, self._seg_from_edge, self._seg_to_edge, self._seg_len_m
+        Raises RuntimeError only if SUMO is available but cannot route.
+        """
+        # Must have SUMO runner for route_time
+        if not getattr(self, "_sumo_runner", None):
+            raise RuntimeError("SUMO runner not available; cannot start OD segment")
+
+        if not to_edge:
+            raise RuntimeError("No destination edge available for OD segment")
+
+        # 1) Prefer the currently known edge if any
+        from_edge = getattr(self, "_seg_from_edge", None)
+
+        # 2) Else try snapping our current XY guess to an edge via the provider
+        if not from_edge:
+            try:
+                xy = self._current_xy_guess()
+                if all(np.isfinite(v) for v in xy):
+                    from_edge = self.candidate_provider.edge_near_xy(*xy)
+            except Exception:
+                from_edge = None
+
+        # 3) Else snap the trip origin (lat/lon) if available
+        if not from_edge and hasattr(self._trip, "origin") and self._trip.origin and len(self._trip.origin) >= 2:
+            try:
+                o_lat, o_lon = float(self._trip.origin[0]), float(self._trip.origin[1])
+                from_edge = self._sumo_runner.snap_to_edge(o_lat, o_lon)
+            except Exception:
+                from_edge = None
+
+        # 4) Absolute last resort: pick any valid edge from the network
+        if not from_edge:
+            from_edge = self._sumo_runner.any_edge_id()
+
+        # Compute route using SUMO (edges list, total length [m], travel time [s])
+        edges, length_m, travel_s = self._sumo_runner.find_route_edges(from_edge, to_edge)
+        if not edges:
+            raise RuntimeError(f"SUMO cannot route from {from_edge} to dest {to_edge}")
+
+        # Configure the active segment
+        self._seg_eta_s   = float(travel_s)
+        self._seg_left_s  = self._seg_eta_s
+        self._seg_from_edge = from_edge
+        self._seg_to_edge   = to_edge
+        self._seg_len_m   = float(length_m)
+        # (In route_time mode we don't need to touch the microsim vehicle here.)
+        
     def _apply_drive(self, dt_min: float, info: Dict[str, Any]) -> float:
         if not self.cfg.use_sumo_drive or self._sumo_runner is None:
             return self._apply_drive_fallback(dt_min, info)
@@ -814,6 +883,16 @@ class PPOChargingEnv(gym.Env):
             return -(minutes_used * self.cfg.value_of_time_per_min) if self.cfg.prefer in ("time", "hybrid") else 0.0
 
         if self.cfg.sumo_mode == "route_time":
+            # If we don't currently have an active segment, try to start one to the destination
+            if self._seg_left_s <= 0.0:
+                try:
+                    if self._dest_edge:
+                        self._begin_od_segment(self._dest_edge)
+                except Exception:
+                    # No route available right now; fall back to kinematics for this slice
+                    return self._apply_drive_fallback(dt_min, info)
+
+            # Consume the active segment if we have one; else fallback already returned above
             if self._seg_left_s > 0:
                 prev_left = self._seg_left_s
                 self._seg_left_s = max(0.0, self._seg_left_s - dt_s)
@@ -828,11 +907,10 @@ class PPOChargingEnv(gym.Env):
                 if self._seg_left_s == 0.0:
                     self._seg_from_edge = self._seg_to_edge
                     self._seg_to_edge = None
-                    self._seg_len_m = 0.0   # <— add this
+                    self._seg_len_m = 0.0
 
-
-            # reward = negative time cost for dt_min (consistent with fallback)
             return _finish_time_and_reward(dt_min)
+
 
         elif self.cfg.sumo_mode == "microsim":
             dist_km = 0.0

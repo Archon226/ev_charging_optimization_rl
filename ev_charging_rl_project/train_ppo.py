@@ -361,7 +361,7 @@ def main():
         gae_lambda=0.95,
         clip_range=0.2,
         clip_range_vf=0.2,           # value clipping prevents VF runaway
-        ent_coef=0.001,             # gentler exploration to cut dithering
+        ent_coef=0.01,             # gentler exploration to cut dithering
         vf_coef=0.7,
         max_grad_norm=0.5,
         target_kl=0.015,             # guardrails against destabilising updates
@@ -403,12 +403,12 @@ def main():
                 "n_steps": 8192,
                 "batch_size": 4096,
                 "n_epochs": 10,
-                "learning_rate": "linear_3e-4",
+                "learning_rate": "linear_1e-4",
                 "gamma": 0.997,
                 "gae_lambda": 0.95,
                 "clip_range": 0.2,
                 "clip_range_vf": 0.2,
-                "ent_coef": 0.0075,
+                "ent_coef": 0.01,
                 "vf_coef": 0.7,
                 "max_grad_norm": 0.5,
                 "target_kl": 0.015,
