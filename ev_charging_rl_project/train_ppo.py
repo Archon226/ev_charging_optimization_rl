@@ -244,7 +244,7 @@ def main():
     EXPERIMENT = "C"
     seed = 202
     RUN_TAG = "Hatim_hybrid_dt10_topk3_vot0p05_sumo_traffic"
-    TOTAL_STEPS = 500_000
+    TOTAL_STEPS = 300_000
 
     cfg = PPOEnvConfig(
         # --- observation & horizon ---
@@ -283,8 +283,8 @@ def main():
         sumo_net_path="london_inner.net.xml",  # set if not at project root
         sumo_gui=False,                       # enable for visual debugging only
         
-        max_charges_per_trip=99,
-        terminate_on_overlimit=False,   
+        max_charges_per_trip=2,
+        terminate_on_overlimit=True,   
     )
 
 
@@ -356,12 +356,12 @@ def main():
         n_epochs=10,                  # PPO default (good here)
 
         # Optimisation
-        learning_rate=lambda f: 3e-4 * f,  # linear decay over training
+        learning_rate=lambda f: 1e-4 * f,  # linear decay over training
         gamma=0.997,                 # long horizon (10-min steps ≈ 55h effective)
         gae_lambda=0.95,
         clip_range=0.2,
         clip_range_vf=0.2,           # value clipping prevents VF runaway
-        ent_coef=0.0075,             # gentler exploration to cut dithering
+        ent_coef=0.001,             # gentler exploration to cut dithering
         vf_coef=0.7,
         max_grad_norm=0.5,
         target_kl=0.015,             # guardrails against destabilising updates
