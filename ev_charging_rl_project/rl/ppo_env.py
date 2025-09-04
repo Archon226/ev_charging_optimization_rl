@@ -567,18 +567,6 @@ class PPOChargingEnv(gym.Env):
                         reward += float(repeat_pen)
                         self.violations_repeat += 1
 
-                    # B) max charges per trip
-                    overlimit = False
-                    max_ch = int(getattr(self.cfg, "max_charges_per_trip", 2))
-                    if self.charge_events >= max_ch:
-                        over_pen = getattr(self.cfg, "penalty_overlimit", -20.0)
-                        reward += float(over_pen)
-                        self.violations_overlimit += 1
-                        if bool(getattr(self.cfg, "terminate_on_overlimit", True)):
-                            # terminate immediately; skip the actual charge
-                            terminated = True
-                            termination_reason = "overlimit"
-
                     # C) cooldown between charges
                     if not terminated:
                         min_gap = float(getattr(self.cfg, "min_charge_gap_min", 12.0))
@@ -602,14 +590,14 @@ class PPOChargingEnv(gym.Env):
                                 termination_reason = "overlimit"
                         self.charge_steps += 1  # PHASE 1.5
 
-                        # Update Phase 3 state after a completed charge slice
-                        self.visited_station_ids.add(station_id)
-                        # end-of-charge time is current total_minutes (apply_charge already advanced clock)
-                        self.last_charge_end_min = float(self.total_minutes)
-                        info["charge_end_min"] = self.last_charge_end_min
-                    else:
-                        # if we terminated due to overlimit, still count the step as a charge attempt
-                        self.charge_steps += 1
+                        # Update Phase 3 state only if a real charge happened
+                        lc = info.get("last_charge", {}) if "last_charge" in info else {}
+                        charged = float(lc.get("batt_kwh", 0.0)) > 0.0 and float(lc.get("minutes_used", 0.0)) > 0.0
+                        if charged:
+                            self.visited_station_ids.add(station_id)
+                            # end-of-charge time is current total_minutes (apply_charge already advanced clock)
+                            self.last_charge_end_min = float(self.total_minutes)
+                            info["charge_end_min"] = self.last_charge_end_min
 
         # ------------------------
         # Termination conditions
@@ -1039,6 +1027,27 @@ class PPOChargingEnv(gym.Env):
             feats.extend([1e3, 1.0, 0.0, 0.0, 0.0])
         return np.asarray(feats, dtype=np.float32)
 
+    # ---------------------------
+    # Action mask (Phase 4 safety)
+    # ---------------------------
+    def get_action_mask(self) -> np.ndarray:
+        """
+        Build a boolean mask for legal actions.
+        Action 0 = Drive (always legal).
+        Actions 1..K correspond to self.candidates.
+        """
+        n_actions = self.action_space.n
+        mask = np.ones(n_actions, dtype=bool)
+
+        # If there are fewer candidates than obs_top_k, mask out the extras
+        K = int(self.cfg.obs_top_k)
+        valid_station_count = len(self.candidates)
+        for i in range(valid_station_count, K):
+            mask[i + 1] = False
+
+        # ---- SAFETY GUARANTEE ----
+        mask[0] = True  # Drive is always legal
+        return mask
 
 
     @staticmethod
