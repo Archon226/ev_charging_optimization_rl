@@ -243,7 +243,7 @@ def main():
     # Uncomment this block for teammate 2 and comment the others.
     EXPERIMENT = "C"
     seed = 202
-    RUN_TAG = "Hatim_hybrid_dt10_topk3_vot0p05_sumo_traffic"
+    RUN_TAG = "Hatim_time_dt10_topk3_vot0p05_sumo_traffic"
     TOTAL_STEPS = 300_000
 
     cfg = PPOEnvConfig(
@@ -253,7 +253,7 @@ def main():
         max_steps=84,                # 60 * 10min = 10 hours horizon (enough for long trips)
 
         # --- objective & costs ---
-        prefer="hybrid",
+        prefer="time",
         value_of_time_per_min=0.05,
         charge_efficiency=0.92,
         charge_session_overhead_min=3.0,

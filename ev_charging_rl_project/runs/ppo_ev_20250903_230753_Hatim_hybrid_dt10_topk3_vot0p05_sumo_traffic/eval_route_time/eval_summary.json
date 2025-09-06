@@ -1,14 +1,14 @@
 {
-  "episodes": 300,
+  "episodes": 100,
   "success_rate": 0.0,
   "strand_rate": 0.0,
-  "avg_minutes": 0.0,
-  "med_minutes": 0.0,
+  "avg_minutes": 879.86,
+  "med_minutes": 882.0,
   "avg_cost_gbp": 0.0,
   "med_cost_gbp": 0.0,
   "avg_steps": 84.0,
   "avg_charges": 0.0,
-  "p95_minutes": 0.0,
+  "p95_minutes": 948.0,
   "p95_cost_gbp": 0.0,
   "violations_repeat_total": 0,
   "violations_overlimit_total": 0,
@@ -16,5 +16,5 @@
   "avg_progress_km": 0.0,
   "avg_shaping_time": 0.0,
   "micro_charge_hits": 0,
-  "idle_hits": 300
+  "idle_hits": 100
 }
