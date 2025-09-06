@@ -60,7 +60,7 @@ def make_env(bundle, trip_iter, cfg: PPOEnvConfig, log_dir: Path, seed: int):
     def _thunk():
         env = PPOTripEnv(cfg, bundle, trip_iter)
         env = Monitor(env, filename=str(log_dir / "monitor.csv"), allow_early_resets=True)
-        env.reset(seed=seed)
+        # env.reset(seed=seed)
         return env
     return _thunk
 

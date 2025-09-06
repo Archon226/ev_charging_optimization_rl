@@ -43,6 +43,7 @@ class PPOEnvConfig:
 
     # Objectives
     prefer: str = "hybrid"                # "time" | "cost" | "hybrid"
+    respect_trip_objective: bool = False  # NEW: if True, override prefer from TripPlan.objective
     success_bonus: float = 50.0
     strand_penalty: float = 200.0
     invalid_action_penalty: float = 2.0
@@ -271,24 +272,36 @@ class PPOChargingEnv(gym.Env):
     # Episode lifecycle
     # ---------------------------
     def _reset_state(self, trip: Optional[TripPlan] = None) -> None:
+        """
+        Initialise all per-episode state.
+        NOTE: Objective handling:
+        - If cfg.respect_trip_objective == True and TripPlan.objective is provided,
+            self.cfg.prefer is overridden per episode (time|cost|hybrid).
+        - Otherwise, we LEAVE self.cfg.prefer as set by the trainer.
+        """
         self.step_count = 0
 
         # -------- episode config from TripPlan (if provided) --------
         self._trip: Optional[TripPlan] = trip
         if trip is not None:
-            # prefer / objective
-            obj = (trip.objective or "hybrid").strip().lower()
-            if obj in ("time", "cost", "hybrid"):
-                self.cfg.prefer = obj
+            # --- Prefer / objective (now gated by config flag) ---
+            if getattr(self.cfg, "respect_trip_objective", False):
+                obj = (trip.objective or "hybrid").strip().lower()
+                if obj in ("time", "cost", "hybrid"):
+                    self.cfg.prefer = obj
+            # else: leave self.cfg.prefer as set by the trainer
 
             # EV selection: map TripPlan.ev_model -> ev_caps key
             self.ev_id, self.ev = self._resolve_ev_from_trip(trip.ev_model)
 
-            # Battery size & efficiency (best effort, using columns the generator put in the CSV)
-            # kWh/km (grid) – use if present; else keep cfg default
-            self.kwh_per_km = float(trip.kwh_per_km) if trip.kwh_per_km else float(self.cfg.default_kwh_per_km)
+            # Energy model: kWh/km (grid) if provided; else cfg default
+            try:
+                self.kwh_per_km = float(trip.kwh_per_km) if trip.kwh_per_km is not None else float(self.cfg.default_kwh_per_km)
+            except Exception:
+                self.kwh_per_km = float(self.cfg.default_kwh_per_km)
 
-            # Battery kWh: try to back-calc from available_kwh_at_start and SoC/reserve if present
+            # Battery capacity estimate:
+            # Try to back-calc pack size from available_kwh_at_start and (start - reserve) if present
             self.battery_kwh = float(self.cfg.default_battery_kwh)
             try:
                 start = float(trip.start_soc_pct) / 100.0
@@ -297,28 +310,27 @@ class PPOChargingEnv(gym.Env):
                 if avail is not None:
                     denom = max(1e-6, (start - reserve))
                     est_pack = avail / denom
-                    if np.isfinite(est_pack) and est_pack > 5.0:  # sanity
+                    if np.isfinite(est_pack) and est_pack > 5.0:
                         self.battery_kwh = float(est_pack)
             except Exception:
+                # keep default_battery_kwh on any parsing issue
                 pass
 
-            # SoC and remaining km
-            self.soc = float(trip.start_soc_pct) / 100.0
-            # If trip_km is present, use it; else fall back to previous range
-            if trip.trip_km is not None and np.isfinite(trip.trip_km):
+            # SoC and remaining distance
+            try:
+                self.soc = float(trip.start_soc_pct) / 100.0
+            except Exception:
+                s0, s1 = self.cfg.start_soc_range
+                self.soc = float(self.rng.uniform(s0, s1))
+
+            if getattr(trip, "trip_km", None) is not None and np.isfinite(trip.trip_km):
                 self.remaining_km = float(trip.trip_km)
             else:
-                # keep old stochastic fallback
                 d0, d1 = self.cfg.trip_distance_km_range
                 self.remaining_km = float(self.rng.uniform(d0, d1))
 
-            # # Per-episode knobs (optional)
-            # if getattr(trip, "top_k_candidates", None):
-            #     self.cfg.obs_top_k = int(trip.top_k_candidates)
-            # # note: we’ll use max_detour_km when we wire in real candidate finding
-
         else:
-            # -------- original random init (no TripPlan) --------
+            # -------- random init (no TripPlan; keeps smoke-tests working) --------
             self.ev_id, self.ev = self._pick_random_ev()
             self.battery_kwh = float(self.cfg.default_battery_kwh)
             self.kwh_per_km = float(self.cfg.default_kwh_per_km)
@@ -327,49 +339,42 @@ class PPOChargingEnv(gym.Env):
             d0, d1 = self.cfg.trip_distance_km_range
             self.remaining_km = float(self.rng.uniform(d0, d1))
 
-        # Candidate list priming
+        # ---------- Candidate priming ----------
         self.all_station_ids: List[str] = list(self.station_index.keys())
         self._refresh_candidates()
 
+        # ---------- Episode running tallies ----------
         self.total_minutes = 0.0
         self.total_cost = 0.0
         self.charge_events = 0
         self._done = False
-        
-        # --- Phase 1.5 telemetry ---
+
+        # --- Telemetry (Phase 1.5) ---
         self.drive_steps = 0
         self.charge_steps = 0
-        self._last_step_type = None   # "drive" or "charge"
-        self._arrival_via = None      # "drive" or "charge" (set at terminal)
-        
-        # --- Phase 3: constraints state ---
+        self._last_step_type = None       # "drive" | "charge"
+        self._arrival_via = None          # "drive" | "charge"
+
+        # --- Constraints state (Phase 3) ---
         self.visited_station_ids: set = set()
         self.last_charge_end_min: Optional[float] = None
         self.violations_repeat: int = 0
         self.violations_overlimit: int = 0
         self.violations_cooldown: int = 0
-        # Stations we discovered are unroutable this episode (masked thereafter)
-        self.unreachable_station_ids: set = set()
+        self.unreachable_station_ids: set = set()  # stations found unroutable this episode
 
+        # --- Episode clock for traffic shaping ---
+        self._clock_dt = getattr(trip, "depart_datetime", None) if trip is not None else None
 
-        # Start-of-episode clock (used for traffic scaling)
-        self._clock_dt = getattr(trip, "depart_datetime", None)
-
-        # ------------------------
-        # Fallback trip clock: full week (Mon–Sun), 24h
-        # ------------------------
+        # Fallback synthetic clock if traffic mode is active but no depart time provided
         if getattr(self.cfg, "traffic_mode", "none") != "none" and self._clock_dt is None:
             from datetime import datetime, timedelta
-            # Use env RNG for reproducibility with seeds
             weekday = int(self.rng.integers(0, 7))     # 0..6 (Mon..Sun)
             hour    = int(self.rng.integers(0, 24))    # 0..23
             minute  = int(self.rng.integers(0, 60))    # 0..59
-
-            # Anchor to a known Monday; 2024-01-01 is Monday
-            base = datetime(2024, 1, 1, 0, 0, 0)
+            base = datetime(2024, 1, 1, 0, 0, 0)       # known Monday anchor
             self._clock_dt = base + timedelta(days=weekday, hours=hour, minutes=minute)
-
-            # Keep a trace for KPI/info
+            # keep a trace for KPI/info in reset()
             self._depart_dt_fallback_iso = self._clock_dt.isoformat()
 
     # ---------------------------

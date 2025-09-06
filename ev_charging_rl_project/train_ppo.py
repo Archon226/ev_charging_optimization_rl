@@ -243,8 +243,8 @@ def main():
     # Uncomment this block for teammate 2 and comment the others.
     EXPERIMENT = "C"
     seed = 202
-    RUN_TAG = "Hatim_time_dt10_topk3_vot0p05_sumo_traffic"
-    TOTAL_STEPS = 300_000
+    RUN_TAG = "Hatim_time_sumo_traffic"
+    TOTAL_STEPS = 200_000
 
     cfg = PPOEnvConfig(
         # --- observation & horizon ---
@@ -254,6 +254,7 @@ def main():
 
         # --- objective & costs ---
         prefer="time",
+        respect_trip_objective= False,
         value_of_time_per_min=0.05,
         charge_efficiency=0.92,
         charge_session_overhead_min=3.0,
@@ -287,12 +288,8 @@ def main():
         terminate_on_overlimit=True,   
     )
 
-
-
-
-
     
-    run_name = time.strftime(f"ppo_ev_%Y%m%d_%H%M%S_{RUN_TAG}")
+    run_name = time.strftime(f"{RUN_TAG}_ppo_ev_%Y%m%d_%H%M%S")
     out_dir = project_root / "runs" / run_name
     tb_log_dir = out_dir / "tb"
     kpi_csv = out_dir / "kpi_episodes.csv"
@@ -351,20 +348,20 @@ def main():
         tensorboard_log=str(tb_log_dir),
 
         # Larger rollouts reduce update noise with single env
-        n_steps=8192,                 # collect 8k steps/update
-        batch_size=4096,              # large minibatches for stable gradients
+        n_steps=4096,                 # collect 8k steps/update
+        batch_size=2048,              # large minibatches for stable gradients
         n_epochs=10,                  # PPO default (good here)
 
         # Optimisation
         learning_rate=lambda f: 1e-4 * f,  # linear decay over training
-        gamma=0.997,                 # long horizon (10-min steps ≈ 55h effective)
+        gamma=0.995,                 # long horizon (10-min steps ≈ 55h effective)
         gae_lambda=0.95,
         clip_range=0.2,
         clip_range_vf=0.2,           # value clipping prevents VF runaway
         ent_coef=0.01,             # gentler exploration to cut dithering
         vf_coef=0.7,
         max_grad_norm=0.5,
-        target_kl=0.015,             # guardrails against destabilising updates
+        target_kl=0.02,             # guardrails against destabilising updates
 
         # Network
         policy_kwargs=dict(
@@ -400,8 +397,8 @@ def main():
             "ppo_env_config": asdict(cfg),
             "algo": "PPO",
             "hyperparams": {
-                "n_steps": 8192,
-                "batch_size": 4096,
+                "n_steps": 4096,
+                "batch_size": 2048,
                 "n_epochs": 10,
                 "learning_rate": "linear_1e-4",
                 "gamma": 0.997,
@@ -411,7 +408,7 @@ def main():
                 "ent_coef": 0.01,
                 "vf_coef": 0.7,
                 "max_grad_norm": 0.5,
-                "target_kl": 0.015,
+                "target_kl": 0.02,
                 "policy_net_arch": [256, 256],
                 "value_net_arch": [256, 256],
                 "activation": "ReLU",
@@ -429,13 +426,31 @@ def main():
 
     # ---- learn ----
     rolled = 0
+    lr_dropped = False            # NEW: track whether we already lowered LR
     while rolled < TOTAL_STEPS and not stop_training["flag"]:
         chunk = min(10_000, TOTAL_STEPS - rolled)
         model.learn(total_timesteps=chunk, reset_num_timesteps=False, callback=[kpi_cb])
         rolled += chunk
+
         # checkpoint
         model.save(str(model_path))
         print(f"[train] checkpoint saved at {rolled}/{TOTAL_STEPS} steps → {model_path}")
+
+        # === OPTIONAL: lower LR mid-run WITHOUT restarting env/model ===
+        # Trigger this based on your own heuristic (e.g., tensorboard, CSV tail, or a manual flag).
+        # Example: after 100k steps, clamp LR to 7.5e-5 one time.
+        if (rolled >= 100_000) and (not lr_dropped):
+            new_lr = 7.5e-5
+            # 1) Override SB3's lr schedule to a constant
+            model.lr_schedule = (lambda _progress_remaining: new_lr)
+            # 2) Set optimizer param groups now (so next update uses new LR)
+            for pg in model.policy.optimizer.param_groups:
+                pg["lr"] = new_lr
+            # 3) (Optional) relax/adjust target_kl on-the-fly if you also want gentler updates
+            model.target_kl = 0.02
+            lr_dropped = True
+            print(f"[train] LR clamped mid-run to {new_lr}; target_kl={model.target_kl}")
+
 
     # ---- save final model ----
     model.save(str(out_dir / "model_final.zip"))
