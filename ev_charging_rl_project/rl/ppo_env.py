@@ -405,7 +405,7 @@ class PPOChargingEnv(gym.Env):
         self._reset_state(trip=trip)
         # --- SUMO integration ---
         if self.cfg.use_sumo_drive and self._sumo_runner is not None:
-            #self._sumo_runner.start()
+            self._sumo_runner.start()
 
             # pick a start edge (from trip explicit edge, else origin lat/lon, else nearest, else any)
             start_edge = None

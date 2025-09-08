@@ -136,6 +136,24 @@ for policy_name, model_path in MODELS.items():
             "soc_final": float(last_info.get("soc_final", np.nan)),
         }
         all_rows.append(row)
+    
+    # --- cleanup: MUST close SUMO before moving to the next policy ---
+    try:
+        # close the SB3 vec wrapper if present
+        if hasattr(model, "env") and hasattr(model.env, "close"):
+            model.env.close()
+    except Exception:
+        pass
+
+    try:
+        # also close the raw env (EvalTripEnv) to stop SumoRunner explicitly
+        if hasattr(env, "close"):
+            env.close()
+    except Exception:
+        pass
+
+    del model
+    del env
 
 # Save episode-level results
 df = pd.DataFrame(all_rows)
