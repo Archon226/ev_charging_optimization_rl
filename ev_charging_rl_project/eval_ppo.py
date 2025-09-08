@@ -1,294 +1,261 @@
-# evaluate_ppo.py
+# eval_ppo.py
 from __future__ import annotations
-
-import os, json, time, argparse
-from dataclasses import asdict
+import os
 from pathlib import Path
-from typing import Iterator, Optional, Dict, Any, List
-
 import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
 from stable_baselines3 import PPO
-from stable_baselines3.common.monitor import Monitor
-from stable_baselines3.common.vec_env import DummyVecEnv
 
-# --- project imports ---
-# repo root is the cwd when you run this; adjust if needed
-from rl.ppo_env import PPOChargingEnv, PPOEnvConfig
-from rl.episodes import TripPlan
+# --- your project imports (same as train_ppo.py)
 from utils.data_loader import load_all_ready
+from rl.episodes import iter_episodes, TripPlan
+from rl.ppo_env import PPOChargingEnv, PPOEnvConfig
 
+# -----------------------------
+# Finite Trip iterator for evaluation
+# -----------------------------
+def load_eval_trips(eval_csv: Path) -> list[TripPlan]:
+    trips = list(iter_episodes(eval_csv))  # same generator you use in training
+    if not trips:
+        raise RuntimeError(f"No episodes found in {eval_csv}")
+    return trips
 
-# ----------------------------
-# Episode iterator (eval CSV)
-# ----------------------------
-def _parse_eval_csv(sim_csv: Path, default_target_soc: float = 80.0) -> List[TripPlan]:
+class EvalTripEnv(PPOChargingEnv):
     """
-    Minimal loader to avoid changing your training code:
-    Expects columns compatible with rl/episodes.load_episodes.
+    Same env as training but pulls TripPlan from a finite list.
     """
-    from rl.episodes import load_episodes as _load
-    return _load(sim_csv, default_target_soc=default_target_soc)
-
-
-def make_trip_iterator(sim_csv: Path, seed: int) -> Iterator[TripPlan]:
-    rng = np.random.default_rng(seed)
-    while True:
-        episodes = _parse_eval_csv(sim_csv)
-        if not episodes:
-            raise RuntimeError(f"No episodes found in {sim_csv}")
-        idx = np.arange(len(episodes))
-        rng.shuffle(idx)
-        for i in idx:
-            yield episodes[i]
-
-
-# ----------------------------
-# Env wrapper: inject TripPlan
-# ----------------------------
-class PPOTripEnv(PPOChargingEnv):
-    """Wrapper that always injects a TripPlan on reset() for SB3 compatibility."""
-    def __init__(self, cfg: PPOEnvConfig, bundle: Dict[str, Any], trip_iter: Iterator[TripPlan]):
+    def __init__(self, cfg: PPOEnvConfig, bundle: dict, trips: list[TripPlan]):
         super().__init__(cfg, data_bundle=bundle)
-        self._trip_iter = trip_iter
+        self._trips = trips
+        self._idx = 0
 
-    def reset(self, *, seed: Optional[int] = None, options: Optional[Dict[str, Any]] = None):
-        trip = next(self._trip_iter)
+    def reset(self, *, seed: int | None = None, options: dict | None = None):
+        if seed is not None:
+            self.rng = np.random.default_rng(seed)
+        if self._idx >= len(self._trips):
+            raise StopIteration("All evaluation trips consumed. Re-create env to run again.")
+        trip = self._trips[self._idx]
+        self._idx += 1
+        # base class expects options={"trip": TripPlan}
         return super().reset(seed=seed, options={"trip": trip})
 
+# -----------------------------
+# Evaluation config (edit paths)
+# -----------------------------
+PROJECT_ROOT = Path(".").resolve()
+DATA_DIR = PROJECT_ROOT / "data"
+EVAL_CSV = DATA_DIR / "sim_users_eval_calibrated.csv"
 
-def make_env(bundle, trip_iter, cfg: PPOEnvConfig, log_dir: Path, seed: int):
-    def _thunk():
-        env = PPOTripEnv(cfg, bundle, trip_iter)
-        env = Monitor(env, filename=str(log_dir / "monitor.csv"), allow_early_resets=True)
-        # env.reset(seed=seed)
-        return env
-    return _thunk
+# Point these to your final models
+MODELS = {
+    "cost":   PROJECT_ROOT / "runs" / "Hatim_cost_sumo_traffic_ppo_ev_20250907_024758"  / "model_final.zip",
+    "time":   PROJECT_ROOT / "runs" / "Hatim_time_sumo_traffic_ppo_ev_20250906_195009"  / "model_final.zip",
+    "hybrid": PROJECT_ROOT / "runs" / "Hatim_hybrid_sumo_traffic_ppo_ev_20250907_110917" / "model_final.zip",
+}
 
+OUT_DIR = PROJECT_ROOT / "eval_outputs"
+OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-# ----------------------------
-# Load PPOEnvConfig from run
-# ----------------------------
-def load_cfg_from_train(model_path: Path, overrides: Dict[str, Any]) -> PPOEnvConfig:
-    """
-    Reads train_config.json next to the model (created in train_ppo.py),
-    extracts "ppo_env_config", then applies overrides (e.g., sumo_mode/gui).
-    Falls back to defaults if file/keys are missing.
-    """
-    run_dir = model_path.parent
-    cfg_json = run_dir / "train_config.json"
-    base = {}
-    if cfg_json.exists():
-        with cfg_json.open("r", encoding="utf-8") as f:
-            obj = json.load(f)
-            base = obj.get("ppo_env_config", {})
-    # Phase-5 knobs: ensure present with safe defaults (in case run predates Phase 5)
-    phase5_safe_defaults = dict(
-        enable_shaping=base.get("enable_shaping", True),
-        shaping_gamma=base.get("shaping_gamma", 1.0),
-        enable_potential_time=base.get("enable_potential_time", True),
-        potential_vref_kmh=base.get("potential_vref_kmh", 25.0),
-        idle_penalty_per_step=base.get("idle_penalty_per_step", 0.05),
-        idle_progress_epsilon_km=base.get("idle_progress_epsilon_km", 0.15),
-        micro_charge_penalty=base.get("micro_charge_penalty", 0.5),
-        micro_charge_min_kwh=base.get("micro_charge_min_kwh", 1.0),
-        micro_charge_min_minutes=base.get("micro_charge_min_minutes", 6.0),
+# -----------------------------
+# Build shared bundle and trips
+# -----------------------------
+bundle = load_all_ready(DATA_DIR, strict=True)  # same as training
+eval_trips = load_eval_trips(EVAL_CSV)         # finite list (one pass)  :contentReference[oaicite:3]{index=3}
+N_EVAL = len(eval_trips)
+
+# -----------------------------
+# Evaluate all policies
+# -----------------------------
+all_rows = []
+
+for policy_name, model_path in MODELS.items():
+    run_dir = Path(model_path).parent
+
+    # cfg.prefer is irrelevant at inference, but we set it for clarity/logs.
+    cfg = PPOEnvConfig(
+        obs_top_k=5,
+        dt_minutes=10.0,
+        max_steps=84,
+        prefer=policy_name,            # "cost" | "time" | "hybrid"
+        respect_trip_objective=False,  # IMPORTANT: evaluation uses the trained policy; we still log user's objective below
+        value_of_time_per_min=0.05,
+        charge_efficiency=0.92,
+        charge_session_overhead_min=3.0,
+        traffic_mode="light",
+        traffic_peak_factor_am=1.6,
+        traffic_peak_factor_pm=1.5,
+        traffic_offpeak_factor=1.0,
+        use_sumo_drive=True,
+        sumo_mode="route_time",
+        sumo_net_path="london_inner.net.xml",
+        sumo_gui=False,
+        max_charges_per_trip=2,
+        terminate_on_overlimit=True,
+        enable_shaping=True,
+        shaping_gamma=1.0,
+        enable_potential_time=True,
+        potential_vref_kmh=25.0,
+        idle_penalty_per_step=0.05,
+        idle_progress_epsilon_km=0.15,
+        micro_charge_penalty=0.5,
+        micro_charge_min_kwh=1.0,
+        micro_charge_min_minutes=6.0,
     )
-    merged = {**base, **phase5_safe_defaults, **overrides}
-    return PPOEnvConfig(**merged)
 
+    # Create a FRESH env with a fresh copy of trips (so each policy sees the same set, in the same order)
+    trips_copy = list(eval_trips)  # shallow copy OK; TripPlan is immutable enough for eval use
+    env = EvalTripEnv(cfg, bundle, trips_copy)
 
-# ----------------------------
-# Evaluation loop
-# ----------------------------
-def evaluate(
-    model_path: Path,
-    data_dir: Path,
-    sim_csv: Path,
-    out_dir: Path,
-    sumo_mode: str = "route_time",    # or "microsim"
-    episodes: int = 50,
-    seed: int = 202,
-    sumo_gui: bool = False,
-):
-    out_dir.mkdir(parents=True, exist_ok=True)
+    # Load model
+    model = PPO.load(str(model_path), env=env)
 
-    # SUMO sanity (warn early if missing)
-    if sumo_mode in ("route_time", "microsim"):
+    # Roll through the entire eval set once
+    for i in range(N_EVAL):
+        obs, info = env.reset()
+        # record the user's declared objective from the active trip
+        user_obj = getattr(env._trip, "objective", None)
+        done = False
+        terminated = False
+        truncated = False
+        last_info = {}
+        while not (terminated or truncated):
+            action, _ = model.predict(obs, deterministic=True)
+            obs, reward, terminated, truncated, last_info = env.step(action)
+
+        # episode-end KPIs are in last_info (set by env.step), consistent with training logger  :contentReference[oaicite:4]{index=4}
+        row = {
+            "policy": policy_name,
+            "objective_user": (user_obj or "").lower(),
+            "total_minutes": float(last_info.get("episode_minutes", np.nan)),
+            "total_cost_gbp": float(last_info.get("episode_cost_gbp", np.nan)),
+            "success": 1 if last_info.get("termination_reason") == "success" else 0,
+            "termination_reason": last_info.get("termination_reason", "unknown"),
+            "charge_events": int(last_info.get("charge_events", 0)),
+            "soc_final": float(last_info.get("soc_final", np.nan)),
+        }
+        all_rows.append(row)
+
+# Save episode-level results
+df = pd.DataFrame(all_rows)
+df.to_csv(OUT_DIR / "evaluation_results.csv", index=False)
+
+# -----------------------------
+# Summaries (global + per-user-objective)
+# -----------------------------
+def summarise(g):
+    return pd.Series({
+        "success_rate": g["success"].mean(),
+        "median_minutes": g["total_minutes"].median(),
+        "iqr_minutes": g["total_minutes"].quantile(0.75) - g["total_minutes"].quantile(0.25),
+        "median_cost": g["total_cost_gbp"].median(),
+        "iqr_cost": g["total_cost_gbp"].quantile(0.75) - g["total_cost_gbp"].quantile(0.25),
+        "mean_charges": g["charge_events"].mean(),
+        "median_soc_final": g["soc_final"].median(),
+    })
+
+summary_global = df.groupby("policy").apply(summarise).sort_index()
+summary_global.to_csv(OUT_DIR / "summary_global.csv")
+
+summary_matrix = df.groupby(["policy","objective_user"]).apply(summarise).reset_index()
+summary_matrix.to_csv(OUT_DIR / "summary_matrix_policy_by_user_objective.csv", index=False)
+
+# Termination breakdown
+term = df.groupby(["policy","termination_reason"]).size().unstack(fill_value=0)
+term_prop = term.div(term.sum(axis=1), axis=0)
+term_prop.to_csv(OUT_DIR / "termination_breakdown.csv")
+
+# -----------------------------
+# Plots
+# -----------------------------
+# 1) Cost boxplot
+ax = df.boxplot(column="total_cost_gbp", by="policy")
+plt.ylabel("Total Cost (£)")
+plt.title("Trip Cost by Policy"); plt.suptitle("")
+plt.savefig(OUT_DIR / "plot_cost_box.png"); plt.close()
+
+# 2) Time boxplot
+ax = df.boxplot(column="total_minutes", by="policy")
+plt.ylabel("Trip Time (min)")
+plt.title("Trip Time by Policy"); plt.suptitle("")
+plt.savefig(OUT_DIR / "plot_time_box.png"); plt.close()
+
+# 3) Pareto scatter (episode cloud)
+for pol, grp in df.groupby("policy"):
+    plt.scatter(grp["total_cost_gbp"], grp["total_minutes"], alpha=0.25, label=pol, s=8)
+plt.xlabel("Total Cost (£)")
+plt.ylabel("Trip Time (min)")
+plt.legend()
+plt.title("Pareto: Episode Cost vs Time")
+plt.savefig(OUT_DIR / "plot_pareto_episodes.png"); plt.close()
+
+# 4) Pareto (run-level medians)
+med = df.groupby("policy")[["total_cost_gbp","total_minutes"]].median()
+plt.scatter(med["total_cost_gbp"], med["total_minutes"])
+for pol, (x,y) in med.iterrows():
+    plt.annotate(pol, (x,y), xytext=(3,3), textcoords="offset points")
+plt.xlabel("Median Cost (£)"); plt.ylabel("Median Time (min)")
+plt.title("Pareto (Run-level Medians)")
+plt.savefig(OUT_DIR / "plot_pareto_medians.png"); plt.close()
+
+# 5) Termination breakdown (stacked bar)
+term_prop.plot(kind="bar", stacked=True)
+plt.ylabel("Proportion")
+plt.title("Termination Reasons by Policy")
+plt.legend(bbox_to_anchor=(1.02,1), loc="upper left")
+plt.tight_layout()
+plt.savefig(OUT_DIR / "plot_termination_stacked.png"); plt.close()
+
+# 6) Policy × User Objective heatmaps (median cost/time; success)
+pivot_cost = df.pivot_table(index="policy", columns="objective_user", values="total_cost_gbp", aggfunc="median")
+pivot_time = df.pivot_table(index="policy", columns="objective_user", values="total_minutes", aggfunc="median")
+pivot_succ = df.pivot_table(index="policy", columns="objective_user", values="success", aggfunc="mean")
+
+for name, pv in [("median_cost", pivot_cost), ("median_minutes", pivot_time), ("success_rate", pivot_succ)]:
+    plt.imshow(pv.values, aspect="auto")
+    plt.xticks(range(pv.shape[1]), pv.columns)
+    plt.yticks(range(pv.shape[0]), pv.index)
+    plt.colorbar()
+    plt.title(f"Policy × User Objective — {name}")
+    plt.tight_layout()
+    plt.savefig(OUT_DIR / f"heatmap_{name}.png"); plt.close()
+
+# -----------------------------
+# Training curves (from run dirs)
+# -----------------------------
+def maybe_plot_training_curves(tag: str, run_dir: Path):
+    mon = run_dir / "monitor.csv"
+    kpi = run_dir / "kpi_episodes.csv"
+    if mon.exists():
         try:
-            import traci, sumolib  # noqa: F401
-        except Exception as e:
-            print(f"[warn] SUMO Python libs not importable: {e}. If use_sumo_drive=True, eval will fail.")
+            m = pd.read_csv(mon, skiprows=1)
+            m["r_roll"] = m["r"].rolling(200, min_periods=1).mean()
+            plt.plot(m["t"], m["r_roll"], label=tag)
+        except Exception:
+            pass
+    return kpi.exists(), kpi
 
-    # --- data bundle (fast lookups) ---
-    bundle = load_all_ready(data_dir, strict=True)
+plt.figure()
+for pol, model_path in MODELS.items():
+    run_dir = Path(model_path).parent
+    _exists, _ = maybe_plot_training_curves(pol, run_dir)
+plt.xlabel("Timesteps"); plt.ylabel("Rolling Reward")
+plt.title("Training Reward (Monitor.csv)")
+plt.legend(); plt.tight_layout()
+plt.savefig(OUT_DIR / "plot_training_reward.png"); plt.close()
 
-    # --- env config from training, override SUMO mode/gui ---
-    cfg = load_cfg_from_train(
-        model_path,
-        overrides=dict(
-            sumo_mode=sumo_mode,
-            sumo_gui=bool(sumo_gui),
-            # common defaults if a saved config had relative paths:
-            sumo_net_path=str((Path(".") / "london_inner.net.xml").resolve()),
-            use_sumo_drive=True,          # ensure we're exercising SUMO path times
-        ),
-    )
+plt.figure()
+for pol, model_path in MODELS.items():
+    run_dir = Path(model_path).parent
+    kpi_path = run_dir / "kpi_episodes.csv"
+    if kpi_path.exists():
+        kpi = pd.read_csv(kpi_path)
+        kpi["succ_roll"] = kpi["success"].rolling(500, min_periods=1).mean()
+        plt.plot(kpi["timesteps"], kpi["succ_roll"], label=pol)
+plt.xlabel("Timesteps"); plt.ylabel("Rolling Success Rate")
+plt.title("Training Success (KPI Episodes)")
+plt.legend(); plt.tight_layout()
+plt.savefig(OUT_DIR / "plot_training_success.png"); plt.close()
 
-    # --- build vec env with trip injection ---
-    trip_iter = make_trip_iterator(sim_csv, seed)
-    env_fn = make_env(bundle, trip_iter, cfg, out_dir, seed)
-    vec_env = DummyVecEnv([env_fn])
-
-    # --- load PPO model ---
-    print(f"[eval] loading model: {model_path}")
-    model = PPO.load(str(model_path), env=vec_env, device="auto")
-
-    # --- per-episode KPI CSV ---
-    kpi_path = out_dir / "eval_kpi_episodes.csv"
-    header = [
-        "time_s","episode","episode_steps",
-        "total_minutes","total_cost_gbp",
-        "success","stranded",
-        "soc_final","remaining_km","charge_events",
-        # Phase 3 penalties (if your env logs them)
-        "violations_repeat","violations_overlimit","violations_cooldown",
-        # Phase 5 fields (optional, present if you merged the changes)
-        "progress_km","shaping_time","penalty_idle","penalty_micro_charge",
-        # Misc telemetry you already write
-        "termination_reason","detour_minutes","action_mask_size",
-    ]
-    with kpi_path.open("w", encoding="utf-8") as f:
-        f.write(",".join(header) + "\n")
-
-    # --- run episodes (deterministic policy) ---
-    done_eps = 0
-    t0 = time.time()
-    obs = vec_env.reset()
-    while done_eps < episodes:
-        action, _ = model.predict(obs, deterministic=True)
-        obs, reward, done, infos = vec_env.step(action)
-
-        if done[0]:
-            info = infos[0]
-            ep_info = info.get("terminal_kpis", {}) or {}
-            # defaults if fields are absent (back-compat)
-            row = dict(
-                time_s=round(time.time() - t0, 3),
-                episode=done_eps,
-                episode_steps=int(info.get("episode_steps", ep_info.get("steps", 0))),
-                total_minutes=float(info.get("episode_minutes", ep_info.get("minutes", 0.0))),
-                total_cost_gbp=float(info.get("episode_cost_gbp", ep_info.get("cost", 0.0))),
-                success=int(ep_info.get("success", info.get("success", False))) or 0,
-                stranded=int(ep_info.get("stranded", info.get("stranded", False))) or 0,
-                soc_final=float(ep_info.get("soc_final", info.get("soc_final", 0.0))),
-                remaining_km=float(ep_info.get("remaining_km", info.get("remaining_km", 0.0))),
-                charge_events=int(ep_info.get("charge_events", info.get("charge_events", 0))),
-                violations_repeat=int(info.get("violations_repeat", 0)),
-                violations_overlimit=int(info.get("violations_overlimit", 0)),
-                violations_cooldown=int(info.get("violations_cooldown", 0)),
-                progress_km=float(info.get("progress_km", 0.0)),
-                shaping_time=float(info.get("shaping_time", 0.0)),
-                penalty_idle=float(info.get("penalty_idle", 0.0)),
-                penalty_micro_charge=float(info.get("penalty_micro_charge", 0.0)),
-                termination_reason=str(ep_info.get("termination_reason", info.get("termination_reason", ""))),
-                detour_minutes=float(info.get("detour_minutes", 0.0)),
-                action_mask_size=int(info.get("action_mask_size", 0)),
-            )
-            with kpi_path.open("a", encoding="utf-8") as f:
-                f.write(",".join(str(row[k]) for k in header) + "\n")
-
-            print(
-                f"[eval] ep={row['episode']:>3} steps={row['episode_steps']:>4} "
-                f"min={row['total_minutes']:.1f} £={row['total_cost_gbp']:.2f} "
-                f"success={row['success']} stranded={row['stranded']} "
-                f"charges={row['charge_events']}"
-            )
-            done_eps += 1
-            obs = vec_env.reset()
-
-    # --- aggregate summary ---
-    summary = aggregate_summary(kpi_path)
-    with (out_dir / "eval_summary.json").open("w", encoding="utf-8") as f:
-        json.dump(summary, f, indent=2)
-
-    # --- clean shutdown ---
-    try:
-        vec_env.envs[0].unwrapped.close()
-    except Exception:
-        pass
-    vec_env.close()
-    print(f"[eval] done.\n  KPIs → {kpi_path}\n  Summary → {out_dir/'eval_summary.json'}")
-
-
-def aggregate_summary(kpi_csv: Path) -> Dict[str, Any]:
-    import pandas as pd
-    df = pd.read_csv(kpi_csv)
-    n = len(df)
-    if n == 0:
-        return {}
-    succ = df["success"].sum()
-    stranded = df["stranded"].sum()
-    out = dict(
-        episodes=int(n),
-        success_rate=float(succ / n),
-        strand_rate=float(stranded / n),
-        avg_minutes=float(df["total_minutes"].mean()),
-        med_minutes=float(df["total_minutes"].median()),
-        avg_cost_gbp=float(df["total_cost_gbp"].mean()),
-        med_cost_gbp=float(df["total_cost_gbp"].median()),
-        avg_steps=float(df["episode_steps"].mean()),
-        avg_charges=float(df["charge_events"].mean()),
-        p95_minutes=float(df["total_minutes"].quantile(0.95)),
-        p95_cost_gbp=float(df["total_cost_gbp"].quantile(0.95)),
-        violations_repeat_total=int(df["violations_repeat"].sum()),
-        violations_overlimit_total=int(df["violations_overlimit"].sum()),
-        violations_cooldown_total=int(df["violations_cooldown"].sum()),
-        # Phase 5 diagnostics (if present)
-        avg_progress_km=float(df.get("progress_km", 0.0).mean()) if "progress_km" in df else 0.0,
-        avg_shaping_time=float(df.get("shaping_time", 0.0).mean()) if "shaping_time" in df else 0.0,
-        micro_charge_hits=int((df.get("penalty_micro_charge", 0.0) > 0).sum()) if "penalty_micro_charge" in df else 0,
-        idle_hits=int((df.get("penalty_idle", 0.0) > 0).sum()) if "penalty_idle" in df else 0,
-    )
-    return out
-
-
-# ----------------------------
-# CLI
-# ----------------------------
-def parse_args():
-    p = argparse.ArgumentParser(description="Evaluate a trained PPO model on the EV charging env.")
-    p.add_argument("--model", required=True, type=Path,
-                   help="Path to runs/<run>/model.zip (e.g., runs/ppo_ev_20250903/model.zip)")
-    p.add_argument("--episodes", type=int, default=50, help="Number of eval episodes")
-    p.add_argument("--sumo-mode", choices=["route_time","microsim"], default="route_time",
-                   help="Which SUMO integration to use during eval")
-    p.add_argument("--sumo-gui", action="store_true", help="Show SUMO GUI during eval")
-    p.add_argument("--sim-csv", type=Path, default=Path("data") / "sim_users_eval.csv",
-                   help="Path to evaluation episode CSV")
-    p.add_argument("--data-dir", type=Path, default=Path("data"), help="Data directory")
-    p.add_argument("--out-dir", type=Path, default=None,
-                   help="Where to write eval logs (default: alongside model as eval_<mode>/)")
-    p.add_argument("--seed", type=int, default=202, help="RNG seed")
-    return p.parse_args()
-
-
-def main():
-    args = parse_args()
-    model_path = args.model.resolve()
-    out_dir = args.out_dir
-    if out_dir is None:
-        out_dir = model_path.parent / f"eval_{args.sumo_mode}"
-    evaluate(
-        model_path=model_path,
-        data_dir=args.data_dir.resolve(),
-        sim_csv=args.sim_csv.resolve(),
-        out_dir=out_dir.resolve(),
-        sumo_mode=args.sumo_mode,
-        episodes=args.episodes,
-        seed=args.seed,
-        sumo_gui=args.sumo_gui,
-    )
-
-
-if __name__ == "__main__":
-    main()
+print(f"[eval] Done. Outputs → {OUT_DIR}")
