@@ -64,7 +64,8 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 # Build shared bundle and trips
 # -----------------------------
 bundle = load_all_ready(DATA_DIR, strict=True)  # same as training
-eval_trips = load_eval_trips(EVAL_CSV)         # finite list (one pass)  :contentReference[oaicite:3]{index=3}
+eval_trips = load_eval_trips(EVAL_CSV)
+eval_trips = eval_trips[:1000]
 N_EVAL = len(eval_trips)
 
 # -----------------------------
@@ -254,6 +255,17 @@ def maybe_plot_training_curves(tag: str, run_dir: Path):
             pass
     return kpi.exists(), kpi
 
+for pol, model_path in MODELS.items():
+    run_dir = Path(model_path).parent
+    plt.figure()
+    exists, _ = maybe_plot_training_curves(pol, run_dir)
+    if exists:
+        plt.xlabel("Timesteps"); plt.ylabel("Rolling Reward")
+        plt.title(f"Training Reward — {pol}")
+        plt.tight_layout()
+        plt.savefig(OUT_DIR / f"plot_training_reward_{pol}.png")
+    plt.close()
+
 plt.figure()
 for pol, model_path in MODELS.items():
     run_dir = Path(model_path).parent
@@ -262,6 +274,21 @@ plt.xlabel("Timesteps"); plt.ylabel("Rolling Reward")
 plt.title("Training Reward (Monitor.csv)")
 plt.legend(); plt.tight_layout()
 plt.savefig(OUT_DIR / "plot_training_reward.png"); plt.close()
+
+
+for pol, model_path in MODELS.items():
+    run_dir = Path(model_path).parent
+    kpi_path = run_dir / "kpi_episodes.csv"
+    if kpi_path.exists():
+        kpi = pd.read_csv(kpi_path)
+        kpi["succ_roll"] = kpi["success"].rolling(500, min_periods=1).mean()
+        plt.figure()
+        plt.plot(kpi["timesteps"], kpi["succ_roll"])
+        plt.xlabel("Timesteps"); plt.ylabel("Rolling Success Rate")
+        plt.title(f"Training Success — {pol}")
+        plt.tight_layout()
+        plt.savefig(OUT_DIR / f"plot_training_success_{pol}.png")
+        plt.close()
 
 plt.figure()
 for pol, model_path in MODELS.items():
@@ -275,5 +302,6 @@ plt.xlabel("Timesteps"); plt.ylabel("Rolling Success Rate")
 plt.title("Training Success (KPI Episodes)")
 plt.legend(); plt.tight_layout()
 plt.savefig(OUT_DIR / "plot_training_success.png"); plt.close()
+
 
 print(f"[eval] Done. Outputs → {OUT_DIR}")

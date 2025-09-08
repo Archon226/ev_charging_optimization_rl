@@ -95,6 +95,9 @@ class PPOChargingEnv(gym.Env):
     """
 
     metadata = {"render_modes": []}
+    # Print the time-mode banner only once per process
+    _time_mode_banner_printed = False
+
 
     def __init__(
         self,
@@ -144,6 +147,7 @@ class PPOChargingEnv(gym.Env):
         self._seg_from_edge = None
         self._seg_to_edge = None
         self._veh_id = None         # vehicle id (microsim mode)
+
 
         # default: provider; only start SUMO if enabled
         if candidate_provider is not None:
@@ -290,6 +294,28 @@ class PPOChargingEnv(gym.Env):
                 if obj in ("time", "cost", "hybrid"):
                     self.cfg.prefer = obj
             # else: leave self.cfg.prefer as set by the trainer
+            # --- Time-optimisation stabilisers (episode-scoped effective params) ---
+            # Defaults mirror the config, but we soften time-only penalties and boost the
+            # positive signal (success + shaping) when prefer == "time".
+            self._vot_eff = float(self.cfg.value_of_time_per_min)          # effective value-of-time (penalty scale)
+            self._success_bonus_eff = float(self.cfg.success_bonus)        # effective success bonus
+            self._phi_scale = 1.0                                          # shaping multiplier
+            self._charge_overhead_eff = float(self.cfg.charge_session_overhead_min)  # effective per-session overhead (min)
+
+            if self.cfg.prefer == "time":
+                # 1) shrink per-minute penalty so negatives don't swamp the value function
+                self._vot_eff *= 0.35
+                # 2) make finishing decisively rewarding vs. accumulating time costs
+                self._success_bonus_eff = max(self._success_bonus_eff, 500.0)
+                # 3) amplify progress-based shaping so PPO "feels" forward motion
+                self._phi_scale = 3.0
+                # 4) reduce fixed charge-overhead to not over-punish necessary pit-stops
+                self._charge_overhead_eff *= 0.5
+                if not PPOChargingEnv._time_mode_banner_printed:
+                    print("[env] Time-mode stabilisers ACTIVE "
+                        f"(vot_eff={self._vot_eff}, success_bonus_eff={self._success_bonus_eff}, "
+                        f"phi_scale={self._phi_scale}, charge_overhead_eff={self._charge_overhead_eff})")
+                    PPOChargingEnv._time_mode_banner_printed = True
 
             # EV selection: map TripPlan.ev_model -> ev_caps key
             self.ev_id, self.ev = self._resolve_ev_from_trip(trip.ev_model)
@@ -637,7 +663,7 @@ class PPOChargingEnv(gym.Env):
             if self._arrived_this_step:
                 terminated = True
                 self._done = True
-                reward += self.cfg.success_bonus
+                reward += getattr(self, "_success_bonus_eff", self.cfg.success_bonus)
                 arrival_via = "drive"
                 termination_reason = "success"
             elif self.soc <= 0.0:
@@ -667,12 +693,15 @@ class PPOChargingEnv(gym.Env):
                 vref = max(1e-3, float(self.cfg.potential_vref_kmh))
                 eta_old_min = max(0.0, prev_km) / vref * 60.0
                 eta_new_min = max(0.0, curr_km) / vref * 60.0
-                phi_old = - float(self.cfg.value_of_time_per_min) * eta_old_min
-                phi_new = - float(self.cfg.value_of_time_per_min) * eta_new_min
+                vot = float(getattr(self, "_vot_eff", self.cfg.value_of_time_per_min))
                 gamma_phi = float(getattr(self.cfg, "shaping_gamma", 1.0))
-                r_phi = gamma_phi * phi_new - phi_old
+                phi_scale = float(getattr(self, "_phi_scale", 1.0))
+                phi_old = - vot * eta_old_min
+                phi_new = - vot * eta_new_min
+                r_phi = phi_scale * (gamma_phi * phi_new - phi_old)
                 reward += float(r_phi)
                 info["shaping_time"] = float(r_phi)
+
 
             # (B) Anti-idle on DRIVE steps: tiny negative if no real progress
             idle_pen = float(getattr(self.cfg, "idle_penalty_per_step", 0.0))
@@ -765,11 +794,10 @@ class PPOChargingEnv(gym.Env):
             from datetime import timedelta
             self._clock_dt = self._clock_dt + timedelta(minutes=minutes_used)
 
-        # Time penalty should use minutes_used (not raw dt_min)
-        time_cost = minutes_used * self.cfg.value_of_time_per_min
-
-
+        vot = getattr(self, "_vot_eff", self.cfg.value_of_time_per_min)
+        time_cost = minutes_used * vot
         return -time_cost if self.cfg.prefer in ("time", "hybrid") else 0.0
+
     
     def _current_xy_guess(self) -> Tuple[float, float]:
         """
@@ -885,7 +913,8 @@ class PPOChargingEnv(gym.Env):
             if self._clock_dt is not None:
                 from datetime import timedelta
                 self._clock_dt = self._clock_dt + timedelta(minutes=minutes_used)
-            return -(minutes_used * self.cfg.value_of_time_per_min) if self.cfg.prefer in ("time", "hybrid") else 0.0
+            vot = getattr(self, "_vot_eff", self.cfg.value_of_time_per_min)
+            return -(minutes_used * vot) if self.cfg.prefer in ("time", "hybrid") else 0.0
 
         if self.cfg.sumo_mode == "route_time":
             # If we don't currently have an active segment, try to start one to the destination
@@ -1020,7 +1049,7 @@ class PPOChargingEnv(gym.Env):
             energy_cost = float(unit_price) * float(grid_kwh)
 
         # Minutes used this decision: charge duration + fixed session overhead + route detour (traffic-adjusted)
-        overhead = float(self.cfg.charge_session_overhead_min)
+        overhead = float(getattr(self, "_charge_overhead_eff", self.cfg.charge_session_overhead_min))
         tf = self._traffic_factor(self._clock_dt)
         extra_detour = max(0.0, float(detour_min)) * tf
         minutes_used = float(dt_min) + overhead + extra_detour
@@ -1034,7 +1063,8 @@ class PPOChargingEnv(gym.Env):
 
         # --- PHASE 1.5: charge must be strictly net-negative, regardless of 'prefer'
         # Always pay BOTH time and energy costs on charge; no positive shaping.
-        time_cost = minutes_used * self.cfg.value_of_time_per_min
+        vot = getattr(self, "_vot_eff", self.cfg.value_of_time_per_min)
+        time_cost = minutes_used * vot
         cost_cost = energy_cost
 
         info.update({
