@@ -242,8 +242,8 @@ def main():
     # HYBRID with fewer candidates for speed/stability (obs_top_k=3)
     # Uncomment this block for teammate 2 and comment the others.
     EXPERIMENT = "C"
-    seed = 203
-    RUN_TAG = "Hatim_cost_sumo_traffic"
+    seed = 204
+    RUN_TAG = "Hatim_hybrid_sumo_traffic"
     TOTAL_STEPS = 200_000
 
     cfg = PPOEnvConfig(
@@ -253,7 +253,7 @@ def main():
         max_steps=84,                # 60 * 10min = 10 hours horizon (enough for long trips)
 
         # --- objective & costs ---
-        prefer="cost",
+        prefer="hybrid",
         respect_trip_objective= False,
         value_of_time_per_min=0.05,
         charge_efficiency=0.92,

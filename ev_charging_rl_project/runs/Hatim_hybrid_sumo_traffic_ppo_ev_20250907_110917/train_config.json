@@ -1,0 +1,79 @@
+{
+  "seed": 204,
+  "ppo_env_config": {
+    "obs_top_k": 5,
+    "max_steps": 84,
+    "dt_minutes": 10.0,
+    "start_soc_range": [
+      0.1,
+      0.3
+    ],
+    "trip_distance_km_range": [
+      12.0,
+      25.0
+    ],
+    "default_battery_kwh": 60.0,
+    "default_kwh_per_km": 0.18,
+    "value_of_time_per_min": 0.05,
+    "charge_efficiency": 0.92,
+    "charge_session_overhead_min": 3.0,
+    "traffic_mode": "light",
+    "traffic_peak_factor_am": 1.6,
+    "traffic_peak_factor_pm": 1.5,
+    "traffic_offpeak_factor": 1.0,
+    "prefer": "hybrid",
+    "respect_trip_objective": false,
+    "success_bonus": 50.0,
+    "strand_penalty": 200.0,
+    "invalid_action_penalty": 2.0,
+    "rng_seed": null,
+    "use_sumo_drive": true,
+    "sumo_net_path": "london_inner.net.xml",
+    "sumo_gui": false,
+    "sumo_step_length_s": 1.0,
+    "sumo_mode": "route_time",
+    "sumo_vehicle_type": "passenger",
+    "disallow_repeat_station": true,
+    "max_charges_per_trip": 2,
+    "min_charge_gap_min": 12.0,
+    "penalty_repeat": -5.0,
+    "penalty_overlimit": -20.0,
+    "penalty_cooldown": -5.0,
+    "terminate_on_overlimit": true,
+    "penalty_unreachable": -3.0,
+    "enable_shaping": true,
+    "shaping_gamma": 1.0,
+    "enable_potential_time": true,
+    "potential_vref_kmh": 25.0,
+    "idle_penalty_per_step": 0.05,
+    "idle_progress_epsilon_km": 0.15,
+    "micro_charge_penalty": 0.5,
+    "micro_charge_min_kwh": 1.0,
+    "micro_charge_min_minutes": 6.0
+  },
+  "algo": "PPO",
+  "hyperparams": {
+    "n_steps": 4096,
+    "batch_size": 2048,
+    "n_epochs": 10,
+    "learning_rate": "linear_1e-4",
+    "gamma": 0.997,
+    "gae_lambda": 0.95,
+    "clip_range": 0.2,
+    "clip_range_vf": 0.2,
+    "ent_coef": 0.01,
+    "vf_coef": 0.7,
+    "max_grad_norm": 0.5,
+    "target_kl": 0.02,
+    "policy_net_arch": [
+      256,
+      256
+    ],
+    "value_net_arch": [
+      256,
+      256
+    ],
+    "activation": "ReLU",
+    "ortho_init": true
+  }
+}
