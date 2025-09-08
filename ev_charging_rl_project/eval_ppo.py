@@ -12,6 +12,8 @@ from stable_baselines3 import PPO
 from utils.data_loader import load_all_ready
 from rl.episodes import iter_episodes, TripPlan
 from rl.ppo_env import PPOChargingEnv, PPOEnvConfig
+from tqdm import trange
+
 
 # -----------------------------
 # Finite Trip iterator for evaluation
@@ -27,7 +29,7 @@ class EvalTripEnv(PPOChargingEnv):
     Same env as training but pulls TripPlan from a finite list.
     """
     def __init__(self, cfg: PPOEnvConfig, bundle: dict, trips: list[TripPlan]):
-        super().__init__(cfg, data_bundle=bundle)
+        super().__init__(cfg, data_bundle=bundle) 
         self._trips = trips
         self._idx = 0
 
@@ -112,11 +114,9 @@ for policy_name, model_path in MODELS.items():
     model = PPO.load(str(model_path), env=env)
 
     # Roll through the entire eval set once
-    for i in range(N_EVAL):
+    for i in trange(N_EVAL, desc=f"Evaluating {policy_name}", unit="ep"):
         obs, info = env.reset()
-        # record the user's declared objective from the active trip
         user_obj = getattr(env._trip, "objective", None)
-        done = False
         terminated = False
         truncated = False
         last_info = {}
