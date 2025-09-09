@@ -53,11 +53,11 @@ EVAL_CSV = DATA_DIR / "sim_users_eval_calibrated.csv"
 # Point these to your final models
 MODELS = {
     "cost":   PROJECT_ROOT / "runs" / "Hatim_cost_sumo_traffic_ppo_ev_20250907_024758"  / "model_final.zip",
-    "time":   PROJECT_ROOT / "runs" / "Hatim_time_sumo_traffic_ppo_ev_20250906_195009"  / "model_final.zip",
+    "time":   PROJECT_ROOT / "runs" / "Hatim_time_sumo_traffic_ppo_ev_20250908_212038"  / "model_final.zip",
     "hybrid": PROJECT_ROOT / "runs" / "Hatim_hybrid_sumo_traffic_ppo_ev_20250907_110917" / "model_final.zip",
 }
 
-OUT_DIR = PROJECT_ROOT / "eval_outputs2"
+OUT_DIR = PROJECT_ROOT / "eval_outputs3"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # -----------------------------
