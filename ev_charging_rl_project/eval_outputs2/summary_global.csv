@@ -1,0 +1,4 @@
+policy,success_rate,median_minutes,iqr_minutes,median_cost,iqr_cost,mean_charges,median_soc_final
+cost,0.999,20.0,10.0,0.0,0.0,0.0,0.1453338404324048
+hybrid,0.999,20.0,10.0,0.0,0.0,0.0,0.1453338404324048
+time,0.0,12.250111856823267,0.0,0.2717391304347826,0.0,1.0,0.23684149662301784

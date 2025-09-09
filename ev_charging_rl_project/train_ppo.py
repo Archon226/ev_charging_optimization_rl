@@ -243,7 +243,7 @@ def main():
     # Uncomment this block for teammate 2 and comment the others.
     EXPERIMENT = "C"
     seed = 203
-    RUN_TAG = "Hatim_hybrid_sumo_traffic"
+    RUN_TAG = "Hatim_time_sumo_traffic"
     TOTAL_STEPS = 200_000
 
     cfg = PPOEnvConfig(
