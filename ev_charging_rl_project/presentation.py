@@ -75,86 +75,55 @@ def _bool(x, default=False) -> bool:
 # Build env + load trips (mirrors training)
 # -------------------------------
 
-def make_config_for_demo(prefer: Optional[str] = None) -> PPOEnvConfig:
-    """
-    Inline config that mirrors train_ppo.py (EXPERIMENT C block).
-    You can tweak 'prefer' here based on the model you’re demoing.
-    """
-    return PPOEnvConfig(
-        # --- observation & horizon ---
-        obs_top_k=5,
-        dt_minutes=10.0,
-        max_steps=84,
-
-        # --- objective & costs ---
-        prefer=(prefer or "time"),   # "time" / "cost" / "hybrid"
-        respect_trip_objective=False,
-        value_of_time_per_min=0.05,
-        charge_efficiency=0.92,
-        charge_session_overhead_min=3.0,
-
-        # --- shaping ---
-        enable_shaping=True,
-        shaping_gamma=1.0,
-        enable_potential_time=True,
-        potential_vref_kmh=25.0,
-        idle_penalty_per_step=0.05,
-        idle_progress_epsilon_km=0.15,
-        micro_charge_penalty=0.5,
-        micro_charge_min_kwh=1.0,
-        micro_charge_min_minutes=6.0,
-
-        # --- traffic + SUMO ---
-        traffic_mode="light",
-        traffic_peak_factor_am=1.6,
-        traffic_peak_factor_pm=1.5,
-        traffic_offpeak_factor=1.0,
-
-        use_sumo_drive=True,
-        sumo_mode="route_time",
-        sumo_net_path="london_inner.net.xml",
-        sumo_gui=False,
-
-        max_charges_per_trip=2,
-        terminate_on_overlimit=True,
-    )
-
 def infer_prefer_from_model_path(model_path: str) -> Optional[str]:
     name = Path(model_path).as_posix().lower()
-    if "cost" in name:
-        return "cost"
-    if "time" in name:
-        return "time"
-    if "hybrid" in name:
-        return "hybrid"
+    if "cost" in name: return "cost"
+    if "time" in name: return "time"
+    if "hybrid" in name: return "hybrid"
     return None
 
-def build_env_and_trips(model_path: str, seed: int = 0):
+def make_config_for_demo(prefer: Optional[str] = None) -> PPOEnvConfig:
+    return PPOEnvConfig(
+        obs_top_k=5, dt_minutes=10.0, max_steps=84,
+        prefer=(prefer or "cost"), respect_trip_objective=False,
+        value_of_time_per_min=0.05, charge_efficiency=0.92,
+        charge_session_overhead_min=3.0,
+        enable_shaping=True, shaping_gamma=1.0,
+        enable_potential_time=True, potential_vref_kmh=25.0,
+        idle_penalty_per_step=0.05, idle_progress_epsilon_km=0.15,
+        micro_charge_penalty=0.5, micro_charge_min_kwh=1.0,
+        micro_charge_min_minutes=6.0,
+        traffic_mode="light",
+        traffic_peak_factor_am=1.6, traffic_peak_factor_pm=1.5,
+        traffic_offpeak_factor=1.0,
+        use_sumo_drive=True, sumo_mode="route_time",
+        sumo_net_path="london_inner.net.xml", sumo_gui=False,
+        max_charges_per_trip=2, terminate_on_overlimit=True,
+    )
+
+def build_env_and_trips(model_path: str, seed: int = 0) -> Tuple[PPOChargingEnv, List[TripPlan], PPOEnvConfig]:
     project_root = Path(".").resolve()
     data_dir = project_root / "data"
+
+    # Use *eval* calibrated users for demo (matches your evaluation runs)
     sim_csv = data_dir / "sim_users_eval_calibrated.csv"
 
-    # Bundle (pricing_catalog, power_model, etc.)
+    # Load bundle (pricing_catalog, ev_power_model, etc.)
     bundle = load_all_ready(data_dir, strict=True)
 
-    # Config (match training)
+    # Config aligned with training; infer prefer from model name
     prefer = infer_prefer_from_model_path(model_path) or "cost"
     cfg = make_config_for_demo(prefer=prefer)
 
-    # Env
+    # Build env but DO NOT reset yet (reset requires options={'trip': TripPlan})
     env = PPOChargingEnv(cfg, data_bundle=bundle)
-    try:
-        env.reset(seed=seed)
-    except TypeError:
-        pass
 
-    # Trips
-    trips: List[TripPlan] = list(iter_episodes(sim_csv))
+    # Load TripPlans
+    trips = list(iter_episodes(sim_csv))
     if not trips:
         raise RuntimeError(f"No episodes found in {sim_csv}")
 
     return env, trips, cfg
-
 
 # -------------------------------
 # Trip selection (by user or autopick)
