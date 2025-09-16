@@ -1,0 +1,6 @@
+step,action,reward,terminated,truncated,soc,remaining_km,minute_delta,total_minutes,energy_kwh,energy_unit_price_gbp_per_kwh,energy_cost_gbp,running_energy_spend_gbp,running_time_value_gbp,running_generalised_cost_gbp,charge_events,station_id,step_type,note
+0,0,0.0,False,False,0.11942935127314154,nan,0.0,0.0,nan,nan,0.0,0.0,0.0,0.0,0,,drive,
+1,0,0.0,False,False,0.08331238864815418,nan,0.0,0.0,nan,nan,0.0,0.0,0.0,0.0,0,,drive,
+2,0,0.0,False,False,0.04719542602316683,nan,0.0,0.0,nan,nan,0.0,0.0,0.0,0.0,0,,drive,
+3,0,0.0,False,False,0.011078463398179472,nan,0.0,0.0,nan,nan,0.0,0.0,0.0,0.0,0,,drive,
+4,0,50.0,True,False,0.0,0.0,0.0,0.0,nan,nan,0.0,0.0,0.0,0.0,0,,drive,

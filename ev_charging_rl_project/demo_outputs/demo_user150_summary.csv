@@ -1,0 +1,2 @@
+timestamp,user_id,objective,vot_gbp_per_min,episode_minutes,episode_energy_cost_gbp,episode_time_value_gbp,episode_generalised_cost_gbp,success,stranded,soc_final,remaining_km,charge_events,termination_reason
+2025-09-16T14:24:19Z,150,unknown,0.0,30.0,0.0,0.0,0.0,False,False,0.12893471111202792,0.0,0,success
