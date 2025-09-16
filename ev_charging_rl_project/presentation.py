@@ -322,14 +322,15 @@ def run_episode(env: PPOChargingEnv, model: PPO, trip: TripPlan, display_user_id
                 obs, reward, done_flag, info = step_res
                 terminated, truncated = done_flag, False
 
+            # Minutes progression
             minute_delta = _float(_get(info, "minute_delta", "delta_minutes", default=None))
             if minute_delta is None:
-                tm_now = _float(_get(info, "total_minutes", default=_get(env, "total_minutes", default=last_minutes_seen)))
-                minute_delta = max(0.0, tm_now - last_minutes_seen)
-                running_minutes = tm_now
-            else:
-                running_minutes += minute_delta
+                # Fallback: advance by configured decision interval if env doesn't emit deltas
+                dt = _float(getattr(getattr(env, "cfg", None), "dt_minutes", 0.0), 0.0)
+                minute_delta = dt if dt > 0 else 0.0
+            running_minutes += minute_delta
             last_minutes_seen = running_minutes
+
 
             step_energy_cost = _float(_get(info, "energy_cost_gbp", "delta_energy_cost_gbp", default=0.0))
             if step_energy_cost == 0.0:
@@ -392,13 +393,21 @@ def run_episode(env: PPOChargingEnv, model: PPO, trip: TripPlan, display_user_id
     ep_time_value = vot_per_min * ep_minutes
     ep_generalised = ep_energy_cost + ep_time_value
 
-    success = _bool(_get(info, "success", default=_get(env, "success", default=False)))
-    stranded = _bool(_get(info, "stranded", default=_get(env, "stranded", default=False)))
-    term_reason = _get(info, "termination_reason", default="")
-    soc_final = _float(_get(info, "soc_final", default=_get(env, "soc", default=np.nan)))
+    # Prefer explicit flags; otherwise infer like training KPI logger
+    success_flag  = _bool(_get(info, "success",  default=_get(env, "success",  default=False)))
+    stranded_flag = _bool(_get(info, "stranded", default=_get(env, "stranded", default=False)))
+    term_reason   = _get(info, "termination_reason", default="")
+
+    # Telemetry for inference
+    soc_final    = _float(_get(info, "soc_final", default=_get(env, "soc", default=np.nan)))
     remaining_km = _float(_get(info, "remaining_km", default=np.nan))
     charge_events = _int(_get(info, "charge_events", default=total_charge_events))
 
+    # Inference
+    inferred_success  = success_flag  or (remaining_km is not None and remaining_km <= 0.0)
+    inferred_stranded = stranded_flag or (soc_final    is not None and soc_final    <= 0.0)
+
+    # Summary payload
     summary_fields = [
         "timestamp","user_id","objective","vot_gbp_per_min",
         "episode_minutes","episode_energy_cost_gbp","episode_time_value_gbp","episode_generalised_cost_gbp",
@@ -413,13 +422,14 @@ def run_episode(env: PPOChargingEnv, model: PPO, trip: TripPlan, display_user_id
         "episode_energy_cost_gbp": ep_energy_cost,
         "episode_time_value_gbp": ep_time_value,
         "episode_generalised_cost_gbp": ep_generalised,
-        "success": success,
-        "stranded": stranded,
+        "success": inferred_success,
+        "stranded": inferred_stranded,
         "soc_final": soc_final,
         "remaining_km": remaining_km,
         "charge_events": charge_events,
         "termination_reason": term_reason,
     }
+
 
     print("\n----- Episode Summary -----")
     print(f"Objective: {objective}")
@@ -430,10 +440,16 @@ def run_episode(env: PPOChargingEnv, model: PPO, trip: TripPlan, display_user_id
     print(f"Generalised:    £{ep_generalised:.2f}")
     print(f"Charge events:  {charge_events}")
     print(f"SoC final:      {soc_final:.1f}%   | Remaining: {remaining_km:.2f} km")
-    print(f"Outcome:        {'SUCCESS' if success else 'FAIL'}"
-          f"{' | STRANDED' if stranded else ''}"
-          f"{' | ' + term_reason if term_reason else ''}")
-    print("---------------------------\n")
+    # Clean label for display
+    if inferred_success:
+        outcome_label = "SUCCESS"
+    elif inferred_stranded:
+        outcome_label = "STRANDED"
+    else:
+        outcome_label = term_reason.upper() if term_reason else "UNKNOWN"
+
+    print(f"Outcome:        {outcome_label}")
+
 
     # write CSVs
     with open(summary_path, "w", newline="", encoding="utf-8") as f_sum:
@@ -457,6 +473,31 @@ def main():
     parser.add_argument("--outdir", default="demo_outputs", help="Directory for CSV outputs")
     parser.add_argument("--seed", type=int, default=0, help="Random seed")
     args = parser.parse_args()
+    # --- Viva-friendly interactive prompt ---
+    # If no --user and no --autopick were passed, ask on the terminal.
+    if args.user is None and not args.autopick:
+        try:
+            raw = input("Enter a user number (or press Enter for autopick): ").strip()
+        except EOFError:
+            raw = ""
+        if raw == "":
+            # No number → enable autopick
+            args.autopick = True
+            print("[demo] Autopick enabled.\n")
+        else:
+            try:
+                args.user = int(raw)
+                # Ask if we should FORCE exactly this user or allow fallback
+                choice = input("Force exactly this user? [y/N] ").strip().lower()
+                if choice in ("y", "yes"):
+                    args.autopick_off = True
+                    print(f"[demo] Forcing user {args.user} (autopick OFF).\n")
+                else:
+                    args.autopick = True
+                    print(f"[demo] Will try user {args.user}, with autopick fallback if needed.\n")
+            except ValueError:
+                print(f"[warn] '{raw}' is not a number. Enabling autopick.\n")
+                args.autopick = True
 
     model = load_model(args.model)
     env, trips, cfg = build_env_and_trips(args.model, seed=args.seed)
