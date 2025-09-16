@@ -1,0 +1,2 @@
+user_id,policy,objective_user,episode_minutes,episode_cost_gbp,charge_events,soc_final,termination_reason,violations_repeat,violations_overlimit,violations_cooldown,ev_model,depart_datetime,origin,dest,start_soc_pct,reserve_soc_pct,needs_charge,trip_km
+100,hybrid,time,20.0,0.0,0,0.13880070513565776,success,0,0,0,e-308,2025-09-02 14:45:00,"(51.474678, -0.169832)","(51.534393, -0.185748)",16.75389533880711,14.28862354517695,,6.731

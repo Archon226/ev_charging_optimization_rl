@@ -1,0 +1,2 @@
+user_id,policy,objective_user,episode_minutes,episode_cost_gbp,charge_events,soc_final,termination_reason,violations_repeat,violations_overlimit,violations_cooldown,ev_model,depart_datetime,origin,dest,start_soc_pct,reserve_soc_pct,needs_charge,trip_km
+636,hybrid,cost,80.0,0.0,0,0.0,success,0,0,0,fortwo cabrio,2025-09-01 08:07:00,"(51.457405, -0.021979)","(51.551962, -0.234937)",15.55463138981289,10.076944181264082,,18.105

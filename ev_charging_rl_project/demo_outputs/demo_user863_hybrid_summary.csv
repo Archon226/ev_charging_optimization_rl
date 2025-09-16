@@ -1,0 +1,2 @@
+user_id,policy,objective_user,episode_minutes,episode_cost_gbp,charge_events,soc_final,termination_reason,violations_repeat,violations_overlimit,violations_cooldown,ev_model,depart_datetime,origin,dest,start_soc_pct,reserve_soc_pct,needs_charge,trip_km
+863,hybrid,hybrid,62.0,0.0,0,0.040490541314174636,success,0,0,0,500e Scorpionissima,2025-09-04 09:43:00,"(51.447215, -0.239927)","(51.550922, -0.020844)",12.805652303909843,10.697752263620696,,19.052

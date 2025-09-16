@@ -1,0 +1,2 @@
+step,step_type,episode_minutes,soc,remaining_km,total_cost_gbp,reward,progress_km,shaping_time,penalty_idle,penalty_micro_charge,last_charge
+0,drive,15.0,0.285543197892254,0.0,0.0,49.52792,2.316,0.27792,,,
