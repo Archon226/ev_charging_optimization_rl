@@ -22,7 +22,7 @@ import os
 import random
 import sys
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any, Dict, Tuple, List, Optional
 
 import numpy as np
@@ -225,23 +225,55 @@ def load_model(model_path: str) -> PPO:
 # -------------------------------
 
 def get_objective(env, info: Dict[str, Any]) -> str:
+    """
+    Try env → env.cfg → info.
+    Names seen in this codebase: cfg.prefer in {'cost','time','hybrid'}.
+    """
+    # direct env attrs that might exist
     obj = _get(env, "objective", "preference", "optimise_for", default=None)
     if obj is None:
+        # <-- THIS is the important one for your repo
+        cfg = getattr(env, "cfg", None)
+        if cfg is not None:
+            obj = getattr(cfg, "prefer", None)
+    if obj is None:
         obj = _get(info, "objective", "preference", "optimise_for", default="unknown")
+
     if isinstance(obj, (list, tuple)) and obj:
         obj = obj[0]
     if isinstance(obj, str):
         return obj.lower()
     return str(obj).lower()
 
+
 def get_vot_gbp_per_min(env, info: Dict[str, Any]) -> float:
-    cand = (
-        _get(env, "value_of_time_gbp_per_min", "vot_gbp_per_min", "vot_per_min_gbp", default=None)
-        or _get(getattr(env, "cfg", {}), "value_of_time_gbp_per_min", "vot_gbp_per_min", "vot_per_min_gbp", default=None)
-        or _get(getattr(env, "config", {}), "value_of_time_gbp_per_min", "vot_gbp_per_min", "vot_per_min_gbp", default=None)
-        or _get(info, "value_of_time_gbp_per_min", "vot_gbp_per_min", "vot_per_min_gbp", default=None)
-    )
+    """
+    Try env → env.cfg → info.
+    In this repo it's cfg.value_of_time_per_min (GBP/min).
+    """
+    # first: direct env-level names if any
+    cand = _get(env, "value_of_time_gbp_per_min", "vot_gbp_per_min", "vot_per_min_gbp", default=None)
+
+    # then: check config object (PPOEnvConfig)
+    if cand is None:
+        cfg = getattr(env, "cfg", None)
+        if cfg is not None:
+            # your PPOEnvConfig uses 'value_of_time_per_min'
+            cand = getattr(cfg, "value_of_time_per_min", None)
+            if cand is None:
+                # just in case of alternative naming
+                cand = (
+                    getattr(cfg, "value_of_time_gbp_per_min", None)
+                    or getattr(cfg, "vot_gbp_per_min", None)
+                    or getattr(cfg, "vot_per_min_gbp", None)
+                )
+
+    # finally: fall back to info dict
+    if cand is None:
+        cand = _get(info, "value_of_time_per_min", "value_of_time_gbp_per_min", "vot_gbp_per_min", "vot_per_min_gbp", default=None)
+
     return _float(cand, default=0.0)
+
 
 def run_episode(env: PPOChargingEnv, model: PPO, trip: TripPlan, display_user_id: int, outdir: str) -> Tuple[str, str, Dict[str, Any]]:
     os.makedirs(outdir, exist_ok=True)
@@ -373,7 +405,7 @@ def run_episode(env: PPOChargingEnv, model: PPO, trip: TripPlan, display_user_id
         "success","stranded","soc_final","remaining_km","charge_events","termination_reason",
     ]
     summary = {
-        "timestamp": datetime.utcnow().isoformat(timespec="seconds") + "Z",
+        "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "user_id": display_user_id,
         "objective": objective,
         "vot_gbp_per_min": vot_per_min,
