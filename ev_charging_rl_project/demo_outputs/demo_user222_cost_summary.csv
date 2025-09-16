@@ -1,0 +1,2 @@
+user_id,policy,objective_user,episode_minutes,episode_cost_gbp,charge_events,soc_final,termination_reason,violations_repeat,violations_overlimit,violations_cooldown,ev_model,depart_datetime,origin,dest,start_soc_pct,reserve_soc_pct,needs_charge,trip_km
+222,cost,cost,20.0,0.0,0,0.20457793399062021,success,0,0,0,iX xDrive45,2025-09-13 09:00:00,"(51.53649, -0.051095)","(51.500011, -0.065567)",21.907420185955942,14.701583907251024,,4.178

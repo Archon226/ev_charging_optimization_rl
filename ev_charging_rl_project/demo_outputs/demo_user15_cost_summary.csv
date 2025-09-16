@@ -1,0 +1,2 @@
+user_id,policy,objective_user,episode_minutes,episode_cost_gbp,charge_events,soc_final,termination_reason,violations_repeat,violations_overlimit,violations_cooldown,ev_model,depart_datetime,origin,dest,start_soc_pct,reserve_soc_pct,needs_charge,trip_km
+15,cost,cost,20.0,0.0,0,0.11227213217420703,success,0,0,0,fortwo coupe,2025-09-04 21:12:00,"(51.510648, -0.083916)","(51.459495, -0.14142)",18.400644862748774,12.071869713921664,,6.943

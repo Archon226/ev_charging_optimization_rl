@@ -1,0 +1,2 @@
+user_id,policy,objective_user,episode_minutes,episode_cost_gbp,charge_events,soc_final,termination_reason,violations_repeat,violations_overlimit,violations_cooldown,ev_model,depart_datetime,origin,dest,start_soc_pct,reserve_soc_pct,needs_charge,trip_km
+69,time,time,20.0,0.0,0,0.1456696443518465,success,0,0,0,#5 Pro,2025-09-07 14:11:00,"(51.464006, -0.178772)","(51.497838, -0.078609)",21.59356796379968,14.973782815892829,,7.891
