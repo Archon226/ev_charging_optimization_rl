@@ -170,45 +170,75 @@ def probe_trip(env: PPOChargingEnv, trip: TripPlan, probes: int = 2) -> float:
 
 def select_trip(env: PPOChargingEnv, trips: List[TripPlan], user_id: Optional[int], autopick: bool, rng: random.Random) -> Tuple[TripPlan, int]:
     """
-    Returns (TripPlan, display_user_id)
+    Returns (TripPlan, display_user_id).
+    Strategy:
+      1) If --autopick-off: force exact user/index.
+      2) Else: try the requested user first; if no charge in a short dry-run, search.
+      3) Prefer trips whose short rollout yields ≥1 charge event or distance >= 10 km.
     """
-    # If explicit and autopick off → honor exactly
+    def display_uid(tp: TripPlan) -> int:
+        uid = get_trip_user_id(tp)
+        return uid if uid is not None else -1
+
+    def short_dryrun_charge_events(tp: TripPlan, steps: int = 12) -> int:
+        # 12 steps × 10 min = ~2 hours window to see a charge
+        try:
+            obs, info = env.reset(options={"trip": tp})
+        except Exception:
+            return -1
+        charges = 0
+        for _ in range(steps):
+            try:
+                action = env.action_space.sample()  # safe default; replaced by model later in main
+                # If you prefer to probe with the trained policy, you can pass a model instance here instead.
+                obs, reward, terminated, truncated, info = env.step(action) if len(env.step(action)) == 5 else env.step(action)
+                if isinstance(info, dict):
+                    step_type = str(info.get("step_type", "")).lower()
+                    if step_type == "charge" or bool(info.get("charge_event", False)):
+                        charges += 1
+                if terminated or truncated:
+                    break
+            except Exception:
+                break
+        return charges
+
+    # 1) Force exact if requested
     if user_id is not None and not autopick:
         tp = find_trip_by_user(trips, user_id)
         if tp is None:
             raise ValueError(f"--user {user_id} not found as TripPlan attribute or index")
-        uid = get_trip_user_id(tp)
-        return tp, (uid if uid is not None else user_id)
+        return tp, display_uid(tp)
 
-    # If explicit but autopick allowed → try explicit, else search
+    # Build candidate list (requested user first)
     candidates: List[TripPlan] = []
     if user_id is not None:
         tp = find_trip_by_user(trips, user_id)
         if tp is not None:
             candidates.append(tp)
 
-    # Add random candidates
+    # Add a shuffled subset of others
     idxs = list(range(len(trips)))
     rng.shuffle(idxs)
-    for i in idxs[:40]:  # sample up to 40 trips to keep it quick
+    for i in idxs[:80]:
         candidates.append(trips[i])
 
-    # Probe for a “doable” trip (>=60% probe success)
+    # Rank by: (has_charge>=1, distance_km >= 10), fallbacks ok
     best = None
-    best_score = -1.0
+    best_key = (-1, -1.0)  # (charges, distance)
     for tp in candidates:
-        score = probe_trip(env, tp, probes=3)
-        if score > best_score:
-            best, best_score = tp, score
-            if score >= 0.60:
+        # distance meta if available
+        dist = getattr(tp, "distance_km", None) or getattr(tp, "trip_km", None) or -1.0
+        charges = short_dryrun_charge_events(tp, steps=12)
+        key = (charges, float(dist) if dist is not None else -1.0)
+        if key > best_key:
+            best, best_key = tp, key
+            # fast exit if this looks good
+            if charges >= 1 or (dist is not None and float(dist) >= 10.0):
                 break
 
     if best is None:
         best = candidates[0]
-
-    uid = get_trip_user_id(best)
-    return best, (uid if uid is not None else -1)
-
+    return best, display_uid(best)
 
 # -------------------------------
 # Model loader
@@ -311,6 +341,13 @@ def run_episode(env: PPOChargingEnv, model: PPO, trip: TripPlan, display_user_id
         print("\n-------- Viva Demo --------")
         print(f"User (from TripPlan): {display_user_id}")
         print(f"Objective: {objective} | VoT £/min: {vot_per_min:.2f}\n")
+        # --- Trip metadata (if available) ---
+        trip_km = getattr(trip, "distance_km", None) or getattr(trip, "trip_km", None)
+        start_soc = getattr(trip, "start_soc", None) or getattr(trip, "initial_soc", None)
+        if trip_km is not None or start_soc is not None:
+            print(f"Trip meta: distance≈{trip_km if trip_km is not None else 'NA'} km | start SoC≈{start_soc if start_soc is not None else 'NA'}%")
+            print()
+
 
         while not done:
             action, _ = model.predict(obs, deterministic=True)
@@ -509,6 +546,15 @@ def main():
     steps_csv, summary_csv, _ = run_episode(env, model, trip, display_user_id, outdir=args.outdir)
     print(f"Steps CSV:   {steps_csv}")
     print(f"Summary CSV: {summary_csv}")
+    # Clean shutdown (prevents SUMO tcpip warnings)
+    try:
+        env.unwrapped.close()
+    except Exception:
+        pass
+    try:
+        env.close()
+    except Exception:
+        pass
 
 if __name__ == "__main__":
     try:
