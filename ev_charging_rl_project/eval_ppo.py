@@ -57,7 +57,7 @@ MODELS = {
     "hybrid": PROJECT_ROOT / "runs" / "Hatim_hybrid_sumo_traffic_ppo_ev_20250907_110917" / "model_final.zip",
 }
 
-OUT_DIR = PROJECT_ROOT / "eval_outputs3"
+OUT_DIR = PROJECT_ROOT / "eval_outputs"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # -----------------------------
