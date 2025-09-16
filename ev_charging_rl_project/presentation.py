@@ -19,30 +19,102 @@ PROJECT_ROOT = Path(".").resolve()
 DATA_DIR = PROJECT_ROOT / "data"
 CALIBRATED_EVAL_CSV = DATA_DIR / "sim_users_eval_calibrated.csv"
 
+def _trip_is_showy(trip: TripPlan) -> bool:
+    """True if the trip is likely to show at least one charge or a longer journey."""
+    km = float(getattr(trip, "trip_km", 0.0) or 0.0)
+    start_soc = getattr(trip, "start_soc_pct", None)  # percent
+    needs_charge = getattr(trip, "needs_charge", None)
 
-def pick_trip(eval_csv: Path, user_id: int | None, row_index: int | None) -> TripPlan:
-    """
-    Pick a single TripPlan from sim_users_eval_calibrated.csv
-    - Prefer exact user_id match if provided
-    - Else use row_index (0-based)
-    - Else default to the first row
-    """
+    # If the CSV provides a needs_charge flag, trust it.
+    if needs_charge is not None:
+        try:
+            return bool(needs_charge)
+        except Exception:
+            pass
+
+    # Heuristic fallback: long-ish trip with low-ish start SoC is more likely to need charging.
+    return (km >= 14.0) and (start_soc is not None and float(start_soc) <= 18.0)
+
+
+def _trip_is_boring(trip: TripPlan) -> bool:
+    """True if the trip is very likely to finish in 1–2 steps with no charging."""
+    km = float(getattr(trip, "trip_km", 0.0) or 0.0)
+    start_soc = getattr(trip, "start_soc_pct", None)
+
+    # Very short trips are usually trivial.
+    if km < 10.0:
+        return True
+    # Short-to-medium trips with high start SoC tend to be trivial too.
+    if start_soc is not None and float(start_soc) >= 24.0 and km <= 14.0:
+        return True
+    return False
+
+
+def _pick_showy_candidate(trips: list[TripPlan], prefer_objective: str | None) -> TripPlan:
+    """Pick the best 'showy' candidate; fall back to the most promising if none strictly match."""
+    def score(trip: TripPlan) -> float:
+        # Higher is better. Favour longer trips and lower start SoC.
+        km = float(getattr(trip, "trip_km", 0.0) or 0.0)
+        start_soc = float(getattr(trip, "start_soc_pct", 100.0) or 100.0)
+        s = km - 0.7 * start_soc
+        # Small bump if objective matches the model's policy tag (helps narrative coherence).
+        if prefer_objective and getattr(trip, "objective", None) == prefer_objective:
+            s += 5.0
+        # Big bump if we believe it will require a charge.
+        if _trip_is_showy(trip):
+            s += 10.0
+        return s
+
+    # Try strict showy filter first
+    showy = [t for t in trips if _trip_is_showy(t)]
+    if prefer_objective:
+        showy_pref = [t for t in showy if getattr(t, "objective", None) == prefer_objective]
+        if showy_pref:
+            showy = showy_pref
+    if showy:
+        return max(showy, key=score)
+
+    # Otherwise, pick the most promising overall
+    return max(trips, key=score)
+
+def pick_trip(eval_csv: Path, user_id: int | None, row_index: int | None,
+              prefer_objective: str | None, autopick_mode: str) -> TripPlan:
     trips = list(iter_episodes(eval_csv))
     if not trips:
         raise RuntimeError(f"No episodes found in {eval_csv}")
 
+    def do_autopick(reason: str) -> TripPlan:
+        print(f"[auto-pick] {reason}; selecting a showy calibrated trip for the demo.")
+        return _pick_showy_candidate(trips, prefer_objective)
+
+    # 1) user_id path
     if user_id is not None:
         for t in trips:
             if getattr(t, "user_id", None) == user_id:
+                if autopick_mode == "on" and _trip_is_boring(t):
+                    return do_autopick(f"user_id={user_id} looks trivial")
+                # 'missing-only' and 'off' both keep the exact (possibly boring) trip
                 return t
-        raise ValueError(f"user_id={user_id} not found in {eval_csv}")
+        # not found
+        if autopick_mode in ("on", "missing-only"):
+            return do_autopick(f"user_id={user_id} not found")
+        raise ValueError(f"user_id={user_id} not found and --autopick=off")
 
+    # 2) row_index path
     if row_index is not None:
         if not (0 <= row_index < len(trips)):
-            raise IndexError(f"row_index {row_index} out of range [0, {len(trips)-1}]")
-        return trips[row_index]
+            if autopick_mode in ("on", "missing-only"):
+                return do_autopick(f"row_index {row_index} out of range")
+            raise IndexError(f"row_index {row_index} out of range and --autopick=off")
+        t = trips[row_index]
+        if autopick_mode == "on" and _trip_is_boring(t):
+            return do_autopick(f"row_index={row_index} looks trivial")
+        return t
 
-    return trips[0]
+    # 3) No hint: pick best demo candidate unless you turned it off
+    if autopick_mode == "off":
+        return trips[0]
+    return _pick_showy_candidate(trips, prefer_objective)
 
 
 def build_env(cfg_policy_name: str, bundle: dict, trip: TripPlan) -> PPOChargingEnv:
@@ -99,20 +171,25 @@ def build_env(cfg_policy_name: str, bundle: dict, trip: TripPlan) -> PPOCharging
 
 def run_demo(model_path: Path, policy_name_hint: str | None,
              user_id: int | None, row_index: int | None,
-             out_dir: Path):
+             out_dir: Path, autopick_mode: str = "on"):
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # 1) Load bundle (same loader you use for training/eval)
     bundle = load_all_ready(DATA_DIR, strict=True)
 
-    # 2) Pick the calibrated eval trip
-    trip = pick_trip(CALIBRATED_EVAL_CSV, user_id=user_id, row_index=row_index)
-    user_obj = getattr(trip, "objective", None)  # "cost" | "time" | "hybrid" from CSV
-
-    # 3) Infer policy name (for config/labels only)
-    pol = (policy_name_hint or user_obj or "hybrid").lower()
+    # 2) Infer policy label early (for selection preference + labels)
+    # We don't know the trip yet; prefer the user-supplied policy_name if given.
+    pol = (policy_name_hint or "hybrid").lower()
     if pol not in {"cost", "time", "hybrid"}:
         pol = "hybrid"
+
+    # 3) Pick the calibrated eval trip (auto-picks showy if needed)
+    trip = pick_trip(CALIBRATED_EVAL_CSV, user_id=user_id, row_index=row_index,
+                    prefer_objective=pol,autopick_mode=autopick_mode)
+
+    # Now we can read the trip's own objective for printing
+    user_obj = getattr(trip, "objective", None)
+
 
     # 4) Build env and load model
     env = build_env(pol, bundle, trip)
@@ -246,6 +323,17 @@ def main():
     p.add_argument("--row-index", type=int, default=None, help="0-based row index from sim_users_eval_calibrated.csv (used if --user-id not given)")
     p.add_argument("--policy-name", type=str, default=None, help='Label to describe model objective in logs: "cost"|"time"|"hybrid" (optional)')
     p.add_argument("--out", type=Path, default=PROJECT_ROOT / "demo_outputs", help="Output directory for CSVs")
+    p.add_argument(
+    "--autopick",
+    choices=["on", "off", "missing-only"],
+    default="on",
+    help=(
+        "on = replace boring or missing picks with a showy trip (default); "
+        "missing-only = only replace if user_id/row_index not found; "
+        "off = never replace (use exactly what you asked for or error)."
+    ),
+)
+
     args = p.parse_args()
 
     run_demo(
@@ -254,6 +342,7 @@ def main():
         user_id=args.user_id,
         row_index=args.row_index,
         out_dir=args.out,
+        autopick_mode=args.autopick,
     )
 
 
